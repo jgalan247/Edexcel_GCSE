@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 1: Computational Thinking | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html" class="active">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 1</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 1: Computational Thinking</h1>
+                    <p style="color: rgba(255,255,255,0.9);">Algorithms, problem-solving strategies, and Boolean logic</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#computational-thinking" class="subtopic-tab active">
+                    <i class="fas fa-lightbulb"></i>
+                    Computational Thinking
+                </a>
+                <a href="#algorithms" class="subtopic-tab">
+                    <i class="fas fa-project-diagram"></i>
+                    Algorithms
+                </a>
+                <a href="#searching" class="subtopic-tab">
+                    <i class="fas fa-search"></i>
+                    Searching
+                </a>
+                <a href="#sorting" class="subtopic-tab">
+                    <i class="fas fa-sort"></i>
+                    Sorting
+                </a>
+                <a href="#logic" class="subtopic-tab">
+                    <i class="fas fa-microchip"></i>
+                    Logic Gates
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== COMPUTATIONAL THINKING ==================== -->
+        <section id="computational-thinking" class="content-section">
+            <h2>Computational Thinking</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Computational Thinking</strong> is a set of problem-solving methods that involve expressing problems and their solutions in ways that a computer could execute. It allows us to take complex problems and break them down into a series of smaller, more manageable problems.</p>
+            </div>
+
+            <p>There are <strong>four key principles</strong> of computational thinking that you must understand:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%); border-left: 4px solid #8b5cf6;">
+                    <h4><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i> 1. Decomposition</h4>
+                    <p>Breaking down a complex problem into smaller, more manageable sub-problems.</p>
+                    <p><strong>Benefits:</strong></p>
+                    <ul style="margin-left: 1rem; font-size: 0.9rem;">
+                        <li>Easier to understand and solve</li>
+                        <li>Different people can work on different parts</li>
+                        <li>Each part can be tested separately</li>
+                        <li>Parts can be reused in other programs</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> Creating a game could be decomposed into: graphics, sound, player controls, scoring system, and levels.</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%); border-left: 4px solid #06b6d4;">
+                    <h4><i class="fas fa-filter" style="color: #06b6d4;"></i> 2. Abstraction</h4>
+                    <p>Removing unnecessary details to focus only on the important information needed to solve the problem.</p>
+                    <p><strong>Key idea:</strong> Identify what is relevant and ignore what isn't.</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> The London Tube map is an abstraction - it doesn't show the exact geographical routes or distances between stations, just the connections needed to navigate.</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-shapes" style="color: #10b981;"></i> 3. Pattern Recognition</h4>
+                    <p>Looking for similarities among and within problems that can help solve them more efficiently.</p>
+                    <p><strong>Benefits:</strong></p>
+                    <ul style="margin-left: 1rem; font-size: 0.9rem;">
+                        <li>Solutions can be reused</li>
+                        <li>Problems become easier to solve</li>
+                        <li>Code can be more efficient</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> Recognising that calculating VAT always uses the same formula, regardless of the product.</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); border-left: 4px solid #f59e0b;">
+                    <h4><i class="fas fa-list-ol" style="color: #f59e0b;"></i> 4. Algorithmic Thinking</h4>
+                    <p>Developing a step-by-step solution to a problem, or rules to follow to solve the problem.</p>
+                    <p><strong>Requirements:</strong></p>
+                    <ul style="margin-left: 1rem; font-size: 0.9rem;">
+                        <li>Clear, unambiguous instructions</li>
+                        <li>Defined start and end points</li>
+                        <li>Correct sequence of steps</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> A recipe is an algorithm - it has clear steps that must be followed in order.</p>
+                </div>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-computational-thinking" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Computational Thinking</h4>
+                    <p>Watch the official video covering all four principles</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">Sample Question - 3 marks</span>
+                    <span class="marks">3 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Explain how decomposition and abstraction could be used when designing a school management system.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Decomposition (1-2 marks):</strong></p>
+                        <ul>
+                            <li>Break the system into smaller parts such as: student records, attendance tracking, timetabling, report generation</li>
+                            <li>Each module can be developed and tested separately</li>
+                        </ul>
+                        <p><strong>Abstraction (1-2 marks):</strong></p>
+                        <ul>
+                            <li>Focus only on relevant student details (name, ID, classes) not irrelevant details (favourite colour)</li>
+                            <li>Remove unnecessary complexity to make the system manageable</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <p class="source-attribution" style="font-size: 0.8rem; color: var(--text-light); margin-top: 2rem;">
+                <i class="fas fa-info-circle"></i> Content based on:
+                <a href="https://www.bbc.co.uk/bitesize/guides/z7ddqhv/revision/1" target="_blank">BBC Bitesize</a>,
+                <a href="https://www.savemyexams.com/gcse/computer-science/edexcel/20/revision-notes/1-computational-thinking/" target="_blank">Save My Exams</a>
+            </p>
+        </section>
+
+        <!-- ==================== ALGORITHMS ==================== -->
+        <section id="algorithms" class="content-section">
+            <h2>Algorithms & Representations</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>An <strong>algorithm</strong> is a sequence of steps that can be followed to complete a task. Every algorithm must have a clear starting point, a clear ending point, and produce the same result each time when given the same input.</p>
+            </div>
+
+            <h3>Representing Algorithms</h3>
+            <p>Algorithms can be represented in three main ways:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;"><i class="fas fa-file-code"></i> Pseudocode</h4>
+                    <p>A structured way of writing algorithms using plain English-like statements. Not a real programming language but follows programming conventions.</p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <pre><code>SET total TO 0
+FOR each number IN list
+    ADD number TO total
+END FOR
+OUTPUT total</code></pre>
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.75rem;"><i class="fas fa-project-diagram"></i> Flowcharts</h4>
+                    <p>Visual diagrams showing the flow of a program using standard symbols.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Advantages:</strong> Easy to follow visually, good for showing decision points and loops.</p>
+                </div>
+            </div>
+
+            <h3>Flowchart Symbols</h3>
+            <p>You must know these standard flowchart symbols:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background: var(--primary-color); color: white;">
+                        <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Shape</th>
+                        <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Name</th>
+                        <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Purpose</th>
+                        <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><div style="width: 60px; height: 30px; background: #8b5cf6; border-radius: 15px;"></div></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Terminator</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Start or End of algorithm</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">"Start", "Stop", "End"</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><div style="width: 60px; height: 30px; background: #06b6d4;"></div></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Process</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">An instruction or calculation</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">"total = total + 1"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><div style="width: 40px; height: 40px; background: #f59e0b; transform: rotate(45deg); margin: 0 10px;"></div></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Decision</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Yes/No question (selection)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">"Is x > 10?"</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><div style="width: 60px; height: 30px; background: #10b981; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);"></div></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Input/Output</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Data input or output</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">"INPUT name", "OUTPUT result"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">→</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Flow Line</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Shows direction of flow</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Connects symbols</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>
+                <p>In the exam, you may be asked to:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>Identify errors in algorithms and correct them</li>
+                    <li>Complete missing parts of flowcharts or pseudocode</li>
+                    <li>Trace through algorithms with given inputs (trace tables)</li>
+                    <li>Write your own algorithms for simple problems</li>
+                </ul>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-how-to-produce-algorithms" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: How to Produce Algorithms</h4>
+                    <p>Covers pseudocode conventions and flowchart creation</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- ==================== SEARCHING ALGORITHMS ==================== -->
+        <section id="searching" class="content-section">
+            <h2>Searching Algorithms</h2>
+
+            <p>You need to understand two searching algorithms for the exam: <strong>Linear Search</strong> and <strong>Binary Search</strong>.</p>
+
+            <h3>Linear Search</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Linear search</strong> starts at the first item in a list and checks each item one at a time until the target is found or the end of the list is reached.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+                <div>
+                    <h4 style="color: #10b981;"><i class="fas fa-check-circle"></i> Advantages</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>Works on <strong>unsorted</strong> data</li>
+                        <li>Simple to understand and implement</li>
+                        <li>No preprocessing required</li>
+                        <li>Good for small datasets</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #ef4444;"><i class="fas fa-times-circle"></i> Disadvantages</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>Slow for large datasets</li>
+                        <li>Must check every item in worst case</li>
+                        <li>Time complexity: O(n)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Linear Search in Python
+def linear_search(data_list, target):
+    for i in range(len(data_list)):
+        if data_list[i] == target:
+            return i  # Return position if found
+    return -1  # Return -1 if not found
+
+# Example: Search for 7 in [4, 2, 7, 1, 9]
+# Checks: 4? No → 2? No → 7? Yes! Found at index 2</code></pre>
+            </div>
+
+            <h3>Binary Search</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Binary search</strong> works by repeatedly dividing a <strong>sorted</strong> list in half. It compares the middle item with the target and eliminates half the remaining items each time.</p>
+            </div>
+
+            <div class="info-box warning" style="background: rgba(245, 158, 11, 0.1); border-left-color: #f59e0b;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Prerequisite</h4>
+                <p>Binary search <strong>only works on sorted data</strong>. If the data is not sorted, you must sort it first (which takes time) or use linear search instead.</p>
+            </div>
+
+            <h4>Binary Search Steps:</h4>
+            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li>Find the <strong>middle</strong> item of the list</li>
+                <li>Compare the middle item with the target</li>
+                <li>If they match, <strong>return</strong> the position</li>
+                <li>If target is <strong>less than</strong> middle, search the <strong>left half</strong></li>
+                <li>If target is <strong>greater than</strong> middle, search the <strong>right half</strong></li>
+                <li>Repeat until found or no items left</li>
+            </ol>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+                <div>
+                    <h4 style="color: #10b981;"><i class="fas fa-check-circle"></i> Advantages</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li><strong>Very fast</strong> for large datasets</li>
+                        <li>Eliminates half the data each step</li>
+                        <li>Time complexity: O(log n)</li>
+                        <li>1000 items = max 10 comparisons!</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #ef4444;"><i class="fas fa-times-circle"></i> Disadvantages</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>Data <strong>must be sorted</strong></li>
+                        <li>More complex to implement</li>
+                        <li>Sorting takes time if not already sorted</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Binary Search in Python
+def binary_search(sorted_list, target):
+    low = 0
+    high = len(sorted_list) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if sorted_list[mid] == target:
+            return mid  # Found it!
+        elif sorted_list[mid] < target:
+            low = mid + 1  # Search right half
+        else:
+            high = mid - 1  # Search left half
+
+    return -1  # Not found
+
+# Example: Search for 7 in [1, 2, 4, 7, 9]
+# Mid=4 → 7>4 → Search right → Mid=7 → Found!</code></pre>
+            </div>
+
+            <h3>Comparison Table</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background: var(--primary-color); color: white;">
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Feature</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Linear Search</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Binary Search</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Data requirement</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Any order</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Must be sorted</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Time complexity</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">O(n) - slow</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">O(log n) - fast</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Max checks (1000 items)</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1000</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">10</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Best for</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Small/unsorted lists</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Large sorted lists</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-linear-search" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Linear Search</h4>
+                    <p>Detailed walkthrough with trace tables</p>
+                </div>
+            </a>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-binary-search" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Binary Search</h4>
+                    <p>Step-by-step explanation with examples</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 1</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>A sorted list contains these values: <strong>[3, 7, 12, 18, 24, 31, 45]</strong></p>
+                    <p>Show the steps a binary search would take to find the value 18.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Step 1:</strong> Middle = 18, Target = 18 ✓ Found!</p>
+                        <p><em>OR if showing working:</em></p>
+                        <p><strong>Step 1:</strong> low=0, high=6, mid=(0+6)//2=3</p>
+                        <p>list[3] = 18, which equals target</p>
+                        <p><strong>Result:</strong> Found at index 3</p>
+                        <p><em>(1 mark for correct method, 1 mark for each correct step, 1 mark for correct answer)</em></p>
+                    </div>
+                </details>
+            </div>
+
+            <p class="source-attribution" style="font-size: 0.8rem; color: var(--text-light); margin-top: 2rem;">
+                <i class="fas fa-info-circle"></i> Content based on:
+                <a href="https://www.bbc.co.uk/bitesize/guides/z7ddqhv/revision/3" target="_blank">BBC Bitesize</a>,
+                <a href="https://www.savemyexams.com/gcse/computer-science/edexcel/20/revision-notes/1-computational-thinking/algorithms/standard-searching-algorithms/" target="_blank">Save My Exams</a>
+            </p>
+        </section>
+
+        <!-- ==================== SORTING ALGORITHMS ==================== -->
+        <section id="sorting" class="content-section">
+            <h2>Sorting Algorithms</h2>
+
+            <p>You need to understand two sorting algorithms: <strong>Bubble Sort</strong> and <strong>Merge Sort</strong>.</p>
+
+            <h3>Bubble Sort</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Bubble sort</strong> compares adjacent pairs of items and swaps them if they are in the wrong order. The largest values "bubble" to the end of the list with each pass.</p>
+            </div>
+
+            <h4>Bubble Sort Steps:</h4>
+            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li>Start at the <strong>beginning</strong> of the list</li>
+                <li>Compare the <strong>first two items</strong></li>
+                <li>If they are in the wrong order, <strong>swap</strong> them</li>
+                <li>Move to the <strong>next pair</strong> and repeat</li>
+                <li>Continue until you reach the end (<strong>one pass</strong>)</li>
+                <li>Repeat passes until <strong>no swaps</strong> are made</li>
+            </ol>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lightbulb"></i> Worked Example</h4>
+                <p>Sort [5, 3, 8, 1] using bubble sort:</p>
+                <p><strong>Pass 1:</strong> [5,3,8,1] → [3,5,8,1] → [3,5,8,1] → [3,5,1,8]</p>
+                <p><strong>Pass 2:</strong> [3,5,1,8] → [3,5,1,8] → [3,1,5,8]</p>
+                <p><strong>Pass 3:</strong> [3,1,5,8] → [1,3,5,8]</p>
+                <p><strong>Pass 4:</strong> [1,3,5,8] → No swaps needed. Done!</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Bubble Sort in Python
+def bubble_sort(data_list):
+    n = len(data_list)
+    for i in range(n - 1):
+        swapped = False
+        for j in range(n - 1 - i):
+            if data_list[j] > data_list[j + 1]:
+                # Swap the items
+                data_list[j], data_list[j + 1] = data_list[j + 1], data_list[j]
+                swapped = True
+        if not swapped:
+            break  # List is sorted, exit early
+    return data_list</code></pre>
+            </div>
+
+            <h3>Merge Sort</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Merge sort</strong> uses a "divide and conquer" approach. It repeatedly divides the list in half until each sublist has one item, then merges them back together in sorted order.</p>
+            </div>
+
+            <h4>Merge Sort Steps:</h4>
+            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li><strong>Divide:</strong> Split the list in half repeatedly until each list has 1 item</li>
+                <li><strong>Conquer:</strong> Merge pairs of lists together in sorted order</li>
+                <li>Continue merging until you have one sorted list</li>
+            </ol>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lightbulb"></i> Worked Example</h4>
+                <p>Sort [6, 3, 8, 2] using merge sort:</p>
+                <p><strong>Divide:</strong> [6,3,8,2] → [6,3] [8,2] → [6] [3] [8] [2]</p>
+                <p><strong>Merge:</strong> [6] [3] → [3,6] and [8] [2] → [2,8]</p>
+                <p><strong>Merge:</strong> [3,6] [2,8] → [2,3,6,8] ✓</p>
+            </div>
+
+            <h3>Comparison Table</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background: var(--primary-color); color: white;">
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Feature</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Bubble Sort</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Merge Sort</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Time complexity</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">O(n²) - slow</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">O(n log n) - fast</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Space needed</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">In-place (minimal)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Needs extra memory</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Complexity</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Simple to code</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">More complex</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Best for</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Small lists, nearly sorted</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Large datasets</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>
+                <p>In the exam, you <strong>don't need to show every single swap</strong> in bubble sort. You can show the state of the list after each complete pass. If each pass is correct, you'll get full marks!</p>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-bubble-sort" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Bubble Sort</h4>
+                    <p>Complete walkthrough with trace tables</p>
+                </div>
+            </a>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-merge-sort" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Merge Sort</h4>
+                    <p>Divide and conquer explained step by step</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2023 - Paper 1</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>The following list needs to be sorted into ascending order using bubble sort:</p>
+                    <p><strong>[12, 8, 15, 3, 9]</strong></p>
+                    <p>Show the state of the list after each complete pass.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Pass 1:</strong> [8, 12, 3, 9, 15]</p>
+                        <p><strong>Pass 2:</strong> [8, 3, 9, 12, 15]</p>
+                        <p><strong>Pass 3:</strong> [3, 8, 9, 12, 15]</p>
+                        <p><strong>Pass 4:</strong> [3, 8, 9, 12, 15] - no swaps, sorted</p>
+                        <p><em>(1 mark for each correct pass)</em></p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ==================== LOGIC GATES ==================== -->
+        <section id="logic" class="content-section">
+            <h2>Boolean Logic & Truth Tables</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Boolean logic</strong> uses only two values: <strong>True (1)</strong> and <strong>False (0)</strong>. Logic gates are electronic circuits that perform Boolean operations and form the basis of how computers make decisions.</p>
+            </div>
+
+            <h3>Logic Gates You Must Know</h3>
+            <p>For the Edexcel GCSE, you need to understand these logic gates:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <!-- NOT Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #ef4444;">
+                    <h4 style="color: #ef4444; margin-bottom: 0.5rem;">NOT Gate (Inverter)</h4>
+                    <p style="margin-bottom: 1rem;"><strong>Inverts</strong> the input. 0 becomes 1, 1 becomes 0.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #ef4444; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Input A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Output Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = NOT A</code></p>
+                </div>
+
+                <!-- AND Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #10b981;">
+                    <h4 style="color: #10b981; margin-bottom: 0.5rem;">AND Gate</h4>
+                    <p style="margin-bottom: 1rem;">Output is 1 only when <strong>BOTH</strong> inputs are 1.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #10b981; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">B</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = A AND B</code></p>
+                </div>
+
+                <!-- OR Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #3b82f6;">
+                    <h4 style="color: #3b82f6; margin-bottom: 0.5rem;">OR Gate</h4>
+                    <p style="margin-bottom: 1rem;">Output is 1 when <strong>AT LEAST ONE</strong> input is 1.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #3b82f6; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">B</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = A OR B</code></p>
+                </div>
+
+                <!-- XOR Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #f59e0b;">
+                    <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">XOR Gate (Exclusive OR)</h4>
+                    <p style="margin-bottom: 1rem;">Output is 1 when inputs are <strong>DIFFERENT</strong>.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #f59e0b; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">B</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = A XOR B</code></p>
+                </div>
+
+                <!-- NAND Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #8b5cf6;">
+                    <h4 style="color: #8b5cf6; margin-bottom: 0.5rem;">NAND Gate (NOT AND)</h4>
+                    <p style="margin-bottom: 1rem;"><strong>Opposite</strong> of AND gate.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #8b5cf6; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">B</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = NOT (A AND B)</code></p>
+                </div>
+
+                <!-- NOR Gate -->
+                <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #ec4899;">
+                    <h4 style="color: #ec4899; margin-bottom: 0.5rem;">NOR Gate (NOT OR)</h4>
+                    <p style="margin-bottom: 1rem;"><strong>Opposite</strong> of OR gate.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr style="background: #ec4899; color: white;">
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">A</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">B</th>
+                            <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Q</th>
+                        </tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">1</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                        <tr style="background: white;"><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center;">1</td><td style="padding: 0.5rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">0</td></tr>
+                    </table>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;"><code>Q = NOT (A OR B)</code></p>
+                </div>
+            </div>
+
+            <div class="info-box warning" style="background: rgba(245, 158, 11, 0.1); border-left-color: #f59e0b;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Common Exam Mistake</h4>
+                <p>Don't confuse <strong>OR</strong> and <strong>XOR</strong>! The key difference is when both inputs are 1:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>OR:</strong> 1 OR 1 = <strong>1</strong> (at least one is true)</li>
+                    <li><strong>XOR:</strong> 1 XOR 1 = <strong>0</strong> (inputs must be different)</li>
+                </ul>
+            </div>
+
+            <h3>Constructing Truth Tables</h3>
+            <p>For expressions with multiple inputs, list all possible combinations. For n inputs, you need 2<sup>n</sup> rows:</p>
+            <ul style="margin: 1rem 0 1rem 1.5rem;">
+                <li>2 inputs = 4 rows (2² = 4)</li>
+                <li>3 inputs = 8 rows (2³ = 8)</li>
+            </ul>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip: Input Pattern</h4>
+                <p>For 2 inputs, use this pattern to ensure all combinations are covered:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>Column A: 0, 0, 1, 1 (doubles up)</li>
+                    <li>Column B: 0, 1, 0, 1 (alternates)</li>
+                </ul>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1b-logic-gates" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Logic Gates</h4>
+                    <p>Complete guide to all logic gates with examples</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 1</span>
+                    <span class="marks">3 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Complete the truth table for: <strong>Q = (A AND B) OR (NOT A)</strong></p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <table style="width: 100%;">
+                            <tr><th>A</th><th>B</th><th>A AND B</th><th>NOT A</th><th>Q</th></tr>
+                            <tr><td>0</td><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+                            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+                            <tr><td>1</td><td>1</td><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+                        </table>
+                        <p><em>1 mark for intermediate columns, 2 marks for correct Q values</em></p>
+                    </div>
+                </details>
+            </div>
+
+            <p class="source-attribution" style="font-size: 0.8rem; color: var(--text-light); margin-top: 2rem;">
+                <i class="fas fa-info-circle"></i> Content based on:
+                <a href="https://www.bbc.co.uk/bitesize/guides/zc4bb9q/revision/1" target="_blank">BBC Bitesize</a>,
+                <a href="https://www.savemyexams.com/gcse/computer-science/edexcel/20/revision-notes/1-computational-thinking/truth-tables/" target="_blank">Save My Exams</a>
+            </p>
+        </section>
+
+        <!-- ==================== QUIZ SECTION ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 1 Quiz</h2>
+            <p>Test your knowledge with this multiple-choice quiz. When you finish, you can download a PDF certificate with your results!</p>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-info-circle"></i> Quiz Instructions</h4>
+                <p>Answer all 15 questions, then submit to see your score. You can then generate a PDF report to download or send to your teacher.</p>
+            </div>
+
+            <!-- Student Info -->
+            <div id="student-info" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin: 2rem 0;">
+                <h4 style="margin-bottom: 1rem;">Enter Your Details</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <label for="studentName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Name:</label>
+                        <input type="text" id="studentName" placeholder="Enter your name" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label for="teacherEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Teacher's Email (optional):</label>
+                        <input type="email" id="teacherEmail" placeholder="teacher@school.com" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container">
+                <form id="topic1-quiz">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </form>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <button type="button" id="submit-quiz" class="btn btn-primary" style="flex: 1; min-width: 200px;">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section (hidden until quiz submitted) -->
+            <div id="quiz-results" style="display: none; margin-top: 2rem;">
+                <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-xl); text-align: center;">
+                    <h3 id="results-title" style="font-size: 1.75rem; margin-bottom: 1rem;"></h3>
+                    <div id="score-display" style="font-size: 3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;"></div>
+                    <p id="score-message" style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" id="download-pdf" class="btn btn-primary">
+                            <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                        </button>
+                        <button type="button" id="retry-quiz" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detailed Results -->
+                <div id="detailed-results" style="margin-top: 2rem;"></div>
+            </div>
+        </section>
+
+        <!-- Key Terms Summary -->
+        <section class="content-section" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(139, 92, 246, 0.05) 100%); border-radius: var(--radius-xl); padding: 2rem; margin: 2rem 0;">
+            <h2>Key Terms Summary</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div><strong>Algorithm</strong> - Step-by-step instructions to solve a problem</div>
+                <div><strong>Decomposition</strong> - Breaking problems into smaller parts</div>
+                <div><strong>Abstraction</strong> - Focusing on essential details only</div>
+                <div><strong>Pattern Recognition</strong> - Finding similarities to reuse solutions</div>
+                <div><strong>Linear Search</strong> - Checking each item sequentially</div>
+                <div><strong>Binary Search</strong> - Dividing sorted data in half repeatedly</div>
+                <div><strong>Bubble Sort</strong> - Swapping adjacent elements</div>
+                <div><strong>Merge Sort</strong> - Divide, sort, and merge approach</div>
+                <div><strong>Boolean</strong> - True/False or 1/0 values</div>
+                <div><strong>Truth Table</strong> - Shows all input/output combinations</div>
+                <div><strong>AND Gate</strong> - Output 1 only if both inputs are 1</div>
+                <div><strong>OR Gate</strong> - Output 1 if at least one input is 1</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Continue Learning</h4>
+                    <ul>
+                        <li><a href="topic2.html">Next: Topic 2 - Data →</a></li>
+                        <li><a href="../index.html#activities">Practice Activities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Video Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave - Edexcel GCSE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sources</h4>
+                    <ul>
+                        <li><a href="https://www.bbc.co.uk/bitesize/examspecs/zdqy7nb" target="_blank">BBC Bitesize</a></li>
+                        <li><a href="https://www.savemyexams.com/gcse/computer-science/edexcel/20/" target="_blank">Save My Exams</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource. Not affiliated with Pearson Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script>
+        // Initialize Topic 1 Quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initQuiz === 'function') {
+                initQuiz('topic1');
+            }
+        });
+
+        // Subtopic tab switching
+        document.querySelectorAll('.subtopic-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                document.querySelectorAll('.subtopic-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const tabs = document.querySelectorAll('.subtopic-tab');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

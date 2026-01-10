@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials | Edexcel GCSE Computer Science 1CP2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .videos-section {
+            padding: 3rem 0;
+        }
+
+        .video-topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-topic-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .video-topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .video-topic-card[data-topic="1"] { border-color: var(--topic1-color); }
+        .video-topic-card[data-topic="2"] { border-color: var(--topic2-color); }
+        .video-topic-card[data-topic="3"] { border-color: var(--topic3-color); }
+        .video-topic-card[data-topic="4"] { border-color: var(--topic4-color); }
+        .video-topic-card[data-topic="5"] { border-color: var(--topic5-color); }
+        .video-topic-card[data-topic="6"] { border-color: var(--topic6-color); }
+
+        .video-card-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .video-topic-card[data-topic="1"] .video-card-header { background: var(--topic1-color); }
+        .video-topic-card[data-topic="2"] .video-card-header { background: var(--topic2-color); }
+        .video-topic-card[data-topic="3"] .video-card-header { background: var(--topic3-color); }
+        .video-topic-card[data-topic="4"] .video-card-header { background: var(--topic4-color); }
+        .video-topic-card[data-topic="5"] .video-card-header { background: var(--topic5-color); }
+        .video-topic-card[data-topic="6"] .video-card-header { background: var(--topic6-color); }
+
+        .video-card-header i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .video-card-header h3 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .video-card-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .video-card-content {
+            padding: 1.5rem;
+        }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .video-list-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .video-list-item:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .video-list-item i {
+            color: #ff0000;
+            font-size: 1.25rem;
+        }
+
+        .video-list-item:hover i {
+            color: white;
+        }
+
+        .video-list-item span {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .playlist-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .playlist-link:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .main-playlist-section {
+            background: var(--bg-secondary);
+            padding: 4rem 0;
+        }
+
+        .playlist-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .playlist-card i.fa-youtube {
+            font-size: 4rem;
+            color: #ff0000;
+            margin-bottom: 1.5rem;
+        }
+
+        .playlist-card h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .playlist-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .playlist-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .playlist-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .playlist-feature i {
+            color: var(--success-color);
+        }
+
+        .btn-youtube {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: #ff0000;
+            color: white;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .btn-youtube:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topics/topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topics/topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topics/topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topics/topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topics/topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topics/topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Activities <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="activities/memory-match.html">Memory Match</a></li>
+                    <li><a href="activities/connection-wall.html">Connection Wall</a></li>
+                    <li><a href="activities/sequence-builder.html">Sequence Builder</a></li>
+                    <li><a href="activities/code-breaker.html">Code Breaker</a></li>
+                    <li><a href="activities/logic-gates.html">Logic Gates</a></li>
+                    <li><a href="activities/cookie-quizzer.html">Cookie Quizzer</a></li>
+                    <li><a href="activities/category-sort.html">Category Sort</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="past-papers.html" class="nav-link">Past Papers</a></li>
+            <li class="nav-item"><a href="videos.html" class="nav-link">Video Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header">
+        <div class="container">
+            <div class="topic-header-icon" style="background: var(--secondary-color);">
+                <i class="fas fa-video"></i>
+            </div>
+            <div>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Video Tutorials</span>
+                </div>
+                <h1>Video Tutorials</h1>
+                <p>Craig 'n' Dave video tutorials covering all topics for Edexcel GCSE Computer Science (1CP2)</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-playlist-section">
+            <div class="container">
+                <div class="playlist-card">
+                    <i class="fab fa-youtube"></i>
+                    <h2>Craig 'n' Dave - Edexcel GCSE 1CP2</h2>
+                    <p>Complete video course covering all topics in the Edexcel GCSE Computer Science specification</p>
+                    <div class="playlist-features">
+                        <div class="playlist-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>All 6 Topics Covered</span>
+                        </div>
+                        <div class="playlist-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exam-Focused Content</span>
+                        </div>
+                        <div class="playlist-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free to Access</span>
+                        </div>
+                    </div>
+                    <a href="https://student.craigndave.org/gcse-computer-science-edexcel" target="_blank" class="btn-youtube">
+                        <i class="fab fa-youtube"></i>
+                        Access Full Playlist
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="videos-section">
+            <div class="container">
+                <h2 class="section-title">Videos by Topic</h2>
+                <p class="section-subtitle">Explore videos organised by each topic in the specification</p>
+
+                <div class="video-topics-grid">
+                    <!-- Topic 1 -->
+                    <div class="video-topic-card" data-topic="1">
+                        <div class="video-card-header">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h3>Topic 1: Computational Thinking</h3>
+                                <p>Algorithms and Computational Logic</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1-computational-thinking" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>1.1 Algorithms</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1-computational-thinking" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>1.2 Flowcharts & Pseudocode</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1-computational-thinking" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>1.3 Searching & Sorting</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1-computational-thinking" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>1.4 Logic Gates</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1-computational-thinking" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 1 Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Topic 2 -->
+                    <div class="video-topic-card" data-topic="2">
+                        <div class="video-card-header">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <h3>Topic 2: Data</h3>
+                                <p>Binary and Data Representation</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2-data" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>2.1 Binary & Hexadecimal</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2-data" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>2.2 Binary Arithmetic</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2-data" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>2.3 Character Sets</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2-data" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>2.4 Images & Sound</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2-data" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 2 Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Topic 3 -->
+                    <div class="video-topic-card" data-topic="3">
+                        <div class="video-card-header">
+                            <i class="fas fa-desktop"></i>
+                            <div>
+                                <h3>Topic 3: Computers</h3>
+                                <p>Hardware and Software</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-computers" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>3.1 CPU Architecture</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-computers" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>3.2 Memory & Storage</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-computers" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>3.3 Operating Systems</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-computers" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>3.4 Programming Languages</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-computers" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 3 Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Topic 4 -->
+                    <div class="video-topic-card" data-topic="4">
+                        <div class="video-card-header">
+                            <i class="fas fa-network-wired"></i>
+                            <div>
+                                <h3>Topic 4: Networks</h3>
+                                <p>Network Types and Security</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-4-networks" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>4.1 Network Types & Topologies</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-4-networks" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>4.2 Network Protocols</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-4-networks" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>4.3 The Internet</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-4-networks" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>4.4 Network Security</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-4-networks" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 4 Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Topic 5 -->
+                    <div class="video-topic-card" data-topic="5">
+                        <div class="video-card-header">
+                            <i class="fas fa-balance-scale"></i>
+                            <div>
+                                <h3>Topic 5: Issues & Impact</h3>
+                                <p>Ethical, Legal and Environmental Issues</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-5-issues-and-impact" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>5.1 Ethical Issues</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-5-issues-and-impact" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>5.2 Legal Issues</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-5-issues-and-impact" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>5.3 Privacy & Data Protection</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-5-issues-and-impact" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>5.4 Environmental Impact</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-5-issues-and-impact" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 5 Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Topic 6 -->
+                    <div class="video-topic-card" data-topic="6">
+                        <div class="video-card-header">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h3>Topic 6: Programming</h3>
+                                <p>Python Programming Fundamentals</p>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <div class="video-list">
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-problem-solving-with-programming" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>6.1 Variables & Data Types</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-problem-solving-with-programming" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>6.2 Selection & Iteration</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-problem-solving-with-programming" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>6.3 Data Structures</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-problem-solving-with-programming" target="_blank" class="video-list-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>6.4 Subprograms & File Handling</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-problem-solving-with-programming" target="_blank" class="playlist-link">
+                                <i class="fas fa-play-circle"></i>
+                                View All Topic 6 Videos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Study Tips</h2>
+                <p class="section-subtitle">Get the most out of these video resources</p>
+
+                <div class="info-box tip">
+                    <h4><i class="fas fa-lightbulb"></i> Active Learning</h4>
+                    <p>Do not just watch the videos passively. Take notes, pause to think about concepts, and try the examples yourself. This will help you retain the information much better.</p>
+                </div>
+
+                <div class="info-box tip">
+                    <h4><i class="fas fa-redo"></i> Review and Repeat</h4>
+                    <p>Return to videos on topics you find challenging. Spaced repetition is one of the most effective ways to move information into long-term memory.</p>
+                </div>
+
+                <div class="info-box exam">
+                    <h4><i class="fas fa-tasks"></i> Combine with Practice</h4>
+                    <p>After watching videos on a topic, practice with related past paper questions. This helps you apply your knowledge in an exam context and identify any gaps in understanding.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>A comprehensive revision resource for the Pearson Edexcel GCSE Computer Science (1CP2) specification.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="topics/topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topics/topic6.html">Topic 6: Programming</a></li>
+                        <li><a href="past-papers.html">Past Papers</a></li>
+                        <li><a href="videos.html">Video Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Official Specification</a></li>
+                        <li><a href="https://student.craigndave.org/1cp2" target="_blank">Craig 'n' Dave Videos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education or Craig 'n' Dave.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

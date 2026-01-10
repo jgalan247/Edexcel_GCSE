@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 6: Problem Solving with Programming | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html" class="active">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Activities <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../activities/memory-match.html">Memory Match</a></li>
+                    <li><a href="../activities/connection-wall.html">Connection Wall</a></li>
+                    <li><a href="../activities/sequence-builder.html">Sequence Builder</a></li>
+                    <li><a href="../activities/code-breaker.html">Code Breaker</a></li>
+                    <li><a href="../activities/logic-gates.html">Logic Gates</a></li>
+                    <li><a href="../activities/cookie-quizzer.html">Cookie Quizzer</a></li>
+                    <li><a href="../activities/category-sort.html">Category Sort</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../past-papers.html" class="nav-link">Past Papers</a></li>
+            <li class="nav-item"><a href="../videos.html" class="nav-link">Video Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="--topic-color: var(--topic6-color);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 6</span>
+            </div>
+            <div class="topic-header-icon" style="background: var(--topic6-color);">
+                <i class="fas fa-code"></i>
+            </div>
+            <div>
+                <h1>Topic 6: Problem Solving with Programming</h1>
+                <p>Programming fundamentals, data structures, and file handling</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#topic6a" class="subtopic-tab active">
+                    <i class="fas fa-terminal"></i>
+                    6A: Programming Fundamentals
+                </a>
+                <a href="#topic6b" class="subtopic-tab">
+                    <i class="fas fa-database"></i>
+                    6B: Data Structures & Files
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- TOPIC 6A: PROGRAMMING FUNDAMENTALS -->
+        <section id="topic6a" class="content-section">
+            <h2>6A: Programming Fundamentals</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>A <strong>program</strong> is a set of instructions written in a programming language that tells a computer how to perform a specific task.</p>
+            </div>
+
+            <h3>Variables and Constants</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: rgba(139, 92, 246, 0.1); border-left-color: #8b5cf6;">
+                    <h4><i class="fas fa-box"></i> Variable</h4>
+                    <p>A named storage location in memory whose value can change during program execution.</p>
+                    <p><strong>Example:</strong> <code>score = 100</code></p>
+                </div>
+                <div class="info-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                    <h4><i class="fas fa-lock"></i> Constant</h4>
+                    <p>A named storage location whose value cannot change during program execution.</p>
+                    <p><strong>Example:</strong> <code>PI = 3.14159</code></p>
+                </div>
+            </div>
+
+            <h3>Data Types</h3>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Data Type</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Description</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Python Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Integer</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Whole numbers (positive or negative)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>age = 16</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Float/Real</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Decimal numbers</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>price = 19.99</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>String</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Text (sequence of characters)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>name = "Alice"</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Boolean</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">True or False only</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>is_valid = True</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Character</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Single character</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>grade = 'A'</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Type Casting</h4>
+            <p>Converting between data types:</p>
+
+            <div class="code-block">
+                <pre><code># Python: Type Casting (Converting between types)
+
+# String to Integer
+age_str = "16"
+age_int = int(age_str)    # age_int is now 16
+
+# Integer to String
+score = 100
+score_str = str(score)    # score_str is now "100"
+
+# String to Float
+price_str = "19.99"
+price = float(price_str)  # price is now 19.99
+
+# Float to Integer (truncates decimal)
+height = 1.85
+height_int = int(height)  # height_int is now 1
+
+# Input always returns a string!
+user_input = input("Enter a number: ")  # Returns string
+number = int(user_input)  # Convert to integer for calculations</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-variables-and-data-types" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Variables and Data Types</h4>
+                    <p>Understanding variables, constants, and data types</p>
+                </div>
+            </a>
+
+            <h3>Operators</h3>
+
+            <h4>Arithmetic Operators</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Operator</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Name</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>+</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Addition</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>5 + 3</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">8</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>-</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Subtraction</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>5 - 3</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">2</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>*</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Multiplication</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>5 * 3</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">15</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>/</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Division</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>7 / 2</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">3.5</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>//</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Integer Division</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>7 // 2</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">3</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>%</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Modulus (remainder)</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>7 % 2</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">1</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>**</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Exponent (power)</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>2 ** 3</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> DIV and MOD</h4>
+                <p><strong>DIV (//)</strong> gives the whole number part of division. Useful for: converting units, calculating rows/columns.</p>
+                <p><strong>MOD (%)</strong> gives the remainder. Useful for: checking if even/odd, extracting digits, cycling through values.</p>
+            </div>
+
+            <h4>Comparison Operators</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Operator</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Meaning</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>==</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Equal to</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x == 5</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>!=</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Not equal to</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x != 5</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>&lt;</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Less than</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x &lt; 5</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>&gt;</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Greater than</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x &gt; 5</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>&lt;=</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Less than or equal</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x &lt;= 5</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>&gt;=</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Greater than or equal</td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>x &gt;= 5</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Selection (IF Statements)</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Selection</strong> allows a program to choose different paths of execution based on conditions. The program "selects" which code to run.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: Selection Examples
+
+# Simple IF
+age = int(input("Enter your age: "))
+if age >= 18:
+    print("You can vote")
+
+# IF-ELSE
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")
+
+# IF-ELIF-ELSE (multiple conditions)
+score = int(input("Enter score: "))
+if score >= 90:
+    grade = "A*"
+elif score >= 80:
+    grade = "A"
+elif score >= 70:
+    grade = "B"
+elif score >= 60:
+    grade = "C"
+else:
+    grade = "Below C"
+print(f"Grade: {grade}")
+
+# Nested IF (IF inside IF)
+has_ticket = True
+age = 15
+if has_ticket:
+    if age >= 18:
+        print("Welcome to the 18+ event")
+    else:
+        print("Sorry, you must be 18+")
+else:
+    print("Please buy a ticket first")</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-selection" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Selection</h4>
+                    <p>IF, ELIF, ELSE and nested conditions</p>
+                </div>
+            </a>
+
+            <h3>Iteration (Loops)</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Iteration</strong> means repeating a block of code multiple times. There are two main types: count-controlled loops (FOR) and condition-controlled loops (WHILE).</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: FOR Loop (count-controlled)
+# Use when you know how many times to repeat
+
+# Print numbers 0 to 4
+for i in range(5):
+    print(i)
+
+# Print numbers 1 to 10
+for i in range(1, 11):
+    print(i)
+
+# Count by 2s: 0, 2, 4, 6, 8
+for i in range(0, 10, 2):
+    print(i)
+
+# Loop through a list
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)</code></pre>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: WHILE Loop (condition-controlled)
+# Use when you don't know how many times to repeat
+
+# Keep asking until valid input
+password = ""
+while password != "secret123":
+    password = input("Enter password: ")
+print("Access granted!")
+
+# Count down from 5
+count = 5
+while count > 0:
+    print(count)
+    count = count - 1
+print("Blast off!")
+
+# Infinite loop with break
+while True:
+    user_input = input("Enter 'quit' to exit: ")
+    if user_input == "quit":
+        break
+    print(f"You entered: {user_input}")</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> FOR vs WHILE</h4>
+                <ul style="margin: 0.5rem 0;">
+                    <li><strong>FOR:</strong> Use when you know the number of iterations (e.g., repeat 10 times, loop through a list)</li>
+                    <li><strong>WHILE:</strong> Use when repetition depends on a condition (e.g., keep asking until correct, game loop)</li>
+                </ul>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-iteration" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Iteration</h4>
+                    <p>FOR loops, WHILE loops, and nested loops</p>
+                </div>
+            </a>
+
+            <h3>Subprograms (Functions and Procedures)</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definitions</h4>
+                <p><strong>Subprogram</strong> - A named block of reusable code that performs a specific task.</p>
+                <p><strong>Procedure</strong> - A subprogram that performs a task but does NOT return a value.</p>
+                <p><strong>Function</strong> - A subprogram that performs a task and RETURNS a value.</p>
+                <p><strong>Parameter</strong> - A variable that receives a value passed into a subprogram.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: Functions and Procedures
+
+# Procedure (no return value)
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Output: Hello, Alice!
+
+# Function (returns a value)
+def calculate_area(length, width):
+    area = length * width
+    return area
+
+result = calculate_area(5, 3)
+print(f"Area: {result}")  # Output: Area: 15
+
+# Function with default parameter
+def power(base, exponent=2):
+    return base ** exponent
+
+print(power(3))      # Output: 9 (uses default exponent=2)
+print(power(2, 4))   # Output: 16
+
+# Why use subprograms?
+# 1. Reusability - write once, use many times
+# 2. Readability - code is easier to understand
+# 3. Maintainability - fix bugs in one place
+# 4. Decomposition - break complex problems into smaller parts</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-subprograms" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Subprograms</h4>
+                    <p>Functions, procedures, parameters, and return values</p>
+                </div>
+            </a>
+
+            <h3>String Handling</h3>
+
+            <div class="code-block">
+                <pre><code># Python: String Manipulation
+
+text = "Hello World"
+
+# Length
+print(len(text))           # Output: 11
+
+# Indexing (0-based)
+print(text[0])             # Output: H (first character)
+print(text[-1])            # Output: d (last character)
+
+# Slicing
+print(text[0:5])           # Output: Hello
+print(text[6:])            # Output: World
+
+# Case conversion
+print(text.upper())        # Output: HELLO WORLD
+print(text.lower())        # Output: hello world
+
+# Find and replace
+print(text.find("World"))  # Output: 6 (index where found)
+print(text.replace("World", "Python"))  # Hello Python
+
+# Concatenation (joining strings)
+first = "Hello"
+second = "World"
+combined = first + " " + second  # Hello World
+
+# Checking contents
+email = "test@example.com"
+print("@" in email)        # Output: True
+print(email.startswith("test"))  # Output: True
+print(email.endswith(".com"))    # Output: True
+
+# Split into list
+sentence = "The quick brown fox"
+words = sentence.split(" ")  # ["The", "quick", "brown", "fox"]</code></pre>
+            </div>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 2 - Q4</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Write a function that takes a string as a parameter and returns the string reversed.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <div class="code-block">
+                            <pre><code>def reverse_string(text):
+    reversed_text = ""
+    for i in range(len(text) - 1, -1, -1):
+        reversed_text = reversed_text + text[i]
+    return reversed_text
+
+# Or using slicing:
+def reverse_string(text):
+    return text[::-1]</code></pre>
+                        </div>
+                        <p><em>1 mark for correct function definition</em></p>
+                        <p><em>1 mark for loop/slicing approach</em></p>
+                        <p><em>1 mark for building reversed string</em></p>
+                        <p><em>1 mark for returning result</em></p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Practice Activities</h3>
+            <div class="activity-links">
+                <a href="../activities/code-breaker.html" class="activity-link">
+                    <i class="fas fa-code"></i>
+                    <span>Code Breaker: Debug the Code</span>
+                </a>
+                <a href="../activities/memory-match.html?topic=topic6a" class="activity-link">
+                    <i class="fas fa-clone"></i>
+                    <span>Memory Match: Programming Terms</span>
+                </a>
+                <a href="../activities/cookie-quizzer.html?topic=topic6" class="activity-link">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Quiz: Programming Basics</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- TOPIC 6B: DATA STRUCTURES AND FILES -->
+        <section id="topic6b" class="content-section">
+            <h2>6B: Data Structures and File Handling</h2>
+
+            <h3>Arrays and Lists</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>An <strong>array</strong> (or list in Python) is a data structure that stores multiple values of the same type under a single variable name. Elements are accessed using an index.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: Lists (Arrays)
+
+# Creating a list
+scores = [85, 92, 78, 90, 88]
+names = ["Alice", "Bob", "Charlie"]
+
+# Accessing elements (0-indexed)
+print(scores[0])    # Output: 85 (first element)
+print(scores[-1])   # Output: 88 (last element)
+
+# Modifying elements
+scores[2] = 80      # Change 78 to 80
+
+# List length
+print(len(scores))  # Output: 5
+
+# Adding elements
+scores.append(95)   # Add to end: [85, 92, 80, 90, 88, 95]
+scores.insert(0, 70)  # Insert at index 0
+
+# Removing elements
+scores.remove(80)   # Remove first occurrence of 80
+last = scores.pop() # Remove and return last element
+
+# Looping through a list
+for score in scores:
+    print(score)
+
+# Looping with index
+for i in range(len(scores)):
+    print(f"Index {i}: {scores[i]}")</code></pre>
+            </div>
+
+            <h4>Common List Operations</h4>
+
+            <div class="code-block">
+                <pre><code># Finding total, average, max, min
+
+numbers = [45, 72, 38, 91, 56]
+
+# Total
+total = 0
+for num in numbers:
+    total = total + num
+print(f"Total: {total}")  # Output: 302
+
+# Alternative using sum()
+total = sum(numbers)
+
+# Average
+average = total / len(numbers)
+print(f"Average: {average}")  # Output: 60.4
+
+# Maximum
+maximum = numbers[0]
+for num in numbers:
+    if num > maximum:
+        maximum = num
+print(f"Maximum: {maximum}")  # Output: 91
+
+# Alternative using max()
+maximum = max(numbers)
+
+# Minimum
+minimum = min(numbers)</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-arrays" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Arrays</h4>
+                    <p>Working with arrays and lists</p>
+                </div>
+            </a>
+
+            <h3>2D Arrays</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>A <strong>2D array</strong> is an array of arrays, forming a grid or table structure with rows and columns. Elements are accessed using two indices: [row][column].</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: 2D Arrays (Lists of Lists)
+
+# Creating a 2D array (3 rows x 4 columns)
+grid = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+# Accessing elements: grid[row][column]
+print(grid[0][0])   # Output: 1 (first row, first column)
+print(grid[1][2])   # Output: 7 (second row, third column)
+print(grid[2][3])   # Output: 12 (third row, fourth column)
+
+# Modifying an element
+grid[1][1] = 100    # Change 6 to 100
+
+# Looping through all elements
+for row in range(len(grid)):
+    for col in range(len(grid[row])):
+        print(grid[row][col], end=" ")
+    print()  # New line after each row
+
+# Example: Seating plan
+seats = [
+    ["Alice", "Bob", "Charlie"],
+    ["David", "Eve", "Frank"],
+    ["Grace", "Henry", "Ivy"]
+]
+print(f"Seat at row 1, col 2: {seats[1][2]}")  # Output: Frank</code></pre>
+            </div>
+
+            <h3>Records (Dictionaries)</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>A <strong>record</strong> (dictionary in Python) is a data structure that stores related data together using key-value pairs. Each piece of data is accessed by its key name.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><code># Python: Dictionaries (Records)
+
+# Creating a dictionary
+student = {
+    "name": "Alice Smith",
+    "age": 16,
+    "year_group": 11,
+    "subjects": ["Maths", "Science", "English"]
+}
+
+# Accessing values by key
+print(student["name"])      # Output: Alice Smith
+print(student["age"])       # Output: 16
+
+# Modifying values
+student["age"] = 17
+
+# Adding new key-value pair
+student["house"] = "Red"
+
+# List of dictionaries (records)
+students = [
+    {"name": "Alice", "score": 85},
+    {"name": "Bob", "score": 92},
+    {"name": "Charlie", "score": 78}
+]
+
+# Loop through records
+for s in students:
+    print(f"{s['name']}: {s['score']}")</code></pre>
+            </div>
+
+            <h3>File Handling</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>File handling</strong> allows programs to store data permanently by reading from and writing to files. This means data persists even after the program ends.</p>
+            </div>
+
+            <h4>File Modes</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Mode</th>
+                        <th style="padding: 0.5rem; text-align: left; border: 1px solid var(--border-color);">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>"r"</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Read - Opens file for reading (error if file doesn't exist)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>"w"</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Write - Creates new file or overwrites existing file</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);"><code>"a"</code></td>
+                        <td style="padding: 0.5rem; border: 1px solid var(--border-color);">Append - Adds to end of file (creates if doesn't exist)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><code># Python: File Handling
+
+# WRITING to a file
+file = open("scores.txt", "w")
+file.write("Alice: 85\n")
+file.write("Bob: 92\n")
+file.write("Charlie: 78\n")
+file.close()
+
+# Better method using 'with' (auto-closes file)
+with open("scores.txt", "w") as file:
+    file.write("Alice: 85\n")
+    file.write("Bob: 92\n")
+
+# READING from a file
+with open("scores.txt", "r") as file:
+    content = file.read()  # Read entire file as string
+    print(content)
+
+# Reading line by line
+with open("scores.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # strip() removes newline characters
+
+# Reading into a list
+with open("scores.txt", "r") as file:
+    lines = file.readlines()  # List of all lines
+
+# APPENDING to a file
+with open("scores.txt", "a") as file:
+    file.write("David: 88\n")  # Adds to end</code></pre>
+            </div>
+
+            <div class="info-box warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important</h4>
+                <ul style="margin: 0.5rem 0;">
+                    <li>Always close files after use (or use <code>with</code> statement)</li>
+                    <li>Mode <code>"w"</code> overwrites existing content - use carefully!</li>
+                    <li>Files store text - convert numbers with <code>int()</code> or <code>float()</code> when reading</li>
+                </ul>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-file-handling" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: File Handling</h4>
+                    <p>Reading from and writing to files</p>
+                </div>
+            </a>
+
+            <h3>Validation and Testing</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Validation</strong> is checking that input data is reasonable, sensible, and of the right type before processing. It does NOT check if data is accurate.</p>
+            </div>
+
+            <h4>Types of Validation</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Type</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Description</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Range check</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Value is within acceptable range</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Age between 0 and 120</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Length check</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Input has correct number of characters</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Password at least 8 characters</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Presence check</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Data has been entered</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Name field is not empty</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Type check</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Data is correct type</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Age is a number</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Format check</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Data follows required pattern</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Email contains @</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><code># Python: Validation Examples
+
+# Range check
+def validate_age(age):
+    if age >= 0 and age <= 120:
+        return True
+    return False
+
+# Length check
+def validate_password(password):
+    if len(password) >= 8:
+        return True
+    return False
+
+# Presence check
+def validate_name(name):
+    if name != "":
+        return True
+    return False
+
+# Type check with try/except
+def get_integer():
+    while True:
+        try:
+            value = int(input("Enter a number: "))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+# Combined validation
+def get_valid_age():
+    while True:
+        try:
+            age = int(input("Enter age (0-120): "))
+            if 0 <= age <= 120:
+                return age
+            else:
+                print("Age must be between 0 and 120")
+        except ValueError:
+            print("Please enter a valid number")</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-validation" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Validation</h4>
+                    <p>Input validation and error handling</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2023 - Paper 2 - Q6</span>
+                    <span class="marks">6 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>A program needs to read student names and scores from a file called "results.txt" and calculate the average score.</p>
+                    <p>The file contains data in this format:</p>
+                    <pre>Alice,85
+Bob,92
+Charlie,78</pre>
+                    <p>Write a program to read the file and output the average score.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <div class="code-block">
+                            <pre><code>total = 0
+count = 0
+
+with open("results.txt", "r") as file:
+    for line in file:
+        data = line.strip().split(",")
+        name = data[0]
+        score = int(data[1])
+        total = total + score
+        count = count + 1
+
+average = total / count
+print(f"Average score: {average}")</code></pre>
+                        </div>
+                        <p><em>1 mark for opening file correctly</em></p>
+                        <p><em>1 mark for looping through lines</em></p>
+                        <p><em>1 mark for splitting data</em></p>
+                        <p><em>1 mark for converting score to integer</em></p>
+                        <p><em>1 mark for calculating total</em></p>
+                        <p><em>1 mark for calculating and outputting average</em></p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 2 - Q8</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Explain the difference between validation and verification. Give one example of each.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Validation:</strong></p>
+                        <ul>
+                            <li>Checking that data is reasonable, sensible, and of the correct type (1 mark)</li>
+                            <li>Does NOT check if data is accurate or true (1 mark)</li>
+                            <li><strong>Example:</strong> Checking that an age is between 0 and 120 (1 mark)</li>
+                        </ul>
+                        <p><strong>Verification:</strong></p>
+                        <ul>
+                            <li>Checking that data has been entered correctly (1 mark)</li>
+                            <li>Confirms data is what the user intended to enter (1 mark)</li>
+                            <li><strong>Example:</strong> Asking user to re-enter password to confirm, double entry (1 mark)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Practice Activities</h3>
+            <div class="activity-links">
+                <a href="../activities/code-breaker.html?topic=files" class="activity-link">
+                    <i class="fas fa-code"></i>
+                    <span>Code Breaker: File Operations</span>
+                </a>
+                <a href="../activities/memory-match.html?topic=topic6b" class="activity-link">
+                    <i class="fas fa-clone"></i>
+                    <span>Memory Match: Data Structures</span>
+                </a>
+                <a href="../activities/cookie-quizzer.html?topic=topic6" class="activity-link">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Quiz: Programming</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Key Terms Summary -->
+        <section class="content-section" style="background: var(--bg-secondary); border-radius: var(--radius-xl); padding: 2rem; margin: 2rem 0;">
+            <h2>Key Terms Summary</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div><strong>Variable</strong> - Named storage that can change</div>
+                <div><strong>Constant</strong> - Named storage that cannot change</div>
+                <div><strong>Data type</strong> - Category of data (integer, string, etc.)</div>
+                <div><strong>Selection</strong> - Choosing paths with IF statements</div>
+                <div><strong>Iteration</strong> - Repeating code with loops</div>
+                <div><strong>Function</strong> - Subprogram that returns a value</div>
+                <div><strong>Procedure</strong> - Subprogram with no return value</div>
+                <div><strong>Parameter</strong> - Value passed into a subprogram</div>
+                <div><strong>Array/List</strong> - Collection of values</div>
+                <div><strong>2D Array</strong> - Grid of values (rows and columns)</div>
+                <div><strong>Record</strong> - Related data with named fields</div>
+                <div><strong>Validation</strong> - Checking input is reasonable</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Continue Learning</h4>
+                    <ul>
+                        <li><a href="topic5.html">Previous: Topic 5 - Issues & Impact</a></li>
+                        <li><a href="topic1.html">Back to Topic 1 - Computational Thinking</a></li>
+                        <li><a href="../activities/memory-match.html">Practice with Activities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Video Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/1cp2" target="_blank">Craig 'n' Dave - Edexcel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Subtopic tab switching
+        document.querySelectorAll('.subtopic-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                document.querySelectorAll('.subtopic-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const tabs = document.querySelectorAll('.subtopic-tab');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

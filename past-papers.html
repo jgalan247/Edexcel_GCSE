@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Papers | Edexcel GCSE Computer Science 1CP2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topics/topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topics/topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topics/topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topics/topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topics/topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topics/topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Activities <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="activities/memory-match.html">Memory Match</a></li>
+                    <li><a href="activities/connection-wall.html">Connection Wall</a></li>
+                    <li><a href="activities/sequence-builder.html">Sequence Builder</a></li>
+                    <li><a href="activities/code-breaker.html">Code Breaker</a></li>
+                    <li><a href="activities/logic-gates.html">Logic Gates</a></li>
+                    <li><a href="activities/cookie-quizzer.html">Cookie Quizzer</a></li>
+                    <li><a href="activities/category-sort.html">Category Sort</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="past-papers.html" class="nav-link">Past Papers</a></li>
+            <li class="nav-item"><a href="videos.html" class="nav-link">Video Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header">
+        <div class="container">
+            <div class="topic-header-icon" style="background: var(--primary-color);">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Past Papers</span>
+                </div>
+                <h1>Past Papers</h1>
+                <p>Practice with official Edexcel GCSE Computer Science (1CP2) exam papers from 2020-2024</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h2>Filter Papers</h2>
+
+                <div class="papers-filter" id="yearFilter">
+                    <button class="filter-btn active" data-filter="all">All Years</button>
+                    <button class="filter-btn" data-filter="2024">2024</button>
+                    <button class="filter-btn" data-filter="2023">2023</button>
+                    <button class="filter-btn" data-filter="2022">2022</button>
+                    <button class="filter-btn" data-filter="2021">2021</button>
+                    <button class="filter-btn" data-filter="2020">2020</button>
+                </div>
+
+                <div class="papers-filter" id="typeFilter">
+                    <button class="filter-btn active" data-filter="all">All Papers</button>
+                    <button class="filter-btn" data-filter="paper1">Paper 1</button>
+                    <button class="filter-btn" data-filter="paper2">Paper 2</button>
+                </div>
+
+                <div class="papers-list" id="papersList">
+                    <!-- 2024 Papers -->
+                    <div class="paper-item" data-year="2024" data-type="paper1">
+                        <div class="paper-info">
+                            <h4>2024 Paper 1 - Principles of Computer Science</h4>
+                            <p>June 2024 | 1 hour 30 minutes | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_que_20240516.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_msc_20240516.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="paper-item" data-year="2024" data-type="paper2">
+                        <div class="paper-info">
+                            <h4>2024 Paper 2 - Application of Computational Thinking</h4>
+                            <p>June 2024 | 2 hours | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_que_20240605.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_msc_20240605.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2023 Papers -->
+                    <div class="paper-item" data-year="2023" data-type="paper1">
+                        <div class="paper-info">
+                            <h4>2023 Paper 1 - Principles of Computer Science</h4>
+                            <p>June 2023 | 1 hour 30 minutes | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_que_20230517.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_msc_20230517.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="paper-item" data-year="2023" data-type="paper2">
+                        <div class="paper-info">
+                            <h4>2023 Paper 2 - Application of Computational Thinking</h4>
+                            <p>June 2023 | 2 hours | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_que_20230607.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_msc_20230607.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2022 Papers -->
+                    <div class="paper-item" data-year="2022" data-type="paper1">
+                        <div class="paper-info">
+                            <h4>2022 Paper 1 - Principles of Computer Science</h4>
+                            <p>June 2022 | 1 hour 30 minutes | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_que_20220520.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_msc_20220520.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="paper-item" data-year="2022" data-type="paper2">
+                        <div class="paper-info">
+                            <h4>2022 Paper 2 - Application of Computational Thinking</h4>
+                            <p>June 2022 | 2 hours | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_que_20220609.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_msc_20220609.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2021 Papers -->
+                    <div class="paper-item" data-year="2021" data-type="paper1">
+                        <div class="paper-info">
+                            <h4>2021 Paper 1 - Principles of Computer Science</h4>
+                            <p>November 2021 | 1 hour 30 minutes | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_que_20211116.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_01_msc_20211116.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="paper-item" data-year="2021" data-type="paper2">
+                        <div class="paper-info">
+                            <h4>2021 Paper 2 - Application of Computational Thinking</h4>
+                            <p>November 2021 | 2 hours | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_que_20211119.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/exam-materials/1CP2_02_msc_20211119.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2020 Papers -->
+                    <div class="paper-item" data-year="2020" data-type="paper1">
+                        <div class="paper-info">
+                            <h4>2020 Paper 1 - Principles of Computer Science (Specimen)</h4>
+                            <p>Specimen Paper | 1 hour 30 minutes | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/specification-and-sample-assessments/SAMs-Paper1-question-paper.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/specification-and-sample-assessments/SAMs-Paper1-mark-scheme.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="paper-item" data-year="2020" data-type="paper2">
+                        <div class="paper-info">
+                            <h4>2020 Paper 2 - Application of Computational Thinking (Specimen)</h4>
+                            <p>Specimen Paper | 2 hours | 75 marks</p>
+                        </div>
+                        <div class="paper-links">
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/specification-and-sample-assessments/SAMs-Paper2-question-paper.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://qualifications.pearson.com/content/dam/pdf/GCSE/computer-science/2020/specification-and-sample-assessments/SAMs-Paper2-mark-scheme.pdf" target="_blank" class="paper-link">
+                                <i class="fas fa-check-circle"></i> Mark Scheme
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <div class="container">
+                <h2 class="section-title">Additional Resources</h2>
+                <p class="section-subtitle">More past paper resources and revision materials</p>
+
+                <div class="resources-grid">
+                    <a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.coursematerials.html#filterQuery=category:Pearson-UK:Category%2FExam-materials" target="_blank" class="resource-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Pearson Edexcel</h3>
+                        <p>Official exam materials from Pearson including past papers, mark schemes, and examiner reports</p>
+                    </a>
+
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-edexcel/" target="_blank" class="resource-card">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Physics and Maths Tutor</h3>
+                        <p>Past papers organised by topic with detailed solutions and revision notes</p>
+                    </a>
+
+                    <a href="https://revisionworld.com/gcse-revision/ict/edexcel-gcse-computer-science-past-papers" target="_blank" class="resource-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Revision World</h3>
+                        <p>Free past papers collection with mark schemes for Edexcel GCSE Computer Science</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Exam Tips</h2>
+
+                <div class="info-box tip">
+                    <h4><i class="fas fa-lightbulb"></i> Paper 1 Tips</h4>
+                    <p>Paper 1 covers Topics 1-5 (Computational Thinking, Data, Computers, Networks, and Issues & Impact). Focus on understanding concepts and being able to explain them clearly. Many questions require you to apply your knowledge to unfamiliar scenarios.</p>
+                </div>
+
+                <div class="info-box tip">
+                    <h4><i class="fas fa-lightbulb"></i> Paper 2 Tips</h4>
+                    <p>Paper 2 is an on-screen examination focusing on programming in Python. Practice writing, debugging, and tracing code. Make sure you are comfortable with file handling, data structures, and common algorithms.</p>
+                </div>
+
+                <div class="info-box exam">
+                    <h4><i class="fas fa-clock"></i> Time Management</h4>
+                    <p>Both papers have approximately 1 mark per minute. For Paper 1, spend about 1 minute per mark. For Paper 2, the 2-hour duration gives you more time for coding and testing your solutions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>A comprehensive revision resource for the Pearson Edexcel GCSE Computer Science (1CP2) specification.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="topics/topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topics/topic6.html">Topic 6: Programming</a></li>
+                        <li><a href="past-papers.html">Past Papers</a></li>
+                        <li><a href="videos.html">Video Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Official Specification</a></li>
+                        <li><a href="https://student.craigndave.org/1cp2" target="_blank">Craig 'n' Dave Videos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let activeYear = 'all';
+            let activeType = 'all';
+
+            const yearButtons = document.querySelectorAll('#yearFilter .filter-btn');
+            const typeButtons = document.querySelectorAll('#typeFilter .filter-btn');
+            const papers = document.querySelectorAll('.paper-item');
+
+            function filterPapers() {
+                papers.forEach(paper => {
+                    const paperYear = paper.dataset.year;
+                    const paperType = paper.dataset.type;
+
+                    const matchesYear = activeYear === 'all' || paperYear === activeYear;
+                    const matchesType = activeType === 'all' || paperType === activeType;
+
+                    if (matchesYear && matchesType) {
+                        paper.style.display = 'flex';
+                    } else {
+                        paper.style.display = 'none';
+                    }
+                });
+            }
+
+            yearButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    yearButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeYear = this.dataset.filter;
+                    filterPapers();
+                });
+            });
+
+            typeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    typeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeType = this.dataset.filter;
+                    filterPapers();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

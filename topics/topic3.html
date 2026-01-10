@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 3: Computers | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html" class="active">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Activities <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../activities/memory-match.html">Memory Match</a></li>
+                    <li><a href="../activities/connection-wall.html">Connection Wall</a></li>
+                    <li><a href="../activities/sequence-builder.html">Sequence Builder</a></li>
+                    <li><a href="../activities/code-breaker.html">Code Breaker</a></li>
+                    <li><a href="../activities/logic-gates.html">Logic Gates</a></li>
+                    <li><a href="../activities/cookie-quizzer.html">Cookie Quizzer</a></li>
+                    <li><a href="../activities/category-sort.html">Category Sort</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../past-papers.html" class="nav-link">Past Papers</a></li>
+            <li class="nav-item"><a href="../videos.html" class="nav-link">Video Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="--topic-color: var(--topic3-color);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 3</span>
+            </div>
+            <div class="topic-header-icon" style="background: var(--topic3-color);">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <div>
+                <h1>Topic 3: Computers</h1>
+                <p>Hardware components, system software, and programming languages</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#topic3a" class="subtopic-tab active">
+                    <i class="fas fa-microchip"></i>
+                    3A: Hardware
+                </a>
+                <a href="#topic3b" class="subtopic-tab">
+                    <i class="fas fa-code"></i>
+                    3B: Software
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- TOPIC 3A: HARDWARE -->
+        <section id="topic3a" class="content-section">
+            <h2>3A: Hardware Components</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Hardware</strong> refers to the physical components of a computer system that you can see and touch, such as the CPU, memory, and storage devices.</p>
+            </div>
+
+            <h3>The CPU (Central Processing Unit)</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>The <strong>CPU</strong> is the brain of the computer. It processes instructions from programs by performing the fetch-decode-execute cycle billions of times per second.</p>
+            </div>
+
+            <h4>CPU Components</h4>
+            <div class="content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: rgba(139, 92, 246, 0.1); border-left-color: #8b5cf6;">
+                    <h4><i class="fas fa-cogs"></i> Control Unit (CU)</h4>
+                    <p>Controls and coordinates the activities of the CPU. Fetches instructions from memory, decodes them, and sends control signals to other components.</p>
+                </div>
+                <div class="info-box" style="background: rgba(6, 182, 212, 0.1); border-left-color: #06b6d4;">
+                    <h4><i class="fas fa-calculator"></i> Arithmetic Logic Unit (ALU)</h4>
+                    <p>Performs all arithmetic calculations (add, subtract, multiply, divide) and logical operations (AND, OR, NOT comparisons).</p>
+                </div>
+                <div class="info-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                    <h4><i class="fas fa-memory"></i> Cache Memory</h4>
+                    <p>Very fast, small memory inside the CPU. Stores frequently used instructions and data for quick access. Faster than RAM but more expensive.</p>
+                </div>
+                <div class="info-box" style="background: rgba(245, 158, 11, 0.1); border-left-color: #f59e0b;">
+                    <h4><i class="fas fa-database"></i> Registers</h4>
+                    <p>Tiny, extremely fast storage locations within the CPU. Hold data currently being processed. Examples: Accumulator, Program Counter, MAR, MDR.</p>
+                </div>
+            </div>
+
+            <h4>The Fetch-Decode-Execute Cycle</h4>
+            <ol>
+                <li><strong>Fetch:</strong> The next instruction is fetched from RAM using the address in the Program Counter (PC)</li>
+                <li><strong>Decode:</strong> The Control Unit decodes the instruction to determine what needs to be done</li>
+                <li><strong>Execute:</strong> The instruction is carried out (may involve the ALU for calculations)</li>
+            </ol>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-the-cpu" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: The CPU</h4>
+                    <p>Detailed explanation of CPU components and the FDE cycle</p>
+                </div>
+            </a>
+
+            <h4>CPU Performance Factors</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Factor</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Description</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Clock Speed</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Measured in GHz. Number of FDE cycles per second.</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Higher = faster processing</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Number of Cores</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Each core can process instructions independently.</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">More cores = better multitasking</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Cache Size</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Amount of high-speed memory in the CPU.</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Larger = fewer delays fetching data</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Memory</h3>
+
+            <h4>RAM (Random Access Memory)</h4>
+            <div class="info-box" style="background: rgba(139, 92, 246, 0.1); border-left-color: #8b5cf6;">
+                <h4><i class="fas fa-memory"></i> RAM Characteristics</h4>
+                <ul style="margin: 0.5rem 0;">
+                    <li><strong>Volatile</strong> - Contents are lost when power is turned off</li>
+                    <li><strong>Read and write</strong> - Data can be changed</li>
+                    <li><strong>Fast access</strong> - Quicker than secondary storage</li>
+                    <li><strong>Stores:</strong> Currently running programs and data being used</li>
+                </ul>
+            </div>
+
+            <h4>ROM (Read Only Memory)</h4>
+            <div class="info-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lock"></i> ROM Characteristics</h4>
+                <ul style="margin: 0.5rem 0;">
+                    <li><strong>Non-volatile</strong> - Contents are retained when power is off</li>
+                    <li><strong>Read only</strong> - Data cannot be changed (in basic ROM)</li>
+                    <li><strong>Stores:</strong> BIOS/boot instructions needed to start the computer</li>
+                </ul>
+            </div>
+
+            <h4>Virtual Memory</h4>
+            <p>When RAM is full, the operating system uses part of the hard drive as temporary RAM. This is called virtual memory.</p>
+
+            <div class="info-box warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Drawback</h4>
+                <p>Virtual memory is much slower than RAM because hard drives are slower than memory chips. Too much reliance on virtual memory causes the computer to slow down significantly.</p>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-memory" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Memory</h4>
+                    <p>RAM, ROM, cache, and virtual memory explained</p>
+                </div>
+            </a>
+
+            <h3>Secondary Storage</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Secondary storage</strong> is non-volatile storage used to store data and programs permanently. It retains data even when the computer is switched off.</p>
+            </div>
+
+            <h4>Types of Secondary Storage</h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-hdd"></i> Magnetic Storage</h4>
+                    <p><strong>Examples:</strong> Hard Disk Drives (HDD), magnetic tape</p>
+                    <p><strong>How it works:</strong> Data stored as magnetic patterns on spinning platters</p>
+                    <p><strong>Pros:</strong> High capacity, low cost per GB</p>
+                    <p><strong>Cons:</strong> Slower, moving parts can fail, fragile</p>
+                </div>
+
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-bolt"></i> Solid State Storage</h4>
+                    <p><strong>Examples:</strong> SSD, USB flash drives, SD cards</p>
+                    <p><strong>How it works:</strong> Data stored in flash memory chips (no moving parts)</p>
+                    <p><strong>Pros:</strong> Very fast, durable, silent, low power</p>
+                    <p><strong>Cons:</strong> More expensive per GB, limited write cycles</p>
+                </div>
+
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-compact-disc"></i> Optical Storage</h4>
+                    <p><strong>Examples:</strong> CD, DVD, Blu-ray</p>
+                    <p><strong>How it works:</strong> Laser reads/writes patterns of pits and lands on disc surface</p>
+                    <p><strong>Pros:</strong> Cheap, portable, good for distributing media</p>
+                    <p><strong>Cons:</strong> Limited capacity, slow, easily scratched</p>
+                </div>
+            </div>
+
+            <h4>Cloud Storage</h4>
+            <p>Data stored on remote servers accessed via the internet.</p>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Advantages</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Disadvantages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Access from anywhere with internet</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Requires internet connection</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Automatic backups</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Ongoing subscription costs</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Easy to share files</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Security/privacy concerns</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Scalable storage</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Reliance on third party</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-secondary-storage" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Secondary Storage</h4>
+                    <p>Magnetic, solid state, and optical storage compared</p>
+                </div>
+            </a>
+
+            <h3>Embedded Systems</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>An <strong>embedded system</strong> is a computer system built into a larger device to perform a specific dedicated function. It typically has limited resources and runs specialized software.</p>
+            </div>
+
+            <p><strong>Examples:</strong> Washing machines, traffic lights, smartwatches, car engine management systems, digital cameras, smart thermostats.</p>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 1 - Q8</span>
+                    <span class="marks">6 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>(a) State three factors that affect CPU performance. [3 marks]</p>
+                    <p>(b) Explain why a computer with more RAM might perform better than one with less RAM. [3 marks]</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>(a)</strong> Any three of:</p>
+                        <ul>
+                            <li>Clock speed (1 mark)</li>
+                            <li>Number of cores (1 mark)</li>
+                            <li>Cache size (1 mark)</li>
+                        </ul>
+                        <p><strong>(b)</strong></p>
+                        <ul>
+                            <li>More programs/data can be stored in RAM at once (1 mark)</li>
+                            <li>Less need to use virtual memory (1 mark)</li>
+                            <li>Virtual memory is slower than RAM because hard drives are slower than memory chips (1 mark)</li>
+                            <li>Therefore processing will be faster overall (1 mark)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Practice Activities</h3>
+            <div class="activity-links">
+                <a href="../activities/memory-match.html?topic=topic3a" class="activity-link">
+                    <i class="fas fa-clone"></i>
+                    <span>Memory Match: Hardware Components</span>
+                </a>
+                <a href="../activities/category-sort.html?topic=storage" class="activity-link">
+                    <i class="fas fa-th-large"></i>
+                    <span>Category Sort: Storage Types</span>
+                </a>
+                <a href="../activities/cookie-quizzer.html?topic=topic3" class="activity-link">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Quiz: Hardware</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- TOPIC 3B: SOFTWARE -->
+        <section id="topic3b" class="content-section">
+            <h2>3B: Software</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Software</strong> is a collection of programs and data that tell the computer how to perform specific tasks. Software is intangible - you cannot physically touch it.</p>
+            </div>
+
+            <h3>Types of Software</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: rgba(139, 92, 246, 0.1); border-left-color: #8b5cf6;">
+                    <h4><i class="fas fa-cog"></i> System Software</h4>
+                    <p>Software that manages and controls the computer hardware, providing a platform for application software to run.</p>
+                    <p><strong>Examples:</strong> Operating systems, utility software, device drivers</p>
+                </div>
+                <div class="info-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                    <h4><i class="fas fa-window-maximize"></i> Application Software</h4>
+                    <p>Software designed to help users perform specific tasks or solve particular problems.</p>
+                    <p><strong>Examples:</strong> Word processors, web browsers, games, spreadsheets</p>
+                </div>
+            </div>
+
+            <h3>Operating Systems</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p>An <strong>operating system (OS)</strong> is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an interface between the user and the hardware.</p>
+            </div>
+
+            <h4>Functions of an Operating System</h4>
+            <div class="content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-layer-group"></i> Memory Management</h4>
+                    <p>Allocates RAM to programs, manages virtual memory, and ensures programs don't interfere with each other's memory space.</p>
+                </div>
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-tasks"></i> Process Management</h4>
+                    <p>Manages running programs (processes), allocates CPU time, handles multitasking between applications.</p>
+                </div>
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-folder-open"></i> File Management</h4>
+                    <p>Organises files and folders on storage devices, controls access permissions, handles reading and writing data.</p>
+                </div>
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-plug"></i> Peripheral Management</h4>
+                    <p>Controls input/output devices through device drivers, manages print queues, handles data transfer.</p>
+                </div>
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-user-shield"></i> User Management</h4>
+                    <p>Handles user accounts, login authentication, access control, and security settings.</p>
+                </div>
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-desktop"></i> User Interface</h4>
+                    <p>Provides GUI (graphical) or CLI (command line) interface for users to interact with the computer.</p>
+                </div>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-operating-systems" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Operating Systems</h4>
+                    <p>Functions and features of operating systems</p>
+                </div>
+            </a>
+
+            <h3>Utility Software</h3>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Utility software</strong> performs maintenance and housekeeping tasks to help the computer run efficiently. It supports, enhances, or protects the computer system.</p>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Utility</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Antivirus/Anti-malware</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Scans for, detects, quarantines, and removes malicious software</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Disk Defragmentation</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Reorganises fragmented files on HDD to improve access speed (not needed for SSDs)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Backup Software</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Creates copies of data to protect against data loss</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Encryption Software</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Scrambles data so it can only be read with the correct key</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Compression Software</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Reduces file sizes for storage or transmission</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Firewall</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Monitors and controls incoming/outgoing network traffic</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-utility-software" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Utility Software</h4>
+                    <p>Common utilities and their purposes</p>
+                </div>
+            </a>
+
+            <h3>Programming Languages</h3>
+
+            <h4>Levels of Programming Language</h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: rgba(245, 158, 11, 0.1); border-left-color: #f59e0b;">
+                    <h4><i class="fas fa-microchip"></i> Low-Level Languages</h4>
+                    <p><strong>Machine Code:</strong> Binary instructions directly executed by CPU. Specific to processor architecture.</p>
+                    <p><strong>Assembly Language:</strong> Uses mnemonics (short codes) instead of binary. Needs an assembler to convert to machine code.</p>
+                    <p><strong>Pros:</strong> Fast execution, direct hardware control, efficient use of memory</p>
+                    <p><strong>Cons:</strong> Difficult to learn/write, processor-specific, time-consuming</p>
+                </div>
+                <div class="info-box" style="background: rgba(139, 92, 246, 0.1); border-left-color: #8b5cf6;">
+                    <h4><i class="fas fa-code"></i> High-Level Languages</h4>
+                    <p><strong>Examples:</strong> Python, Java, C++, JavaScript</p>
+                    <p>Uses English-like statements. Needs a compiler or interpreter to convert to machine code.</p>
+                    <p><strong>Pros:</strong> Easier to learn/write, portable across platforms, faster development</p>
+                    <p><strong>Cons:</strong> Slower execution, less direct hardware control, requires translator</p>
+                </div>
+            </div>
+
+            <h4>Translators</h4>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="background: var(--bg-secondary);">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Translator</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Function</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Characteristics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Compiler</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Translates entire high-level program into machine code before execution</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Creates executable file, faster execution, errors reported at end</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Interpreter</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Translates and executes code line by line</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">No executable file, slower execution, stops at first error</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Assembler</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Translates assembly language into machine code</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">One-to-one translation, processor specific</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><code># Python is typically interpreted
+# This code runs line by line
+
+print("Line 1 executes")   # This runs first
+print("Line 2 executes")   # Then this runs
+x = 10 / 0                 # Error here - stops execution
+print("Line 4 never runs") # This never executes
+
+# With a compiler, all errors would be reported
+# before any code runs</code></pre>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-programming-languages" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Programming Languages</h4>
+                    <p>High vs low level, compilers, and interpreters</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2023 - Paper 1 - Q9</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Describe two functions of an operating system. [4 marks]</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p>Any two from (2 marks each - 1 for naming, 1 for description):</p>
+                        <ul>
+                            <li><strong>Memory management:</strong> Allocates RAM to programs and manages virtual memory when RAM is full</li>
+                            <li><strong>Process/processor management:</strong> Allocates CPU time to running programs and manages multitasking</li>
+                            <li><strong>File management:</strong> Organises files into folders, controls access permissions, handles saving/loading</li>
+                            <li><strong>User management:</strong> Handles user accounts, passwords, and access rights</li>
+                            <li><strong>Peripheral management:</strong> Controls input/output devices through device drivers</li>
+                            <li><strong>User interface:</strong> Provides GUI or CLI for users to interact with the computer</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 1 - Q10</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Compare the use of a compiler and an interpreter. [4 marks]</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Compiler:</strong></p>
+                        <ul>
+                            <li>Translates the entire program before execution (1 mark)</li>
+                            <li>Creates an executable file that can be run without the compiler (1 mark)</li>
+                            <li>Faster execution once compiled (1 mark)</li>
+                            <li>Reports all errors at end of compilation (1 mark)</li>
+                        </ul>
+                        <p><strong>Interpreter:</strong></p>
+                        <ul>
+                            <li>Translates and executes code one line at a time (1 mark)</li>
+                            <li>No executable file created - needs interpreter each time (1 mark)</li>
+                            <li>Slower execution (1 mark)</li>
+                            <li>Stops at first error encountered (1 mark)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Practice Activities</h3>
+            <div class="activity-links">
+                <a href="../activities/memory-match.html?topic=topic3b" class="activity-link">
+                    <i class="fas fa-clone"></i>
+                    <span>Memory Match: Software Terms</span>
+                </a>
+                <a href="../activities/category-sort.html?topic=software" class="activity-link">
+                    <i class="fas fa-th-large"></i>
+                    <span>Category Sort: System vs Application</span>
+                </a>
+                <a href="../activities/cookie-quizzer.html?topic=topic3" class="activity-link">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Quiz: Software</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Key Terms Summary -->
+        <section class="content-section" style="background: var(--bg-secondary); border-radius: var(--radius-xl); padding: 2rem; margin: 2rem 0;">
+            <h2>Key Terms Summary</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div><strong>CPU</strong> - Central Processing Unit, the brain of the computer</div>
+                <div><strong>ALU</strong> - Performs arithmetic and logic operations</div>
+                <div><strong>Control Unit</strong> - Coordinates CPU activities</div>
+                <div><strong>Cache</strong> - Fast memory inside the CPU</div>
+                <div><strong>RAM</strong> - Volatile memory for running programs</div>
+                <div><strong>ROM</strong> - Non-volatile memory for boot instructions</div>
+                <div><strong>Virtual Memory</strong> - Hard drive space used as RAM</div>
+                <div><strong>SSD</strong> - Solid State Drive, fast storage with no moving parts</div>
+                <div><strong>Operating System</strong> - Manages hardware and provides user interface</div>
+                <div><strong>Utility Software</strong> - Performs maintenance tasks</div>
+                <div><strong>Compiler</strong> - Translates entire program at once</div>
+                <div><strong>Interpreter</strong> - Translates code line by line</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Continue Learning</h4>
+                    <ul>
+                        <li><a href="topic2.html">Previous: Topic 2 - Data</a></li>
+                        <li><a href="topic4.html">Next: Topic 4 - Networks</a></li>
+                        <li><a href="../activities/memory-match.html">Practice with Activities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Video Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/1cp2" target="_blank">Craig 'n' Dave - Edexcel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Subtopic tab switching
+        document.querySelectorAll('.subtopic-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                document.querySelectorAll('.subtopic-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const tabs = document.querySelectorAll('.subtopic-tab');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

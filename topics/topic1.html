@@ -595,46 +595,66 @@ else:
                     <h4 style="color: #d97706; margin-bottom: 0.5rem; text-align: center;"><i class="fas fa-code-branch"></i> Selection (IF Statement)</h4>
                     <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">Check if someone can vote (age 18+)</p>
 
-                    <!-- Flowchart Visual -->
-                    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                    <!-- SVG Flowchart -->
+                    <svg viewBox="0 0 400 420" style="width: 100%; max-width: 400px; margin: 0 auto; display: block; background: #1e1e1e; border-radius: 8px;">
+                        <!-- Arrow marker definition -->
+                        <defs>
+                            <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+                            </marker>
+                        </defs>
+
                         <!-- Start -->
-                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">Start</div>
-                        <div style="color: white; font-size: 1.5rem;">↓</div>
+                        <rect x="150" y="15" width="100" height="35" rx="17" fill="#8b5cf6"/>
+                        <text x="200" y="38" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Start</text>
 
-                        <!-- Input -->
-                        <div style="background: #10b981; color: white; padding: 0.5rem 1rem; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); min-width: 150px; text-align: center;">INPUT age</div>
-                        <div style="color: white; font-size: 1.5rem;">↓</div>
+                        <!-- Line: Start to Input -->
+                        <line x1="200" y1="50" x2="200" y2="70" stroke="white" stroke-width="2" marker-end="url(#arrowhead1)"/>
 
-                        <!-- Decision -->
-                        <div style="background: #f59e0b; color: white; padding: 1rem; transform: rotate(45deg); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                            <span style="transform: rotate(-45deg); font-size: 0.75rem; text-align: center;">age >= 18?</span>
-                        </div>
+                        <!-- Input (parallelogram) -->
+                        <polygon points="130,80 270,80 250,115 110,115" fill="#10b981"/>
+                        <text x="190" y="103" text-anchor="middle" fill="white" font-size="12">INPUT age</text>
 
-                        <!-- Arrows from diamond -->
-                        <div style="display: flex; width: 70%; justify-content: space-between; margin-top: 0.25rem;">
-                            <div style="color: white; font-size: 1.5rem;">↙</div>
-                            <div style="color: white; font-size: 1.5rem;">↘</div>
-                        </div>
+                        <!-- Line: Input to Decision -->
+                        <line x1="200" y1="115" x2="200" y2="140" stroke="white" stroke-width="2" marker-end="url(#arrowhead1)"/>
 
-                        <!-- YES/NO Labels -->
-                        <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start;">
-                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #10b981; font-weight: bold; font-size: 0.9rem;">YES</span>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="background: #10b981; color: white; padding: 0.5rem 0.75rem; font-size: 0.75rem; text-align: center; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); min-width: 140px;">OUTPUT "You can vote"</div>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #ef4444; font-weight: bold; font-size: 0.9rem;">NO</span>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="background: #10b981; color: white; padding: 0.5rem 0.75rem; font-size: 0.75rem; text-align: center; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); min-width: 130px;">OUTPUT "Too young"</div>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                            </div>
-                        </div>
+                        <!-- Decision (diamond) -->
+                        <polygon points="200,150 260,190 200,230 140,190" fill="#f59e0b"/>
+                        <text x="200" y="185" text-anchor="middle" fill="white" font-size="11">age >= 18?</text>
+
+                        <!-- Line: Decision to YES branch (left diagonal) -->
+                        <line x1="140" y1="190" x2="80" y2="250" stroke="white" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                        <text x="95" y="245" fill="#10b981" font-size="12" font-weight="bold">YES</text>
+
+                        <!-- Line: Decision to NO branch (right diagonal) -->
+                        <line x1="260" y1="190" x2="320" y2="250" stroke="white" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                        <text x="305" y="245" fill="#ef4444" font-size="12" font-weight="bold">NO</text>
+
+                        <!-- YES Output (parallelogram) -->
+                        <polygon points="20,260 155,260 140,295 5,295" fill="#10b981"/>
+                        <text x="80" y="282" text-anchor="middle" fill="white" font-size="9">OUTPUT "You can vote"</text>
+
+                        <!-- NO Output (parallelogram) -->
+                        <polygon points="260,260 390,260 375,295 245,295" fill="#10b981"/>
+                        <text x="318" y="282" text-anchor="middle" fill="white" font-size="9">OUTPUT "Too young"</text>
+
+                        <!-- Line: YES Output down -->
+                        <line x1="80" y1="295" x2="80" y2="340" stroke="white" stroke-width="2"/>
+                        <!-- Line: YES to End (horizontal then down) -->
+                        <line x1="80" y1="340" x2="200" y2="340" stroke="white" stroke-width="2"/>
+
+                        <!-- Line: NO Output down -->
+                        <line x1="318" y1="295" x2="318" y2="340" stroke="white" stroke-width="2"/>
+                        <!-- Line: NO to End (horizontal then down) -->
+                        <line x1="318" y1="340" x2="200" y2="340" stroke="white" stroke-width="2"/>
+
+                        <!-- Line: Merge to End -->
+                        <line x1="200" y1="340" x2="200" y2="360" stroke="white" stroke-width="2" marker-end="url(#arrowhead1)"/>
 
                         <!-- End -->
-                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">End</div>
-                    </div>
+                        <rect x="150" y="370" width="100" height="35" rx="17" fill="#8b5cf6"/>
+                        <text x="200" y="393" text-anchor="middle" fill="white" font-size="14" font-weight="bold">End</text>
+                    </svg>
 
                     <!-- Pseudocode equivalent -->
                     <div style="background: rgba(0,0,0,0.1); padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
@@ -653,45 +673,65 @@ END IF</pre>
                     <h4 style="color: #2563eb; margin-bottom: 0.5rem; text-align: center;"><i class="fas fa-redo"></i> Iteration (WHILE Loop)</h4>
                     <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">Count and display numbers 1 to 5</p>
 
-                    <!-- Flowchart Visual -->
-                    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                    <!-- SVG Flowchart -->
+                    <svg viewBox="0 0 400 450" style="width: 100%; max-width: 400px; margin: 0 auto; display: block; background: #1e1e1e; border-radius: 8px;">
+                        <!-- Arrow marker definition -->
+                        <defs>
+                            <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+                            </marker>
+                            <marker id="arrowhead2-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+                            </marker>
+                        </defs>
+
                         <!-- Start -->
-                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">Start</div>
-                        <div style="color: white; font-size: 1.5rem;">↓</div>
+                        <rect x="150" y="15" width="100" height="35" rx="17" fill="#8b5cf6"/>
+                        <text x="200" y="38" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Start</text>
 
-                        <!-- Initialize -->
-                        <div style="background: #06b6d4; color: white; padding: 0.5rem 1rem; border-radius: 4px;">count = 1</div>
-                        <div style="color: white; font-size: 1.5rem;">↓</div>
+                        <!-- Line: Start to Initialize -->
+                        <line x1="200" y1="50" x2="200" y2="70" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-                        <!-- Decision -->
-                        <div style="background: #f59e0b; color: white; padding: 1rem; transform: rotate(45deg); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                            <span style="transform: rotate(-45deg); font-size: 0.75rem; text-align: center;">count <= 5?</span>
-                        </div>
+                        <!-- Initialize (process box) -->
+                        <rect x="130" y="80" width="140" height="35" fill="#06b6d4"/>
+                        <text x="200" y="103" text-anchor="middle" fill="white" font-size="12">count = 1</text>
 
-                        <!-- Arrows from diamond -->
-                        <div style="display: flex; width: 70%; justify-content: space-between; margin-top: 0.25rem;">
-                            <div style="color: white; font-size: 1.5rem;">↙</div>
-                            <div style="color: white; font-size: 1.5rem;">↘</div>
-                        </div>
+                        <!-- Line: Initialize to Decision -->
+                        <line x1="200" y1="115" x2="200" y2="135" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-                        <!-- YES/NO Branches -->
-                        <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start;">
-                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #10b981; font-weight: bold; font-size: 0.9rem;">YES</span>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="background: #10b981; color: white; padding: 0.5rem 0.75rem; font-size: 0.75rem; text-align: center; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); min-width: 120px;">OUTPUT count</div>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.75rem; text-align: center; border-radius: 4px;">count = count + 1</div>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="color: #f59e0b; font-size: 0.8rem; font-weight: bold; padding: 0.25rem 0.5rem; border: 2px dashed #f59e0b; border-radius: 4px;">↑ Loop back to decision</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #ef4444; font-weight: bold; font-size: 0.9rem;">NO</span>
-                                <div style="color: white; font-size: 1.2rem;">↓</div>
-                                <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">End</div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Decision (diamond) -->
+                        <polygon points="200,145 260,185 200,225 140,185" fill="#f59e0b"/>
+                        <text x="200" y="180" text-anchor="middle" fill="white" font-size="10">count &lt;= 5?</text>
+
+                        <!-- Line: Decision YES (down from bottom of diamond) -->
+                        <line x1="200" y1="225" x2="200" y2="255" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <text x="215" y="245" fill="#10b981" font-size="12" font-weight="bold">YES</text>
+
+                        <!-- Line: Decision NO (right from diamond) -->
+                        <line x1="260" y1="185" x2="330" y2="185" stroke="white" stroke-width="2"/>
+                        <line x1="330" y1="185" x2="330" y2="400" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <text x="285" y="175" fill="#ef4444" font-size="12" font-weight="bold">NO</text>
+
+                        <!-- OUTPUT (parallelogram) -->
+                        <polygon points="130,265 270,265 255,300 115,300" fill="#10b981"/>
+                        <text x="193" y="287" text-anchor="middle" fill="white" font-size="11">OUTPUT count</text>
+
+                        <!-- Line: OUTPUT to count++ -->
+                        <line x1="200" y1="300" x2="200" y2="320" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
+
+                        <!-- count = count + 1 (process box) -->
+                        <rect x="115" y="330" width="170" height="35" fill="#06b6d4"/>
+                        <text x="200" y="353" text-anchor="middle" fill="white" font-size="11">count = count + 1</text>
+
+                        <!-- Loop back arrow: from count++ back up to before decision -->
+                        <line x1="115" y1="347" x2="60" y2="347" stroke="#f59e0b" stroke-width="3"/>
+                        <line x1="60" y1="347" x2="60" y2="130" stroke="#f59e0b" stroke-width="3"/>
+                        <line x1="60" y1="130" x2="190" y2="130" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowhead2-orange)"/>
+
+                        <!-- End -->
+                        <rect x="280" y="410" width="100" height="35" rx="17" fill="#8b5cf6"/>
+                        <text x="330" y="433" text-anchor="middle" fill="white" font-size="14" font-weight="bold">End</text>
+                    </svg>
 
                     <!-- Output and Pseudocode -->
                     <div style="background: rgba(0,0,0,0.1); padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">

@@ -357,6 +357,58 @@
                 <p>An <strong>algorithm</strong> is a sequence of steps that can be followed to complete a task. Every algorithm must have a clear starting point, a clear ending point, and produce the same result each time when given the same input.</p>
             </div>
 
+            <!-- Real-World Algorithm Example -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-map-marked-alt"></i> Real-World Example: GPS Navigation</h4>
+                <p style="margin: 0 0 0.75rem 0;">When you use Google Maps or a sat-nav to get from home to school, it uses an algorithm! The algorithm:</p>
+                <ol style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Takes your input:</strong> Where you are (home) and where you want to go (school)</li>
+                    <li><strong>Processes the data:</strong> Looks at all possible roads, distances, traffic</li>
+                    <li><strong>Produces output:</strong> The fastest route with turn-by-turn directions</li>
+                </ol>
+                <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem; color: #1e40af;">Every time you put in the same start and end point with the same traffic conditions, it gives you the same route. That's what makes it an algorithm!</p>
+            </div>
+
+            <!-- What Makes a Successful Algorithm -->
+            <h3 style="margin-top: 2rem;">What Makes a Successful Algorithm?</h3>
+            <p>A good algorithm isn't just any set of instructions - it must have these <strong>three essential qualities</strong>:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-bullseye" style="color: #10b981;"></i> 1. Accuracy</h4>
+                    <p>The algorithm must produce the <strong>correct result</strong> every single time.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Example:</strong> If your calculator said 2 + 2 = 5, it would be useless! The algorithm for addition must always give the right answer.</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-sync-alt" style="color: #3b82f6;"></i> 2. Consistency</h4>
+                    <p>Given the same input, the algorithm must produce the <strong>same output</strong> every time.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Example:</strong> When you scan the same barcode twice at a shop, it should show the same product and price both times!</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); border-left: 4px solid #f59e0b;">
+                    <h4><i class="fas fa-bolt" style="color: #f59e0b;"></i> 3. Efficiency</h4>
+                    <p>The algorithm should solve the problem <strong>without wasting time or resources</strong>.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Example:</strong> If Google took 10 minutes to search for something, nobody would use it! Good search algorithms work in milliseconds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 1.5rem 0;">
+                <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Simple Way to Remember</h4>
+                <p>Think of a vending machine algorithm:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem;">
+                    <li><strong>Accurate:</strong> Press A3 and you get the crisps from slot A3, not chocolate from B2</li>
+                    <li><strong>Consistent:</strong> Press A3 ten times (with money each time) and you get crisps all ten times</li>
+                    <li><strong>Efficient:</strong> It dispenses the crisps in seconds, not hours!</li>
+                </ul>
+            </div>
+
             <h3>Representing Algorithms</h3>
             <p>Algorithms can be represented in three main ways:</p>
 
@@ -434,6 +486,149 @@ OUTPUT total</code></pre>
                     <li>Complete missing parts of flowcharts or pseudocode</li>
                     <li>Trace through algorithms with given inputs (trace tables)</li>
                     <li>Write your own algorithms for simple problems</li>
+                </ul>
+            </div>
+
+            <!-- Variables and Constants Section -->
+            <h3 style="margin-top: 2.5rem;">Variables and Constants</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-box" style="color: #3b82f6;"></i> Variable</h4>
+                    <p>A named storage location in a program that holds a value which <strong>can change</strong> during execution.</p>
+                    <div class="code-block" style="margin-top: 0.75rem; background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #d4d4d4;">score = 0<br>score = score + 10  # Now score is 10</code>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-lock" style="color: #10b981;"></i> Constant</h4>
+                    <p>A named storage location that holds a value which <strong>cannot change</strong> once it's set.</p>
+                    <div class="code-block" style="margin-top: 0.75rem; background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #d4d4d4;">PI = 3.14159<br>VAT_RATE = 0.20  # Always 20%</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Think of Variables as Labelled Boxes</h4>
+                <p style="margin: 0 0 0.75rem 0;">Imagine you have boxes in your room with labels on them:</p>
+                <ul style="margin: 0 0 0.75rem 1.5rem;">
+                    <li>A box labelled <strong>"socks"</strong> contains 5 pairs. You can add more socks or take some out - the number <strong>changes</strong> (it's a variable)</li>
+                    <li>A box labelled <strong>"birthday"</strong> contains "15th March". This date will <strong>never change</strong> - it's a constant!</li>
+                </ul>
+                <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Why use constants?</strong> They prevent accidental changes to important values and make code easier to understand. If VAT changes, you only update it in one place!</p>
+            </div>
+
+            <!-- Arithmetic Operators Section -->
+            <h3 style="margin-top: 2.5rem;">Arithmetic Operators</h3>
+            <p>When writing algorithms, you need to know these <strong>arithmetic operators</strong> for calculations:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background: var(--primary-color); color: white;">
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Operator</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Name</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">+</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Addition</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 + 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">10</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">-</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Subtraction</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 - 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">4</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">*</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Multiplication</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 * 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">21</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">/</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Division</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 / 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">2.333...</td>
+                    </tr>
+                    <tr style="background: rgba(139, 92, 246, 0.1);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">DIV or //</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Integer Division</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 DIV 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>2</strong> (whole number only)</td>
+                    </tr>
+                    <tr style="background: rgba(245, 158, 11, 0.1);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">MOD or %</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Modulus (Remainder)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>7 MOD 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>1</strong> (the remainder)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; font-size: 1.1rem;">^</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Exponentiation (Power)</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><code>2 ^ 3</code></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">8 (2×2×2)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- DIV and MOD Explained -->
+            <div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #9333ea;">
+                <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-question-circle"></i> DIV and MOD - The Tricky Ones Explained!</h4>
+                <p style="margin: 0 0 0.75rem 0;">These two confuse a lot of students. Think of sharing sweets:</p>
+                <p style="margin: 0 0 0.5rem 0;"><strong>You have 17 sweets to share equally among 5 friends.</strong></p>
+                <ul style="margin: 0 0 0.75rem 1.5rem;">
+                    <li><strong>17 DIV 5 = 3</strong> → Each friend gets 3 sweets (whole sweets only!)</li>
+                    <li><strong>17 MOD 5 = 2</strong> → You have 2 sweets left over (the remainder)</li>
+                </ul>
+                <p style="margin: 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Exam favourite:</strong> "Is a number even or odd?" → Use <code>number MOD 2</code>. If result is 0, it's even. If result is 1, it's odd!</p>
+            </div>
+
+            <!-- Naming Conventions Section -->
+            <h3 style="margin-top: 2.5rem;">Naming Conventions</h3>
+            <p>When naming variables, constants, and functions, programmers follow <strong>naming conventions</strong> to make code readable:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%); border-left: 4px solid #06b6d4;">
+                    <h4><i class="fas fa-camel" style="color: #06b6d4;"></i> camelCase</h4>
+                    <p>First word lowercase, each new word starts with a capital letter. <strong>No spaces!</strong></p>
+                    <div class="code-block" style="margin-top: 0.75rem; background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #d4d4d4;">playerScore<br>numberOfLives<br>calculateTotalPrice</code>
+                    </div>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-light);">Used in: JavaScript, Java</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-snake" style="color: #10b981;"></i> snake_case</h4>
+                    <p>All lowercase, words separated by underscores.</p>
+                    <div class="code-block" style="margin-top: 0.75rem; background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #d4d4d4;">player_score<br>number_of_lives<br>calculate_total_price</code>
+                    </div>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-light);">Used in: Python, databases</p>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 1rem 0;">
+                <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Why Can't I Just Use Spaces?</h4>
+                <p style="margin: 0;">Computer languages can't have spaces in variable names because spaces separate different parts of code. If you wrote <code>player score = 10</code>, the computer would think "player" and "score" are two different things!</p>
+            </div>
+
+            <div class="info-box warning" style="background: rgba(239, 68, 68, 0.1); border-left-color: #ef4444; margin: 1rem 0;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Rules for Naming Variables</h4>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>Must start with a letter (not a number) - <code>score1</code> ✓ but <code>1score</code> ✗</li>
+                    <li>Cannot contain spaces - use camelCase or snake_case instead</li>
+                    <li>Cannot use reserved words (like <code>if</code>, <code>for</code>, <code>print</code>)</li>
+                    <li>Should be meaningful - <code>age</code> is better than <code>x</code></li>
+                    <li>Constants are often written in CAPITALS: <code>MAX_SCORE = 100</code></li>
                 </ul>
             </div>
 

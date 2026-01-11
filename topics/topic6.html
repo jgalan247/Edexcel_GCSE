@@ -517,6 +517,71 @@ for row in grid:
 
             <h3>String Operations</h3>
 
+            <!-- String Indexing Visual Explanation -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Strings Are Like a Row of Boxes!</h4>
+                <p style="margin: 0 0 0.75rem 0;">Think of a string as a row of numbered boxes, each holding ONE character. The numbering starts at <strong>0</strong>, not 1!</p>
+
+                <!-- Visual String Index Table -->
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="border-collapse: collapse; font-family: monospace; margin: 0 auto;">
+                        <tr style="background: #f3e8ff;">
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">C</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">o</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">m</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">p</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">u</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">t</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">e</td>
+                            <td style="border: 2px solid #7c3aed; padding: 0.5rem 0.75rem; text-align: center; font-weight: bold; color: #7c3aed;">r</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">0</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">1</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">2</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">3</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">4</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">5</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">6</td>
+                            <td style="padding: 0.25rem 0.75rem; text-align: center; font-size: 0.85rem; color: #065f46;">7</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem;">
+                    <code style="font-size: 0.9rem;">word = "Computer"<br>print(word[0])  # Output: C<br>print(word[3])  # Output: p<br>print(word[7])  # Output: r</code>
+                </div>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;"><strong>Remember:</strong> The last index is always LENGTH - 1. "Computer" has 8 letters, so the last index is 7!</p>
+            </div>
+
+            <!-- String Traversal -->
+            <h4>String Traversal - Going Through Each Character</h4>
+            <p>To look at every character in a string one by one, use a FOR loop:</p>
+
+            <div class="code-example">
+                <pre><code># Traversal - visit each character
+word = "Hello"
+for letter in word:
+    print(letter)
+
+# Output: H, e, l, l, o (each on a new line)
+
+# Traversal with index position
+word = "Hello"
+for i in range(len(word)):
+    print("Position", i, "=", word[i])</code></pre>
+            </div>
+
+            <!-- String Slicing -->
+            <h4>String Slicing - Extracting Parts of a String</h4>
+            <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #065f46; margin-bottom: 0.5rem;"><i class="fas fa-cut"></i> Slicing is Like Cutting a Cake!</h4>
+                <p style="margin: 0 0 0.5rem 0;">Use <code>[start:end]</code> to cut out a piece. The slice goes from <strong>start</strong> up to (but NOT including) <strong>end</strong>.</p>
+                <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                    <code style="font-size: 0.9rem;">word = "Computer"<br>print(word[0:4])  # "Comp" (positions 0,1,2,3)<br>print(word[4:8])  # "uter" (positions 4,5,6,7)<br>print(word[:4])   # "Comp" (from start to 4)<br>print(word[4:])   # "uter" (from 4 to end)</code>
+                </div>
+            </div>
+
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
@@ -533,12 +598,12 @@ for row in grid:
                             <td>5</td>
                         </tr>
                         <tr>
-                            <td>Concatenation</td>
+                            <td>Concatenation (joining)</td>
                             <td><code>"Hello" + " World"</code></td>
                             <td>"Hello World"</td>
                         </tr>
                         <tr>
-                            <td>Substring</td>
+                            <td>Substring (slice)</td>
                             <td><code>"Hello"[1:4]</code></td>
                             <td>"ell"</td>
                         </tr>
@@ -556,6 +621,16 @@ for row in grid:
                             <td>Character at index</td>
                             <td><code>"Hello"[0]</code></td>
                             <td>"H"</td>
+                        </tr>
+                        <tr>
+                            <td>Find position</td>
+                            <td><code>"Hello".find("l")</code></td>
+                            <td>2 (first occurrence)</td>
+                        </tr>
+                        <tr>
+                            <td>Check if contains</td>
+                            <td><code>"e" in "Hello"</code></td>
+                            <td>True</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1209,19 +1284,79 @@ while x < 4:
             </div>
 
             <h3>Input Validation</h3>
-            <p>Checking that user input is valid before using it:</p>
+            <p>Checking that user input is valid before using it.</p>
+
+            <!-- GIGO Principle -->
+            <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ef4444;">
+                <h4 style="color: #991b1b; margin-bottom: 0.5rem;"><i class="fas fa-trash-alt"></i> GIGO - Garbage In, Garbage Out!</h4>
+                <p style="margin: 0 0 0.5rem 0;">If you put bad data INTO a program, you get bad results OUT. It's like making a cake:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li>Put in rotten eggs (garbage in) = get a horrible cake (garbage out)</li>
+                    <li>Put in fresh ingredients (good data) = get a delicious cake (good results)</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>That's why we validate!</strong> We check the input BEFORE the program uses it.</p>
+            </div>
+
+            <h4>Three Types of Validation Checks</h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- Range Check -->
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-ruler-horizontal" style="color: #3b82f6;"></i> 1. Range Check</h4>
+                    <p>Checks data is within acceptable minimum and maximum values.</p>
+                    <p style="font-size: 0.85rem; font-style: italic; color: #1d4ed8;"><strong>Analogy:</strong> Like a theme park ride - you must be between 1.2m and 2.0m tall!</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="color: #d4d4d4; font-size: 0.8rem;"># Range: age must be 0-120<br>while age < 0 or age > 120:<br>&nbsp;&nbsp;age = int(input("Invalid!"))</code>
+                    </div>
+                </div>
+
+                <!-- Presence Check -->
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-check-square" style="color: #10b981;"></i> 2. Presence Check</h4>
+                    <p>Checks that data has actually been entered (not left empty).</p>
+                    <p style="font-size: 0.85rem; font-style: italic; color: #065f46;"><strong>Analogy:</strong> Like a form that says "Required field" - you can't leave your name blank!</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="color: #d4d4d4; font-size: 0.8rem;"># Check name isn't empty<br>while name == "":<br>&nbsp;&nbsp;name = input("Enter name!")</code>
+                    </div>
+                </div>
+
+                <!-- Look-up Check -->
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); border-left: 4px solid #f59e0b;">
+                    <h4><i class="fas fa-list-ul" style="color: #f59e0b;"></i> 3. Look-up Check</h4>
+                    <p>Checks that data matches one of the allowed values in a list.</p>
+                    <p style="font-size: 0.85rem; font-style: italic; color: #92400e;"><strong>Analogy:</strong> Like a dropdown menu - you can only pick from the options given!</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="color: #d4d4d4; font-size: 0.8rem;"># Must be Yes or No<br>while choice not in ["Y","N"]:<br>&nbsp;&nbsp;choice = input("Y or N?")</code>
+                    </div>
+                </div>
+            </div>
 
             <div class="code-example">
-                <pre><code># Validate age is between 0 and 120
+                <h4>Complete Validation Examples</h4>
+                <pre><code># RANGE CHECK - age must be between 0 and 120
 age = int(input("Enter age: "))
 while age < 0 or age > 120:
-    print("Invalid age!")
+    print("Invalid! Age must be between 0 and 120")
     age = int(input("Enter age: "))
 
-# Validate choice is Y or N
-choice = input("Continue? (Y/N): ").upper()
-while choice != "Y" and choice != "N":
-    choice = input("Enter Y or N: ").upper()</code></pre>
+# PRESENCE CHECK - name cannot be empty
+name = input("Enter your name: ")
+while name == "":
+    print("Name is required!")
+    name = input("Enter your name: ")
+
+# LOOK-UP CHECK - must be one of the valid options
+valid_sizes = ["S", "M", "L", "XL"]
+size = input("Enter size (S/M/L/XL): ").upper()
+while size not in valid_sizes:
+    print("Invalid size! Choose S, M, L, or XL")
+    size = input("Enter size: ").upper()</code></pre>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Validation vs Verification</h4>
+                <p><strong>Validation</strong> = Checking data is sensible (is age between 0-120?)</p>
+                <p><strong>Verification</strong> = Checking data is correct (is this really YOUR email? Type it twice to confirm!)</p>
             </div>
 
             <h3>File Handling</h3>

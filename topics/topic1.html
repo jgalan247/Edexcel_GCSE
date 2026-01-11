@@ -188,6 +188,18 @@
                 <p><strong>Computational Thinking</strong> is a set of problem-solving methods that involve expressing problems and their solutions in ways that a computer could execute. It allows us to take complex problems and break them down into a series of smaller, more manageable problems.</p>
             </div>
 
+            <!-- Simple Analogy Box for Low-Ability Students -->
+            <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 1.5rem 0;">
+                <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Simple Way to Think About It</h4>
+                <p><strong>Computational thinking is like being a detective!</strong> When a detective solves a crime, they don't try to figure everything out at once. They:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem;">
+                    <li>Break the mystery into smaller clues (decomposition)</li>
+                    <li>Focus only on important evidence, not every tiny detail (abstraction)</li>
+                    <li>Look for patterns - "This looks like other cases I've solved!" (pattern recognition)</li>
+                    <li>Create a step-by-step plan to catch the criminal (algorithmic thinking)</li>
+                </ul>
+            </div>
+
             <p>There are <strong>four key principles</strong> of computational thinking that you must understand:</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
@@ -202,6 +214,9 @@
                         <li>Parts can be reused in other programs</li>
                     </ul>
                     <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> Creating a game could be decomposed into: graphics, sound, player controls, scoring system, and levels.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.75rem; border-radius: 8px; margin-top: 0.75rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Everyday Analogy:</strong> Think about cleaning your bedroom. Instead of panicking about the mess, you break it into smaller tasks: make the bed, pick up clothes, tidy the desk, vacuum the floor. Each task is easier to handle on its own!</p>
+                    </div>
                 </div>
 
                 <div class="info-box" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%); border-left: 4px solid #06b6d4;">
@@ -209,6 +224,9 @@
                     <p>Removing unnecessary details to focus only on the important information needed to solve the problem.</p>
                     <p><strong>Key idea:</strong> Identify what is relevant and ignore what isn't.</p>
                     <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> The London Tube map is an abstraction - it doesn't show the exact geographical routes or distances between stations, just the connections needed to navigate.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.75rem; border-radius: 8px; margin-top: 0.75rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Everyday Analogy:</strong> If someone says "I saw a cat on the street", you immediately picture a cat and a street in your mind. You don't need to know the exact colour of the cat, how many whiskers it has, or the postcode of the street. Your brain automatically focuses on the important details!</p>
+                    </div>
                 </div>
 
                 <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
@@ -228,12 +246,50 @@
                     <p>Developing a step-by-step solution to a problem, or rules to follow to solve the problem.</p>
                     <p><strong>Requirements:</strong></p>
                     <ul style="margin-left: 1rem; font-size: 0.9rem;">
-                        <li>Clear, unambiguous instructions</li>
+                        <li>Clear, unambiguous instructions (no confusion!)</li>
                         <li>Defined start and end points</li>
                         <li>Correct sequence of steps</li>
                     </ul>
                     <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-light);"><strong>Example:</strong> A recipe is an algorithm - it has clear steps that must be followed in order.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.75rem; border-radius: 8px; margin-top: 0.75rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Why computers need EXACT instructions:</strong> If you tell a human "wait for the water to boil", they know to keep checking until it boils. But a computer would just wait... forever! You'd need to say "keep checking if the temperature equals 100°C, and only stop when it does."</p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Three Programming Constructs - From Textbook -->
+            <h3 style="margin-top: 2.5rem;">The Three Programming Constructs</h3>
+            <p>All algorithms are built from just <strong>three basic building blocks</strong> called constructs:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-arrow-right" style="color: #3b82f6;"></i> Sequence</h4>
+                    <p>Instructions that are carried out <strong>one after another</strong>, in order.</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Like following a recipe:</strong> You do step 1, then step 2, then step 3 - in that exact order. You can't ice a cake before you've baked it!</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%); border-left: 4px solid #ef4444;">
+                    <h4><i class="fas fa-code-branch" style="color: #ef4444;"></i> Selection</h4>
+                    <p>Making a <strong>decision</strong> - choosing which path to take based on a condition (IF...THEN...ELSE).</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Like checking the weather:</strong> IF it's raining THEN take an umbrella ELSE wear sunglasses. You make a choice!</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-sync-alt" style="color: #10b981;"></i> Iteration (Loops)</h4>
+                    <p><strong>Repeating</strong> instructions until a condition is met. Also called a "loop".</p>
+                    <div style="background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                        <p style="font-size: 0.85rem; margin: 0;"><strong>Like eating dinner:</strong> You keep eating UNTIL your plate is empty or you're full. You repeat the "take a bite" action over and over!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left: 4px solid #0ea5e9; margin: 1.5rem 0;">
+                <h4><i class="fas fa-info-circle" style="color: #0ea5e9;"></i> Did You Know?</h4>
+                <p>We use iteration in our daily lives all the time! When traffic lights are red, you keep waiting UNTIL they turn green. When learning lines for a play, you repeat them over and over UNTIL you know them all. Every video game loop checks "has the player won?" repeatedly until you finish the level!</p>
             </div>
 
             <a href="https://youtu.be/Qdmz2gsQW1s?si=hnfRq1MVpnzGUIC4" target="_blank" class="video-link">
@@ -412,11 +468,33 @@ OUTPUT total</code></pre>
 
             <p>You need to understand two searching algorithms for the exam: <strong>Linear Search</strong> and <strong>Binary Search</strong>.</p>
 
+            <!-- Simple Overview Box -->
+            <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 1.5rem 0;">
+                <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Simple Way to Remember</h4>
+                <p><strong>Linear Search</strong> = Looking through a messy drawer one item at a time until you find your keys.</p>
+                <p><strong>Binary Search</strong> = Playing "higher or lower" to guess a number - you eliminate half the options each time!</p>
+            </div>
+
             <h3>Linear Search</h3>
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Definition</h4>
-                <p><strong>Linear search</strong> starts at the first item in a list and checks each item one at a time until the target is found or the end of the list is reached.</p>
+                <p><strong>Linear search</strong> starts at the first item in a list and checks each item one at a time until the target is found or the end of the list is reached. This is also called a <strong>sequential search</strong> because it goes through items in sequence (one after another).</p>
             </div>
+
+            <!-- Linear Search Analogy -->
+            <div style="background: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #10b981; margin-bottom: 0.5rem;"><i class="fas fa-search"></i> Real-Life Example</h4>
+                <p style="margin: 0;">Imagine looking for your friend's name in a <strong>paper phone book that isn't alphabetical</strong>. You'd have to start at page 1 and check every single name until you find it. If there are 1000 names and your friend is last, you'd check all 1000!</p>
+            </div>
+
+            <h4>Linear Search Algorithm (Step by Step):</h4>
+            <ol style="margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8; background: var(--bg-secondary); padding: 1rem 1rem 1rem 2.5rem; border-radius: var(--radius-lg);">
+                <li>Start at the <strong>first item</strong> in the list</li>
+                <li><strong>Compare</strong> the item with what you're searching for</li>
+                <li>If they're the same, <strong>stop</strong> - you found it!</li>
+                <li>If not, <strong>move to the next item</strong></li>
+                <li>Repeat steps 2-4 until you find it or reach the end</li>
+            </ol>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
                 <div>
@@ -453,12 +531,26 @@ def linear_search(data_list, target):
             <h3>Binary Search</h3>
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Definition</h4>
-                <p><strong>Binary search</strong> works by repeatedly dividing a <strong>sorted</strong> list in half. It compares the middle item with the target and eliminates half the remaining items each time.</p>
+                <p><strong>Binary search</strong> works by repeatedly dividing a <strong>sorted</strong> list in half. It compares the middle item with the target and eliminates half the remaining items each time. This is called a <strong>"divide and conquer"</strong> method.</p>
+            </div>
+
+            <!-- Binary Search Guessing Game Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-gamepad"></i> The Guessing Game - You Already Know Binary Search!</h4>
+                <p style="margin: 0 0 0.75rem 0;">Have you ever played "guess the number between 1 and 100"? You probably:</p>
+                <ol style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li>First guess <strong>50</strong> (the middle)</li>
+                    <li>If told "too high", you guess <strong>25</strong> (middle of 1-50)</li>
+                    <li>If told "too low", you guess <strong>37</strong> (middle of 25-50)</li>
+                    <li>Keep halving until you find it!</li>
+                </ol>
+                <p style="margin: 0.75rem 0 0 0; font-weight: 600; color: #1d4ed8;">That's exactly how binary search works! You can find ANY number from 1-100 in just 7 guesses maximum.</p>
             </div>
 
             <div class="info-box warning" style="background: rgba(245, 158, 11, 0.1); border-left-color: #f59e0b;">
                 <h4><i class="fas fa-exclamation-triangle"></i> Important Prerequisite</h4>
                 <p>Binary search <strong>only works on sorted data</strong>. If the data is not sorted, you must sort it first (which takes time) or use linear search instead.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;"><strong>Think about it:</strong> The guessing game only works because numbers are in order (1, 2, 3...). If they were jumbled up randomly, "higher" and "lower" would be meaningless!</p>
             </div>
 
             <h4>Binary Search Steps:</h4>
@@ -545,6 +637,23 @@ def binary_search(sorted_list, target):
                     </tr>
                 </tbody>
             </table>
+
+            <!-- When to Use Which Search -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-balance-scale"></i> Which Search Should I Use?</h4>
+                <p style="margin: 0 0 0.75rem 0;"><strong>Use Linear Search when:</strong></p>
+                <ul style="margin: 0 0 0.75rem 1.5rem;">
+                    <li>Your data is NOT sorted (and you only need to search once)</li>
+                    <li>You have a small list</li>
+                    <li>You need simple code that's easy to understand</li>
+                </ul>
+                <p style="margin: 0 0 0.75rem 0;"><strong>Use Binary Search when:</strong></p>
+                <ul style="margin: 0 0 0 1.5rem;">
+                    <li>Your data IS sorted (or you'll sort it and search many times)</li>
+                    <li>You have a large list - the speed difference is HUGE!</li>
+                    <li>Think about it: In a phone book with 1 million names, linear search might check all 1 million. Binary search finds anyone in just 20 checks!</li>
+                </ul>
+            </div>
 
             <!-- Interactive Python Editor: Searching Algorithms -->
             <h3><i class="fab fa-python"></i> Try It Yourself: Searching Algorithms</h3>
@@ -668,14 +777,27 @@ else:
 
             <p>You need to understand two sorting algorithms: <strong>Bubble Sort</strong> and <strong>Merge Sort</strong>.</p>
 
+            <!-- Simple Overview -->
+            <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 1.5rem 0;">
+                <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Simple Way to Remember</h4>
+                <p><strong>Bubble Sort</strong> = Comparing neighbours and swapping if needed (like sorting people by height - swap if the taller person is in front)</p>
+                <p><strong>Merge Sort</strong> = Split everything into tiny piles, then carefully combine them back in order (like sorting a deck of cards)</p>
+            </div>
+
             <h3>Bubble Sort</h3>
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Definition</h4>
-                <p><strong>Bubble sort</strong> compares adjacent pairs of items and swaps them if they are in the wrong order. The largest values "bubble" to the end of the list with each pass.</p>
+                <p><strong>Bubble sort</strong> compares adjacent (next to each other) pairs of items and swaps them if they are in the wrong order. The largest values "bubble" to the end of the list with each pass.</p>
+            </div>
+
+            <!-- Why "Bubble"? -->
+            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #0ea5e9;">
+                <h4 style="color: #0369a1; margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Why is it Called "Bubble" Sort?</h4>
+                <p style="margin: 0;">Watch the largest numbers carefully - they gradually move to the end of the list, <strong>like bubbles rising to the surface of water!</strong> After the first pass, the biggest number is in its correct place at the end. After the second pass, the second biggest is in place. And so on!</p>
             </div>
 
             <h4>Bubble Sort Steps:</h4>
-            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8; background: var(--bg-secondary); padding: 1rem 1rem 1rem 2.5rem; border-radius: var(--radius-lg);">
                 <li>Start at the <strong>beginning</strong> of the list</li>
                 <li>Compare the <strong>first two items</strong></li>
                 <li>If they are in the wrong order, <strong>swap</strong> them</li>
@@ -683,6 +805,12 @@ else:
                 <li>Continue until you reach the end (<strong>one pass</strong>)</li>
                 <li>Repeat passes until <strong>no swaps</strong> are made</li>
             </ol>
+
+            <!-- Height Sorting Analogy -->
+            <div style="background: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #10b981; margin-bottom: 0.5rem;"><i class="fas fa-users"></i> Real-Life Example: Sorting by Height</h4>
+                <p style="margin: 0;">Imagine lining up students by height for a photo. You walk along the line comparing each pair of neighbours. If someone tall is in front of someone short, they swap places. You keep walking through the line until nobody needs to swap - then everyone is in height order!</p>
+            </div>
 
             <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
                 <h4><i class="fas fa-lightbulb"></i> Worked Example</h4>
@@ -779,11 +907,24 @@ sorted_nums = bubble_sort_visual(numbers)</textarea>
             <h3>Merge Sort</h3>
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Definition</h4>
-                <p><strong>Merge sort</strong> uses a "divide and conquer" approach. It repeatedly divides the list in half until each sublist has one item, then merges them back together in sorted order.</p>
+                <p><strong>Merge sort</strong> uses a "divide and conquer" approach. It repeatedly divides the list in half until each sublist has one item, then merges them back together in sorted order. This uses <strong>recursion</strong> - the same process applied over and over to smaller and smaller pieces.</p>
+            </div>
+
+            <!-- Card Sorting Analogy -->
+            <div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #9333ea;">
+                <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-clone"></i> Think of Sorting Playing Cards</h4>
+                <p style="margin: 0 0 0.75rem 0;">Imagine you have a messy pile of cards to sort:</p>
+                <ol style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Split</strong> the pile in half, then split those halves, until you have individual cards</li>
+                    <li>A single card is already "sorted" (it's just one card!)</li>
+                    <li>Now <strong>merge</strong> pairs of cards, putting them in order as you combine</li>
+                    <li>Keep merging the small sorted piles into bigger sorted piles</li>
+                    <li>Eventually you have one fully sorted deck!</li>
+                </ol>
             </div>
 
             <h4>Merge Sort Steps:</h4>
-            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+            <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8; background: var(--bg-secondary); padding: 1rem 1rem 1rem 2.5rem; border-radius: var(--radius-lg);">
                 <li><strong>Divide:</strong> Split the list in half repeatedly until each list has 1 item</li>
                 <li><strong>Conquer:</strong> Merge pairs of lists together in sorted order</li>
                 <li>Continue merging until you have one sorted list</li>
@@ -905,8 +1046,20 @@ print(f"Final result: {sorted_nums}")</textarea>
                         <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Small lists, nearly sorted</td>
                         <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Large datasets</td>
                     </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Algorithm design</strong></td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Brute force</strong> - tries everything</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Divide and conquer</strong></td>
+                    </tr>
                 </tbody>
             </table>
+
+            <!-- When to Use Which -->
+            <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); padding: 1.25rem; border-radius: var(--radius-lg); margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-question-circle"></i> So Which Should I Use?</h4>
+                <p style="margin: 0 0 0.75rem 0;"><strong>For small lists (less than ~1000 items):</strong> Both take about the same time. Bubble sort is easier to write, so use that!</p>
+                <p style="margin: 0;"><strong>For large lists:</strong> Merge sort is MUCH faster. Sorting 500,000 items with bubble sort could take minutes, but merge sort does it in seconds!</p>
+            </div>
 
             <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
                 <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>

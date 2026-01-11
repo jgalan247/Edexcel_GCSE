@@ -97,64 +97,101 @@
                 <p><strong>A network</strong> is a group of two or more computers or devices connected together to communicate and share resources such as files, printers, and internet connections.</p>
             </div>
 
+            <!-- Network Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-comments"></i> Why Do We Need Networks?</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine a school where no one could talk to each other - chaos! Networks let computers "talk" to share:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Files</strong> - like passing notes between friends</li>
+                    <li><strong>Printers</strong> - one printer for everyone, not one each!</li>
+                    <li><strong>Internet</strong> - one connection shared by all devices</li>
+                </ul>
+            </div>
+
             <h3>LAN vs WAN</h3>
             <p>Networks are classified into two main types based on their geographical size:</p>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-building"></i> LAN (Local Area Network)</h4>
-                    <ul>
+            <!-- LAN vs WAN Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-home"></i> The House vs City Analogy</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #3b82f6;">LAN</strong> = Talking to people <strong>inside your house</strong>. You own the house, it's fast, and you're in control!</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #8b5cf6;">WAN</strong> = Phoning someone in <strong>another city</strong>. You use phone lines you don't own, and there's a delay!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.75rem;"><i class="fas fa-building"></i> LAN (Local Area Network)</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
                         <li>Covers a <strong>small geographical area</strong> (single building or site)</li>
                         <li>Examples: school, office, home network</li>
                         <li><strong>Owned and maintained</strong> by the organisation</li>
                         <li>Connected by cables (Ethernet) or Wi-Fi</li>
-                        <li>High data transfer speeds</li>
-                        <li>Low latency (fast response)</li>
+                        <li style="color: #16a34a;"><strong>High data transfer speeds</strong></li>
+                        <li style="color: #16a34a;"><strong>Low latency</strong> (fast response)</li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-globe"></i> WAN (Wide Area Network)</h4>
-                    <ul>
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.75rem;"><i class="fas fa-globe"></i> WAN (Wide Area Network)</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
                         <li>Covers a <strong>large geographical area</strong> (cities, countries, worldwide)</li>
                         <li>Examples: internet, bank networks across branches</li>
                         <li>Usually made up of <strong>multiple LANs</strong> connected together</li>
                         <li>Uses telephone lines, fibre optic cables, satellites</li>
-                        <li>Third-party infrastructure (not owned by user)</li>
-                        <li>Higher latency than LANs</li>
+                        <li style="color: #dc2626;"><strong>Third-party infrastructure</strong> (not owned by user)</li>
+                        <li style="color: #dc2626;"><strong>Higher latency</strong> than LANs</li>
                     </ul>
                 </div>
             </div>
 
             <div class="info-box tip">
                 <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
-                <p>The Internet is the world's largest WAN - a global network of interconnected networks.</p>
+                <p>The <strong>Internet</strong> is the world's largest WAN - a global network of interconnected networks. It's basically millions of LANs all joined together!</p>
             </div>
 
             <h3>Client-Server vs Peer-to-Peer</h3>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-server"></i> Client-Server Network</h4>
-                    <ul>
+            <!-- Client-Server vs P2P Analogy -->
+            <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-utensils"></i> The Restaurant vs Potluck Analogy</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #059669;">Client-Server</strong> = A <strong>restaurant</strong>. One chef (server) cooks for everyone. Organised, but if the chef is sick, no one eats!</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #f59e0b;">Peer-to-Peer</strong> = A <strong>potluck dinner</strong>. Everyone brings food to share. No single chef, but harder to organise!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.75rem;"><i class="fas fa-server"></i> Client-Server Network</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
                         <li>Central <strong>server</strong> provides services to clients</li>
                         <li>Server manages files, security, backups</li>
                         <li>Clients request resources from server</li>
-                        <li>Centralised management and control</li>
-                        <li>More secure and reliable</li>
-                        <li>Expensive (need dedicated server)</li>
-                        <li>Used in businesses and schools</li>
+                        <li style="color: #16a34a;">Centralised management and control</li>
+                        <li style="color: #16a34a;">More secure and reliable</li>
+                        <li style="color: #dc2626;">Expensive (need dedicated server)</li>
+                        <li>Used in <strong>businesses and schools</strong></li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-users"></i> Peer-to-Peer Network</h4>
-                    <ul>
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <h4 style="color: #d97706; margin-bottom: 0.75rem;"><i class="fas fa-users"></i> Peer-to-Peer Network</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
                         <li><strong>No central server</strong></li>
                         <li>All computers are equal (peers)</li>
                         <li>Each computer can share and access files</li>
-                        <li>Decentralised - no single point of failure</li>
-                        <li>Less secure, harder to manage</li>
-                        <li>Cheap and easy to set up</li>
-                        <li>Used in small offices, homes</li>
+                        <li style="color: #16a34a;">Decentralised - no single point of failure</li>
+                        <li style="color: #dc2626;">Less secure, harder to manage</li>
+                        <li style="color: #16a34a;">Cheap and easy to set up</li>
+                        <li>Used in <strong>small offices, homes</strong></li>
                     </ul>
                 </div>
             </div>
@@ -244,26 +281,75 @@
 
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Key Definition</h4>
-                <p><strong>Network Topology</strong> is the arrangement or pattern in which nodes (devices) on a network are connected together. The three main topologies are star, bus, and mesh.</p>
+                <p><strong>Network Topology</strong> is the arrangement or pattern in which nodes (devices) on a network are connected together. Think of it as the "shape" of your network!</p>
+            </div>
+
+            <!-- Topology Overview with Visual Diagrams -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- Star Visual -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6; text-align: center;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-star"></i> Star</h4>
+                    <div style="background: #1e1e1e; padding: 1rem; border-radius: 8px; margin: 0.5rem 0;">
+                        <pre style="color: #d4d4d4; margin: 0; font-size: 0.8rem;">    [PC]
+      |
+[PC]--[HUB]--[PC]
+      |
+    [PC]</pre>
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem;">Like spokes on a wheel</p>
+                </div>
+
+                <!-- Bus Visual -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #f59e0b; text-align: center;">
+                    <h4 style="color: #d97706; margin-bottom: 0.5rem;"><i class="fas fa-minus"></i> Bus</h4>
+                    <div style="background: #1e1e1e; padding: 1rem; border-radius: 8px; margin: 0.5rem 0;">
+                        <pre style="color: #d4d4d4; margin: 0; font-size: 0.8rem;">[PC]  [PC]  [PC]  [PC]
+  |     |     |     |
+=======================
+    (backbone cable)</pre>
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem;">Like a bus route</p>
+                </div>
+
+                <!-- Mesh Visual -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6; text-align: center;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-project-diagram"></i> Mesh</h4>
+                    <div style="background: #1e1e1e; padding: 1rem; border-radius: 8px; margin: 0.5rem 0;">
+                        <pre style="color: #d4d4d4; margin: 0; font-size: 0.8rem;">[PC]----[PC]
+ |\    /|
+ | \  / |
+ |  \/  |
+ |  /\  |
+ | /  \ |
+[PC]----[PC]</pre>
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem;">Everyone connected!</p>
+                </div>
             </div>
 
             <h3>Star Topology</h3>
+
+            <!-- Star Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <p style="margin: 0; font-size: 0.9rem;"><i class="fas fa-lightbulb" style="color: #3b82f6;"></i> <strong>Analogy:</strong> Like a <strong>spider web</strong> with the spider (hub/switch) in the middle. If one strand breaks, only one fly escapes - but if the spider dies, the whole web is useless!</p>
+            </div>
+
             <p>All devices connect to a <strong>central hub or switch</strong>:</p>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
-                    <ul>
-                        <li>If one cable fails, only that device is affected</li>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Advantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li>If one cable fails, <strong>only that device</strong> is affected</li>
                         <li>Easy to add new devices</li>
                         <li>Easier to manage and troubleshoot</li>
                         <li>Good performance - no data collisions</li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
-                    <ul>
-                        <li>If central hub/switch fails, whole network fails</li>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-times-circle"></i> Disadvantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li>If central hub/switch fails, <strong>whole network fails</strong></li>
                         <li>Requires more cable than bus topology</li>
                         <li>More expensive (hub/switch needed)</li>
                     </ul>
@@ -271,46 +357,58 @@
             </div>
 
             <h3>Bus Topology</h3>
+
+            <!-- Bus Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <p style="margin: 0; font-size: 0.9rem;"><i class="fas fa-bus" style="color: #f59e0b;"></i> <strong>Analogy:</strong> Like a <strong>single road</strong> with houses along it. Everyone shares the same road, so if there's a traffic jam (collision), everyone waits. If the road is blocked, no one can travel!</p>
+            </div>
+
             <p>All devices connect to a <strong>single central cable (backbone)</strong>:</p>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
-                    <ul>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Advantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
                         <li>Simple and cheap to install</li>
                         <li>Uses less cable than star topology</li>
                         <li>Easy to add new devices</li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
-                    <ul>
-                        <li>If backbone fails, whole network fails</li>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-times-circle"></i> Disadvantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li>If backbone fails, <strong>whole network fails</strong></li>
                         <li>Data collisions reduce performance</li>
                         <li>Harder to troubleshoot</li>
-                        <li>Limited cable length and number of devices</li>
+                        <li>Limited cable length</li>
                         <li>Security risk - all devices see all data</li>
                     </ul>
                 </div>
             </div>
 
             <h3>Mesh Topology</h3>
+
+            <!-- Mesh Analogy -->
+            <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #8b5cf6;">
+                <p style="margin: 0; font-size: 0.9rem;"><i class="fas fa-project-diagram" style="color: #8b5cf6;"></i> <strong>Analogy:</strong> Like a <strong>group of friends who ALL have each other's phone numbers</strong>. If one friend's phone breaks, you can still reach them through another friend. Super reliable, but lots of phone numbers to manage!</p>
+            </div>
+
             <p>Every device connects <strong>directly to every other device</strong>:</p>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
-                    <ul>
-                        <li>Very reliable - multiple paths for data</li>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Advantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li>Very reliable - <strong>multiple paths</strong> for data</li>
                         <li>No single point of failure</li>
                         <li>If one connection fails, data reroutes</li>
                         <li>Good for critical systems</li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
-                    <ul>
-                        <li>Very expensive - lots of cables/connections</li>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-times-circle"></i> Disadvantages</h4>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong>Very expensive</strong> - lots of cables/connections</li>
                         <li>Complex to set up and manage</li>
                         <li>Impractical for large networks</li>
                     </ul>
@@ -318,8 +416,8 @@
             </div>
 
             <div class="info-box tip">
-                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
-                <p>Star topology is the most common in modern LANs. Mesh topology is often used in WANs and the internet where reliability is critical.</p>
+                <h4><i class="fas fa-lightbulb"></i> Which Topology is Best?</h4>
+                <p><strong>Star topology</strong> is the most common in modern LANs (schools, offices). <strong>Mesh topology</strong> is used in WANs and the internet where reliability is critical. <strong>Bus topology</strong> is rarely used today - it's outdated!</p>
             </div>
 
             <a href="https://youtu.be/OxOPNMddAhw?si=bRpj8_KxjKewiY7N" target="_blank" class="video-link">
@@ -346,6 +444,98 @@
             </div>
         </section>
 
+        <!-- ==================== NETWORK HARDWARE ==================== -->
+        <section id="hardware" class="content-section">
+            <h2>Network Hardware</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Network hardware</strong> refers to the physical devices needed to set up and operate a network. Each device has a specific job to help data travel from one place to another.</p>
+            </div>
+
+            <!-- Hardware Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-road"></i> The Postal System Analogy</h4>
+                <p style="margin: 0;">Think of a network like a postal delivery system:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>NIC</strong> = Your mailbox (lets you send/receive)</li>
+                    <li><strong>Switch</strong> = Local post office (sorts mail for your street)</li>
+                    <li><strong>Router</strong> = Main sorting office (decides which town to send mail to)</li>
+                    <li><strong>WAP</strong> = A postman who delivers wirelessly (no postbox needed!)</li>
+                </ul>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- NIC -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-ethernet"></i> Network Interface Card (NIC)</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Hardware that allows a computer to connect to a network. Can be wired or wireless.</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li>Usually built into the motherboard</li>
+                        <li>Has a unique <strong>MAC address</strong></li>
+                        <li>Converts data into signals for the network</li>
+                    </ul>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Analogy:</strong> Your "ID badge" that lets you join the network party!</p>
+                </div>
+
+                <!-- Switch -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-network-wired"></i> Switch</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Connects devices together on a <strong>LAN</strong>. Sends data directly to the correct device.</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li>Reads MAC addresses to route data</li>
+                        <li>More efficient than a hub (sends to specific device, not all)</li>
+                        <li>Central point for star topology</li>
+                    </ul>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Analogy:</strong> A smart receptionist who knows exactly which desk to deliver your message to!</p>
+                </div>
+
+                <!-- Router -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-router"></i> Router</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Connects different networks together (e.g., your LAN to the internet/WAN).</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li>Uses <strong>IP addresses</strong> to route data</li>
+                        <li>Finds the best path for data to travel</li>
+                        <li>Assigns IP addresses (DHCP)</li>
+                        <li>Often includes firewall protection</li>
+                    </ul>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Analogy:</strong> A GPS that knows how to get your data to any address in the world!</p>
+                </div>
+
+                <!-- WAP -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <h4 style="color: #d97706; margin-bottom: 0.5rem;"><i class="fas fa-wifi"></i> Wireless Access Point (WAP)</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Allows wireless devices to connect to a wired network using Wi-Fi.</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li>Creates a wireless local area network</li>
+                        <li>Bridges wireless and wired networks</li>
+                        <li>Often built into home routers</li>
+                    </ul>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Analogy:</strong> A translator that lets wireless devices "speak" to the wired network!</p>
+                </div>
+            </div>
+
+            <!-- Home Router Note -->
+            <div class="info-box tip">
+                <h4><i class="fas fa-home"></i> What About Your Home "Router"?</h4>
+                <p>The box in your home that you call a "router" is actually an <strong>all-in-one device</strong>! It's really a router + switch + wireless access point + modem all in one box. Clever, right?</p>
+            </div>
+
+            <!-- Switch vs Hub -->
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #fca5a5;">
+                <h4 style="color: #dc2626; margin-bottom: 0.75rem;"><i class="fas fa-exchange-alt"></i> Switch vs Hub - What's the Difference?</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #059669;">Switch (Smart)</strong><br>Reads the destination address and sends data ONLY to that device. Efficient and secure!</p>
+                    </div>
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #dc2626;">Hub (Dumb)</strong><br>Sends data to ALL devices and lets them figure it out. Wasteful, slow, and insecure - avoid!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ==================== PROTOCOLS ==================== -->
         <section id="protocols" class="content-section">
             <h2>Network Protocols</h2>
@@ -353,6 +543,13 @@
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Key Definition</h4>
                 <p><strong>A protocol</strong> is a set of rules that governs how data is transmitted across a network. Protocols ensure that devices from different manufacturers can communicate with each other.</p>
+            </div>
+
+            <!-- Protocol Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-language"></i> The Language Analogy</h4>
+                <p style="margin: 0 0 0.5rem 0;">Protocols are like <strong>languages</strong> that computers agree to speak!</p>
+                <p style="margin: 0; font-size: 0.9rem;">If you speak English and I speak French, we can't communicate. Protocols ensure ALL devices "speak the same language" so they can understand each other - even if they're made by different companies!</p>
             </div>
 
             <h3>Why Do We Need Protocols?</h3>
@@ -493,7 +690,54 @@
                 <p><strong>The Internet</strong> is a global network of interconnected networks that use TCP/IP protocols to communicate. The <strong>World Wide Web</strong> is a service that runs on the internet, consisting of web pages accessed via browsers.</p>
             </div>
 
-            <h3>Key Internet Concepts</h3>
+            <h3>IP Addresses and MAC Addresses</h3>
+
+            <!-- IP vs MAC Analogy -->
+            <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-id-card"></i> The House Address vs Birth Certificate Analogy</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #3b82f6;">IP Address</strong> = Your <strong>house address</strong>. It can change if you move house! It tells data WHERE to go on the network.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #8b5cf6;">MAC Address</strong> = Your <strong>birth certificate</strong>. It NEVER changes - it's permanently attached to your network card!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- IP Address Card -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> IP Address</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">A unique numerical address that identifies each device on a network.</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                        <code style="color: #d4d4d4; font-size: 0.85rem;">IPv4: 192.168.1.1</code><br>
+                        <code style="color: #d4d4d4; font-size: 0.85rem;">IPv6: 2001:0db8:85a3:0000</code>
+                    </div>
+                    <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li><strong>IPv4:</strong> 32-bit (4 billion addresses)</li>
+                        <li><strong>IPv6:</strong> 128-bit (billions of billions!)</li>
+                        <li>Can change (dynamic) or stay fixed (static)</li>
+                    </ul>
+                </div>
+
+                <!-- MAC Address Card -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-fingerprint"></i> MAC Address</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">A unique hardware address burned into every network interface card.</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                        <code style="color: #d4d4d4; font-size: 0.85rem;">00:1A:2B:3C:4D:5E</code>
+                    </div>
+                    <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.85rem; line-height: 1.5;">
+                        <li><strong>48-bit</strong> hexadecimal address</li>
+                        <li><strong>Permanent</strong> - set by manufacturer</li>
+                        <li>Used for <strong>local network</strong> communication</li>
+                        <li>Also called "physical address"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Other Key Internet Concepts</h3>
 
             <div class="table-container">
                 <table class="styled-table">
@@ -505,16 +749,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>IP Address</strong></td>
-                            <td>A unique numerical address that identifies each device on a network (e.g., 192.168.1.1). IPv4 uses 32 bits; IPv6 uses 128 bits.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>MAC Address</strong></td>
-                            <td>A unique hardware address assigned to every network interface card (NIC). Used for local network communication.</td>
-                        </tr>
-                        <tr>
                             <td><strong>DNS</strong></td>
-                            <td>Domain Name System - translates domain names (www.google.com) into IP addresses.</td>
+                            <td>Domain Name System - translates domain names (www.google.com) into IP addresses. Like a phonebook for the internet!</td>
                         </tr>
                         <tr>
                             <td><strong>Router</strong></td>

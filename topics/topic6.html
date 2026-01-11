@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 6: Programming | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html" class="active">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 6</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 6: Programming</h1>
+                    <p style="color: rgba(255,255,255,0.9);">Problem solving with programming - Paper 2</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#fundamentals" class="subtopic-tab active">
+                    <i class="fas fa-cube"></i>
+                    Fundamentals
+                </a>
+                <a href="#data-types" class="subtopic-tab">
+                    <i class="fas fa-database"></i>
+                    Data Types
+                </a>
+                <a href="#control" class="subtopic-tab">
+                    <i class="fas fa-random"></i>
+                    Control Flow
+                </a>
+                <a href="#subprograms" class="subtopic-tab">
+                    <i class="fas fa-puzzle-piece"></i>
+                    Subprograms
+                </a>
+                <a href="#testing" class="subtopic-tab">
+                    <i class="fas fa-bug"></i>
+                    Testing
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== FUNDAMENTALS ==================== -->
+        <section id="fundamentals" class="content-section">
+            <h2>Programming Fundamentals</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Programming</strong> is the process of writing instructions (code) that a computer can execute to solve a problem or perform a task. Programs are written using programming languages.</p>
+            </div>
+
+            <div class="info-box warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Paper 2 Information</h4>
+                <p>Topic 6 is assessed in <strong>Paper 2: Problem Solving with Programming</strong>. This is a 2-hour on-screen exam where you write, test and modify programs using Python.</p>
+            </div>
+
+            <h3>Variables and Constants</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-box"></i> Variables</h4>
+                    <ul>
+                        <li>Named storage locations in memory</li>
+                        <li>Value can change during program execution</li>
+                        <li>Example: <code>score = 0</code></li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-lock"></i> Constants</h4>
+                    <ul>
+                        <li>Named values that don't change</li>
+                        <li>Value fixed throughout program</li>
+                        <li>Example: <code>PI = 3.14159</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Assignment and Operators</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Operator Type</th>
+                            <th>Operators</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Assignment</strong></td>
+                            <td>=</td>
+                            <td><code>name = "Alice"</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arithmetic</strong></td>
+                            <td>+ - * / // % **</td>
+                            <td><code>total = a + b</code>, <code>remainder = 10 % 3</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comparison</strong></td>
+                            <td>== != < > <= >=</td>
+                            <td><code>if age >= 18:</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logical</strong></td>
+                            <td>AND, OR, NOT</td>
+                            <td><code>if age >= 18 AND hasID:</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Input and Output</h3>
+
+            <div class="code-example">
+                <h4>Python Examples</h4>
+                <pre><code># Output - displaying to user
+print("Hello, World!")
+print("Your score is:", score)
+
+# Input - getting data from user
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>In Python, <code>input()</code> always returns a string. To get a number, you must convert it using <code>int()</code> or <code>float()</code>.</p>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=Rc5EoRvIJ7w" target="_blank">Programming Fundamentals</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== DATA TYPES ==================== -->
+        <section id="data-types" class="content-section">
+            <h2>Data Types and Structures</h2>
+
+            <h3>Basic Data Types</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Description</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Integer (int)</strong></td>
+                            <td>Whole numbers (positive or negative)</td>
+                            <td><code>42</code>, <code>-7</code>, <code>0</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Float (real)</strong></td>
+                            <td>Decimal numbers</td>
+                            <td><code>3.14</code>, <code>-0.5</code>, <code>2.0</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>String (str)</strong></td>
+                            <td>Text/characters in quotes</td>
+                            <td><code>"Hello"</code>, <code>'A'</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boolean (bool)</strong></td>
+                            <td>True or False values</td>
+                            <td><code>True</code>, <code>False</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Character (char)</strong></td>
+                            <td>Single character</td>
+                            <td><code>'A'</code>, <code>'7'</code>, <code>'!'</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Type Casting</h3>
+            <p>Converting between data types:</p>
+
+            <div class="code-example">
+                <pre><code># String to Integer
+age = int("25")
+
+# String to Float
+price = float("19.99")
+
+# Number to String
+text = str(42)
+
+# Integer to Float
+decimal = float(10)  # becomes 10.0</code></pre>
+            </div>
+
+            <h3>Arrays (Lists)</h3>
+            <p>Arrays store multiple values of the same type in a single variable:</p>
+
+            <div class="code-example">
+                <pre><code># Creating an array/list
+scores = [85, 92, 78, 95, 88]
+names = ["Alice", "Bob", "Charlie"]
+
+# Accessing elements (index starts at 0)
+first = scores[0]    # 85
+second = names[1]    # "Bob"
+
+# Modifying elements
+scores[2] = 80
+
+# Array length
+length = len(scores)  # 5
+
+# Looping through an array
+for score in scores:
+    print(score)</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Array indices start at <strong>0</strong>, not 1. So in an array of 5 elements, valid indices are 0, 1, 2, 3, 4.</p>
+            </div>
+
+            <h3>2D Arrays</h3>
+            <p>Arrays within arrays, like a table with rows and columns:</p>
+
+            <div class="code-example">
+                <pre><code># Creating a 2D array (3 rows, 4 columns)
+grid = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+# Accessing elements: grid[row][column]
+value = grid[1][2]  # 7 (row 1, column 2)
+
+# Looping through 2D array
+for row in grid:
+    for item in row:
+        print(item)</code></pre>
+            </div>
+
+            <h3>String Operations</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Python Code</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Length</td>
+                            <td><code>len("Hello")</code></td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Concatenation</td>
+                            <td><code>"Hello" + " World"</code></td>
+                            <td>"Hello World"</td>
+                        </tr>
+                        <tr>
+                            <td>Substring</td>
+                            <td><code>"Hello"[1:4]</code></td>
+                            <td>"ell"</td>
+                        </tr>
+                        <tr>
+                            <td>Upper case</td>
+                            <td><code>"Hello".upper()</code></td>
+                            <td>"HELLO"</td>
+                        </tr>
+                        <tr>
+                            <td>Lower case</td>
+                            <td><code>"Hello".lower()</code></td>
+                            <td>"hello"</td>
+                        </tr>
+                        <tr>
+                            <td>Character at index</td>
+                            <td><code>"Hello"[0]</code></td>
+                            <td>"H"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=OUQ1YGJMd50" target="_blank">Data Types and Arrays</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Write code to find the largest number in an array called 'numbers'. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <pre><code>largest = numbers[0]
+for num in numbers:
+    if num > largest:
+        largest = num
+print(largest)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTROL FLOW ==================== -->
+        <section id="control" class="content-section">
+            <h2>Control Flow</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Control flow</strong> determines the order in which statements are executed. The three main constructs are: sequence, selection (if/else), and iteration (loops).</p>
+            </div>
+
+            <h3>Selection (IF Statements)</h3>
+            <p>Making decisions in code:</p>
+
+            <div class="code-example">
+                <pre><code># Simple IF
+if age >= 18:
+    print("You can vote")
+
+# IF-ELSE
+if score >= 50:
+    print("Pass")
+else:
+    print("Fail")
+
+# IF-ELIF-ELSE
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("Below C")</code></pre>
+            </div>
+
+            <h3>Iteration (Loops)</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-redo"></i> FOR Loop (Count-controlled)</h4>
+                    <p>Repeats a fixed number of times:</p>
+                    <pre><code># Print 1 to 5
+for i in range(1, 6):
+    print(i)
+
+# Loop through array
+for name in names:
+    print(name)</code></pre>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-sync"></i> WHILE Loop (Condition-controlled)</h4>
+                    <p>Repeats while condition is true:</p>
+                    <pre><code># Count to 5
+count = 1
+while count <= 5:
+    print(count)
+    count = count + 1
+
+# Until user quits
+while answer != "quit":
+    answer = input()</code></pre>
+                </div>
+            </div>
+
+            <h3>Nested Structures</h3>
+            <p>Putting control structures inside each other:</p>
+
+            <div class="code-example">
+                <pre><code># Nested IF
+if age >= 18:
+    if hasLicense:
+        print("Can drive")
+    else:
+        print("Need license")
+
+# Nested loops (multiplication table)
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i * j, end=" ")
+    print()  # New line</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> When to Use Each Loop</h4>
+                <ul>
+                    <li><strong>FOR loop:</strong> When you know how many times to repeat</li>
+                    <li><strong>WHILE loop:</strong> When you don't know how many times (e.g., until user enters valid input)</li>
+                </ul>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=HxU25pq9BaQ" target="_blank">Selection and Iteration</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Write a program that asks for numbers until -1 is entered, then displays the total. (5 marks)</strong></p>
+                <div class="mark-scheme">
+                    <pre><code>total = 0
+number = int(input("Enter number (-1 to stop): "))
+while number != -1:
+    total = total + number
+    number = int(input("Enter number (-1 to stop): "))
+print("Total:", total)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SUBPROGRAMS ==================== -->
+        <section id="subprograms" class="content-section">
+            <h2>Subprograms</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Subprograms</strong> are named blocks of code that can be called from elsewhere in the program. They help organise code, reduce repetition, and make programs easier to maintain.</p>
+            </div>
+
+            <h3>Functions vs Procedures</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-reply"></i> Function</h4>
+                    <ul>
+                        <li>Returns a value</li>
+                        <li>Can be used in expressions</li>
+                        <li>Example: <code>result = calculate(5)</code></li>
+                    </ul>
+                    <pre><code>def square(n):
+    return n * n
+
+answer = square(4)  # 16</code></pre>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-play"></i> Procedure</h4>
+                    <ul>
+                        <li>Does not return a value</li>
+                        <li>Performs an action</li>
+                        <li>Example: <code>displayMessage()</code></li>
+                    </ul>
+                    <pre><code>def greet(name):
+    print("Hello,", name)
+
+greet("Alice")  # Hello, Alice</code></pre>
+                </div>
+            </div>
+
+            <h3>Parameters and Arguments</h3>
+
+            <div class="code-example">
+                <pre><code># Parameters are the variables in the function definition
+def add(a, b):    # a and b are parameters
+    return a + b
+
+# Arguments are the values passed when calling
+result = add(5, 3)  # 5 and 3 are arguments</code></pre>
+            </div>
+
+            <h3>Local vs Global Variables</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Variable Type</th>
+                            <th>Scope</th>
+                            <th>Where Declared</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Local</strong></td>
+                            <td>Only accessible inside the subprogram</td>
+                            <td>Inside a function/procedure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Global</strong></td>
+                            <td>Accessible anywhere in the program</td>
+                            <td>Outside all functions (main program)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code-example">
+                <pre><code>score = 0  # Global variable
+
+def addPoints(points):
+    global score  # Access global variable
+    score = score + points
+
+def calculate():
+    total = 100  # Local variable
+    return total</code></pre>
+            </div>
+
+            <h3>Benefits of Using Subprograms</h3>
+            <ul class="styled-list">
+                <li><strong>Decomposition:</strong> Break complex problems into smaller, manageable parts</li>
+                <li><strong>Reusability:</strong> Write code once, use it many times</li>
+                <li><strong>Readability:</strong> Makes code easier to understand</li>
+                <li><strong>Debugging:</strong> Easier to find and fix errors</li>
+                <li><strong>Maintenance:</strong> Changes only need to be made in one place</li>
+                <li><strong>Teamwork:</strong> Different programmers can work on different functions</li>
+            </ul>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=KYk7wfxABzE" target="_blank">Functions and Procedures</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== TESTING ==================== -->
+        <section id="testing" class="content-section">
+            <h2>Testing and Debugging</h2>
+
+            <h3>Types of Errors</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Error Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Syntax Error</strong></td>
+                            <td>Code breaks grammar rules; program won't run</td>
+                            <td><code>print("Hello</code> - missing quote</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logic Error</strong></td>
+                            <td>Code runs but produces wrong results</td>
+                            <td><code>average = a + b / 2</code> - should be <code>(a+b)/2</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Runtime Error</strong></td>
+                            <td>Error occurs while program is running</td>
+                            <td>Division by zero, file not found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Test Data</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Test Type</th>
+                            <th>Purpose</th>
+                            <th>Example (for age 18-65)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Normal</strong></td>
+                            <td>Test with typical expected values</td>
+                            <td>25, 40, 55</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boundary</strong></td>
+                            <td>Test at the edges of valid ranges</td>
+                            <td>17, 18, 65, 66</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Erroneous</strong></td>
+                            <td>Test with invalid data</td>
+                            <td>-5, "abc", 150</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Trace Tables</h3>
+            <p>Used to track variable values through code execution:</p>
+
+            <div class="code-example">
+                <pre><code># Code to trace:
+x = 1
+while x < 4:
+    y = x * 2
+    x = x + 1</code></pre>
+            </div>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>x</th>
+                            <th>x < 4</th>
+                            <th>y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Start</td><td>1</td><td>True</td><td>-</td></tr>
+                        <tr><td>1</td><td>2</td><td>True</td><td>2</td></tr>
+                        <tr><td>2</td><td>3</td><td>True</td><td>4</td></tr>
+                        <tr><td>3</td><td>4</td><td>False</td><td>6</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Input Validation</h3>
+            <p>Checking that user input is valid before using it:</p>
+
+            <div class="code-example">
+                <pre><code># Validate age is between 0 and 120
+age = int(input("Enter age: "))
+while age < 0 or age > 120:
+    print("Invalid age!")
+    age = int(input("Enter age: "))
+
+# Validate choice is Y or N
+choice = input("Continue? (Y/N): ").upper()
+while choice != "Y" and choice != "N":
+    choice = input("Enter Y or N: ").upper()</code></pre>
+            </div>
+
+            <h3>File Handling</h3>
+
+            <div class="code-example">
+                <pre><code># Writing to a file
+file = open("data.txt", "w")
+file.write("Hello World\n")
+file.close()
+
+# Reading from a file
+file = open("data.txt", "r")
+content = file.read()
+file.close()
+
+# Reading line by line
+file = open("data.txt", "r")
+for line in file:
+    print(line)
+file.close()</code></pre>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=s_Pz6fLQgEE" target="_blank">Testing and Debugging</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Complete a trace table for this code:</strong></p>
+                <pre><code>a = 5
+b = 3
+while a > b:
+    a = a - 1
+    b = b + 1</code></pre>
+                <div class="mark-scheme">
+                    <table class="styled-table">
+                        <tr><th>a</th><th>b</th><th>a > b</th></tr>
+                        <tr><td>5</td><td>3</td><td>True</td></tr>
+                        <tr><td>4</td><td>4</td><td>False</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUIZ ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 6 Quiz</h2>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Test Your Knowledge</h4>
+                <p>Complete this 15-question quiz to test your understanding of programming concepts.</p>
+            </div>
+
+            <form id="quiz-form" class="quiz-form">
+                <div class="quiz-student-info">
+                    <div class="form-group">
+                        <label for="student-name"><i class="fas fa-user"></i> Your Name (required)</label>
+                        <input type="text" id="student-name" name="student-name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email"><i class="fas fa-envelope"></i> Teacher's Email (optional)</label>
+                        <input type="email" id="teacher-email" name="teacher-email" placeholder="Enter your teacher's email">
+                    </div>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="quiz-question" data-question="1">
+                    <h4>Question 1</h4>
+                    <p>What data type would you use to store "Hello World"?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q1" value="a"><span>Integer</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="b"><span>Float</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="c"><span>String</span></label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="d"><span>Boolean</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question" data-question="2">
+                    <h4>Question 2</h4>
+                    <p>What is the index of the first element in an array?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q2" value="a"><span>0</span></label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="b"><span>1</span></label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="c"><span>-1</span></label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="d"><span>The length of the array</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question" data-question="3">
+                    <h4>Question 3</h4>
+                    <p>What is the result of: 17 % 5?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q3" value="a"><span>3</span></label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="b"><span>2</span></label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="c"><span>3.4</span></label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="d"><span>12</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question" data-question="4">
+                    <h4>Question 4</h4>
+                    <p>Which loop is best when you know exactly how many times to repeat?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q4" value="a"><span>WHILE loop</span></label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="b"><span>FOR loop</span></label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="c"><span>DO-WHILE loop</span></label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="d"><span>IF statement</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question" data-question="5">
+                    <h4>Question 5</h4>
+                    <p>What is a syntax error?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q5" value="a"><span>Code that produces wrong results</span></label>
+                        <label class="quiz-option"><input type="radio" name="q5" value="b"><span>Code that breaks the language's grammar rules</span></label>
+                        <label class="quiz-option"><input type="radio" name="q5" value="c"><span>An error that occurs while the program runs</span></label>
+                        <label class="quiz-option"><input type="radio" name="q5" value="d"><span>Code that runs too slowly</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question" data-question="6">
+                    <h4>Question 6</h4>
+                    <p>What is the difference between a function and a procedure?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q6" value="a"><span>Functions are faster</span></label>
+                        <label class="quiz-option"><input type="radio" name="q6" value="b"><span>Functions return a value, procedures don't</span></label>
+                        <label class="quiz-option"><input type="radio" name="q6" value="c"><span>Procedures can have parameters, functions can't</span></label>
+                        <label class="quiz-option"><input type="radio" name="q6" value="d"><span>There is no difference</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question" data-question="7">
+                    <h4>Question 7</h4>
+                    <p>What does int("25") return in Python?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q7" value="a"><span>"25" (string)</span></label>
+                        <label class="quiz-option"><input type="radio" name="q7" value="b"><span>25 (integer)</span></label>
+                        <label class="quiz-option"><input type="radio" name="q7" value="c"><span>25.0 (float)</span></label>
+                        <label class="quiz-option"><input type="radio" name="q7" value="d"><span>An error</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question" data-question="8">
+                    <h4>Question 8</h4>
+                    <p>What type of test data tests values at the edge of valid ranges?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q8" value="a"><span>Normal data</span></label>
+                        <label class="quiz-option"><input type="radio" name="q8" value="b"><span>Erroneous data</span></label>
+                        <label class="quiz-option"><input type="radio" name="q8" value="c"><span>Boundary data</span></label>
+                        <label class="quiz-option"><input type="radio" name="q8" value="d"><span>Random data</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question" data-question="9">
+                    <h4>Question 9</h4>
+                    <p>What is a local variable?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q9" value="a"><span>A variable accessible anywhere in the program</span></label>
+                        <label class="quiz-option"><input type="radio" name="q9" value="b"><span>A variable only accessible inside a subprogram</span></label>
+                        <label class="quiz-option"><input type="radio" name="q9" value="c"><span>A variable that never changes</span></label>
+                        <label class="quiz-option"><input type="radio" name="q9" value="d"><span>A variable stored in a file</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question" data-question="10">
+                    <h4>Question 10</h4>
+                    <p>What does len("Python") return?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q10" value="a"><span>5</span></label>
+                        <label class="quiz-option"><input type="radio" name="q10" value="b"><span>6</span></label>
+                        <label class="quiz-option"><input type="radio" name="q10" value="c"><span>7</span></label>
+                        <label class="quiz-option"><input type="radio" name="q10" value="d"><span>"Python"</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question" data-question="11">
+                    <h4>Question 11</h4>
+                    <p>What is the purpose of a trace table?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q11" value="a"><span>To store data in a file</span></label>
+                        <label class="quiz-option"><input type="radio" name="q11" value="b"><span>To track variable values through code execution</span></label>
+                        <label class="quiz-option"><input type="radio" name="q11" value="c"><span>To display output to the user</span></label>
+                        <label class="quiz-option"><input type="radio" name="q11" value="d"><span>To create graphics</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question" data-question="12">
+                    <h4>Question 12</h4>
+                    <p>In a 2D array grid[2][3], what does [2] represent?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q12" value="a"><span>The column</span></label>
+                        <label class="quiz-option"><input type="radio" name="q12" value="b"><span>The row</span></label>
+                        <label class="quiz-option"><input type="radio" name="q12" value="c"><span>The value</span></label>
+                        <label class="quiz-option"><input type="radio" name="q12" value="d"><span>The size</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question" data-question="13">
+                    <h4>Question 13</h4>
+                    <p>What is input validation?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q13" value="a"><span>Displaying output to the user</span></label>
+                        <label class="quiz-option"><input type="radio" name="q13" value="b"><span>Checking that user input is valid before using it</span></label>
+                        <label class="quiz-option"><input type="radio" name="q13" value="c"><span>Storing input in a file</span></label>
+                        <label class="quiz-option"><input type="radio" name="q13" value="d"><span>Converting input to uppercase</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question" data-question="14">
+                    <h4>Question 14</h4>
+                    <p>What is a logic error?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q14" value="a"><span>Code that won't run due to incorrect grammar</span></label>
+                        <label class="quiz-option"><input type="radio" name="q14" value="b"><span>Code that runs but produces incorrect results</span></label>
+                        <label class="quiz-option"><input type="radio" name="q14" value="c"><span>An error caused by dividing by zero</span></label>
+                        <label class="quiz-option"><input type="radio" name="q14" value="d"><span>An error in the logic gates</span></label>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question" data-question="15">
+                    <h4>Question 15</h4>
+                    <p>Which operator would you use to check if two values are equal?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option"><input type="radio" name="q15" value="a"><span>=</span></label>
+                        <label class="quiz-option"><input type="radio" name="q15" value="b"><span>==</span></label>
+                        <label class="quiz-option"><input type="radio" name="q15" value="c"><span>!=</span></label>
+                        <label class="quiz-option"><input type="radio" name="q15" value="d"><span>>=</span></label>
+                    </div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </form>
+
+            <div id="quiz-results" class="quiz-results" style="display: none;">
+                <h3><i class="fas fa-chart-bar"></i> Your Results</h3>
+                <div class="results-summary">
+                    <div class="score-circle">
+                        <span id="score-display">0</span>
+                        <span class="score-total">/15</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div id="results-breakdown"></div>
+                <div class="results-actions">
+                    <button id="download-pdf" class="btn btn-primary">
+                        <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                    </button>
+                    <button id="retry-quiz" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>Revision resource for Pearson Edexcel GCSE Computer Science (1CP2).</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Topics</h4>
+                    <ul>
+                        <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topic2.html">Topic 2: Data</a></li>
+                        <li><a href="topic3.html">Topic 3: Computers</a></li>
+                        <li><a href="topic4.html">Topic 4: Networks</a></li>
+                        <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                        <li><a href="topic6.html">Topic 6: Programming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave</a></li>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Pearson Spec</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        const quizAnswers = {
+            q1: 'c', q2: 'a', q3: 'b', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'c', q9: 'b', q10: 'b',
+            q11: 'b', q12: 'b', q13: 'b', q14: 'b', q15: 'b'
+        };
+
+        const quizExplanations = {
+            q1: 'Strings are used to store text. "Hello World" is text, so it needs a string data type.',
+            q2: 'Array indices start at 0 in most programming languages, including Python.',
+            q3: 'The % operator (modulo) returns the remainder. 17 / 5 = 3 remainder 2.',
+            q4: 'FOR loops are count-controlled - use them when you know exactly how many iterations.',
+            q5: 'Syntax errors occur when code breaks the grammar rules of the language.',
+            q6: 'Functions return a value that can be used. Procedures perform actions but don\'t return values.',
+            q7: 'int() converts a string to an integer. int("25") returns the integer 25.',
+            q8: 'Boundary data tests values at the edges of valid ranges (e.g., 17 and 18 for age >= 18).',
+            q9: 'Local variables are only accessible within the subprogram where they are declared.',
+            q10: 'len() returns the length. "Python" has 6 characters.',
+            q11: 'Trace tables track how variable values change as code executes, helping find logic errors.',
+            q12: 'In grid[row][column], the first index [2] represents the row.',
+            q13: 'Input validation checks that user input meets expected criteria before the program uses it.',
+            q14: 'Logic errors cause the program to run but produce incorrect results.',
+            q15: '== is the equality comparison operator. = is for assignment.'
+        };
+
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studentName = document.getElementById('student-name').value;
+            if (!studentName.trim()) { alert('Please enter your name.'); return; }
+
+            let score = 0;
+            let resultsHTML = '<div class="results-list">';
+            for (let i = 1; i <= 15; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const isCorrect = selected && selected.value === quizAnswers[`q${i}`];
+                if (isCorrect) score++;
+                resultsHTML += `<div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                    <span class="result-icon">${isCorrect ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}</span>
+                    <span class="result-text">Question ${i}: ${isCorrect ? 'Correct' : 'Incorrect'}</span>
+                    ${!isCorrect ? `<p class="result-explanation">${quizExplanations[`q${i}`]}</p>` : ''}</div>`;
+            }
+            resultsHTML += '</div>';
+
+            document.getElementById('score-display').textContent = score;
+            document.getElementById('results-breakdown').innerHTML = resultsHTML;
+            let message = score === 15 ? 'Perfect!' : score >= 12 ? 'Excellent!' : score >= 9 ? 'Good work!' : score >= 6 ? 'Keep studying!' : 'More revision needed.';
+            document.getElementById('score-message').textContent = message;
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+            window.quizData = { studentName, teacherEmail: document.getElementById('teacher-email').value, score, total: 15, topic: 'Topic 6: Programming', date: new Date().toLocaleDateString('en-GB') };
+        });
+
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.quizData;
+            doc.setFillColor(236, 72, 153);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.text('Quiz Certificate', 105, 25, { align: 'center' });
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(16);
+            doc.text('This certifies that', 105, 60, { align: 'center' });
+            doc.setFontSize(22);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.studentName, 105, 75, { align: 'center' });
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(14);
+            doc.text('has completed the quiz for', 105, 90, { align: 'center' });
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.topic, 105, 105, { align: 'center' });
+            doc.setFontSize(36);
+            const pct = Math.round((data.score / data.total) * 100);
+            doc.text(`${data.score}/${data.total}`, 105, 135, { align: 'center' });
+            doc.setFontSize(16);
+            doc.text(`(${pct}%)`, 105, 148, { align: 'center' });
+            doc.setFontSize(14);
+            let grade = pct >= 90 ? 'Outstanding' : pct >= 70 ? 'Good' : pct >= 50 ? 'Satisfactory' : 'Needs Improvement';
+            doc.text(`Grade: ${grade}`, 105, 165, { align: 'center' });
+            doc.setFontSize(12);
+            doc.text(`Date: ${data.date}`, 105, 185, { align: 'center' });
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Edexcel GCSE Computer Science Revision', 105, 270, { align: 'center' });
+            doc.save(`Topic6-Quiz-${data.studentName.replace(/\s+/g, '-')}.pdf`);
+        });
+
+        document.getElementById('retry-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-form').reset();
+            document.getElementById('quiz-form').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

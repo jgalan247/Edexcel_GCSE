@@ -7,6 +7,97 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Skulpt for in-browser Python -->
+    <script src="https://skulpt.org/js/skulpt.min.js"></script>
+    <script src="https://skulpt.org/js/skulpt-stdlib.js"></script>
+    <style>
+        .code-editor-container {
+            background: #1e1e1e;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .code-editor-header {
+            background: #2d2d2d;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        .code-editor-title {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .code-editor-title i { margin-right: 0.5rem; }
+        .code-editor textarea {
+            width: 100%;
+            min-height: 180px;
+            padding: 1rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border: none;
+            resize: vertical;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .code-editor textarea:focus { background: #252526; }
+        .code-editor-buttons { display: flex; gap: 0.5rem; }
+        .btn-run {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+        .btn-run:hover { background: #059669; }
+        .btn-clear {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-clear:hover { background: #4b5563; }
+        .code-output {
+            background: #0d1117;
+            color: #58a6ff;
+            padding: 1rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            min-height: 60px;
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #3d3d3d;
+            white-space: pre-wrap;
+        }
+        .code-output.error { color: #f87171; }
+        .challenge-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .challenge-box h4 { color: #92400e; margin-bottom: 0.5rem; }
+        .challenge-box h4 i { margin-right: 0.5rem; }
+        .challenge-box p, .challenge-box ul { color: #78350f; }
+        .challenge-box ul { margin: 0.5rem 0 0 1.5rem; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -174,6 +265,43 @@ age = int(input("Enter your age: "))</code></pre>
             <div class="info-box tip">
                 <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
                 <p>In Python, <code>input()</code> always returns a string. To get a number, you must convert it using <code>int()</code> or <code>float()</code>.</p>
+            </div>
+
+            <h3>Try It Yourself - Variables and Output</h3>
+            <p>Edit the code below and click "Run Code" to see the output:</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('editor1', 'output1')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('output1')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="editor1"># Variables and Output Practice
+name = "Student"
+age = 15
+score = 85.5
+
+print("Hello,", name)
+print("You are", age, "years old")
+print("Your score is:", score)
+
+# Try changing the values above!
+# Can you add a new variable for your favourite subject?</textarea>
+                </div>
+                <div class="code-output" id="output1">Click "Run Code" to see output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge 1</h4>
+                <p>Modify the code above to:</p>
+                <ul>
+                    <li>Change the name to your own name</li>
+                    <li>Add a variable called <code>subject</code> with your favourite subject</li>
+                    <li>Print a message that includes all four variables</li>
+                </ul>
             </div>
 
             <div class="video-container">
@@ -354,6 +482,48 @@ for num in numbers:
 print(largest)</code></pre>
                 </div>
             </div>
+
+            <h3>Try It Yourself - Arrays</h3>
+            <p>Practice working with arrays (lists) in Python:</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Arrays</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('editor2', 'output2')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('output2')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="editor2"># Arrays (Lists) Practice
+scores = [85, 92, 78, 95, 88]
+
+# Access elements by index (starts at 0)
+print("First score:", scores[0])
+print("Third score:", scores[2])
+
+# Find the length
+print("Number of scores:", len(scores))
+
+# Loop through all elements
+print("\nAll scores:")
+for score in scores:
+    print(score)
+
+# Calculate the total
+total = 0
+for score in scores:
+    total = total + score
+print("\nTotal:", total)
+print("Average:", total / len(scores))</textarea>
+                </div>
+                <div class="code-output" id="output2">Click "Run Code" to see output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge 2</h4>
+                <p>Modify the code to find the highest and lowest scores in the array. Hint: Start with <code>highest = scores[0]</code></p>
+            </div>
         </section>
 
         <!-- ==================== CONTROL FLOW ==================== -->
@@ -462,6 +632,52 @@ while number != -1:
 print("Total:", total)</code></pre>
                 </div>
             </div>
+
+            <h3>Try It Yourself - Loops and Selection</h3>
+            <p>Practice using IF statements and loops:</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Control Flow</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('editor3', 'output3')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('output3')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="editor3"># Selection (IF statements)
+score = 75
+
+if score >= 90:
+    print("Grade: A - Excellent!")
+elif score >= 80:
+    print("Grade: B - Good")
+elif score >= 70:
+    print("Grade: C - Satisfactory")
+elif score >= 60:
+    print("Grade: D - Needs improvement")
+else:
+    print("Grade: F - Must resit")
+
+# FOR loop - repeat a known number of times
+print("\nCounting from 1 to 5:")
+for i in range(1, 6):
+    print(i)
+
+# WHILE loop - repeat until condition is false
+print("\nDoubling until > 100:")
+number = 1
+while number <= 100:
+    print(number)
+    number = number * 2</textarea>
+                </div>
+                <div class="code-output" id="output3">Click "Run Code" to see output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge 3</h4>
+                <p>Write a program that prints the multiplication table for the number 7 (7x1 through 7x12). Use a FOR loop!</p>
+            </div>
         </section>
 
         <!-- ==================== SUBPROGRAMS ==================== -->
@@ -564,6 +780,53 @@ def calculate():
             <div class="video-container">
                 <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
                 <p>Watch: <a href="https://www.youtube.com/watch?v=KYk7wfxABzE" target="_blank">Functions and Procedures</a></p>
+            </div>
+
+            <h3>Try It Yourself - Functions</h3>
+            <p>Practice creating and using functions:</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Functions</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('editor4', 'output4')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('output4')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="editor4"># Functions that RETURN a value
+def square(n):
+    return n * n
+
+def add(a, b):
+    return a + b
+
+def is_even(num):
+    return num % 2 == 0
+
+# Procedures that DO something (no return)
+def greet(name):
+    print("Hello,", name, "!")
+
+def print_stars(count):
+    print("*" * count)
+
+# Using the functions
+print("Square of 5:", square(5))
+print("3 + 7 =", add(3, 7))
+print("Is 8 even?", is_even(8))
+print("Is 7 even?", is_even(7))
+
+# Using the procedures
+greet("Student")
+print_stars(10)</textarea>
+                </div>
+                <div class="code-output" id="output4">Click "Run Code" to see output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge 4</h4>
+                <p>Create a function called <code>calculate_average(numbers)</code> that takes an array of numbers and returns the average. Test it with <code>[10, 20, 30, 40, 50]</code>.</p>
             </div>
         </section>
 
@@ -1078,6 +1341,46 @@ while a > b:
             document.getElementById('quiz-results').style.display = 'none';
             document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
         });
+
+        // Skulpt Python Runner
+        function builtinRead(x) {
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+            return Sk.builtinFiles["files"][x];
+        }
+
+        function runCode(editorId, outputId) {
+            var code = document.getElementById(editorId).value;
+            var outputElement = document.getElementById(outputId);
+            outputElement.innerHTML = '';
+            outputElement.className = 'code-output';
+
+            Sk.pre = outputId;
+            Sk.configure({
+                output: function(text) {
+                    outputElement.innerHTML += text;
+                },
+                read: builtinRead,
+                inputfun: function(prompt) {
+                    return window.prompt(prompt);
+                },
+                inputfunTakesPrompt: true
+            });
+
+            Sk.misceval.asyncToPromise(function() {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            }).then(function(mod) {
+                // Success - code ran without errors
+            }, function(err) {
+                outputElement.className = 'code-output error';
+                outputElement.innerHTML = 'Error: ' + err.toString();
+            });
+        }
+
+        function clearOutput(outputId) {
+            document.getElementById(outputId).innerHTML = 'Click "Run Code" to see output...';
+            document.getElementById(outputId).className = 'code-output';
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 5: Issues & Impact | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html" class="active">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 5</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 5: Issues & Impact</h1>
+                    <p style="color: rgba(255,255,255,0.9);">Ethical, legal, environmental and cultural issues in computing</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#ethical" class="subtopic-tab active">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    Ethical Issues
+                </a>
+                <a href="#legal" class="subtopic-tab">
+                    <i class="fas fa-gavel"></i>
+                    Legal Issues
+                </a>
+                <a href="#environmental" class="subtopic-tab">
+                    <i class="fas fa-leaf"></i>
+                    Environmental
+                </a>
+                <a href="#ai" class="subtopic-tab">
+                    <i class="fas fa-robot"></i>
+                    AI & Robotics
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== ETHICAL ISSUES ==================== -->
+        <section id="ethical" class="content-section">
+            <h2>Ethical Issues</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Ethics</strong> are moral principles or rules that govern a person's attitudes and behaviour. Ethical issues in computing relate to privacy, inclusion, professionalism, and the responsible use of technology.</p>
+            </div>
+
+            <h3>Privacy</h3>
+            <p>Once data is stored on a computer, it can easily be copied, shared or transmitted. Key privacy concerns include:</p>
+
+            <ul class="styled-list">
+                <li><strong>Personal data collection:</strong> Websites, apps and services collect vast amounts of data about users</li>
+                <li><strong>Data sharing:</strong> Companies may share or sell user data to third parties</li>
+                <li><strong>Surveillance:</strong> Governments and organisations can monitor online activity</li>
+                <li><strong>Data breaches:</strong> Hackers can steal personal information</li>
+                <li><strong>Location tracking:</strong> Mobile devices constantly track user movements</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Many smartphone apps request permission to access contacts, photos, location and other data. Users should carefully consider what permissions they grant.</p>
+            </div>
+
+            <h3>The Digital Divide</h3>
+            <p>The <strong>digital divide</strong> refers to the gap between those who have access to technology and those who don't:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Type of Divide</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Economic</strong></td>
+                            <td>Not everyone can afford computers, smartphones, or internet access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geographic</strong></td>
+                            <td>Rural areas often have slower/no broadband compared to cities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Generational</strong></td>
+                            <td>Older generations may be less comfortable with technology</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skills</strong></td>
+                            <td>Some people lack the digital literacy skills needed for employment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Global</strong></td>
+                            <td>Developing countries have less access to technology infrastructure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Professionalism in IT</h3>
+            <p>IT professionals should follow ethical codes of conduct:</p>
+
+            <ul class="styled-list">
+                <li><strong>Knowledge and qualifications:</strong> Have proper training and certifications</li>
+                <li><strong>Continuous development:</strong> Keep skills up to date</li>
+                <li><strong>Best practices:</strong> Follow industry standards and guidelines</li>
+                <li><strong>Accountability:</strong> Take responsibility for work and mistakes</li>
+                <li><strong>Security awareness:</strong> Protect systems and data properly</li>
+            </ul>
+
+            <div class="info-box warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Consequences of Unprofessionalism</h4>
+                <ul>
+                    <li>Coding errors can cause system failures</li>
+                    <li>Inadequate testing can lead to bugs in production</li>
+                    <li>Poor security can result in data breaches and fraud</li>
+                    <li>Hardware errors could create safety hazards</li>
+                </ul>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=8F_DNQTB9Uk" target="_blank">Ethical Issues in Computing</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain what is meant by the 'digital divide' and give two examples. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>The digital divide is the gap between those who have access to technology and those who don't (1)</li>
+                        <li>Example 1: Economic - some people cannot afford computers/internet (1)</li>
+                        <li>Example 2: Geographic - rural areas may have poor broadband (1)</li>
+                        <li>Example 3: Generational - older people may struggle with technology (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== LEGAL ISSUES ==================== -->
+        <section id="legal" class="content-section">
+            <h2>Legal Issues</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Legislation</strong> refers to laws passed by parliament that govern how technology can be used. Key laws include the Data Protection Act, Computer Misuse Act, and Copyright, Designs and Patents Act.</p>
+            </div>
+
+            <h3>Data Protection Act (2018) / GDPR</h3>
+            <p>The General Data Protection Regulation (GDPR) and UK Data Protection Act protect personal data. Key principles:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Right</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Right to be informed</strong></td>
+                            <td>Know what data is collected and how it's used</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right of access</strong></td>
+                            <td>View any personal data held about you</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right to rectification</strong></td>
+                            <td>Have inaccurate data corrected</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right to erasure</strong></td>
+                            <td>Request deletion of your data ("right to be forgotten")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right to restrict processing</strong></td>
+                            <td>Limit how data can be used</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right to data portability</strong></td>
+                            <td>Transfer data to another organisation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right to object</strong></td>
+                            <td>Object to automated decision-making</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Organisations can be fined up to 4% of annual turnover or €20 million for serious GDPR breaches.</p>
+            </div>
+
+            <h3>Computer Misuse Act (1990)</h3>
+            <p>This law makes certain computer-related activities illegal:</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Unauthorised Access</h4>
+                        <p>Accessing a computer system without permission (hacking). Up to 2 years imprisonment.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Unauthorised Access with Intent</h4>
+                        <p>Accessing a system to commit or facilitate further crimes. Up to 5 years imprisonment.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Unauthorised Modification</h4>
+                        <p>Modifying data without permission (e.g., spreading viruses, deleting files). Up to 10 years imprisonment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Copyright, Designs and Patents Act (1988)</h3>
+            <p>Protects the intellectual property of creators:</p>
+
+            <ul class="styled-list">
+                <li><strong>Copyright</strong> is automatic - you don't need to register</li>
+                <li>Protects: music, films, books, software, games, images, videos</li>
+                <li>Copyright holders have exclusive rights to publish, copy, distribute and sell their work</li>
+                <li><strong>Illegal activities:</strong> downloading music/films without permission, copying software, sharing copyrighted content</li>
+            </ul>
+
+            <h3>Software Licensing</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-lock"></i> Proprietary Software</h4>
+                    <ul>
+                        <li>Source code is kept secret</li>
+                        <li>Must pay for a licence to use</li>
+                        <li>Cannot modify or redistribute</li>
+                        <li>Examples: Microsoft Office, Adobe Photoshop</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-unlock"></i> Open Source Software</h4>
+                    <ul>
+                        <li>Source code is freely available</li>
+                        <li>Usually free to use</li>
+                        <li>Can be modified and redistributed</li>
+                        <li>Examples: Linux, LibreOffice, Firefox</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=4dpYdz4F2nY" target="_blank">Legal Issues and Legislation</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Describe two offences under the Computer Misuse Act 1990. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>Unauthorised access to a computer system (1) - e.g., hacking into someone's account (1)</li>
+                        <li>Unauthorised modification of data (1) - e.g., spreading a virus or deleting files (1)</li>
+                        <li>Unauthorised access with intent to commit further offences (1) - e.g., accessing bank systems to steal money (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ENVIRONMENTAL ==================== -->
+        <section id="environmental" class="content-section">
+            <h2>Environmental Issues</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Environmental impact</strong> refers to the effect that the manufacture, use and disposal of computing devices has on the natural environment, including energy consumption and electronic waste.</p>
+            </div>
+
+            <h3>Negative Environmental Impacts</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Energy consumption</strong></td>
+                            <td>Data centres, servers, and devices require huge amounts of electricity, often from fossil fuels</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Manufacturing</strong></td>
+                            <td>Production of devices uses metals, plastics and rare earth elements; creates pollution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E-waste</strong></td>
+                            <td>Electronic waste contains toxic materials (lead, mercury) that pollute soil and water</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Frequent upgrades</strong></td>
+                            <td>People replace phones/computers every 2-3 years, creating more waste</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Difficult recycling</strong></td>
+                            <td>Many components are hard to recycle or contain hazardous materials</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Ways to Reduce Environmental Impact</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-plug"></i> Energy Efficiency</h4>
+                    <ul>
+                        <li>Use energy-efficient devices</li>
+                        <li>Turn off devices when not in use</li>
+                        <li>Use sleep/hibernate modes</li>
+                        <li>Data centres using renewable energy</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-recycle"></i> Reduce, Reuse, Recycle</h4>
+                    <ul>
+                        <li>Keep devices longer before replacing</li>
+                        <li>Donate or sell old devices</li>
+                        <li>Recycle e-waste properly</li>
+                        <li>Buy refurbished equipment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Health Impacts</h3>
+            <p>Technology use also affects human health:</p>
+
+            <ul class="styled-list">
+                <li><strong>Eye strain:</strong> Prolonged screen use causes digital eye strain</li>
+                <li><strong>Posture problems:</strong> Poor posture when using devices leads to back/neck pain</li>
+                <li><strong>Sleep disruption:</strong> Blue light from screens affects sleep patterns</li>
+                <li><strong>Mental health:</strong> Social media can contribute to anxiety and depression</li>
+                <li><strong>Addiction:</strong> Excessive device use can become compulsive</li>
+                <li><strong>Toxic exposure:</strong> E-waste recycling workers exposed to hazardous materials</li>
+            </ul>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=JR9_0oNCGYE" target="_blank">Environmental Impact of Computing</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain two ways that computers have a negative impact on the environment. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>Energy consumption: Data centres and devices use large amounts of electricity (1), often from non-renewable sources contributing to climate change (1)</li>
+                        <li>E-waste: Discarded devices contain toxic materials (1) that pollute the environment when not disposed of properly (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AI ==================== -->
+        <section id="ai" class="content-section">
+            <h2>AI, Machine Learning & Robotics</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Artificial Intelligence (AI)</strong> refers to computer systems designed to perform tasks that normally require human intelligence, such as decision-making, speech recognition, and problem-solving.</p>
+            </div>
+
+            <h3>Key Terms</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Artificial Intelligence</strong></td>
+                            <td>Computer systems that can make decisions like humans</td>
+                            <td>Virtual assistants (Siri, Alexa), chatbots, self-driving cars</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Machine Learning</strong></td>
+                            <td>Systems that learn from data without being explicitly programmed</td>
+                            <td>Netflix recommendations, spam filters, image recognition</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Robotics</strong></td>
+                            <td>Design and use of machines to perform physical tasks</td>
+                            <td>Factory robots, robot vacuum cleaners, surgical robots</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Generative AI</strong></td>
+                            <td>AI that can create new content (text, images, code)</td>
+                            <td>ChatGPT, DALL-E, Copilot</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Ethical Concerns with AI</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Algorithmic Bias</h4>
+                    <p>AI systems learn from existing data. If the training data contains biases, the AI will replicate them.</p>
+                    <p>Example: Recruitment AI trained on biased hiring data may discriminate against certain groups.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-user-secret"></i> Accountability</h4>
+                    <p>When AI makes a mistake, who is responsible? The developer? The company? The user?</p>
+                    <p>Example: If a self-driving car causes an accident, who is legally liable?</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-briefcase"></i> Job Displacement</h4>
+                    <p>AI and robots may replace human workers in many industries.</p>
+                    <p>Example: Automated checkouts replacing shop workers, AI replacing customer service staff.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-shield-alt"></i> Safety</h4>
+                    <p>AI systems must be thoroughly tested to prevent harm.</p>
+                    <p>Example: Medical AI giving incorrect diagnoses, robots causing injuries in factories.</p>
+                </div>
+            </div>
+
+            <h3>Benefits of AI</h3>
+            <ul class="styled-list">
+                <li><strong>Healthcare:</strong> AI can analyse medical images, assist diagnosis, discover drugs</li>
+                <li><strong>Efficiency:</strong> Automation reduces human error and speeds up processes</li>
+                <li><strong>Accessibility:</strong> Voice assistants help people with disabilities</li>
+                <li><strong>Research:</strong> AI can process vast amounts of data quickly</li>
+                <li><strong>Safety:</strong> Self-driving cars could reduce accidents caused by human error</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>As AI becomes more prevalent, new laws and regulations are being developed to address issues like accountability, transparency, and fairness.</p>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=N3rKD1F2EZ8" target="_blank">AI and Emerging Technologies</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain what is meant by 'algorithmic bias' and why it is a concern. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>Algorithmic bias is when AI systems produce unfair/prejudiced results (1)</li>
+                        <li>This happens because AI learns from existing data (1)</li>
+                        <li>If the training data contains human biases, the AI replicates them (1)</li>
+                        <li>This can lead to discrimination in areas like recruitment, lending, or criminal justice (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUIZ ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 5 Quiz</h2>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Test Your Knowledge</h4>
+                <p>Complete this 15-question quiz to test your understanding of ethical, legal, and environmental issues in computing.</p>
+            </div>
+
+            <form id="quiz-form" class="quiz-form">
+                <div class="quiz-student-info">
+                    <div class="form-group">
+                        <label for="student-name"><i class="fas fa-user"></i> Your Name (required)</label>
+                        <input type="text" id="student-name" name="student-name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email"><i class="fas fa-envelope"></i> Teacher's Email (optional)</label>
+                        <input type="email" id="teacher-email" name="teacher-email" placeholder="Enter your teacher's email">
+                    </div>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="quiz-question" data-question="1">
+                    <h4>Question 1</h4>
+                    <p>What is the 'digital divide'?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="a">
+                            <span>The difference between digital and analogue signals</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="b">
+                            <span>The gap between those who have access to technology and those who don't</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="c">
+                            <span>The division of data into packets</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="d">
+                            <span>The separation of hardware and software</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question" data-question="2">
+                    <h4>Question 2</h4>
+                    <p>Which act protects personal data in the UK?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="a">
+                            <span>Computer Misuse Act</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="b">
+                            <span>Copyright, Designs and Patents Act</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="c">
+                            <span>Data Protection Act / GDPR</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="d">
+                            <span>Freedom of Information Act</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question" data-question="3">
+                    <h4>Question 3</h4>
+                    <p>Which of these is an offence under the Computer Misuse Act?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="a">
+                            <span>Downloading free software</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="b">
+                            <span>Unauthorised access to a computer system</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="c">
+                            <span>Using social media</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="d">
+                            <span>Creating a backup of your files</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question" data-question="4">
+                    <h4>Question 4</h4>
+                    <p>What does the 'right to erasure' under GDPR allow?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="a">
+                            <span>The right to delete other people's data</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="b">
+                            <span>The right to request deletion of your personal data</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="c">
+                            <span>The right to erase software from computers</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="d">
+                            <span>The right to clear your browsing history</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question" data-question="5">
+                    <h4>Question 5</h4>
+                    <p>What is a major environmental concern with computing devices?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="a">
+                            <span>They make too much noise</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="b">
+                            <span>E-waste contains toxic materials that pollute the environment</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="c">
+                            <span>They take up too much space</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="d">
+                            <span>They are too expensive</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question" data-question="6">
+                    <h4>Question 6</h4>
+                    <p>What is 'algorithmic bias'?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="a">
+                            <span>When algorithms run slowly</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="b">
+                            <span>When AI systems produce unfair results due to biased training data</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="c">
+                            <span>When algorithms favour one programming language</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="d">
+                            <span>When algorithms use too much memory</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question" data-question="7">
+                    <h4>Question 7</h4>
+                    <p>What is the difference between open source and proprietary software?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="a">
+                            <span>Open source is always better quality</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="b">
+                            <span>Open source code is freely available; proprietary code is kept secret</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="c">
+                            <span>Proprietary software is free; open source costs money</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="d">
+                            <span>Open source only runs on Linux</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question" data-question="8">
+                    <h4>Question 8</h4>
+                    <p>Which act protects creators of music, films and software?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="a">
+                            <span>Data Protection Act</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="b">
+                            <span>Computer Misuse Act</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="c">
+                            <span>Copyright, Designs and Patents Act</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="d">
+                            <span>Health and Safety Act</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question" data-question="9">
+                    <h4>Question 9</h4>
+                    <p>What is machine learning?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="a">
+                            <span>Robots learning to walk</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="b">
+                            <span>Systems that learn from data without being explicitly programmed</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="c">
+                            <span>Teaching people to use machines</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="d">
+                            <span>A type of computer hardware</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question" data-question="10">
+                    <h4>Question 10</h4>
+                    <p>Why is accountability a concern with AI systems?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="a">
+                            <span>AI systems are too expensive</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="b">
+                            <span>It's unclear who is responsible when AI makes mistakes</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="c">
+                            <span>AI systems don't need power</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="d">
+                            <span>AI systems are always correct</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question" data-question="11">
+                    <h4>Question 11</h4>
+                    <p>What is one health impact of excessive technology use?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="a">
+                            <span>Improved eyesight</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="b">
+                            <span>Digital eye strain from prolonged screen use</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="c">
+                            <span>Better posture</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="d">
+                            <span>Increased physical activity</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question" data-question="12">
+                    <h4>Question 12</h4>
+                    <p>How can the environmental impact of computing be reduced?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="a">
+                            <span>Buy a new phone every year</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="b">
+                            <span>Leave devices on all the time</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="c">
+                            <span>Recycle e-waste properly and keep devices longer</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="d">
+                            <span>Throw old devices in the bin</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question" data-question="13">
+                    <h4>Question 13</h4>
+                    <p>What is the maximum penalty for organisations breaching GDPR?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="a">
+                            <span>£1,000 fine</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="b">
+                            <span>4% of annual turnover or €20 million</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="c">
+                            <span>A warning letter</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="d">
+                            <span>No penalty</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question" data-question="14">
+                    <h4>Question 14</h4>
+                    <p>Which is an example of a virtual assistant powered by AI?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="a">
+                            <span>Microsoft Word</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="b">
+                            <span>Amazon Alexa</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="c">
+                            <span>Google Chrome</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="d">
+                            <span>Windows Calculator</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question" data-question="15">
+                    <h4>Question 15</h4>
+                    <p>Is copyright protection automatic?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="a">
+                            <span>No, you must register and pay a fee</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="b">
+                            <span>Yes, it applies automatically when work is created</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="c">
+                            <span>Only for software, not other creative works</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="d">
+                            <span>Only in the USA</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </form>
+
+            <div id="quiz-results" class="quiz-results" style="display: none;">
+                <h3><i class="fas fa-chart-bar"></i> Your Results</h3>
+                <div class="results-summary">
+                    <div class="score-circle">
+                        <span id="score-display">0</span>
+                        <span class="score-total">/15</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div id="results-breakdown"></div>
+                <div class="results-actions">
+                    <button id="download-pdf" class="btn btn-primary">
+                        <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                    </button>
+                    <button id="retry-quiz" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>A comprehensive revision resource for the Pearson Edexcel GCSE Computer Science (1CP2) specification.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topic2.html">Topic 2: Data</a></li>
+                        <li><a href="topic3.html">Topic 3: Computers</a></li>
+                        <li><a href="topic4.html">Topic 4: Networks</a></li>
+                        <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>External Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave Videos</a></li>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Pearson Specification</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        const quizAnswers = {
+            q1: 'b', q2: 'c', q3: 'b', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'c', q9: 'b', q10: 'b',
+            q11: 'b', q12: 'c', q13: 'b', q14: 'b', q15: 'b'
+        };
+
+        const quizExplanations = {
+            q1: 'The digital divide is the gap between those who have access to technology and those who don\'t, including economic, geographic, and generational factors.',
+            q2: 'The Data Protection Act 2018 and GDPR protect personal data and give individuals rights over how their data is used.',
+            q3: 'Unauthorised access to a computer system (hacking) is an offence under the Computer Misuse Act 1990.',
+            q4: 'The right to erasure (right to be forgotten) allows you to request that organisations delete your personal data.',
+            q5: 'E-waste contains toxic materials like lead and mercury that pollute soil and water when not disposed of properly.',
+            q6: 'Algorithmic bias occurs when AI systems produce unfair results because they learned from biased training data.',
+            q7: 'Open source software has freely available source code that anyone can view and modify. Proprietary software keeps its code secret.',
+            q8: 'The Copyright, Designs and Patents Act 1988 protects the intellectual property of creators of music, films, software and other works.',
+            q9: 'Machine learning is a type of AI where systems learn patterns from data without being explicitly programmed for each task.',
+            q10: 'With AI, it\'s often unclear who is responsible when the system makes a mistake - the developer, company, or user.',
+            q11: 'Digital eye strain from prolonged screen use is a common health impact of excessive technology use.',
+            q12: 'Recycling e-waste properly and keeping devices longer helps reduce the environmental impact of computing.',
+            q13: 'Organisations can be fined up to 4% of annual turnover or €20 million for serious GDPR breaches.',
+            q14: 'Amazon Alexa is a virtual assistant powered by AI that can respond to voice commands and questions.',
+            q15: 'Copyright protection is automatic - it applies as soon as original work is created, without needing to register.'
+        };
+
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studentName = document.getElementById('student-name').value;
+            if (!studentName.trim()) { alert('Please enter your name.'); return; }
+
+            let score = 0;
+            let resultsHTML = '<div class="results-list">';
+            for (let i = 1; i <= 15; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const isCorrect = selected && selected.value === quizAnswers[`q${i}`];
+                if (isCorrect) score++;
+                resultsHTML += `<div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                    <span class="result-icon">${isCorrect ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}</span>
+                    <span class="result-text">Question ${i}: ${isCorrect ? 'Correct' : 'Incorrect'}</span>
+                    ${!isCorrect ? `<p class="result-explanation">${quizExplanations[`q${i}`]}</p>` : ''}</div>`;
+            }
+            resultsHTML += '</div>';
+
+            document.getElementById('score-display').textContent = score;
+            document.getElementById('results-breakdown').innerHTML = resultsHTML;
+            let message = score === 15 ? 'Perfect!' : score >= 12 ? 'Excellent!' : score >= 9 ? 'Good work!' : score >= 6 ? 'Keep studying!' : 'More revision needed.';
+            document.getElementById('score-message').textContent = message;
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+            window.quizData = { studentName, teacherEmail: document.getElementById('teacher-email').value, score, total: 15, topic: 'Topic 5: Issues & Impact', date: new Date().toLocaleDateString('en-GB') };
+        });
+
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.quizData;
+            doc.setFillColor(239, 68, 68);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.text('Quiz Certificate', 105, 25, { align: 'center' });
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(16);
+            doc.text('This certifies that', 105, 60, { align: 'center' });
+            doc.setFontSize(22);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.studentName, 105, 75, { align: 'center' });
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(14);
+            doc.text('has completed the quiz for', 105, 90, { align: 'center' });
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.topic, 105, 105, { align: 'center' });
+            doc.setFontSize(36);
+            const pct = Math.round((data.score / data.total) * 100);
+            doc.text(`${data.score}/${data.total}`, 105, 135, { align: 'center' });
+            doc.setFontSize(16);
+            doc.text(`(${pct}%)`, 105, 148, { align: 'center' });
+            doc.setFontSize(14);
+            let grade = pct >= 90 ? 'Outstanding' : pct >= 70 ? 'Good' : pct >= 50 ? 'Satisfactory' : 'Needs Improvement';
+            doc.text(`Grade: ${grade}`, 105, 165, { align: 'center' });
+            doc.setFontSize(12);
+            doc.text(`Date: ${data.date}`, 105, 185, { align: 'center' });
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Edexcel GCSE Computer Science Revision', 105, 270, { align: 'center' });
+            doc.save(`Topic5-Quiz-${data.studentName.replace(/\s+/g, '-')}.pdf`);
+        });
+
+        document.getElementById('retry-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-form').reset();
+            document.getElementById('quiz-form').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

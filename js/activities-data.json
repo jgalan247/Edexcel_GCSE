@@ -108,15 +108,15 @@
         { "term": "Data Protection Act", "definition": "Law protecting personal data rights" },
         { "term": "Computer Misuse Act", "definition": "Law against hacking and unauthorized access" },
         { "term": "Copyright", "definition": "Legal protection for creative works" },
-        { "term": "Creative Commons", "definition": "Licenses allowing sharing with conditions" },
-        { "term": "Open Source", "definition": "Software with freely available source code" },
-        { "term": "Proprietary", "definition": "Software with restricted access to code" },
         { "term": "Digital Divide", "definition": "Gap between those with/without tech access" },
         { "term": "E-waste", "definition": "Discarded electronic equipment" },
-        { "term": "Phishing", "definition": "Fraudulent attempt to obtain sensitive data" },
-        { "term": "Privacy", "definition": "Right to control personal information" },
-        { "term": "Artificial Intelligence", "definition": "Systems that simulate human intelligence" },
-        { "term": "Automation", "definition": "Technology performing tasks without humans" }
+        { "term": "Virus", "definition": "Malware that attaches to programs and replicates" },
+        { "term": "Worm", "definition": "Self-replicating malware spreading across networks" },
+        { "term": "Trojan", "definition": "Malware disguised as legitimate software" },
+        { "term": "Ransomware", "definition": "Malware that encrypts files and demands payment" },
+        { "term": "Phishing", "definition": "Fake emails/sites to steal personal information" },
+        { "term": "Social Engineering", "definition": "Manipulating people to reveal information" },
+        { "term": "Encryption", "definition": "Converting data into unreadable code" }
       ]
     },
     "topic6": {
@@ -125,14 +125,14 @@
         { "term": "Constant", "definition": "Value that cannot be changed during execution" },
         { "term": "Array", "definition": "Collection of items stored under one name" },
         { "term": "String", "definition": "Sequence of characters" },
-        { "term": "Integer", "definition": "Whole number without decimal places" },
-        { "term": "Boolean", "definition": "Data type with True or False values" },
-        { "term": "Selection", "definition": "IF statements choosing different paths" },
-        { "term": "Iteration", "definition": "Repeating code using loops" },
         { "term": "Function", "definition": "Reusable block of code that returns a value" },
         { "term": "Procedure", "definition": "Reusable block of code that performs a task" },
-        { "term": "Parameter", "definition": "Value passed into a function" },
-        { "term": "Syntax Error", "definition": "Mistake in the structure of the code" }
+        { "term": "CSV File", "definition": "Text file with comma-separated values" },
+        { "term": "Validation", "definition": "Checking data is reasonable and usable" },
+        { "term": "Authentication", "definition": "Verifying a user's identity" },
+        { "term": "Range Check", "definition": "Ensuring numbers are within acceptable limits" },
+        { "term": "Presence Check", "definition": "Ensuring required data is not empty" },
+        { "term": "Length Check", "definition": "Ensuring data has acceptable number of characters" }
       ]
     }
   },

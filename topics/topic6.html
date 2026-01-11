@@ -1042,13 +1042,37 @@ greet("Alice")  # Hello, Alice</code></pre>
 
             <h3>Parameters and Arguments</h3>
 
+            <!-- Parameters vs Arguments Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-exchange-alt"></i> Parameters vs Arguments - What's the Difference?</h4>
+                <p style="margin: 0 0 0.75rem 0;">Think of a function like a vending machine:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Parameters</strong> = The SLOTS in the machine (labelled "coins" and "selection")</li>
+                    <li><strong>Arguments</strong> = The actual THINGS you put in (your 50p coin and button B3)</li>
+                </ul>
+                <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Parameters</strong> are defined when you CREATE the function. <strong>Arguments</strong> are the actual values you PASS when you CALL it.</p>
+            </div>
+
             <div class="code-example">
                 <pre><code># Parameters are the variables in the function definition
-def add(a, b):    # a and b are parameters
+def add(a, b):    # a and b are PARAMETERS (the slots)
     return a + b
 
 # Arguments are the values passed when calling
-result = add(5, 3)  # 5 and 3 are arguments</code></pre>
+result = add(5, 3)  # 5 and 3 are ARGUMENTS (actual values)</code></pre>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #3b82f6; text-align: center;">
+                    <h4 style="color: #1d4ed8; margin: 0 0 0.5rem 0;">Parameters</h4>
+                    <p style="margin: 0; font-size: 0.9rem;">In the function <strong>definition</strong></p>
+                    <code style="font-size: 0.85rem;">def greet(<strong>name</strong>):</code>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #10b981; text-align: center;">
+                    <h4 style="color: #059669; margin: 0 0 0.5rem 0;">Arguments</h4>
+                    <p style="margin: 0; font-size: 0.9rem;">When <strong>calling</strong> the function</p>
+                    <code style="font-size: 0.85rem;">greet(<strong>"Alice"</strong>)</code>
+                </div>
             </div>
 
             <h3>Local vs Global Variables</h3>
@@ -1090,14 +1114,46 @@ def calculate():
             </div>
 
             <h3>Benefits of Using Subprograms</h3>
-            <ul class="styled-list">
-                <li><strong>Decomposition:</strong> Break complex problems into smaller, manageable parts</li>
-                <li><strong>Reusability:</strong> Write code once, use it many times</li>
-                <li><strong>Readability:</strong> Makes code easier to understand</li>
-                <li><strong>Debugging:</strong> Easier to find and fix errors</li>
-                <li><strong>Maintenance:</strong> Changes only need to be made in one place</li>
-                <li><strong>Teamwork:</strong> Different programmers can work on different functions</li>
-            </ul>
+
+            <!-- Benefits Analogy -->
+            <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #065f46; margin-bottom: 0.5rem;"><i class="fas fa-puzzle-piece"></i> Why Use Subprograms?</h4>
+                <p style="margin: 0;"><strong>Analogy:</strong> Think of subprograms like LEGO blocks. Instead of building everything from scratch each time, you create reusable pieces that snap together. One "wheel" block can be used in many different vehicles!</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-recycle" style="color: #3b82f6;"></i> Reusability</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Write code once, use it many times. No copying and pasting!</p>
+                </div>
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-compress-arrows-alt" style="color: #10b981;"></i> Shorter Programs</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Less code = less memory used, faster to write.</p>
+                </div>
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); border-left: 4px solid #f59e0b;">
+                    <h4><i class="fas fa-search" style="color: #f59e0b;"></i> Easier Debugging</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Test each function separately. Find bugs faster!</p>
+                </div>
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%); border-left: 4px solid #8b5cf6;">
+                    <h4><i class="fas fa-users" style="color: #8b5cf6;"></i> Team Work</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Different people can work on different functions at the same time.</p>
+                </div>
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%); border-left: 4px solid #ec4899;">
+                    <h4><i class="fas fa-wrench" style="color: #ec4899;"></i> Easy Maintenance</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Need to change something? Update it in ONE place, not everywhere!</p>
+                </div>
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%); border-left: 4px solid #14b8a6;">
+                    <h4><i class="fas fa-book-reader" style="color: #14b8a6;"></i> Readability</h4>
+                    <p style="font-size: 0.9rem; margin: 0;"><code>calculateAverage()</code> is easier to understand than 10 lines of maths!</p>
+                </div>
+            </div>
+
+            <!-- Built-in Functions -->
+            <div class="info-box definition">
+                <h4><i class="fas fa-box-open"></i> Built-in Functions</h4>
+                <p>Python comes with ready-made functions you can use immediately - no need to write them yourself!</p>
+                <p style="margin-bottom: 0;"><strong>Examples:</strong> <code>print()</code>, <code>len()</code>, <code>input()</code>, <code>int()</code>, <code>str()</code>, <code>range()</code></p>
+            </div>
 
             <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-subprograms" target="_blank" class="video-link">
                 <i class="fab fa-youtube" style="color: #ff0000;"></i>
@@ -1224,33 +1280,49 @@ print_stars(10)</textarea>
 
             <h3>Test Data</h3>
 
-            <div class="table-container">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Test Type</th>
-                            <th>Purpose</th>
-                            <th>Example (for age 18-65)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Normal</strong></td>
-                            <td>Test with typical expected values</td>
-                            <td>25, 40, 55</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Boundary</strong></td>
-                            <td>Test at the edges of valid ranges</td>
-                            <td>17, 18, 65, 66</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Erroneous</strong></td>
-                            <td>Test with invalid data</td>
-                            <td>-5, "abc", 150</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Test Data Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-vial"></i> Why Test with Different Data?</h4>
+                <p style="margin: 0;">Testing is like checking a door lock works properly. You don't just try ONE key - you test with:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; line-height: 1.6;">
+                    <li>The <strong>correct key</strong> (normal data) - it should open</li>
+                    <li>Keys that are <strong>almost right</strong> (boundary data) - testing the limits</li>
+                    <li>Completely <strong>wrong keys</strong> (erroneous data) - they should NOT open!</li>
+                </ul>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <!-- Normal Data -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Normal Data</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Typical values that SHOULD be accepted.</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>For age 18-65:</strong> Test with 25, 40, 55</p>
+                </div>
+
+                <!-- Boundary Data -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <h4 style="color: #d97706; margin-bottom: 0.5rem;"><i class="fas fa-expand-arrows-alt"></i> Boundary Data</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Values at the EDGES of what's allowed.</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>For age 18-65:</strong> Test with 17, 18, 65, 66</p>
+                </div>
+
+                <!-- Erroneous Data -->
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-times-circle"></i> Erroneous Data</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Invalid data that should be REJECTED.</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>For age 18-65:</strong> Test with -5, "abc", 150</p>
+                </div>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Boundary Testing</h4>
+                <p>For a range like <strong>>= 18 AND <= 65</strong>, always test BOTH sides of each boundary:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>17</strong> (should fail - just below lower limit)</li>
+                    <li><strong>18</strong> (should pass - AT the lower limit)</li>
+                    <li><strong>65</strong> (should pass - AT the upper limit)</li>
+                    <li><strong>66</strong> (should fail - just above upper limit)</li>
+                </ul>
             </div>
 
             <h3>Trace Tables</h3>
@@ -1297,7 +1369,7 @@ while x < 4:
                 <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>That's why we validate!</strong> We check the input BEFORE the program uses it.</p>
             </div>
 
-            <h4>Three Types of Validation Checks</h4>
+            <h4>Four Types of Validation Checks</h4>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
                 <!-- Range Check -->
@@ -1329,6 +1401,16 @@ while x < 4:
                         <code style="color: #d4d4d4; font-size: 0.8rem;"># Must be Yes or No<br>while choice not in ["Y","N"]:<br>&nbsp;&nbsp;choice = input("Y or N?")</code>
                     </div>
                 </div>
+
+                <!-- Length Check -->
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%); border-left: 4px solid #8b5cf6;">
+                    <h4><i class="fas fa-text-width" style="color: #8b5cf6;"></i> 4. Length Check</h4>
+                    <p>Checks that the length of input falls within a specified range.</p>
+                    <p style="font-size: 0.85rem; font-style: italic; color: #6d28d9;"><strong>Analogy:</strong> Like a UK postcode - must be 6-8 characters long!</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="color: #d4d4d4; font-size: 0.8rem;"># Postcode: 6-8 chars<br>while len(postcode) < 6 or len(postcode) > 8:<br>&nbsp;&nbsp;postcode = input("Invalid!")</code>
+                    </div>
+                </div>
             </div>
 
             <div class="code-example">
@@ -1350,7 +1432,13 @@ valid_sizes = ["S", "M", "L", "XL"]
 size = input("Enter size (S/M/L/XL): ").upper()
 while size not in valid_sizes:
     print("Invalid size! Choose S, M, L, or XL")
-    size = input("Enter size: ").upper()</code></pre>
+    size = input("Enter size: ").upper()
+
+# LENGTH CHECK - UK postcode must be 6-8 characters
+postcode = input("Enter UK postcode: ")
+while len(postcode) < 6 or len(postcode) > 8:
+    print("Invalid! Postcode must be 6-8 characters")
+    postcode = input("Enter UK postcode: ")</code></pre>
             </div>
 
             <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
@@ -1361,22 +1449,88 @@ while size not in valid_sizes:
 
             <h3>File Handling</h3>
 
+            <!-- Why Files Matter -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-save"></i> Why Do We Need Files?</h4>
+                <p style="margin: 0 0 0.5rem 0;">Think about it: when your program ends, all your variables disappear! Files let you <strong>save data permanently</strong>.</p>
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Analogy:</strong> Variables are like writing on a whiteboard (erased when you leave). Files are like writing in a notebook (kept forever)!</p>
+            </div>
+
+            <!-- File Modes Table -->
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>What it Does</th>
+                            <th>Warning!</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>"r"</code></td>
+                            <td><strong>Read</strong> - Opens file to read data from it</td>
+                            <td>File must exist or you get an error</td>
+                        </tr>
+                        <tr>
+                            <td><code>"w"</code></td>
+                            <td><strong>Write</strong> - Opens file to write data to it</td>
+                            <td style="color: #dc2626;"><strong>DANGER: Overwrites existing file!</strong></td>
+                        </tr>
+                        <tr>
+                            <td><code>"a"</code></td>
+                            <td><strong>Append</strong> - Adds data to end of file</td>
+                            <td>Keeps existing data safe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box warning" style="background: rgba(239, 68, 68, 0.1); border-left-color: #ef4444;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Common Mistake: Using "w" Mode!</h4>
+                <p>If you open an EXISTING file with <code>"w"</code> mode, <strong>all the old data is deleted!</strong> Use <code>"a"</code> (append) if you want to add data without losing what's already there.</p>
+            </div>
+
             <div class="code-example">
-                <pre><code># Writing to a file
+                <h4>File Handling Examples</h4>
+                <pre><code># Writing to a file (creates new or OVERWRITES existing!)
 file = open("data.txt", "w")
 file.write("Hello World\n")
 file.close()
 
-# Reading from a file
+# Reading entire file
 file = open("data.txt", "r")
 content = file.read()
 file.close()
+print(content)
 
 # Reading line by line
 file = open("data.txt", "r")
 for line in file:
     print(line)
+file.close()
+
+# APPENDING - adds to end without deleting
+file = open("data.txt", "a")
+file.write("New line added!\n")
+file.close()
+
+# Saving an array to a file (with commas)
+scores = [85, 92, 78, 95]
+file = open("scores.txt", "w")
+for score in scores:
+    file.write(str(score) + ",")
+file.close()
+
+# Reading back into an array
+file = open("scores.txt", "r")
+data = file.read().split(",")  # Split by comma
 file.close()</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Remember: Always Close Your Files!</h4>
+                <p>Data isn't actually saved until you call <code>file.close()</code>. Forgetting to close can cause data loss or errors!</p>
             </div>
 
             <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-testing" target="_blank" class="video-link">

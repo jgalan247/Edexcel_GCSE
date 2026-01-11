@@ -1249,33 +1249,140 @@ print_stars(10)</textarea>
 
             <h3>Types of Errors</h3>
 
+            <!-- Error Types Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-bug"></i> Three Types of Bugs (Errors)</h4>
+                <p style="margin: 0;">Think of writing code like writing a recipe. There are three ways it can go wrong:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Syntax error:</strong> Like spelling "teaspoon" wrong - the recipe can't be read!</li>
+                    <li><strong>Logic error:</strong> Like saying "add 10 cups of salt" instead of 1 - it runs but tastes terrible!</li>
+                    <li><strong>Runtime error:</strong> Like saying "divide the mixture into zero portions" - impossible to do!</li>
+                </ul>
+            </div>
+
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
                             <th>Error Type</th>
+                            <th>When Detected</th>
                             <th>Description</th>
                             <th>Example</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Syntax Error</strong></td>
-                            <td>Code breaks grammar rules; program won't run</td>
+                            <td><strong style="color: #ef4444;">Syntax Error</strong></td>
+                            <td>Before running</td>
+                            <td>Code breaks grammar rules; program won't even start</td>
                             <td><code>print("Hello</code> - missing quote</td>
                         </tr>
                         <tr>
-                            <td><strong>Logic Error</strong></td>
-                            <td>Code runs but produces wrong results</td>
-                            <td><code>average = a + b / 2</code> - should be <code>(a+b)/2</code></td>
+                            <td><strong style="color: #f59e0b;">Logic Error</strong></td>
+                            <td>After running</td>
+                            <td>Code runs successfully but produces WRONG results</td>
+                            <td><code>average = a + b / 2</code> (BIDMAS error!)</td>
                         </tr>
                         <tr>
-                            <td><strong>Runtime Error</strong></td>
-                            <td>Error occurs while program is running</td>
+                            <td><strong style="color: #8b5cf6;">Runtime Error</strong></td>
+                            <td>While running</td>
+                            <td>Program crashes during execution</td>
                             <td>Division by zero, file not found</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Syntax Errors Detail -->
+            <div style="background: rgba(239, 68, 68, 0.1); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #ef4444;">
+                <h4 style="color: #dc2626; margin-bottom: 0.75rem;"><i class="fas fa-times-circle"></i> Syntax Errors - "The Computer Can't Read This!"</h4>
+                <p style="margin: 0 0 0.5rem 0;">Syntax errors break Python's grammar rules. The program won't even start - Python tells you immediately!</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 4px;">
+                        <p style="color: #ef4444; margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Missing bracket:</strong></p>
+                        <code style="color: #d4d4d4;">print("Hello"</code>
+                    </div>
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 4px;">
+                        <p style="color: #ef4444; margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Missing colon:</strong></p>
+                        <code style="color: #d4d4d4;">if age > 18</code>
+                    </div>
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 4px;">
+                        <p style="color: #ef4444; margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Missing quote:</strong></p>
+                        <code style="color: #d4d4d4;">name = "Bob</code>
+                    </div>
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 4px;">
+                        <p style="color: #ef4444; margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Typo in keyword:</strong></p>
+                        <code style="color: #d4d4d4;">pritn("Hello")</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logic Errors Detail -->
+            <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #f59e0b;">
+                <h4 style="color: #d97706; margin-bottom: 0.75rem;"><i class="fas fa-calculator"></i> Logic Errors - "It Runs But It's Wrong!"</h4>
+                <p style="margin: 0 0 0.75rem 0;">The sneakiest errors! Your code runs perfectly but gives the wrong answer. Python can't detect these - you have to find them yourself.</p>
+
+                <!-- BIDMAS Example -->
+                <div style="background: rgba(255,255,255,0.6); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <h5 style="color: #92400e; margin: 0 0 0.5rem 0;"><i class="fas fa-sort-numeric-down"></i> Classic BIDMAS Error</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Remember BIDMAS (Brackets, Indices, Division, Multiplication, Addition, Subtraction)?</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="background: #fee2e2; padding: 0.75rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #dc2626;"><strong>WRONG:</strong></p>
+                            <code style="font-size: 0.9rem;">average = a + b / 2</code>
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem;">If a=10, b=20: 10 + 20/2 = 10 + 10 = <strong>20</strong></p>
+                        </div>
+                        <div style="background: #dcfce7; padding: 0.75rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #16a34a;"><strong>CORRECT:</strong></p>
+                            <code style="font-size: 0.9rem;">average = (a + b) / 2</code>
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem;">If a=10, b=20: (10 + 20)/2 = 30/2 = <strong>15</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infinite Loop Example -->
+                <div style="background: rgba(255,255,255,0.6); padding: 1rem; border-radius: 8px;">
+                    <h5 style="color: #92400e; margin: 0 0 0.5rem 0;"><i class="fas fa-sync-alt"></i> Infinite Loop - The Loop That Never Ends!</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Like a hamster wheel that won't stop - the condition never becomes False!</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="background: #fee2e2; padding: 0.75rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #dc2626;"><strong>INFINITE LOOP:</strong></p>
+                            <code style="font-size: 0.85rem;">x = 1<br>while x < 10:<br>&nbsp;&nbsp;print(x)<br>&nbsp;&nbsp;# Forgot x = x + 1!</code>
+                        </div>
+                        <div style="background: #dcfce7; padding: 0.75rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #16a34a;"><strong>FIXED:</strong></p>
+                            <code style="font-size: 0.85rem;">x = 1<br>while x < 10:<br>&nbsp;&nbsp;print(x)<br>&nbsp;&nbsp;x = x + 1</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Runtime Errors Detail -->
+            <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #8b5cf6;">
+                <h4 style="color: #7c3aed; margin-bottom: 0.75rem;"><i class="fas fa-bomb"></i> Runtime Errors - "It Crashed!"</h4>
+                <p style="margin: 0 0 0.75rem 0;">The program starts fine, but something impossible happens while running and it crashes.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 4px;">
+                        <p style="margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Division by zero:</strong></p>
+                        <code style="font-size: 0.85rem;">result = 10 / 0</code>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 4px;">
+                        <p style="margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>File not found:</strong></p>
+                        <code style="font-size: 0.85rem;">open("missing.txt")</code>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 4px;">
+                        <p style="margin: 0 0 0.25rem 0; font-size: 0.85rem;"><strong>Index out of range:</strong></p>
+                        <code style="font-size: 0.85rem;">names[100]</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real World Example: Ariane 5 -->
+            <div style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; color: white;">
+                <h4 style="color: #f59e0b; margin-bottom: 0.75rem;"><i class="fas fa-rocket"></i> Real World Disaster: Ariane 5 Rocket (1996)</h4>
+                <p style="margin: 0 0 0.75rem 0; line-height: 1.6;">On June 4, 1996, the Ariane 5 rocket exploded just 37 seconds after launch, destroying $370 million worth of satellites!</p>
+                <p style="margin: 0 0 0.75rem 0; line-height: 1.6;"><strong style="color: #ef4444;">The cause?</strong> A software bug tried to store a number too big for its variable (like trying to fit an elephant in a shoebox). This caused a runtime error that crashed the guidance system.</p>
+                <p style="margin: 0; font-size: 0.9rem; background: rgba(245, 158, 11, 0.2); padding: 0.5rem; border-radius: 4px;"><strong>Lesson:</strong> Even one small bug can have HUGE consequences. That's why testing is so important!</p>
             </div>
 
             <h3>Test Data</h3>
@@ -1326,9 +1433,34 @@ print_stars(10)</textarea>
             </div>
 
             <h3>Trace Tables</h3>
-            <p>Used to track variable values through code execution:</p>
+
+            <!-- Trace Table Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-clipboard-list"></i> What is a Trace Table?</h4>
+                <p style="margin: 0 0 0.5rem 0;">A trace table is like being a <strong>detective following footprints</strong>. You track what happens to each variable at every step of the program.</p>
+                <p style="margin: 0; font-size: 0.9rem; font-style: italic;">Think of it as "playing computer" - you BE the computer and write down what happens in each line!</p>
+            </div>
+
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-question-circle"></i> Why Use Trace Tables?</h4>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Find logic errors:</strong> See exactly where your code goes wrong</li>
+                    <li><strong>Understand loops:</strong> Track how many times a loop runs</li>
+                    <li><strong>Debug code:</strong> Figure out why you're getting wrong answers</li>
+                    <li><strong>Exam requirement:</strong> You WILL be asked to complete trace tables!</li>
+                </ul>
+            </div>
+
+            <h4>How to Create a Trace Table</h4>
+            <ol style="line-height: 1.8;">
+                <li><strong>Create columns</strong> for each variable and any condition being tested</li>
+                <li><strong>Add a row</strong> each time a value changes</li>
+                <li><strong>Work through line by line</strong> - execute each line in order</li>
+                <li><strong>Update values</strong> - only write the NEW value when it changes</li>
+            </ol>
 
             <div class="code-example">
+                <h4>Example: Tracing a While Loop</h4>
                 <pre><code># Code to trace:
 x = 1
 while x < 4:
@@ -1337,6 +1469,45 @@ while x < 4:
             </div>
 
             <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>x</th>
+                            <th>x < 4</th>
+                            <th>y</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>x = 1</td><td style="background: #dcfce7;">1</td><td>-</td><td>-</td><td>-</td></tr>
+                        <tr><td>while x < 4</td><td>1</td><td style="background: #dcfce7;">True ✓</td><td>-</td><td>-</td></tr>
+                        <tr><td>y = x * 2</td><td>1</td><td>-</td><td style="background: #dcfce7;">2</td><td>-</td></tr>
+                        <tr><td>x = x + 1</td><td style="background: #dcfce7;">2</td><td>-</td><td>2</td><td>-</td></tr>
+                        <tr><td>while x < 4</td><td>2</td><td style="background: #dcfce7;">True ✓</td><td>2</td><td>-</td></tr>
+                        <tr><td>y = x * 2</td><td>2</td><td>-</td><td style="background: #dcfce7;">4</td><td>-</td></tr>
+                        <tr><td>x = x + 1</td><td style="background: #dcfce7;">3</td><td>-</td><td>4</td><td>-</td></tr>
+                        <tr><td>while x < 4</td><td>3</td><td style="background: #dcfce7;">True ✓</td><td>4</td><td>-</td></tr>
+                        <tr><td>y = x * 2</td><td>3</td><td>-</td><td style="background: #dcfce7;">6</td><td>-</td></tr>
+                        <tr><td>x = x + 1</td><td style="background: #dcfce7;">4</td><td>-</td><td>6</td><td>-</td></tr>
+                        <tr><td>while x < 4</td><td>4</td><td style="background: #fee2e2;">False ✗</td><td>6</td><td>Loop ends</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Trace Table Shortcuts</h4>
+                <p>In exams, you don't need to show EVERY line. Just show key moments:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>Initial values (start of program)</li>
+                    <li>End of each loop iteration</li>
+                    <li>Final values (when loop ends)</li>
+                </ul>
+            </div>
+
+            <!-- Simplified trace table for exam -->
+            <div class="table-container">
+                <p style="margin-bottom: 0.5rem;"><strong>Simplified version (exam-style):</strong></p>
                 <table class="styled-table">
                     <thead>
                         <tr>
@@ -1353,6 +1524,123 @@ while x < 4:
                         <tr><td>3</td><td>4</td><td>False</td><td>6</td></tr>
                     </tbody>
                 </table>
+            </div>
+
+            <h3>Using an IDE to Find Errors</h3>
+
+            <!-- What is an IDE -->
+            <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #6366f1;">
+                <h4 style="color: #4338ca; margin-bottom: 0.5rem;"><i class="fas fa-laptop-code"></i> What is an IDE?</h4>
+                <p style="margin: 0 0 0.5rem 0;">An <strong>IDE (Integrated Development Environment)</strong> is like a Swiss Army knife for programmers - it has tools to write, run, test, and debug code all in one place!</p>
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Examples:</strong> IDLE (comes with Python), Visual Studio Code, PyCharm, Thonny</p>
+            </div>
+
+            <h4>IDE Features That Help Find Errors</h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- Syntax Highlighting -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h5 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-highlighter"></i> Syntax Highlighting</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">The IDE colours different parts of your code:</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem;">
+                        <span style="color: #c586c0;">if</span> <span style="color: #9cdcfe;">age</span> <span style="color: #d4d4d4;">>=</span> <span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">:</span><br>
+                        &nbsp;&nbsp;<span style="color: #dcdcaa;">print</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Adult"</span><span style="color: #d4d4d4;">)</span>
+                    </div>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #1d4ed8;">Keywords (purple), variables (blue), numbers (green), strings (orange)</p>
+                </div>
+
+                <!-- Error Messages -->
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #ef4444;">
+                    <h5 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-exclamation-circle"></i> Error Messages</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">The IDE tells you EXACTLY what went wrong:</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem;">
+                        <span style="color: #ef4444;">SyntaxError: EOL while scanning string literal</span><br>
+                        <span style="color: #d4d4d4;">Line 5: name = "Bob</span>
+                    </div>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #dc2626;">Shows the error type, description, and LINE NUMBER!</p>
+                </div>
+
+                <!-- Auto-complete -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h5 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-magic"></i> Auto-complete</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Start typing and the IDE suggests completions:</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.6;">
+                        <li>Type <code>pri</code> → suggests <code>print()</code></li>
+                        <li>Prevents spelling mistakes</li>
+                        <li>Shows function parameters</li>
+                    </ul>
+                </div>
+
+                <!-- Debugger -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <h5 style="color: #d97706; margin-bottom: 0.5rem;"><i class="fas fa-bug"></i> Debugger</h5>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Step through your code line by line:</p>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.85rem; line-height: 1.6;">
+                        <li><strong>Breakpoints:</strong> Pause at specific lines</li>
+                        <li><strong>Step through:</strong> Run one line at a time</li>
+                        <li><strong>Watch variables:</strong> See values change live</li>
+                    </ul>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #d97706;">Like a trace table, but the IDE does it for you!</p>
+                </div>
+            </div>
+
+            <!-- Common Error Messages -->
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #fca5a5;">
+                <h4 style="color: #dc2626; margin-bottom: 0.75rem;"><i class="fas fa-list"></i> Common Python Error Messages (and what they mean!)</h4>
+                <div class="table-container">
+                    <table class="styled-table" style="margin: 0;">
+                        <thead>
+                            <tr>
+                                <th>Error Message</th>
+                                <th>What It Means</th>
+                                <th>How to Fix It</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code style="color: #ef4444;">SyntaxError: invalid syntax</code></td>
+                                <td>You broke Python's grammar rules</td>
+                                <td>Check for missing colons, brackets, quotes</td>
+                            </tr>
+                            <tr>
+                                <td><code style="color: #ef4444;">NameError: name 'x' is not defined</code></td>
+                                <td>You're using a variable that doesn't exist</td>
+                                <td>Check spelling! Did you create the variable first?</td>
+                            </tr>
+                            <tr>
+                                <td><code style="color: #ef4444;">TypeError: cannot concatenate str and int</code></td>
+                                <td>You're mixing text and numbers wrongly</td>
+                                <td>Use <code>str(number)</code> to convert numbers to text</td>
+                            </tr>
+                            <tr>
+                                <td><code style="color: #ef4444;">IndentationError</code></td>
+                                <td>Your code isn't lined up properly</td>
+                                <td>Check your tabs/spaces - be consistent!</td>
+                            </tr>
+                            <tr>
+                                <td><code style="color: #ef4444;">ZeroDivisionError</code></td>
+                                <td>You tried to divide by zero</td>
+                                <td>Check the divisor isn't zero before dividing</td>
+                            </tr>
+                            <tr>
+                                <td><code style="color: #ef4444;">IndexError: list index out of range</code></td>
+                                <td>You tried to access an item that doesn't exist</td>
+                                <td>Remember arrays start at 0! Check the list length</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Top Tip: READ the Error Message!</h4>
+                <p>Python tries to help you! The error message tells you:</p>
+                <ol style="margin: 0.5rem 0 0 1rem; line-height: 1.6;">
+                    <li><strong>What type</strong> of error it is (SyntaxError, TypeError, etc.)</li>
+                    <li><strong>Which line</strong> the error is on</li>
+                    <li><strong>What went wrong</strong> (description)</li>
+                </ol>
+                <p style="margin-top: 0.5rem;">Don't panic when you see red text - it's Python trying to help you debug!</p>
             </div>
 
             <h3>Input Validation</h3>
@@ -1533,6 +1821,112 @@ file.close()</code></pre>
                 <p>Data isn't actually saved until you call <code>file.close()</code>. Forgetting to close can cause data loss or errors!</p>
             </div>
 
+            <h3>Test Plans</h3>
+
+            <!-- What is a Test Plan -->
+            <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-clipboard-check"></i> What is a Test Plan?</h4>
+                <p style="margin: 0 0 0.5rem 0;">A test plan is like a <strong>checklist before launch</strong>. Before NASA sends a rocket into space, they don't just hope it works - they test EVERYTHING and write down the results!</p>
+                <p style="margin: 0; font-size: 0.9rem;">A test plan documents: what you're testing, what data you'll use, what SHOULD happen, and what ACTUALLY happened.</p>
+            </div>
+
+            <h4>Test Plan Structure</h4>
+            <p>A good test plan has these columns:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Test #</th>
+                            <th>Description</th>
+                            <th>Test Data</th>
+                            <th>Data Type</th>
+                            <th>Expected Result</th>
+                            <th>Actual Result</th>
+                            <th>Pass/Fail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Check valid age accepted</td>
+                            <td>25</td>
+                            <td style="color: #16a34a;">Normal</td>
+                            <td>"Access granted"</td>
+                            <td>"Access granted"</td>
+                            <td style="color: #16a34a; font-weight: bold;">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Check lower boundary</td>
+                            <td>18</td>
+                            <td style="color: #f59e0b;">Boundary</td>
+                            <td>"Access granted"</td>
+                            <td>"Access granted"</td>
+                            <td style="color: #16a34a; font-weight: bold;">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Check below boundary rejected</td>
+                            <td>17</td>
+                            <td style="color: #f59e0b;">Boundary</td>
+                            <td>"Access denied"</td>
+                            <td>"Access denied"</td>
+                            <td style="color: #16a34a; font-weight: bold;">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Check text rejected</td>
+                            <td>"abc"</td>
+                            <td style="color: #ef4444;">Erroneous</td>
+                            <td>Error message</td>
+                            <td>Program crashed!</td>
+                            <td style="color: #ef4444; font-weight: bold;">FAIL</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Check negative rejected</td>
+                            <td>-5</td>
+                            <td style="color: #ef4444;">Erroneous</td>
+                            <td>"Access denied"</td>
+                            <td>"Access denied"</td>
+                            <td style="color: #16a34a; font-weight: bold;">PASS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <!-- Expected Result -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    <h5 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-bullseye"></i> Expected Result</h5>
+                    <p style="margin: 0; font-size: 0.9rem;">What SHOULD happen if the program works correctly. You write this BEFORE testing!</p>
+                </div>
+
+                <!-- Actual Result -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <h5 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-eye"></i> Actual Result</h5>
+                    <p style="margin: 0; font-size: 0.9rem;">What ACTUALLY happened when you ran the test. You write this AFTER testing!</p>
+                </div>
+
+                <!-- Pass or Fail -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                    <h5 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-check-double"></i> Pass or Fail?</h5>
+                    <p style="margin: 0; font-size: 0.9rem;">If Expected = Actual, it's a <strong style="color: #16a34a;">PASS</strong>. If they're different, it's a <strong style="color: #ef4444;">FAIL</strong> (bug found!).</p>
+                </div>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Test Plan Must-Haves</h4>
+                <p>In the exam, make sure your test plan includes:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>At least one <strong>normal</strong> test (typical valid data)</li>
+                    <li>At least one <strong>boundary</strong> test (values at the limits)</li>
+                    <li>At least one <strong>erroneous</strong> test (invalid data that should be rejected)</li>
+                    <li><strong>Expected results</strong> written BEFORE you run the test</li>
+                </ul>
+            </div>
+
             <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-6-testing" target="_blank" class="video-link">
                 <i class="fab fa-youtube" style="color: #ff0000;"></i>
                 <div class="video-link-content">
@@ -1604,6 +1998,134 @@ while a > b:
                         <tr><td>4</td><td>4</td><td>False</td></tr>
                     </table>
                 </div>
+            </div>
+
+            <h3>Evaluating Programs</h3>
+
+            <!-- What is Evaluation -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-star-half-alt"></i> What is Program Evaluation?</h4>
+                <p style="margin: 0 0 0.5rem 0;">Evaluation is like being a <strong>judge on a talent show</strong>. You look at the program and ask: "Is it any good? Does it do what it's supposed to? Could it be better?"</p>
+                <p style="margin: 0; font-size: 0.9rem;">A program can work correctly but still be poor quality (slow, hard to read, or difficult to use).</p>
+            </div>
+
+            <h4>The 5 Criteria for Evaluating Programs</h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- 1. Fitness for Purpose -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: #3b82f6; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-weight: bold;">1</span>
+                        <h5 style="color: #1d4ed8; margin: 0;"><i class="fas fa-bullseye"></i> Fitness for Purpose</h5>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>Does it do what it was meant to do?</strong></p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #1d4ed8;">Check: Does it meet ALL the original requirements? Does it produce the correct outputs?</p>
+                </div>
+
+                <!-- 2. Usability -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-weight: bold;">2</span>
+                        <h5 style="color: #059669; margin: 0;"><i class="fas fa-user-friends"></i> Usability</h5>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>Is it easy to use?</strong></p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #059669;">Check: Are instructions clear? Is the interface intuitive? Can a beginner figure it out?</p>
+                </div>
+
+                <!-- 3. Validation -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: #f59e0b; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-weight: bold;">3</span>
+                        <h5 style="color: #d97706; margin: 0;"><i class="fas fa-shield-alt"></i> Validation (Robustness)</h5>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>Does it handle bad input without crashing?</strong></p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #d97706;">Check: What happens if you type letters instead of numbers? Does it give helpful error messages?</p>
+                </div>
+
+                <!-- 4. Efficiency -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: #8b5cf6; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-weight: bold;">4</span>
+                        <h5 style="color: #7c3aed; margin: 0;"><i class="fas fa-tachometer-alt"></i> Efficiency</h5>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>Does it run quickly without wasting resources?</strong></p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #7c3aed;">Check: Is the code concise? Are there unnecessary loops? Does it use memory wisely?</p>
+                </div>
+
+                <!-- 5. Readability -->
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #ef4444;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: #ef4444; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-weight: bold;">5</span>
+                        <h5 style="color: #dc2626; margin: 0;"><i class="fas fa-book-reader"></i> Readability (Maintainability)</h5>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>Can other programmers understand the code?</strong></p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #dc2626;">Check: Are variable names meaningful? Are there comments? Is it properly indented?</p>
+                </div>
+            </div>
+
+            <!-- Memory Aid -->
+            <div style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; color: white;">
+                <h4 style="color: #f59e0b; margin-bottom: 0.75rem;"><i class="fas fa-brain"></i> Memory Trick: "FIVER"</h4>
+                <p style="margin: 0; line-height: 1.8; font-size: 1rem;">
+                    <strong style="color: #3b82f6;">F</strong>itness for purpose<br>
+                    <strong style="color: #10b981;">I</strong>nterface usability<br>
+                    <strong style="color: #f59e0b;">V</strong>alidation (robustness)<br>
+                    <strong style="color: #8b5cf6;">E</strong>fficiency<br>
+                    <strong style="color: #ef4444;">R</strong>eadability
+                </p>
+                <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem; background: rgba(245, 158, 11, 0.2); padding: 0.5rem; border-radius: 4px;">Remember: A good program should score a FIVER on all five criteria!</p>
+            </div>
+
+            <!-- Example Evaluation -->
+            <div class="code-example">
+                <h4>Example: Evaluating a Calculator Program</h4>
+                <div class="table-container">
+                    <table class="styled-table" style="margin: 0.5rem 0;">
+                        <thead>
+                            <tr>
+                                <th>Criteria</th>
+                                <th>Question to Ask</th>
+                                <th>Example Response</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fitness</strong></td>
+                                <td>Does it add, subtract, multiply, divide?</td>
+                                <td>Yes, all 4 operations work correctly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Usability</strong></td>
+                                <td>Are prompts clear?</td>
+                                <td>Prompts are clear: "Enter first number:"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Validation</strong></td>
+                                <td>What if user types "abc"?</td>
+                                <td>Program crashes - needs input validation!</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Efficiency</strong></td>
+                                <td>Does it run fast?</td>
+                                <td>Yes, calculations are instant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Readability</strong></td>
+                                <td>Can another programmer follow it?</td>
+                                <td>Variables are well named, has comments</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Evaluation Questions</h4>
+                <p>In evaluation questions, don't just say "yes" or "no". Give <strong>specific examples</strong>:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>Bad:</strong> "The program is easy to use" (too vague)</li>
+                    <li><strong>Good:</strong> "The program is easy to use because it displays clear prompts like 'Enter your age:' and gives helpful error messages when invalid data is entered"</li>
+                </ul>
             </div>
         </section>
 

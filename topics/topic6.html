@@ -169,6 +169,10 @@
                     <i class="fas fa-bug"></i>
                     Testing
                 </a>
+                <a href="#readability" class="subtopic-tab">
+                    <i class="fas fa-code"></i>
+                    Readability
+                </a>
                 <a href="#quiz" class="subtopic-tab">
                     <i class="fas fa-clipboard-check"></i>
                     Quiz
@@ -185,6 +189,17 @@
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Key Definition</h4>
                 <p><strong>Programming</strong> is the process of writing instructions (code) that a computer can execute to solve a problem or perform a task. Programs are written using programming languages.</p>
+            </div>
+
+            <!-- Algorithm vs Program - Simple Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Algorithm vs Program - What's the Difference?</h4>
+                <p style="margin: 0 0 0.75rem 0;">Think of it like a recipe:</p>
+                <ul style="margin: 0 0 0.75rem 1.5rem;">
+                    <li><strong>Algorithm</strong> = The recipe written on paper (the plan in plain English or pseudocode)</li>
+                    <li><strong>Program</strong> = Actually cooking the meal following the recipe (the algorithm converted into code a computer can run)</li>
+                </ul>
+                <p style="margin: 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">A well-written algorithm is like a clear recipe - it's easy to follow and should work every time! A program is when you actually make the computer "cook" by running the code.</p>
             </div>
 
             <div class="info-box warning">
@@ -357,6 +372,19 @@ print("Your score is:", score)
         <section id="data-types" class="content-section">
             <h2>Data Types and Structures</h2>
 
+            <!-- Simple Analogy for Data Types -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Why Do Data Types Matter?</h4>
+                <p style="margin: 0 0 0.75rem 0;">Think of data types like different types of containers:</p>
+                <ul style="margin: 0 0 0.75rem 1.5rem;">
+                    <li><strong>Integer</strong> = A box that only holds whole items (like marbles: 1, 2, 3...)</li>
+                    <li><strong>Float</strong> = A measuring jug that can hold precise amounts (like 2.5 litres)</li>
+                    <li><strong>String</strong> = A label maker that stores text (like "Hello")</li>
+                    <li><strong>Boolean</strong> = A light switch - only ON (True) or OFF (False)</li>
+                </ul>
+                <p style="margin: 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Why it matters:</strong> If you try to put water (2.5) in a marble box (integer), it becomes 2 - you lose the .5! The computer needs to know what type of data it's storing.</p>
+            </div>
+
             <h3>Basic Data Types</h3>
 
             <div class="table-container">
@@ -398,7 +426,7 @@ print("Your score is:", score)
                 </table>
             </div>
 
-            <h3>Type Casting</h3>
+            <h3>Type Casting (Converting Data Types)</h3>
             <p>Converting between data types:</p>
 
             <div class="code-example">
@@ -413,6 +441,30 @@ text = str(42)
 
 # Integer to Float
 decimal = float(10)  # becomes 10.0</code></pre>
+            </div>
+
+            <!-- Type Coercion Explanation -->
+            <div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #9333ea;">
+                <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-magic"></i> Type Coercion - Automatic Conversion</h4>
+                <p style="margin: 0 0 0.75rem 0;">Sometimes Python automatically converts data types for you. This is called <strong>type coercion</strong>.</p>
+                <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 6px; margin: 0.5rem 0;">
+                    <code style="color: #d4d4d4;">x = 1      # integer<br>y = 2.5    # float<br>z = x + y  # z becomes 3.5 (float!)</code>
+                </div>
+                <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem;"><strong>The rule:</strong> When you mix an integer with a float, Python automatically converts the result to a float. It's like mixing whole apples with apple slices - you end up with slices!</p>
+            </div>
+
+            <div class="info-box warning" style="background: rgba(239, 68, 68, 0.1); border-left-color: #ef4444;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Common Mistake: input() Always Returns a String!</h4>
+                <p>When you use <code>input()</code>, Python always gives you a string - even if the user types a number!</p>
+                <div class="code-example" style="margin: 0.5rem 0;">
+                    <pre><code># WRONG - will crash or give unexpected results!
+age = input("Enter age: ")  # age is a STRING like "15"
+new_age = age + 1  # ERROR! Can't add string + number
+
+# CORRECT - convert to integer first
+age = int(input("Enter age: "))  # age is now INTEGER 15
+new_age = age + 1  # Works! new_age is 16</code></pre>
+                </div>
             </div>
 
             <h3>Arrays (Lists)</h3>
@@ -600,6 +652,17 @@ print("Average:", total / len(scores))</textarea>
             <h3>Selection (IF Statements)</h3>
             <p>Making decisions in code:</p>
 
+            <!-- Selection Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Selection is Just Decision-Making!</h4>
+                <p style="margin: 0 0 0.5rem 0;">You use selection in real life all the time:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>IF</strong> it's raining <strong>THEN</strong> take an umbrella</li>
+                    <li><strong>IF</strong> I have money <strong>THEN</strong> buy lunch <strong>ELSE</strong> bring packed lunch</li>
+                    <li><strong>IF</strong> score >= 90 <strong>THEN</strong> "A" <strong>ELIF</strong> score >= 80 <strong>THEN</strong> "B" <strong>ELSE</strong> "C"</li>
+                </ul>
+            </div>
+
             <div class="code-example">
                 <pre><code># Simple IF
 if age >= 18:
@@ -624,9 +687,27 @@ else:
 
             <h3>Iteration (Loops)</h3>
 
+            <!-- Loops Analogy -->
+            <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #065f46; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb"></i> Two Types of Loops - Know the Difference!</h4>
+                <p style="margin: 0 0 0.75rem 0;">Loops repeat instructions. There are two types:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-weight: bold; color: #3b82f6;">Definite (FOR loop)</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem;">You KNOW how many times to repeat.</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; font-style: italic;">"Do 10 star jumps" - you know it's exactly 10!</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px;">
+                        <p style="margin: 0; font-weight: bold; color: #10b981;">Indefinite (WHILE loop)</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem;">You DON'T know - repeat until something happens.</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; font-style: italic;">"Keep guessing until you're right" - could be 1 guess or 100!</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="comparison-grid">
                 <div class="comparison-card">
-                    <h4><i class="fas fa-redo"></i> FOR Loop (Count-controlled)</h4>
+                    <h4><i class="fas fa-redo"></i> FOR Loop (Definite/Count-controlled)</h4>
                     <p>Repeats a fixed number of times:</p>
                     <pre><code># Print 1 to 5
 for i in range(1, 6):
@@ -758,6 +839,91 @@ while number <= 100:
             <div class="challenge-box">
                 <h4><i class="fas fa-trophy"></i> Challenge 3</h4>
                 <p>Write a program that prints the multiplication table for the number 7 (7x1 through 7x12). Use a FOR loop!</p>
+            </div>
+
+            <!-- Random Numbers Section -->
+            <h3 style="margin-top: 2.5rem;">Random Numbers</h3>
+            <p>Random numbers are used in games, simulations, and anywhere you need unpredictable values.</p>
+
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-dice"></i> When Do You Need Random Numbers?</h4>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li>Rolling dice in a game (random number 1-6)</li>
+                    <li>Shuffling a deck of cards</li>
+                    <li>Generating a random password</li>
+                    <li>Making a "guess the number" game</li>
+                    <li>Choosing a random winner from a list</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <pre><code># First, import the random module
+import random
+
+# Generate a random integer between 1 and 10
+number = random.randint(1, 10)
+print("Random number:", number)
+
+# Generate a random integer between 1 and 6 (like a dice)
+dice = random.randint(1, 6)
+print("You rolled:", dice)
+
+# Pick a random item from a list
+colours = ["red", "blue", "green", "yellow"]
+chosen = random.choice(colours)
+print("Random colour:", chosen)</code></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Don't Forget to Import!</h4>
+                <p>You must write <code>import random</code> at the TOP of your program before you can use any random functions. This tells Python to load the random number tools.</p>
+            </div>
+
+            <h4>Try It Yourself - Random Numbers</h4>
+            <p>Create a simple dice roller:</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Random Numbers</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('editorRandom', 'outputRandom')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('outputRandom')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="editorRandom"># Random Numbers - Dice Game
+import random
+
+print("=== DICE ROLLER ===")
+print()
+
+# Roll two dice
+dice1 = random.randint(1, 6)
+dice2 = random.randint(1, 6)
+
+print("Dice 1:", dice1)
+print("Dice 2:", dice2)
+print("Total:", dice1 + dice2)
+
+# Check for doubles
+if dice1 == dice2:
+    print("DOUBLES! Roll again!")
+
+# Guess the number game
+print()
+print("=== GUESS THE NUMBER ===")
+secret = random.randint(1, 10)
+print("I'm thinking of a number between 1-10...")
+print("(The secret number is:", secret, ")")
+
+# Try changing the range to make it harder!</textarea>
+                </div>
+                <div class="code-output" id="outputRandom">Click "Run Code" to see output... Run multiple times to see different results!</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge: Coin Flip</h4>
+                <p>Create a program that simulates flipping a coin 10 times and counts how many heads and tails you get. Hint: Use <code>random.choice(["Heads", "Tails"])</code></p>
             </div>
         </section>
 
@@ -1149,6 +1315,100 @@ while a > b:
                         <tr><td>4</td><td>4</td><td>False</td></tr>
                     </table>
                 </div>
+            </div>
+        </section>
+
+        <!-- ==================== CODE READABILITY ==================== -->
+        <section id="readability" class="content-section">
+            <h2>Making Code Easy to Read</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Concept</h4>
+                <p><strong>Code readability</strong> means writing code that is easy for humans to understand. This is important because programmers spend more time reading code than writing it!</p>
+            </div>
+
+            <!-- Why Readability Matters -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-users"></i> Why Does Readability Matter?</h4>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.8;">
+                    <li><strong>You will forget!</strong> Come back to your code in a month - will you remember what it does?</li>
+                    <li><strong>Teamwork:</strong> Other programmers need to understand your code</li>
+                    <li><strong>Debugging:</strong> Finding errors is much easier in readable code</li>
+                    <li><strong>Maintenance:</strong> Code often needs updating - readable code is easier to change</li>
+                </ul>
+            </div>
+
+            <h3>Three Ways to Make Code Readable</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-tag" style="color: #10b981;"></i> 1. Use Descriptive Names</h4>
+                    <p>Variable names should explain what they store.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                        <div style="background: rgba(239, 68, 68, 0.1); padding: 0.5rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.8rem; color: #dc2626;"><strong>Bad:</strong></p>
+                            <code style="font-size: 0.85rem;">x = 15</code><br>
+                            <code style="font-size: 0.85rem;">n1 = "Bob"</code>
+                        </div>
+                        <div style="background: rgba(16, 185, 129, 0.1); padding: 0.5rem; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 0.8rem; color: #059669;"><strong>Good:</strong></p>
+                            <code style="font-size: 0.85rem;">age = 15</code><br>
+                            <code style="font-size: 0.85rem;">playerName = "Bob"</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid #3b82f6;">
+                    <h4><i class="fas fa-align-left" style="color: #3b82f6;"></i> 2. Use Blank Lines</h4>
+                    <p>Separate different sections of code with blank lines - like paragraphs in an essay.</p>
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="font-size: 0.85rem;"># Get user input<br>name = input("Name: ")<br>age = int(input("Age: "))<br><br># Calculate result<br>result = age * 2<br><br># Display output<br>print(result)</code>
+                    </div>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); border-left: 4px solid #f59e0b;">
+                    <h4><i class="fas fa-comment" style="color: #f59e0b;"></i> 3. Add Comments</h4>
+                    <p>Comments explain WHAT the code does and WHY.</p>
+                    <div style="background: #1e1e1e; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <code style="color: #6a9955; font-size: 0.85rem;"># Check if user is old enough to vote</code><br>
+                        <code style="color: #d4d4d4; font-size: 0.85rem;">if age >= 18:</code><br>
+                        <code style="color: #d4d4d4; font-size: 0.85rem; margin-left: 1rem;">print("You can vote!")</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bad vs Good Code Example -->
+            <h3>Example: Bad Code vs Good Code</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #fca5a5;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-times-circle"></i> Hard to Read</h4>
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #d4d4d4; font-size: 0.8rem;">n1=int(input())<br>n2=int(input())<br>if n1==1:<br>&nbsp;&nbsp;print("*")<br>elif n2==2:<br>&nbsp;&nbsp;print("**")<br>else:<br>&nbsp;&nbsp;print("***")</code>
+                    </div>
+                    <p style="font-size: 0.85rem; margin: 0.5rem 0 0 0; color: #991b1b;">What does this even do?!</p>
+                </div>
+
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #86efac;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Easy to Read</h4>
+                    <div style="background: #1e1e1e; padding: 0.75rem; border-radius: 6px;">
+                        <code style="color: #6a9955; font-size: 0.8rem;"># Get user's choice</code><br>
+                        <code style="color: #d4d4d4; font-size: 0.8rem;">userChoice = int(input("Enter 1, 2 or 3: "))</code><br><br>
+                        <code style="color: #6a9955; font-size: 0.8rem;"># Display stars based on choice</code><br>
+                        <code style="color: #d4d4d4; font-size: 0.8rem;">if userChoice == 1:<br>&nbsp;&nbsp;print("*")<br>elif userChoice == 2:<br>&nbsp;&nbsp;print("**")<br>else:<br>&nbsp;&nbsp;print("***")</code>
+                    </div>
+                    <p style="font-size: 0.85rem; margin: 0.5rem 0 0 0; color: #065f46;">Clear variable names + comments = understandable!</p>
+                </div>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>
+                <p>In Paper 2, you get marks for code that is readable and well-commented. Even if your solution works, poor readability can lose you marks. Always:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li>Use meaningful variable names (not x, y, z)</li>
+                    <li>Add comments explaining your logic</li>
+                    <li>Use proper indentation</li>
+                </ul>
             </div>
         </section>
 

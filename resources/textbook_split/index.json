@@ -1,0 +1,62 @@
+{
+  "original_file": "iG_ComputerScience_SB_sample.pdf",
+  "total_pages": 116,
+  "pages_per_part": 20,
+  "total_parts": 6,
+  "parts": [
+    {
+      "part": 1,
+      "filename": "iG_ComputerScience_SB_part1.pdf",
+      "start_page": 1,
+      "end_page": 20,
+      "page_count": 20,
+      "size_bytes": 9506297,
+      "size_mb": 9.07
+    },
+    {
+      "part": 2,
+      "filename": "iG_ComputerScience_SB_part2.pdf",
+      "start_page": 21,
+      "end_page": 40,
+      "page_count": 20,
+      "size_bytes": 1432952,
+      "size_mb": 1.37
+    },
+    {
+      "part": 3,
+      "filename": "iG_ComputerScience_SB_part3.pdf",
+      "start_page": 41,
+      "end_page": 60,
+      "page_count": 20,
+      "size_bytes": 7666600,
+      "size_mb": 7.31
+    },
+    {
+      "part": 4,
+      "filename": "iG_ComputerScience_SB_part4.pdf",
+      "start_page": 61,
+      "end_page": 80,
+      "page_count": 20,
+      "size_bytes": 1615141,
+      "size_mb": 1.54
+    },
+    {
+      "part": 5,
+      "filename": "iG_ComputerScience_SB_part5.pdf",
+      "start_page": 81,
+      "end_page": 100,
+      "page_count": 20,
+      "size_bytes": 480092,
+      "size_mb": 0.46
+    },
+    {
+      "part": 6,
+      "filename": "iG_ComputerScience_SB_part6.pdf",
+      "start_page": 101,
+      "end_page": 116,
+      "page_count": 16,
+      "size_bytes": 594333,
+      "size_mb": 0.57
+    }
+  ]
+}

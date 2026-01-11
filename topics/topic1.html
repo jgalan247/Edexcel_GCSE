@@ -610,21 +610,17 @@ else:
                             <span style="transform: rotate(-45deg); font-size: 0.75rem; text-align: center;">age >= 18?</span>
                         </div>
 
-                        <!-- Arrows from decision -->
-                        <div style="display: flex; width: 80%; justify-content: space-between; margin-top: 0.5rem;">
-                            <div style="color: white; font-size: 1.2rem; text-align: center;">↙</div>
-                            <div style="color: white; font-size: 1.2rem; text-align: center;">↘</div>
-                        </div>
-
-                        <!-- Branches -->
-                        <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start;">
+                        <!-- Branches with arrows from decision -->
+                        <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start; margin-top: 0.5rem;">
                             <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #10b981; font-weight: bold; font-size: 0.8rem;">YES</span>
+                                <div style="color: white; font-size: 1.2rem;">↓</div>
+                                <span style="color: #10b981; font-weight: bold; font-size: 0.9rem;">YES</span>
                                 <div style="color: white; font-size: 1.2rem;">↓</div>
                                 <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT "You can vote"</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-                                <span style="color: #ef4444; font-weight: bold; font-size: 0.8rem;">NO</span>
+                                <div style="color: white; font-size: 1.2rem;">↓</div>
+                                <span style="color: #ef4444; font-weight: bold; font-size: 0.9rem;">NO</span>
                                 <div style="color: white; font-size: 1.2rem;">↓</div>
                                 <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT "Too young"</div>
                             </div>
@@ -672,16 +668,11 @@ END IF</pre>
                             </div>
                         </div>
 
-                        <!-- Arrows from decision -->
-                        <div style="display: flex; width: 80%; justify-content: space-between; margin-top: 0.5rem;">
-                            <div style="color: white; font-size: 1.2rem; text-align: center;">↙</div>
-                            <div style="color: white; font-size: 1.2rem; text-align: center;">↘</div>
-                        </div>
-
-                        <!-- Branches -->
-                        <div style="display: flex; width: 100%; justify-content: space-around; align-items: flex-start;">
+                        <!-- Branches with arrows from decision -->
+                        <div style="display: flex; width: 100%; justify-content: space-around; align-items: flex-start; margin-top: 0.5rem;">
                             <div style="display: flex; flex-direction: column; align-items: center;">
-                                <span style="color: #10b981; font-weight: bold; font-size: 0.8rem;">YES</span>
+                                <div style="color: white; font-size: 1.2rem;">↓</div>
+                                <span style="color: #10b981; font-weight: bold; font-size: 0.9rem;">YES</span>
                                 <div style="color: white; font-size: 1.2rem;">↓</div>
                                 <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT count</div>
                                 <div style="color: white; font-size: 1.2rem;">↓</div>
@@ -689,7 +680,8 @@ END IF</pre>
                                 <div style="color: #3b82f6; font-size: 0.8rem; margin-top: 0.5rem;">← (loop back)</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center;">
-                                <span style="color: #ef4444; font-weight: bold; font-size: 0.8rem;">NO</span>
+                                <div style="color: white; font-size: 1.2rem;">↓</div>
+                                <span style="color: #ef4444; font-weight: bold; font-size: 0.9rem;">NO</span>
                                 <div style="color: white; font-size: 1.2rem;">↓</div>
                                 <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold; margin-top: 2rem;">End</div>
                             </div>

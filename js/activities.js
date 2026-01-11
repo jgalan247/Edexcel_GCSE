@@ -1,64 +1,61 @@
 /**
  * Interactive Activities for Edexcel GCSE Computer Science
- * Includes: Memory Match, Connection Wall, Category Sort, Logic Gates Builder
+ * Template-based system loading data from activities-data.json
+ * Includes: Memory Match, Connection Wall, Category Sort, Logic Gates, Sequence Builder
  */
 
-// ==================== MEMORY MATCH GAME ====================
-const memoryMatchData = {
-    topic1: {
-        title: 'Computational Thinking',
-        pairs: [
-            { term: 'Decomposition', definition: 'Breaking a problem into smaller parts' },
-            { term: 'Abstraction', definition: 'Removing unnecessary details' },
-            { term: 'Algorithm', definition: 'Step-by-step instructions to solve a problem' },
-            { term: 'Linear Search', definition: 'Checking each item one at a time' },
-            { term: 'Binary Search', definition: 'Dividing a sorted list in half repeatedly' },
-            { term: 'Bubble Sort', definition: 'Swapping adjacent elements until sorted' },
-            { term: 'AND Gate', definition: 'Output 1 only if both inputs are 1' },
-            { term: 'OR Gate', definition: 'Output 1 if at least one input is 1' }
-        ]
-    },
-    topic2: {
-        title: 'Data Representation',
-        pairs: [
-            { term: 'Binary', definition: 'Base 2 number system (0s and 1s)' },
-            { term: 'Hexadecimal', definition: 'Base 16 number system (0-9 and A-F)' },
-            { term: 'ASCII', definition: '7-bit character encoding standard' },
-            { term: 'Pixel', definition: 'Smallest element of a digital image' },
-            { term: 'Sample Rate', definition: 'Number of audio samples per second' },
-            { term: 'Bit Depth', definition: 'Number of bits per audio sample' },
-            { term: 'Lossy Compression', definition: 'Reduces file size by removing some data' },
-            { term: 'Lossless Compression', definition: 'Reduces file size without losing data' }
-        ]
-    },
-    topic3: {
-        title: 'Computer Systems',
-        pairs: [
-            { term: 'CPU', definition: 'The brain of the computer that executes instructions' },
-            { term: 'RAM', definition: 'Volatile memory for temporary data storage' },
-            { term: 'ROM', definition: 'Non-volatile memory containing boot instructions' },
-            { term: 'Cache', definition: 'Fast memory between CPU and RAM' },
-            { term: 'SSD', definition: 'Fast storage using flash memory chips' },
-            { term: 'Operating System', definition: 'Software that manages hardware and applications' },
-            { term: 'Compiler', definition: 'Translates entire source code before running' },
-            { term: 'Interpreter', definition: 'Translates and executes code line by line' }
-        ]
-    },
-    topic4: {
-        title: 'Networks',
-        pairs: [
-            { term: 'LAN', definition: 'Network covering a small geographical area' },
-            { term: 'WAN', definition: 'Network spanning large geographical distances' },
-            { term: 'Router', definition: 'Directs data packets between networks' },
-            { term: 'Switch', definition: 'Connects devices within a network' },
-            { term: 'TCP/IP', definition: 'Protocol suite for internet communication' },
-            { term: 'Encryption', definition: 'Scrambling data to prevent unauthorized access' },
-            { term: 'Firewall', definition: 'Monitors and filters network traffic' },
-            { term: 'DNS', definition: 'Converts domain names to IP addresses' }
-        ]
-    }
-};
+// Global data store
+let activitiesData = null;
 
+// Load activities data from JSON
+async function loadActivitiesData() {
+    if (activitiesData) return activitiesData;
+
+    try {
+        const response = await fetch('../js/activities-data.json');
+        if (!response.ok) {
+            // Try alternative path (for when page is in root)
+            const altResponse = await fetch('js/activities-data.json');
+            if (!altResponse.ok) throw new Error('Failed to load activities data');
+            activitiesData = await altResponse.json();
+        } else {
+            activitiesData = await response.json();
+        }
+        return activitiesData;
+    } catch (error) {
+        console.error('Error loading activities data:', error);
+        return null;
+    }
+}
+
+// Get topic info
+function getTopicInfo(topicId) {
+    if (!activitiesData || !activitiesData.topics) return null;
+    return activitiesData.topics[topicId];
+}
+
+// Get all topics as array for dropdowns
+function getAllTopics() {
+    if (!activitiesData || !activitiesData.topics) return [];
+    return Object.values(activitiesData.topics);
+}
+
+// Create topic selector dropdown HTML
+function createTopicSelector(currentTopic, onChangeCallback, selectorId = 'topicSelect') {
+    const topics = getAllTopics();
+    return `
+        <select id="${selectorId}" class="topic-selector" onchange="${onChangeCallback}(this.value)">
+            ${topics.map(topic => `
+                <option value="${topic.id}" ${topic.id === currentTopic ? 'selected' : ''}>
+                    ${topic.name}
+                </option>
+            `).join('')}
+        </select>
+    `;
+}
+
+
+// ==================== MEMORY MATCH GAME ====================
 class MemoryMatch {
     constructor(containerId, topic = 'topic1') {
         this.container = document.getElementById(containerId);
@@ -70,22 +67,33 @@ class MemoryMatch {
         this.gameStarted = false;
         this.timer = null;
         this.seconds = 0;
+        this.maxPairs = 8; // Limit to 8 pairs for better gameplay
     }
 
-    init() {
-        const data = memoryMatchData[this.topic];
+    async init() {
+        await loadActivitiesData();
+        if (!activitiesData) {
+            this.container.innerHTML = '<p class="error">Failed to load game data</p>';
+            return;
+        }
+        this.setupGame();
+    }
+
+    setupGame() {
+        const data = activitiesData.memoryMatch[this.topic];
         if (!data) return;
+
+        // Get pairs (limit to maxPairs for better gameplay)
+        const allPairs = data.pairs.slice(0, this.maxPairs);
 
         // Create cards array (each pair creates 2 cards)
         this.cards = [];
-        data.pairs.forEach((pair, index) => {
+        allPairs.forEach((pair, index) => {
             this.cards.push({ id: index * 2, type: 'term', content: pair.term, pairId: index });
             this.cards.push({ id: index * 2 + 1, type: 'definition', content: pair.definition, pairId: index });
         });
 
-        // Shuffle cards
         this.shuffleCards();
-
         this.render();
     }
 
@@ -97,18 +105,19 @@ class MemoryMatch {
     }
 
     render() {
-        const data = memoryMatchData[this.topic];
+        const topicInfo = getTopicInfo(this.topic);
+        const totalPairs = this.cards.length / 2;
 
         this.container.innerHTML = `
             <div class="memory-game-header">
-                <h3>${data.title} Memory Match</h3>
+                <h3><i class="fas ${topicInfo?.icon || 'fa-brain'}"></i> ${topicInfo?.name || 'Memory Match'}</h3>
                 <div class="game-stats">
                     <span class="stat"><i class="fas fa-mouse-pointer"></i> Moves: <span id="moveCount">0</span></span>
                     <span class="stat"><i class="fas fa-clock"></i> Time: <span id="timeCount">0:00</span></span>
-                    <span class="stat"><i class="fas fa-check-circle"></i> Matched: <span id="matchCount">0</span>/${data.pairs.length}</span>
+                    <span class="stat"><i class="fas fa-check-circle"></i> Matched: <span id="matchCount">0</span>/${totalPairs}</span>
                 </div>
             </div>
-            <div class="memory-grid">
+            <div class="memory-grid" style="--topic-color: ${topicInfo?.color || '#8b5cf6'}">
                 ${this.cards.map(card => `
                     <div class="memory-card" data-id="${card.id}" data-pair="${card.pairId}">
                         <div class="card-inner">
@@ -124,21 +133,31 @@ class MemoryMatch {
             </div>
             <div class="game-controls">
                 <button class="btn btn-secondary" onclick="memoryGame.reset()">
-                    <i class="fas fa-redo"></i> Reset Game
+                    <i class="fas fa-redo"></i> Reset
                 </button>
-                <select id="topicSelect" onchange="memoryGame.changeTopic(this.value)">
-                    <option value="topic1" ${this.topic === 'topic1' ? 'selected' : ''}>Topic 1: Computational Thinking</option>
-                    <option value="topic2" ${this.topic === 'topic2' ? 'selected' : ''}>Topic 2: Data</option>
-                    <option value="topic3" ${this.topic === 'topic3' ? 'selected' : ''}>Topic 3: Computers</option>
-                    <option value="topic4" ${this.topic === 'topic4' ? 'selected' : ''}>Topic 4: Networks</option>
-                </select>
+                ${createTopicSelector(this.topic, 'memoryGame.changeTopic', 'memoryTopicSelect')}
             </div>
         `;
+
+        // Update card front color based on topic
+        const cardFronts = this.container.querySelectorAll('.card-front');
+        cardFronts.forEach(front => {
+            front.style.background = `linear-gradient(135deg, ${topicInfo?.color || '#8b5cf6'} 0%, ${this.darkenColor(topicInfo?.color || '#8b5cf6', 20)} 100%)`;
+        });
 
         // Add click listeners
         this.container.querySelectorAll('.memory-card').forEach(card => {
             card.addEventListener('click', () => this.flipCard(card));
         });
+    }
+
+    darkenColor(color, percent) {
+        const num = parseInt(color.replace('#', ''), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = Math.max((num >> 16) - amt, 0);
+        const G = Math.max((num >> 8 & 0x00FF) - amt, 0);
+        const B = Math.max((num & 0x0000FF) - amt, 0);
+        return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
     }
 
     flipCard(card) {
@@ -166,19 +185,16 @@ class MemoryMatch {
         const pair2 = card2.dataset.pair;
 
         if (pair1 === pair2) {
-            // Match found
             card1.classList.add('matched');
             card2.classList.add('matched');
             this.matchedPairs++;
             document.getElementById('matchCount').textContent = this.matchedPairs;
 
-            if (this.matchedPairs === memoryMatchData[this.topic].pairs.length) {
+            if (this.matchedPairs === this.cards.length / 2) {
                 this.gameComplete();
             }
-
             this.flippedCards = [];
         } else {
-            // No match
             setTimeout(() => {
                 card1.classList.remove('flipped');
                 card2.classList.remove('flipped');
@@ -201,7 +217,7 @@ class MemoryMatch {
         setTimeout(() => {
             const mins = Math.floor(this.seconds / 60);
             const secs = this.seconds % 60;
-            alert(`Congratulations! You completed the game in ${this.moves} moves and ${mins}:${secs.toString().padStart(2, '0')}!`);
+            alert(`Congratulations! Completed in ${this.moves} moves and ${mins}:${secs.toString().padStart(2, '0')}!`);
         }, 500);
     }
 
@@ -218,47 +234,23 @@ class MemoryMatch {
 
     changeTopic(topic) {
         this.topic = topic;
-        this.reset();
-        this.init();
+        this.flippedCards = [];
+        this.matchedPairs = 0;
+        this.moves = 0;
+        this.seconds = 0;
+        this.gameStarted = false;
+        clearInterval(this.timer);
+        this.setupGame();
     }
 }
 
 
-// ==================== CONNECTION WALL (Only Connect Style) ====================
-const connectionWallData = {
-    set1: {
-        title: 'Computer Science Mix',
-        groups: [
-            { name: 'Types of Memory', items: ['RAM', 'ROM', 'Cache', 'Registers'], color: '#8b5cf6' },
-            { name: 'Network Topologies', items: ['Star', 'Bus', 'Mesh', 'Ring'], color: '#3b82f6' },
-            { name: 'Logic Gates', items: ['AND', 'OR', 'NOT', 'XOR'], color: '#10b981' },
-            { name: 'Data Types', items: ['Integer', 'String', 'Boolean', 'Float'], color: '#f59e0b' }
-        ]
-    },
-    set2: {
-        title: 'Programming & Data',
-        groups: [
-            { name: 'Control Structures', items: ['IF', 'WHILE', 'FOR', 'SWITCH'], color: '#8b5cf6' },
-            { name: 'Image Properties', items: ['Resolution', 'Colour Depth', 'Pixel', 'Metadata'], color: '#3b82f6' },
-            { name: 'Sorting Algorithms', items: ['Bubble', 'Merge', 'Quick', 'Insertion'], color: '#10b981' },
-            { name: 'Security Threats', items: ['Phishing', 'Malware', 'Brute Force', 'SQL Injection'], color: '#f59e0b' }
-        ]
-    },
-    set3: {
-        title: 'Hardware & Networks',
-        groups: [
-            { name: 'Input Devices', items: ['Keyboard', 'Mouse', 'Microphone', 'Webcam'], color: '#8b5cf6' },
-            { name: 'Output Devices', items: ['Monitor', 'Printer', 'Speakers', 'Projector'], color: '#3b82f6' },
-            { name: 'Network Hardware', items: ['Router', 'Switch', 'NIC', 'Hub'], color: '#10b981' },
-            { name: 'Storage Devices', items: ['SSD', 'HDD', 'USB', 'Optical'], color: '#f59e0b' }
-        ]
-    }
-};
-
+// ==================== CONNECTION WALL ====================
 class ConnectionWall {
-    constructor(containerId, setName = 'set1') {
+    constructor(containerId, topic = 'topic1') {
         this.container = document.getElementById(containerId);
-        this.setName = setName;
+        this.topic = topic;
+        this.currentSetIndex = 0;
         this.items = [];
         this.selectedItems = [];
         this.foundGroups = [];
@@ -266,19 +258,29 @@ class ConnectionWall {
         this.maxAttempts = 3;
     }
 
-    init() {
-        const data = connectionWallData[this.setName];
-        if (!data) return;
+    async init() {
+        await loadActivitiesData();
+        if (!activitiesData) {
+            this.container.innerHTML = '<p class="error">Failed to load game data</p>';
+            return;
+        }
+        this.setupGame();
+    }
+
+    setupGame() {
+        const topicData = activitiesData.connectionWall[this.topic];
+        if (!topicData || !topicData.sets || topicData.sets.length === 0) return;
+
+        const currentSet = topicData.sets[this.currentSetIndex];
 
         // Flatten all items
         this.items = [];
-        data.groups.forEach(group => {
+        currentSet.groups.forEach(group => {
             group.items.forEach(item => {
                 this.items.push({ text: item, group: group.name, color: group.color });
             });
         });
 
-        // Shuffle items
         this.shuffleItems();
         this.render();
     }
@@ -291,14 +293,16 @@ class ConnectionWall {
     }
 
     render() {
-        const data = connectionWallData[this.setName];
+        const topicInfo = getTopicInfo(this.topic);
+        const topicData = activitiesData.connectionWall[this.topic];
+        const currentSet = topicData.sets[this.currentSetIndex];
 
         this.container.innerHTML = `
             <div class="connection-wall-header">
-                <h3>${data.title}</h3>
+                <h3><i class="fas ${topicInfo?.icon || 'fa-th-large'}"></i> ${currentSet.title}</h3>
                 <p>Find the 4 groups of 4 connected items!</p>
                 <div class="game-stats">
-                    <span class="stat"><i class="fas fa-bullseye"></i> Groups Found: <span id="groupsFound">${this.foundGroups.length}</span>/4</span>
+                    <span class="stat"><i class="fas fa-bullseye"></i> Groups: <span id="groupsFound">${this.foundGroups.length}</span>/4</span>
                     <span class="stat"><i class="fas fa-heart"></i> Lives: <span id="livesLeft">${this.maxAttempts - this.attempts}</span></span>
                 </div>
             </div>
@@ -319,7 +323,7 @@ class ConnectionWall {
             </div>
             <div class="game-controls">
                 <button class="btn btn-primary" id="submitGuess" onclick="connectionWall.checkSelection()" disabled>
-                    <i class="fas fa-check"></i> Check Selection
+                    <i class="fas fa-check"></i> Check
                 </button>
                 <button class="btn btn-secondary" onclick="connectionWall.clearSelection()">
                     <i class="fas fa-times"></i> Clear
@@ -327,15 +331,15 @@ class ConnectionWall {
                 <button class="btn btn-secondary" onclick="connectionWall.reset()">
                     <i class="fas fa-redo"></i> New Game
                 </button>
-                <select id="wallSetSelect" onchange="connectionWall.changeSet(this.value)">
-                    <option value="set1" ${this.setName === 'set1' ? 'selected' : ''}>Set 1: Computer Science Mix</option>
-                    <option value="set2" ${this.setName === 'set2' ? 'selected' : ''}>Set 2: Programming & Data</option>
-                    <option value="set3" ${this.setName === 'set3' ? 'selected' : ''}>Set 3: Hardware & Networks</option>
-                </select>
+                ${createTopicSelector(this.topic, 'connectionWall.changeTopic', 'wallTopicSelect')}
+                ${topicData.sets.length > 1 ? `
+                    <button class="btn btn-secondary" onclick="connectionWall.nextSet()">
+                        <i class="fas fa-forward"></i> Next Set
+                    </button>
+                ` : ''}
             </div>
         `;
 
-        // Add click listeners
         this.container.querySelectorAll('.connection-item').forEach(item => {
             item.addEventListener('click', () => this.selectItem(item));
         });
@@ -349,7 +353,6 @@ class ConnectionWall {
             item.classList.add('selected');
             this.selectedItems.push(item);
         }
-
         document.getElementById('submitGuess').disabled = this.selectedItems.length !== 4;
     }
 
@@ -366,9 +369,8 @@ class ConnectionWall {
         const allSameGroup = groups.every(g => g === groups[0]);
 
         if (allSameGroup) {
-            // Correct!
             const groupName = groups[0];
-            const groupData = connectionWallData[this.setName].groups.find(g => g.name === groupName);
+            const groupData = this.items.find(i => i.group === groupName);
             this.foundGroups.push({
                 name: groupName,
                 items: this.selectedItems.map(i => i.dataset.text),
@@ -376,15 +378,11 @@ class ConnectionWall {
             });
 
             if (this.foundGroups.length === 4) {
-                setTimeout(() => {
-                    alert('Congratulations! You found all 4 groups!');
-                }, 300);
+                setTimeout(() => alert('Congratulations! You found all 4 groups!'), 300);
             }
-
             this.selectedItems = [];
             this.render();
         } else {
-            // Wrong
             this.attempts++;
             this.selectedItems.forEach(item => {
                 item.classList.add('wrong');
@@ -392,81 +390,69 @@ class ConnectionWall {
             });
 
             if (this.attempts >= this.maxAttempts) {
+                const topicData = activitiesData.connectionWall[this.topic];
+                const currentSet = topicData.sets[this.currentSetIndex];
                 setTimeout(() => {
                     alert('Game Over! The groups were:\n' +
-                        connectionWallData[this.setName].groups.map(g => `${g.name}: ${g.items.join(', ')}`).join('\n'));
+                        currentSet.groups.map(g => `${g.name}: ${g.items.join(', ')}`).join('\n'));
                     this.reset();
                 }, 600);
             } else {
                 document.getElementById('livesLeft').textContent = this.maxAttempts - this.attempts;
             }
-
             this.clearSelection();
         }
+    }
+
+    nextSet() {
+        const topicData = activitiesData.connectionWall[this.topic];
+        this.currentSetIndex = (this.currentSetIndex + 1) % topicData.sets.length;
+        this.reset();
     }
 
     reset() {
         this.selectedItems = [];
         this.foundGroups = [];
         this.attempts = 0;
-        this.shuffleItems();
-        this.render();
+        this.setupGame();
     }
 
-    changeSet(setName) {
-        this.setName = setName;
-        this.selectedItems = [];
-        this.foundGroups = [];
-        this.attempts = 0;
-        this.init();
+    changeTopic(topic) {
+        this.topic = topic;
+        this.currentSetIndex = 0;
+        this.reset();
     }
 }
 
 
-// ==================== CATEGORY SORT (Drag & Drop) ====================
-const categorySortData = {
-    hardware: {
-        title: 'Hardware Components',
-        categories: {
-            'Input Devices': ['Keyboard', 'Mouse', 'Microphone', 'Scanner', 'Webcam'],
-            'Output Devices': ['Monitor', 'Printer', 'Speakers', 'Headphones', 'Projector'],
-            'Storage Devices': ['SSD', 'HDD', 'USB Drive', 'SD Card', 'Optical Drive']
-        }
-    },
-    networks: {
-        title: 'Network Concepts',
-        categories: {
-            'Network Hardware': ['Router', 'Switch', 'NIC', 'WAP', 'Firewall'],
-            'Protocols': ['TCP/IP', 'HTTP', 'FTP', 'SMTP', 'DNS'],
-            'Security': ['Encryption', 'Authentication', 'Firewall', 'VPN', 'Antivirus']
-        }
-    },
-    programming: {
-        title: 'Programming Concepts',
-        categories: {
-            'Data Types': ['Integer', 'String', 'Boolean', 'Float', 'Character'],
-            'Control Structures': ['IF statement', 'FOR loop', 'WHILE loop', 'SWITCH', 'TRY/EXCEPT'],
-            'Operators': ['Addition (+)', 'Modulus (%)', 'Equal to (==)', 'AND', 'OR']
-        }
-    }
-};
-
+// ==================== CATEGORY SORT ====================
 class CategorySort {
-    constructor(containerId, setName = 'hardware') {
+    constructor(containerId, topic = 'topic1') {
         this.container = document.getElementById(containerId);
-        this.setName = setName;
+        this.topic = topic;
+        this.currentSetIndex = 0;
         this.items = [];
-        this.correctPlacements = 0;
         this.totalItems = 0;
     }
 
-    init() {
-        const data = categorySortData[this.setName];
-        if (!data) return;
+    async init() {
+        await loadActivitiesData();
+        if (!activitiesData) {
+            this.container.innerHTML = '<p class="error">Failed to load game data</p>';
+            return;
+        }
+        this.setupGame();
+    }
+
+    setupGame() {
+        const topicData = activitiesData.categorySort[this.topic];
+        if (!topicData || !topicData.sets || topicData.sets.length === 0) return;
+
+        const currentSet = topicData.sets[this.currentSetIndex];
 
         // Flatten all items and shuffle
         this.items = [];
-        Object.entries(data.categories).forEach(([category, items]) => {
+        Object.entries(currentSet.categories).forEach(([category, items]) => {
             items.forEach(item => {
                 this.items.push({ text: item, category: category });
             });
@@ -484,12 +470,14 @@ class CategorySort {
     }
 
     render() {
-        const data = categorySortData[this.setName];
-        const categories = Object.keys(data.categories);
+        const topicInfo = getTopicInfo(this.topic);
+        const topicData = activitiesData.categorySort[this.topic];
+        const currentSet = topicData.sets[this.currentSetIndex];
+        const categories = Object.keys(currentSet.categories);
 
         this.container.innerHTML = `
             <div class="category-sort-header">
-                <h3>${data.title}</h3>
+                <h3><i class="fas ${topicInfo?.icon || 'fa-layer-group'}"></i> ${currentSet.title}</h3>
                 <p>Drag and drop items into the correct categories!</p>
                 <div class="game-stats">
                     <span class="stat"><i class="fas fa-check"></i> Correct: <span id="correctCount">0</span>/${this.totalItems}</span>
@@ -507,7 +495,7 @@ class CategorySort {
             </div>
             <div class="categories-container">
                 ${categories.map(cat => `
-                    <div class="category-box" data-category="${cat}">
+                    <div class="category-box">
                         <h4>${cat}</h4>
                         <div class="category-dropzone" data-category="${cat}"></div>
                     </div>
@@ -515,16 +503,17 @@ class CategorySort {
             </div>
             <div class="game-controls">
                 <button class="btn btn-primary" onclick="categorySort.checkAll()">
-                    <i class="fas fa-check-circle"></i> Check Answers
+                    <i class="fas fa-check-circle"></i> Check
                 </button>
                 <button class="btn btn-secondary" onclick="categorySort.reset()">
                     <i class="fas fa-redo"></i> Reset
                 </button>
-                <select id="categorySetSelect" onchange="categorySort.changeSet(this.value)">
-                    <option value="hardware" ${this.setName === 'hardware' ? 'selected' : ''}>Hardware Components</option>
-                    <option value="networks" ${this.setName === 'networks' ? 'selected' : ''}>Network Concepts</option>
-                    <option value="programming" ${this.setName === 'programming' ? 'selected' : ''}>Programming Concepts</option>
-                </select>
+                ${createTopicSelector(this.topic, 'categorySort.changeTopic', 'categoryTopicSelect')}
+                ${topicData.sets.length > 1 ? `
+                    <button class="btn btn-secondary" onclick="categorySort.nextSet()">
+                        <i class="fas fa-forward"></i> Next Set
+                    </button>
+                ` : ''}
             </div>
         `;
 
@@ -538,11 +527,8 @@ class CategorySort {
 
         items.forEach(item => {
             item.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', item.outerHTML);
-                e.dataTransfer.setData('category', item.dataset.category);
                 item.classList.add('dragging');
             });
-
             item.addEventListener('dragend', () => {
                 item.classList.remove('dragging');
             });
@@ -553,15 +539,12 @@ class CategorySort {
                 e.preventDefault();
                 zone.classList.add('drag-over');
             });
-
             zone.addEventListener('dragleave', () => {
                 zone.classList.remove('drag-over');
             });
-
             zone.addEventListener('drop', (e) => {
                 e.preventDefault();
                 zone.classList.remove('drag-over');
-
                 const dragging = this.container.querySelector('.dragging');
                 if (dragging) {
                     zone.appendChild(dragging);
@@ -579,69 +562,60 @@ class CategorySort {
             const itemCategory = item.dataset.category;
             const parentZone = item.closest('.category-dropzone');
 
-            if (parentZone) {
-                const zoneCategory = parentZone.dataset.category;
-                if (itemCategory === zoneCategory) {
-                    item.classList.add('correct');
-                    item.classList.remove('incorrect');
-                    correct++;
-                } else {
-                    item.classList.add('incorrect');
-                    item.classList.remove('correct');
-                }
+            if (parentZone && itemCategory === parentZone.dataset.category) {
+                item.classList.add('correct');
+                item.classList.remove('incorrect');
+                correct++;
+            } else if (parentZone) {
+                item.classList.add('incorrect');
+                item.classList.remove('correct');
             } else {
                 item.classList.remove('correct', 'incorrect');
             }
         });
 
-        this.correctPlacements = correct;
         document.getElementById('correctCount').textContent = correct;
 
         if (correct === this.totalItems) {
-            setTimeout(() => {
-                alert('Excellent! All items sorted correctly!');
-            }, 300);
+            setTimeout(() => alert('Excellent! All items sorted correctly!'), 300);
         }
     }
 
+    nextSet() {
+        const topicData = activitiesData.categorySort[this.topic];
+        this.currentSetIndex = (this.currentSetIndex + 1) % topicData.sets.length;
+        this.setupGame();
+    }
+
     reset() {
-        this.correctPlacements = 0;
         this.shuffleItems();
         this.render();
     }
 
-    changeSet(setName) {
-        this.setName = setName;
-        this.init();
+    changeTopic(topic) {
+        this.topic = topic;
+        this.currentSetIndex = 0;
+        this.setupGame();
     }
 }
 
 
-// ==================== LOGIC GATES BUILDER ====================
+// ==================== LOGIC GATES GAME ====================
 class LogicGatesGame {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
         this.currentQuestion = 0;
         this.score = 0;
-        this.questions = this.generateQuestions();
+        this.questions = [];
     }
 
-    generateQuestions() {
-        return [
-            { gate: 'AND', inputs: [0, 0], answer: 0 },
-            { gate: 'AND', inputs: [1, 1], answer: 1 },
-            { gate: 'OR', inputs: [0, 1], answer: 1 },
-            { gate: 'OR', inputs: [0, 0], answer: 0 },
-            { gate: 'NOT', inputs: [1], answer: 0 },
-            { gate: 'NOT', inputs: [0], answer: 1 },
-            { gate: 'XOR', inputs: [1, 1], answer: 0 },
-            { gate: 'XOR', inputs: [0, 1], answer: 1 },
-            { gate: 'NAND', inputs: [1, 1], answer: 0 },
-            { gate: 'NOR', inputs: [0, 0], answer: 1 }
-        ];
-    }
-
-    init() {
+    async init() {
+        await loadActivitiesData();
+        if (!activitiesData) {
+            this.container.innerHTML = '<p class="error">Failed to load game data</p>';
+            return;
+        }
+        this.questions = [...activitiesData.logicGates.questions];
         this.shuffleQuestions();
         this.render();
     }
@@ -651,29 +625,35 @@ class LogicGatesGame {
             const j = Math.floor(Math.random() * (i + 1));
             [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
         }
+        // Limit to 10 questions per game
+        this.questions = this.questions.slice(0, 10);
     }
 
     render() {
         const q = this.questions[this.currentQuestion];
+        const gateColors = {
+            'AND': '#10b981', 'OR': '#3b82f6', 'NOT': '#ef4444',
+            'XOR': '#f59e0b', 'NAND': '#8b5cf6', 'NOR': '#ec4899'
+        };
 
         this.container.innerHTML = `
             <div class="logic-game-header">
-                <h3>Logic Gates Challenge</h3>
+                <h3><i class="fas fa-microchip"></i> Logic Gates Challenge</h3>
                 <div class="game-stats">
                     <span class="stat">Question: ${this.currentQuestion + 1}/${this.questions.length}</span>
-                    <span class="stat">Score: ${this.score}</span>
+                    <span class="stat">Score: ${this.score}/${this.currentQuestion}</span>
                 </div>
             </div>
             <div class="logic-question">
                 <div class="gate-display">
-                    <div class="gate-box ${q.gate.toLowerCase()}">
+                    <div class="gate-box" style="background: ${gateColors[q.gate] || '#8b5cf6'}">
                         <span class="gate-name">${q.gate}</span>
                     </div>
                 </div>
                 <div class="inputs-display">
                     ${q.inputs.map((input, i) => `
                         <div class="input-value">
-                            Input ${q.inputs.length > 1 ? String.fromCharCode(65 + i) : ''}: <strong>${input}</strong>
+                            ${q.inputs.length > 1 ? `Input ${String.fromCharCode(65 + i)}` : 'Input'}: <strong>${input}</strong>
                         </div>
                     `).join('')}
                 </div>
@@ -695,10 +675,10 @@ class LogicGatesGame {
 
         if (answer === q.answer) {
             this.score++;
-            feedback.innerHTML = '<p class="correct-feedback"><i class="fas fa-check-circle"></i> Correct!</p>';
+            feedback.innerHTML = `<p class="correct-feedback"><i class="fas fa-check-circle"></i> Correct! ${q.explanation}</p>`;
             feedback.className = 'feedback correct';
         } else {
-            feedback.innerHTML = `<p class="incorrect-feedback"><i class="fas fa-times-circle"></i> Incorrect. The answer was ${q.answer}</p>`;
+            feedback.innerHTML = `<p class="incorrect-feedback"><i class="fas fa-times-circle"></i> Incorrect. The answer was ${q.answer}. ${q.explanation}</p>`;
             feedback.className = 'feedback incorrect';
         }
 
@@ -709,19 +689,17 @@ class LogicGatesGame {
             } else {
                 this.showResults();
             }
-        }, 1500);
+        }, 2000);
     }
 
     showResults() {
         const percentage = Math.round((this.score / this.questions.length) * 100);
-        let message = '';
-        if (percentage >= 80) message = 'Excellent work!';
-        else if (percentage >= 60) message = 'Good job!';
-        else message = 'Keep practising!';
+        let message = percentage >= 80 ? 'Excellent work!' : percentage >= 60 ? 'Good job!' : 'Keep practising!';
+        let emoji = percentage >= 80 ? '🌟' : percentage >= 60 ? '👍' : '💪';
 
         this.container.innerHTML = `
             <div class="results-container">
-                <h3>Game Complete!</h3>
+                <h3>Game Complete! ${emoji}</h3>
                 <div class="final-score">${this.score}/${this.questions.length}</div>
                 <p class="percentage">${percentage}%</p>
                 <p class="message">${message}</p>
@@ -735,7 +713,7 @@ class LogicGatesGame {
     reset() {
         this.currentQuestion = 0;
         this.score = 0;
-        this.questions = this.generateQuestions();
+        this.questions = [...activitiesData.logicGates.questions];
         this.shuffleQuestions();
         this.render();
     }
@@ -743,67 +721,29 @@ class LogicGatesGame {
 
 
 // ==================== SEQUENCE BUILDER ====================
-const sequenceData = {
-    linearSearch: {
-        title: 'Linear Search Algorithm',
-        steps: [
-            'Start at the first item in the list',
-            'Compare current item with target value',
-            'If they match, return the position',
-            'If not, move to the next item',
-            'Repeat until found or end of list',
-            'If end reached, return "not found"'
-        ]
-    },
-    binarySearch: {
-        title: 'Binary Search Algorithm',
-        steps: [
-            'Find the middle item of the sorted list',
-            'Compare middle item with target value',
-            'If they match, return the position',
-            'If target is less than middle, search left half',
-            'If target is greater than middle, search right half',
-            'Repeat until found or no items left'
-        ]
-    },
-    bubbleSort: {
-        title: 'Bubble Sort Algorithm',
-        steps: [
-            'Start at the beginning of the list',
-            'Compare the first two adjacent items',
-            'If they are in wrong order, swap them',
-            'Move to the next pair and repeat',
-            'Continue until end of list (one pass)',
-            'Repeat passes until no swaps are made'
-        ]
-    },
-    fetchExecute: {
-        title: 'Fetch-Execute Cycle',
-        steps: [
-            'PC sends address to MAR',
-            'Address sent to RAM via address bus',
-            'Instruction fetched from RAM to MDR',
-            'Instruction copied from MDR to CIR',
-            'PC is incremented',
-            'CU decodes the instruction',
-            'ALU executes the instruction'
-        ]
-    }
-};
-
 class SequenceBuilder {
-    constructor(containerId, algorithm = 'linearSearch') {
+    constructor(containerId, topic = 'topic1') {
         this.container = document.getElementById(containerId);
-        this.algorithm = algorithm;
+        this.topic = topic;
+        this.currentSequenceIndex = 0;
         this.shuffledSteps = [];
-        this.userOrder = [];
     }
 
-    init() {
-        const data = sequenceData[this.algorithm];
-        if (!data) return;
+    async init() {
+        await loadActivitiesData();
+        if (!activitiesData) {
+            this.container.innerHTML = '<p class="error">Failed to load game data</p>';
+            return;
+        }
+        this.setupGame();
+    }
 
-        this.shuffledSteps = [...data.steps];
+    setupGame() {
+        const topicData = activitiesData.sequenceBuilder[this.topic];
+        if (!topicData || !topicData.sequences || topicData.sequences.length === 0) return;
+
+        const currentSequence = topicData.sequences[this.currentSequenceIndex];
+        this.shuffledSteps = [...currentSequence.steps];
         this.shuffleSteps();
         this.render();
     }
@@ -816,16 +756,18 @@ class SequenceBuilder {
     }
 
     render() {
-        const data = sequenceData[this.algorithm];
+        const topicInfo = getTopicInfo(this.topic);
+        const topicData = activitiesData.sequenceBuilder[this.topic];
+        const currentSequence = topicData.sequences[this.currentSequenceIndex];
 
         this.container.innerHTML = `
             <div class="sequence-header">
-                <h3>${data.title}</h3>
+                <h3><i class="fas ${topicInfo?.icon || 'fa-sort-numeric-down'}"></i> ${currentSequence.title}</h3>
                 <p>Drag and arrange the steps in the correct order!</p>
             </div>
             <div class="sequence-steps" id="sequenceSteps">
                 ${this.shuffledSteps.map((step, idx) => `
-                    <div class="sequence-step" draggable="true" data-original="${data.steps.indexOf(step)}">
+                    <div class="sequence-step" draggable="true" data-original="${currentSequence.steps.indexOf(step)}">
                         <span class="step-number">${idx + 1}</span>
                         <span class="step-text">${step}</span>
                         <i class="fas fa-grip-vertical drag-handle"></i>
@@ -839,12 +781,12 @@ class SequenceBuilder {
                 <button class="btn btn-secondary" onclick="sequenceBuilder.reset()">
                     <i class="fas fa-redo"></i> Shuffle
                 </button>
-                <select id="algorithmSelect" onchange="sequenceBuilder.changeAlgorithm(this.value)">
-                    <option value="linearSearch" ${this.algorithm === 'linearSearch' ? 'selected' : ''}>Linear Search</option>
-                    <option value="binarySearch" ${this.algorithm === 'binarySearch' ? 'selected' : ''}>Binary Search</option>
-                    <option value="bubbleSort" ${this.algorithm === 'bubbleSort' ? 'selected' : ''}>Bubble Sort</option>
-                    <option value="fetchExecute" ${this.algorithm === 'fetchExecute' ? 'selected' : ''}>Fetch-Execute Cycle</option>
-                </select>
+                ${createTopicSelector(this.topic, 'sequenceBuilder.changeTopic', 'sequenceTopicSelect')}
+                ${topicData.sequences.length > 1 ? `
+                    <button class="btn btn-secondary" onclick="sequenceBuilder.nextSequence()">
+                        <i class="fas fa-forward"></i> Next
+                    </button>
+                ` : ''}
             </div>
             <div id="sequenceFeedback" class="feedback"></div>
         `;
@@ -858,7 +800,7 @@ class SequenceBuilder {
         let draggedItem = null;
 
         steps.forEach(step => {
-            step.addEventListener('dragstart', (e) => {
+            step.addEventListener('dragstart', () => {
                 draggedItem = step;
                 step.classList.add('dragging');
             });
@@ -881,16 +823,14 @@ class SequenceBuilder {
     }
 
     getDragAfterElement(container, y) {
-        const draggableElements = [...container.querySelectorAll('.sequence-step:not(.dragging)')];
-
-        return draggableElements.reduce((closest, child) => {
+        const draggables = [...container.querySelectorAll('.sequence-step:not(.dragging)')];
+        return draggables.reduce((closest, child) => {
             const box = child.getBoundingClientRect();
             const offset = y - box.top - box.height / 2;
             if (offset < 0 && offset > closest.offset) {
                 return { offset: offset, element: child };
-            } else {
-                return closest;
             }
+            return closest;
         }, { offset: Number.NEGATIVE_INFINITY }).element;
     }
 
@@ -927,22 +867,32 @@ class SequenceBuilder {
         }
     }
 
+    nextSequence() {
+        const topicData = activitiesData.sequenceBuilder[this.topic];
+        this.currentSequenceIndex = (this.currentSequenceIndex + 1) % topicData.sequences.length;
+        this.setupGame();
+    }
+
     reset() {
         this.shuffleSteps();
         this.render();
     }
 
-    changeAlgorithm(algorithm) {
-        this.algorithm = algorithm;
-        this.init();
+    changeTopic(topic) {
+        this.topic = topic;
+        this.currentSequenceIndex = 0;
+        this.setupGame();
     }
 }
 
 
-// Initialize games when DOM is ready
+// ==================== INITIALIZE GAMES ====================
 let memoryGame, connectionWall, categorySort, logicGame, sequenceBuilder;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Pre-load data
+    await loadActivitiesData();
+
     // Initialize games if their containers exist
     if (document.getElementById('memory-game')) {
         memoryGame = new MemoryMatch('memory-game');

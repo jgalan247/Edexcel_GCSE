@@ -1,0 +1,642 @@
+{
+  "topics": {
+    "topic1": {
+      "id": "topic1",
+      "name": "Computational Thinking",
+      "color": "#8b5cf6",
+      "icon": "fa-brain"
+    },
+    "topic2": {
+      "id": "topic2",
+      "name": "Data Representation",
+      "color": "#3b82f6",
+      "icon": "fa-database"
+    },
+    "topic3": {
+      "id": "topic3",
+      "name": "Computer Systems",
+      "color": "#06b6d4",
+      "icon": "fa-desktop"
+    },
+    "topic4": {
+      "id": "topic4",
+      "name": "Networks",
+      "color": "#10b981",
+      "icon": "fa-network-wired"
+    },
+    "topic5": {
+      "id": "topic5",
+      "name": "Issues & Impact",
+      "color": "#f59e0b",
+      "icon": "fa-globe"
+    },
+    "topic6": {
+      "id": "topic6",
+      "name": "Programming",
+      "color": "#ef4444",
+      "icon": "fa-code"
+    }
+  },
+
+  "memoryMatch": {
+    "topic1": {
+      "pairs": [
+        { "term": "Decomposition", "definition": "Breaking a problem into smaller parts" },
+        { "term": "Abstraction", "definition": "Removing unnecessary details" },
+        { "term": "Pattern Recognition", "definition": "Finding similarities to reuse solutions" },
+        { "term": "Algorithmic Thinking", "definition": "Developing step-by-step solutions" },
+        { "term": "Linear Search", "definition": "Checking each item one at a time" },
+        { "term": "Binary Search", "definition": "Dividing a sorted list in half repeatedly" },
+        { "term": "Bubble Sort", "definition": "Swapping adjacent elements until sorted" },
+        { "term": "Merge Sort", "definition": "Divide, sort and merge approach" },
+        { "term": "AND Gate", "definition": "Output 1 only if both inputs are 1" },
+        { "term": "OR Gate", "definition": "Output 1 if at least one input is 1" },
+        { "term": "NOT Gate", "definition": "Inverts the input (0→1, 1→0)" },
+        { "term": "XOR Gate", "definition": "Output 1 only if inputs are different" }
+      ]
+    },
+    "topic2": {
+      "pairs": [
+        { "term": "Binary", "definition": "Base 2 number system (0s and 1s)" },
+        { "term": "Denary", "definition": "Base 10 number system (0-9)" },
+        { "term": "Hexadecimal", "definition": "Base 16 number system (0-9, A-F)" },
+        { "term": "ASCII", "definition": "7-bit character encoding (128 characters)" },
+        { "term": "Unicode", "definition": "Universal character encoding for all languages" },
+        { "term": "Pixel", "definition": "Smallest element of a digital image" },
+        { "term": "Resolution", "definition": "Number of pixels in an image" },
+        { "term": "Colour Depth", "definition": "Number of bits per pixel for colour" },
+        { "term": "Sample Rate", "definition": "Number of audio samples per second" },
+        { "term": "Bit Depth", "definition": "Number of bits per audio sample" },
+        { "term": "Lossy Compression", "definition": "Reduces file size by removing data permanently" },
+        { "term": "Lossless Compression", "definition": "Reduces file size without losing any data" }
+      ]
+    },
+    "topic3": {
+      "pairs": [
+        { "term": "CPU", "definition": "Executes instructions and processes data" },
+        { "term": "ALU", "definition": "Performs arithmetic and logical operations" },
+        { "term": "Control Unit", "definition": "Decodes instructions and coordinates components" },
+        { "term": "RAM", "definition": "Volatile memory for temporary data storage" },
+        { "term": "ROM", "definition": "Non-volatile memory with boot instructions" },
+        { "term": "Cache", "definition": "Fast memory between CPU and RAM" },
+        { "term": "SSD", "definition": "Fast storage using flash memory chips" },
+        { "term": "HDD", "definition": "Storage using magnetic spinning platters" },
+        { "term": "Operating System", "definition": "Software that manages hardware and apps" },
+        { "term": "Compiler", "definition": "Translates entire source code before running" },
+        { "term": "Interpreter", "definition": "Translates and executes code line by line" },
+        { "term": "Embedded System", "definition": "Computer built into another device" }
+      ]
+    },
+    "topic4": {
+      "pairs": [
+        { "term": "LAN", "definition": "Network covering a small geographical area" },
+        { "term": "WAN", "definition": "Network spanning large geographical distances" },
+        { "term": "Router", "definition": "Directs data packets between networks" },
+        { "term": "Switch", "definition": "Connects devices within a network" },
+        { "term": "NIC", "definition": "Hardware enabling network connection" },
+        { "term": "IP Address", "definition": "Unique numerical identifier for a device" },
+        { "term": "MAC Address", "definition": "Permanent hardware identifier for NIC" },
+        { "term": "TCP/IP", "definition": "Protocol suite for internet communication" },
+        { "term": "DNS", "definition": "Converts domain names to IP addresses" },
+        { "term": "Encryption", "definition": "Scrambling data to prevent unauthorized access" },
+        { "term": "Firewall", "definition": "Monitors and filters network traffic" },
+        { "term": "Packet", "definition": "Small unit of data sent over a network" }
+      ]
+    },
+    "topic5": {
+      "pairs": [
+        { "term": "Data Protection Act", "definition": "Law protecting personal data rights" },
+        { "term": "Computer Misuse Act", "definition": "Law against hacking and unauthorized access" },
+        { "term": "Copyright", "definition": "Legal protection for creative works" },
+        { "term": "Creative Commons", "definition": "Licenses allowing sharing with conditions" },
+        { "term": "Open Source", "definition": "Software with freely available source code" },
+        { "term": "Proprietary", "definition": "Software with restricted access to code" },
+        { "term": "Digital Divide", "definition": "Gap between those with/without tech access" },
+        { "term": "E-waste", "definition": "Discarded electronic equipment" },
+        { "term": "Phishing", "definition": "Fraudulent attempt to obtain sensitive data" },
+        { "term": "Privacy", "definition": "Right to control personal information" },
+        { "term": "Artificial Intelligence", "definition": "Systems that simulate human intelligence" },
+        { "term": "Automation", "definition": "Technology performing tasks without humans" }
+      ]
+    },
+    "topic6": {
+      "pairs": [
+        { "term": "Variable", "definition": "Named storage location for data" },
+        { "term": "Constant", "definition": "Value that cannot be changed during execution" },
+        { "term": "Array", "definition": "Collection of items stored under one name" },
+        { "term": "String", "definition": "Sequence of characters" },
+        { "term": "Integer", "definition": "Whole number without decimal places" },
+        { "term": "Boolean", "definition": "Data type with True or False values" },
+        { "term": "Selection", "definition": "IF statements choosing different paths" },
+        { "term": "Iteration", "definition": "Repeating code using loops" },
+        { "term": "Function", "definition": "Reusable block of code that returns a value" },
+        { "term": "Procedure", "definition": "Reusable block of code that performs a task" },
+        { "term": "Parameter", "definition": "Value passed into a function" },
+        { "term": "Syntax Error", "definition": "Mistake in the structure of the code" }
+      ]
+    }
+  },
+
+  "connectionWall": {
+    "topic1": {
+      "sets": [
+        {
+          "title": "Computational Thinking Concepts",
+          "groups": [
+            { "name": "Computational Thinking", "items": ["Decomposition", "Abstraction", "Pattern Recognition", "Algorithmic Thinking"], "color": "#8b5cf6" },
+            { "name": "Searching Algorithms", "items": ["Linear Search", "Binary Search", "Sequential", "Divide and Conquer"], "color": "#3b82f6" },
+            { "name": "Sorting Algorithms", "items": ["Bubble Sort", "Merge Sort", "Insertion Sort", "Quick Sort"], "color": "#10b981" },
+            { "name": "Logic Gates", "items": ["AND", "OR", "NOT", "XOR"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Algorithm Representations",
+          "groups": [
+            { "name": "Flowchart Symbols", "items": ["Terminator", "Process", "Decision", "Input/Output"], "color": "#8b5cf6" },
+            { "name": "Algorithm Features", "items": ["Sequence", "Selection", "Iteration", "Variables"], "color": "#3b82f6" },
+            { "name": "Boolean Operators", "items": ["AND", "OR", "NOT", "XOR"], "color": "#10b981" },
+            { "name": "Search Requirements", "items": ["Target", "List", "Comparison", "Position"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    },
+    "topic2": {
+      "sets": [
+        {
+          "title": "Data Representation Mix",
+          "groups": [
+            { "name": "Number Systems", "items": ["Binary", "Denary", "Hexadecimal", "Octal"], "color": "#8b5cf6" },
+            { "name": "Image Properties", "items": ["Resolution", "Colour Depth", "Pixel", "Metadata"], "color": "#3b82f6" },
+            { "name": "Sound Properties", "items": ["Sample Rate", "Bit Depth", "Duration", "Channels"], "color": "#10b981" },
+            { "name": "Character Encoding", "items": ["ASCII", "Unicode", "UTF-8", "Extended ASCII"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Compression & Calculations",
+          "groups": [
+            { "name": "Lossy Formats", "items": ["JPEG", "MP3", "MPEG", "AAC"], "color": "#8b5cf6" },
+            { "name": "Lossless Formats", "items": ["PNG", "FLAC", "ZIP", "GIF"], "color": "#3b82f6" },
+            { "name": "Binary Operations", "items": ["Addition", "Shift Left", "Shift Right", "Overflow"], "color": "#10b981" },
+            { "name": "Units of Storage", "items": ["Bit", "Byte", "Kilobyte", "Megabyte"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    },
+    "topic3": {
+      "sets": [
+        {
+          "title": "Computer Components",
+          "groups": [
+            { "name": "CPU Components", "items": ["ALU", "Control Unit", "Registers", "Cache"], "color": "#8b5cf6" },
+            { "name": "Types of Memory", "items": ["RAM", "ROM", "Virtual Memory", "Flash"], "color": "#3b82f6" },
+            { "name": "Storage Devices", "items": ["SSD", "HDD", "Optical", "Magnetic Tape"], "color": "#10b981" },
+            { "name": "CPU Characteristics", "items": ["Clock Speed", "Cores", "Cache Size", "Architecture"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Software & Languages",
+          "groups": [
+            { "name": "System Software", "items": ["Operating System", "Utility Software", "Drivers", "BIOS"], "color": "#8b5cf6" },
+            { "name": "Application Software", "items": ["Word Processor", "Spreadsheet", "Browser", "Database"], "color": "#3b82f6" },
+            { "name": "High-Level Languages", "items": ["Python", "Java", "C#", "JavaScript"], "color": "#10b981" },
+            { "name": "Translators", "items": ["Compiler", "Interpreter", "Assembler", "Linker"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    },
+    "topic4": {
+      "sets": [
+        {
+          "title": "Network Fundamentals",
+          "groups": [
+            { "name": "Network Types", "items": ["LAN", "WAN", "PAN", "MAN"], "color": "#8b5cf6" },
+            { "name": "Network Topologies", "items": ["Star", "Bus", "Ring", "Mesh"], "color": "#3b82f6" },
+            { "name": "Network Hardware", "items": ["Router", "Switch", "NIC", "WAP"], "color": "#10b981" },
+            { "name": "Transmission Media", "items": ["Ethernet", "Fibre Optic", "Wi-Fi", "Bluetooth"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Protocols & Security",
+          "groups": [
+            { "name": "Internet Protocols", "items": ["TCP/IP", "HTTP", "FTP", "SMTP"], "color": "#8b5cf6" },
+            { "name": "Security Methods", "items": ["Encryption", "Firewall", "Authentication", "VPN"], "color": "#3b82f6" },
+            { "name": "Network Threats", "items": ["Malware", "Phishing", "DDoS", "Brute Force"], "color": "#10b981" },
+            { "name": "TCP/IP Layers", "items": ["Application", "Transport", "Internet", "Network Access"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    },
+    "topic5": {
+      "sets": [
+        {
+          "title": "Legal & Ethical Issues",
+          "groups": [
+            { "name": "UK Legislation", "items": ["Data Protection Act", "Computer Misuse Act", "Copyright Act", "GDPR"], "color": "#8b5cf6" },
+            { "name": "Ethical Issues", "items": ["Privacy", "Censorship", "Surveillance", "Digital Divide"], "color": "#3b82f6" },
+            { "name": "Environmental Issues", "items": ["E-waste", "Energy Usage", "Rare Metals", "Carbon Footprint"], "color": "#10b981" },
+            { "name": "Licensing", "items": ["Open Source", "Proprietary", "Creative Commons", "Freeware"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Technology & Society",
+          "groups": [
+            { "name": "Emerging Tech", "items": ["AI", "VR", "IoT", "Blockchain"], "color": "#8b5cf6" },
+            { "name": "Privacy Concerns", "items": ["Cookies", "Tracking", "Data Mining", "Profiling"], "color": "#3b82f6" },
+            { "name": "Cyber Threats", "items": ["Phishing", "Ransomware", "Identity Theft", "Social Engineering"], "color": "#10b981" },
+            { "name": "Stakeholders", "items": ["Users", "Developers", "Companies", "Government"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    },
+    "topic6": {
+      "sets": [
+        {
+          "title": "Programming Fundamentals",
+          "groups": [
+            { "name": "Data Types", "items": ["Integer", "String", "Boolean", "Float"], "color": "#8b5cf6" },
+            { "name": "Control Structures", "items": ["IF", "WHILE", "FOR", "SWITCH"], "color": "#3b82f6" },
+            { "name": "Operators", "items": ["Arithmetic", "Comparison", "Logical", "Assignment"], "color": "#10b981" },
+            { "name": "Data Structures", "items": ["Array", "List", "Dictionary", "Record"], "color": "#f59e0b" }
+          ]
+        },
+        {
+          "title": "Programming Concepts",
+          "groups": [
+            { "name": "Subprograms", "items": ["Function", "Procedure", "Method", "Module"], "color": "#8b5cf6" },
+            { "name": "Error Types", "items": ["Syntax", "Logic", "Runtime", "Semantic"], "color": "#3b82f6" },
+            { "name": "Testing Methods", "items": ["Normal Data", "Boundary Data", "Erroneous Data", "Extreme Data"], "color": "#10b981" },
+            { "name": "String Operations", "items": ["Concatenation", "Slicing", "Length", "Upper/Lower"], "color": "#f59e0b" }
+          ]
+        }
+      ]
+    }
+  },
+
+  "categorySort": {
+    "topic1": {
+      "sets": [
+        {
+          "title": "Algorithm Types",
+          "categories": {
+            "Searching": ["Linear Search", "Binary Search", "Sequential Search"],
+            "Sorting": ["Bubble Sort", "Merge Sort", "Insertion Sort"],
+            "Computational Thinking": ["Decomposition", "Abstraction", "Pattern Recognition"]
+          }
+        },
+        {
+          "title": "Logic Gate Outputs (Both inputs = 1)",
+          "categories": {
+            "Output = 1": ["AND", "OR", "NAND input=0,0"],
+            "Output = 0": ["XOR", "NOR", "NAND input=1,1"],
+            "Single Input Gates": ["NOT", "Buffer", "Inverter"]
+          }
+        }
+      ]
+    },
+    "topic2": {
+      "sets": [
+        {
+          "title": "File Formats",
+          "categories": {
+            "Image Formats": ["JPEG", "PNG", "GIF", "BMP", "TIFF"],
+            "Audio Formats": ["MP3", "WAV", "FLAC", "AAC", "OGG"],
+            "Video Formats": ["MP4", "AVI", "MOV", "MKV", "MPEG"]
+          }
+        },
+        {
+          "title": "Compression Types",
+          "categories": {
+            "Lossy Compression": ["JPEG", "MP3", "MPEG", "AAC"],
+            "Lossless Compression": ["PNG", "FLAC", "ZIP", "RAR"],
+            "No Compression": ["BMP", "WAV", "RAW", "TIFF"]
+          }
+        }
+      ]
+    },
+    "topic3": {
+      "sets": [
+        {
+          "title": "Hardware Components",
+          "categories": {
+            "Input Devices": ["Keyboard", "Mouse", "Microphone", "Scanner", "Webcam"],
+            "Output Devices": ["Monitor", "Printer", "Speakers", "Headphones", "Projector"],
+            "Storage Devices": ["SSD", "HDD", "USB Drive", "SD Card", "Optical Drive"]
+          }
+        },
+        {
+          "title": "Memory Types",
+          "categories": {
+            "Volatile Memory": ["RAM", "Cache", "Registers", "SRAM"],
+            "Non-Volatile Memory": ["ROM", "Flash", "EEPROM", "NVRAM"],
+            "Secondary Storage": ["HDD", "SSD", "Optical", "Magnetic Tape"]
+          }
+        }
+      ]
+    },
+    "topic4": {
+      "sets": [
+        {
+          "title": "Network Components",
+          "categories": {
+            "Network Hardware": ["Router", "Switch", "NIC", "WAP", "Hub"],
+            "Protocols": ["TCP/IP", "HTTP", "FTP", "SMTP", "DNS"],
+            "Security Measures": ["Encryption", "Firewall", "VPN", "Authentication", "Antivirus"]
+          }
+        },
+        {
+          "title": "Network Characteristics",
+          "categories": {
+            "LAN Features": ["Small area", "High speed", "Low cost", "Private ownership"],
+            "WAN Features": ["Large area", "Lower speed", "Higher cost", "Public/Private"],
+            "Wireless Features": ["No cables", "Mobility", "Limited range", "Interference risk"]
+          }
+        }
+      ]
+    },
+    "topic5": {
+      "sets": [
+        {
+          "title": "Legal & Ethical Categories",
+          "categories": {
+            "UK Laws": ["Data Protection Act", "Computer Misuse Act", "Copyright Act", "GDPR"],
+            "Ethical Issues": ["Privacy", "Surveillance", "Censorship", "Digital Divide"],
+            "Environmental": ["E-waste", "Energy consumption", "Rare earth mining", "Recycling"]
+          }
+        },
+        {
+          "title": "Software Licensing",
+          "categories": {
+            "Open Source": ["Linux", "Firefox", "VLC", "LibreOffice"],
+            "Proprietary": ["Windows", "Microsoft Office", "Adobe Photoshop", "macOS"],
+            "Freeware": ["Skype", "Zoom Free", "Avast Free", "Adobe Reader"]
+          }
+        }
+      ]
+    },
+    "topic6": {
+      "sets": [
+        {
+          "title": "Programming Concepts",
+          "categories": {
+            "Data Types": ["Integer", "String", "Boolean", "Float", "Character"],
+            "Control Structures": ["IF statement", "FOR loop", "WHILE loop", "SWITCH", "TRY/EXCEPT"],
+            "Operators": ["+ (Addition)", "% (Modulus)", "== (Equal to)", "and", "or"]
+          }
+        },
+        {
+          "title": "Error Types",
+          "categories": {
+            "Syntax Errors": ["Missing colon", "Misspelled keyword", "Unmatched brackets", "Wrong indentation"],
+            "Logic Errors": ["Wrong operator", "Infinite loop", "Off-by-one error", "Wrong condition"],
+            "Runtime Errors": ["Division by zero", "File not found", "Index out of range", "Type error"]
+          }
+        }
+      ]
+    }
+  },
+
+  "sequenceBuilder": {
+    "topic1": {
+      "sequences": [
+        {
+          "title": "Linear Search Algorithm",
+          "steps": [
+            "Start at the first item in the list",
+            "Compare current item with target value",
+            "If they match, return the position",
+            "If not, move to the next item",
+            "Repeat until found or end of list reached",
+            "If end reached without finding, return 'not found'"
+          ]
+        },
+        {
+          "title": "Binary Search Algorithm",
+          "steps": [
+            "Find the middle item of the sorted list",
+            "Compare middle item with target value",
+            "If they match, return the position",
+            "If target < middle, search the left half",
+            "If target > middle, search the right half",
+            "Repeat until found or no items left"
+          ]
+        },
+        {
+          "title": "Bubble Sort Algorithm",
+          "steps": [
+            "Start at the beginning of the list",
+            "Compare adjacent pair of items",
+            "If they are in wrong order, swap them",
+            "Move to the next pair",
+            "Continue until end of list (one pass)",
+            "Repeat passes until no swaps are made"
+          ]
+        }
+      ]
+    },
+    "topic2": {
+      "sequences": [
+        {
+          "title": "Binary to Denary Conversion",
+          "steps": [
+            "Write out the binary number",
+            "Write place values above (128, 64, 32, 16, 8, 4, 2, 1)",
+            "Multiply each binary digit by its place value",
+            "Add all the products together",
+            "The sum is the denary equivalent"
+          ]
+        },
+        {
+          "title": "Denary to Binary Conversion",
+          "steps": [
+            "Divide the denary number by 2",
+            "Record the remainder (0 or 1)",
+            "Divide the quotient by 2",
+            "Repeat until quotient is 0",
+            "Read remainders bottom to top for binary number"
+          ]
+        },
+        {
+          "title": "Calculate Image File Size",
+          "steps": [
+            "Find the image dimensions (width × height)",
+            "Calculate total number of pixels",
+            "Determine the colour depth (bits per pixel)",
+            "Multiply pixels by colour depth",
+            "Divide by 8 to convert bits to bytes"
+          ]
+        }
+      ]
+    },
+    "topic3": {
+      "sequences": [
+        {
+          "title": "Fetch-Execute Cycle",
+          "steps": [
+            "PC sends address to MAR",
+            "Address sent to RAM via address bus",
+            "Instruction fetched from RAM to MDR",
+            "Instruction copied from MDR to CIR",
+            "PC is incremented by 1",
+            "CU decodes the instruction",
+            "ALU executes the instruction"
+          ]
+        },
+        {
+          "title": "Computer Startup (Boot Process)",
+          "steps": [
+            "Power button pressed, electricity flows to motherboard",
+            "BIOS/UEFI loaded from ROM chip",
+            "POST (Power-On Self Test) checks hardware",
+            "BIOS locates boot device (HDD/SSD)",
+            "Bootloader loaded into RAM",
+            "Operating system kernel loaded",
+            "User interface displayed"
+          ]
+        },
+        {
+          "title": "Compilation Process",
+          "steps": [
+            "Source code written in high-level language",
+            "Lexical analysis breaks code into tokens",
+            "Syntax analysis checks grammar rules",
+            "Semantic analysis checks meaning",
+            "Code optimization improves efficiency",
+            "Machine code generated for target platform"
+          ]
+        }
+      ]
+    },
+    "topic4": {
+      "sequences": [
+        {
+          "title": "Sending Data Across a Network",
+          "steps": [
+            "Application creates data to send",
+            "Data broken into packets",
+            "Each packet given header with addressing info",
+            "Packets sent via router to destination",
+            "Packets may take different routes",
+            "Destination receives and reorders packets",
+            "Data reassembled and delivered to application"
+          ]
+        },
+        {
+          "title": "DNS Lookup Process",
+          "steps": [
+            "User enters domain name in browser",
+            "Browser checks local DNS cache",
+            "If not found, query sent to DNS resolver",
+            "Resolver queries root DNS server",
+            "Root server directs to TLD server (.com, .uk)",
+            "TLD server directs to authoritative server",
+            "IP address returned to browser",
+            "Browser connects to web server using IP"
+          ]
+        },
+        {
+          "title": "TCP Three-Way Handshake",
+          "steps": [
+            "Client sends SYN packet to server",
+            "Server receives SYN and sends SYN-ACK",
+            "Client receives SYN-ACK and sends ACK",
+            "Connection established, data transfer begins"
+          ]
+        }
+      ]
+    },
+    "topic5": {
+      "sequences": [
+        {
+          "title": "Data Protection Act Principles",
+          "steps": [
+            "Data must be processed lawfully and fairly",
+            "Data collected for specified purposes only",
+            "Data must be adequate and relevant",
+            "Data must be accurate and up to date",
+            "Data kept no longer than necessary",
+            "Data processed securely",
+            "Data subject has rights to access their data"
+          ]
+        },
+        {
+          "title": "Responding to a Data Breach",
+          "steps": [
+            "Detect and identify the breach",
+            "Contain the breach to prevent further damage",
+            "Assess the risk to individuals",
+            "Report to ICO within 72 hours if required",
+            "Notify affected individuals if high risk",
+            "Document the breach and response",
+            "Review and improve security measures"
+          ]
+        }
+      ]
+    },
+    "topic6": {
+      "sequences": [
+        {
+          "title": "Program Development Cycle",
+          "steps": [
+            "Analyse the problem and requirements",
+            "Design the solution (algorithms, flowcharts)",
+            "Write the code (implementation)",
+            "Test with different types of test data",
+            "Debug and fix any errors found",
+            "Document the solution",
+            "Maintain and update as needed"
+          ]
+        },
+        {
+          "title": "Testing a Program",
+          "steps": [
+            "Create a test plan with test cases",
+            "Test with normal/typical data",
+            "Test with boundary/edge case data",
+            "Test with erroneous/invalid data",
+            "Compare actual results with expected",
+            "Document any errors found",
+            "Fix errors and retest"
+          ]
+        },
+        {
+          "title": "Writing a Function",
+          "steps": [
+            "Define the function with def keyword",
+            "Add parameters in parentheses",
+            "Write the function body (indented)",
+            "Add return statement if needed",
+            "Call the function with arguments",
+            "Store or use the returned value"
+          ]
+        }
+      ]
+    }
+  },
+
+  "logicGates": {
+    "questions": [
+      { "gate": "AND", "inputs": [0, 0], "answer": 0, "explanation": "AND: Both inputs must be 1 for output 1" },
+      { "gate": "AND", "inputs": [0, 1], "answer": 0, "explanation": "AND: Both inputs must be 1 for output 1" },
+      { "gate": "AND", "inputs": [1, 0], "answer": 0, "explanation": "AND: Both inputs must be 1 for output 1" },
+      { "gate": "AND", "inputs": [1, 1], "answer": 1, "explanation": "AND: Both inputs are 1, so output is 1" },
+      { "gate": "OR", "inputs": [0, 0], "answer": 0, "explanation": "OR: At least one input must be 1 for output 1" },
+      { "gate": "OR", "inputs": [0, 1], "answer": 1, "explanation": "OR: One input is 1, so output is 1" },
+      { "gate": "OR", "inputs": [1, 0], "answer": 1, "explanation": "OR: One input is 1, so output is 1" },
+      { "gate": "OR", "inputs": [1, 1], "answer": 1, "explanation": "OR: Both inputs are 1, so output is 1" },
+      { "gate": "NOT", "inputs": [0], "answer": 1, "explanation": "NOT: Inverts 0 to 1" },
+      { "gate": "NOT", "inputs": [1], "answer": 0, "explanation": "NOT: Inverts 1 to 0" },
+      { "gate": "XOR", "inputs": [0, 0], "answer": 0, "explanation": "XOR: Inputs must be different for output 1" },
+      { "gate": "XOR", "inputs": [0, 1], "answer": 1, "explanation": "XOR: Inputs are different, so output is 1" },
+      { "gate": "XOR", "inputs": [1, 0], "answer": 1, "explanation": "XOR: Inputs are different, so output is 1" },
+      { "gate": "XOR", "inputs": [1, 1], "answer": 0, "explanation": "XOR: Inputs are same, so output is 0" },
+      { "gate": "NAND", "inputs": [0, 0], "answer": 1, "explanation": "NAND: Opposite of AND" },
+      { "gate": "NAND", "inputs": [0, 1], "answer": 1, "explanation": "NAND: Opposite of AND" },
+      { "gate": "NAND", "inputs": [1, 0], "answer": 1, "explanation": "NAND: Opposite of AND" },
+      { "gate": "NAND", "inputs": [1, 1], "answer": 0, "explanation": "NAND: Opposite of AND - both 1s gives 0" },
+      { "gate": "NOR", "inputs": [0, 0], "answer": 1, "explanation": "NOR: Opposite of OR - both 0s gives 1" },
+      { "gate": "NOR", "inputs": [0, 1], "answer": 0, "explanation": "NOR: Opposite of OR" },
+      { "gate": "NOR", "inputs": [1, 0], "answer": 0, "explanation": "NOR: Opposite of OR" },
+      { "gate": "NOR", "inputs": [1, 1], "answer": 0, "explanation": "NOR: Opposite of OR" }
+    ]
+  }
+}

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 2: Data | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html" class="active">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 2</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 2: Data</h1>
+                    <p style="color: rgba(255,255,255,0.9);">Number systems, data representation, and compression</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#number-systems" class="subtopic-tab active">
+                    <i class="fas fa-binary"></i>
+                    Number Systems
+                </a>
+                <a href="#binary-arithmetic" class="subtopic-tab">
+                    <i class="fas fa-calculator"></i>
+                    Binary Arithmetic
+                </a>
+                <a href="#text" class="subtopic-tab">
+                    <i class="fas fa-font"></i>
+                    Text
+                </a>
+                <a href="#images" class="subtopic-tab">
+                    <i class="fas fa-image"></i>
+                    Images
+                </a>
+                <a href="#sound" class="subtopic-tab">
+                    <i class="fas fa-volume-up"></i>
+                    Sound
+                </a>
+                <a href="#compression" class="subtopic-tab">
+                    <i class="fas fa-compress-alt"></i>
+                    Compression
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== NUMBER SYSTEMS ==================== -->
+        <section id="number-systems" class="content-section">
+            <h2>Number Systems</h2>
+
+            <p>Computers use <strong>binary</strong> (base-2) to store and process all data. You need to understand three number systems and how to convert between them.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%); border-left: 4px solid #06b6d4;">
+                    <h4><i class="fas fa-hashtag" style="color: #06b6d4;"></i> Denary (Base-10)</h4>
+                    <p>The number system we use every day.</p>
+                    <p><strong>Digits:</strong> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+                    <p><strong>Example:</strong> 156 = (1×100) + (5×10) + (6×1)</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #10b981;">
+                    <h4><i class="fas fa-microchip" style="color: #10b981;"></i> Binary (Base-2)</h4>
+                    <p>The language of computers - only 0s and 1s.</p>
+                    <p><strong>Digits:</strong> 0, 1</p>
+                    <p><strong>Example:</strong> 1010 = 8 + 0 + 2 + 0 = 10</p>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%); border-left: 4px solid #8b5cf6;">
+                    <h4><i class="fas fa-code" style="color: #8b5cf6;"></i> Hexadecimal (Base-16)</h4>
+                    <p>Shorthand for binary - used for colours, memory addresses.</p>
+                    <p><strong>Digits:</strong> 0-9, A, B, C, D, E, F</p>
+                    <p><strong>Example:</strong> 2F = (2×16) + (15×1) = 47</p>
+                </div>
+            </div>
+
+            <h3>Binary Place Values</h3>
+            <p>Each position in a binary number represents a power of 2:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; text-align: center;">
+                <thead>
+                    <tr style="background: var(--primary-color); color: white;">
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">128</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">64</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">32</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">16</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">8</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">4</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">2</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color);">1</th>
+                        <th style="padding: 0.75rem; border: 1px solid var(--border-color); background: #10b981;">Denary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; background: rgba(16, 185, 129, 0.1);">10</td>
+                    </tr>
+                    <tr style="background: var(--bg-secondary);">
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">0</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; background: rgba(16, 185, 129, 0.1);">101</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                        <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold; background: rgba(16, 185, 129, 0.1);">255</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Data Units</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definitions</h4>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>Bit</strong> - A single binary digit (0 or 1)</li>
+                    <li><strong>Nibble</strong> - 4 bits</li>
+                    <li><strong>Byte</strong> - 8 bits (can store values 0-255)</li>
+                    <li><strong>Kilobyte (KB)</strong> - 1,000 bytes (or 1,024 bytes)</li>
+                    <li><strong>Megabyte (MB)</strong> - 1,000 KB</li>
+                    <li><strong>Gigabyte (GB)</strong> - 1,000 MB</li>
+                    <li><strong>Terabyte (TB)</strong> - 1,000 GB</li>
+                </ul>
+            </div>
+
+            <h3>Hexadecimal Conversion</h3>
+            <p>Hexadecimal uses 16 digits. Letters A-F represent values 10-15:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0; text-align: center;">
+                <tr style="background: var(--bg-secondary);">
+                    <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Hex</th>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">0</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">1</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">2</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">3</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">4</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">5</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">6</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">7</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">8</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">9</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">A</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">B</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">C</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">D</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">E</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); background: #8b5cf6; color: white;">F</td>
+                </tr>
+                <tr>
+                    <th style="padding: 0.5rem; border: 1px solid var(--border-color);">Denary</th>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">0</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">1</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">2</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">3</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">4</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">5</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">6</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">7</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">8</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color);">9</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">10</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">11</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">12</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">13</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">14</td>
+                    <td style="padding: 0.5rem; border: 1px solid var(--border-color); font-weight: bold;">15</td>
+                </tr>
+            </table>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lightbulb"></i> Why Use Hexadecimal?</h4>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>Shorter:</strong> One hex digit = 4 binary digits (1 nibble)</li>
+                    <li><strong>Easier to read:</strong> FF is easier than 11111111</li>
+                    <li><strong>Common uses:</strong> Colour codes (#FF0000), MAC addresses, memory addresses</li>
+                </ul>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2a-number-systems" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Number Systems</h4>
+                    <p>Binary, denary, and hexadecimal conversions explained</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">Sample Question - 3 marks</span>
+                    <span class="marks">3 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Convert the binary number <strong>11001010</strong> to:</p>
+                    <p>a) Denary [2 marks]</p>
+                    <p>b) Hexadecimal [1 mark]</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>a) Denary:</strong></p>
+                        <p>128 + 64 + 0 + 0 + 8 + 0 + 2 + 0 = <strong>202</strong></p>
+                        <p><strong>b) Hexadecimal:</strong></p>
+                        <p>Split into nibbles: 1100 1010 = C A = <strong>CA</strong></p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ==================== BINARY ARITHMETIC ==================== -->
+        <section id="binary-arithmetic" class="content-section">
+            <h2>Binary Arithmetic</h2>
+
+            <h3>Binary Addition</h3>
+            <p>Binary addition follows these rules:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; text-align: center;">
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: var(--radius-md);">
+                    <p style="font-size: 1.25rem; font-weight: bold;">0 + 0 = 0</p>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: var(--radius-md);">
+                    <p style="font-size: 1.25rem; font-weight: bold;">0 + 1 = 1</p>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: var(--radius-md);">
+                    <p style="font-size: 1.25rem; font-weight: bold;">1 + 0 = 1</p>
+                </div>
+                <div style="background: rgba(245, 158, 11, 0.2); padding: 1rem; border-radius: var(--radius-md); border: 2px solid #f59e0b;">
+                    <p style="font-size: 1.25rem; font-weight: bold;">1 + 1 = 10</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">(0, carry 1)</p>
+                </div>
+            </div>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lightbulb"></i> Worked Example: 00110101 + 00011011</h4>
+                <pre style="font-family: monospace; margin: 0.5rem 0;">
+    00110101  (53)
+  + 00011011  (27)
+  ----------
+    01010000  (80)
+    1111      (carries)</pre>
+            </div>
+
+            <h3>Overflow</h3>
+            <div class="info-box warning" style="background: rgba(239, 68, 68, 0.1); border-left-color: #ef4444;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Overflow Error</h4>
+                <p><strong>Overflow</strong> occurs when the result of a calculation is too large to fit in the available number of bits.</p>
+                <p>Example: In 8-bit binary, the maximum value is 255. If 200 + 100 = 300, this causes overflow because 300 > 255.</p>
+            </div>
+
+            <h3>Binary Shifts</h3>
+            <p>Shifting bits left or right is a quick way to multiply or divide by powers of 2.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                    <h4 style="color: #10b981;"><i class="fas fa-arrow-left"></i> Left Shift</h4>
+                    <p><strong>Multiplies</strong> by 2 for each shift</p>
+                    <p style="font-family: monospace; margin: 0.5rem 0;">
+                        00001010 (10)<br>
+                        00010100 (20) ← shift left 1<br>
+                        00101000 (40) ← shift left 2
+                    </p>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border-left: 4px solid #ef4444;">
+                    <h4 style="color: #ef4444;"><i class="fas fa-arrow-right"></i> Right Shift</h4>
+                    <p><strong>Divides</strong> by 2 for each shift (integer division)</p>
+                    <p style="font-family: monospace; margin: 0.5rem 0;">
+                        00101000 (40)<br>
+                        00010100 (20) → shift right 1<br>
+                        00001010 (10) → shift right 2
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>
+                <p>When shifting, bits that "fall off" the end are lost. New bits added are always 0. A left shift can cause overflow if a 1 is shifted out of the most significant bit position.</p>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2a-binary-arithmetic" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Binary Arithmetic</h4>
+                    <p>Addition, shifts, and overflow explained</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- ==================== TEXT REPRESENTATION ==================== -->
+        <section id="text" class="content-section">
+            <h2>Representing Text</h2>
+
+            <p>Computers store text as numbers using <strong>character sets</strong> - tables that map each character to a unique number.</p>
+
+            <h3>ASCII</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>ASCII</strong> (American Standard Code for Information Interchange) uses <strong>7 bits</strong> to represent 128 characters (0-127), including letters, numbers, punctuation, and control characters.</p>
+            </div>
+
+            <p>Common ASCII values to remember:</p>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <tr style="background: var(--primary-color); color: white;">
+                    <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Character</th>
+                    <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Denary</th>
+                    <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Binary</th>
+                </tr>
+                <tr><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">A</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">65</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">01000001</td></tr>
+                <tr style="background: var(--bg-secondary);"><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Z</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">90</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">01011010</td></tr>
+                <tr><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">a</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">97</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">01100001</td></tr>
+                <tr style="background: var(--bg-secondary);"><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">z</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">122</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">01111010</td></tr>
+                <tr><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">0</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">48</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">00110000</td></tr>
+                <tr style="background: var(--bg-secondary);"><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Space</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">32</td><td style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">00100000</td></tr>
+            </table>
+
+            <h3>Unicode</h3>
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Unicode</strong> is a universal character set that can represent characters from <strong>all languages</strong> in the world, plus emojis and symbols. It uses up to <strong>32 bits</strong> per character, allowing for over 1 million characters.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+                <div>
+                    <h4 style="color: #10b981;"><i class="fas fa-check-circle"></i> ASCII</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>7 bits = 128 characters</li>
+                        <li>English only</li>
+                        <li>Smaller file sizes</li>
+                        <li>Faster to process</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #3b82f6;"><i class="fas fa-globe"></i> Unicode</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>Up to 32 bits = 1+ million characters</li>
+                        <li>All world languages</li>
+                        <li>Includes emojis</li>
+                        <li>Larger file sizes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2b-character-sets" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Character Sets</h4>
+                    <p>ASCII and Unicode explained</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- ==================== IMAGE REPRESENTATION ==================== -->
+        <section id="images" class="content-section">
+            <h2>Representing Images</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definitions</h4>
+                <p>Digital images are made up of <strong>pixels</strong> (picture elements). Each pixel's colour is stored as a binary number.</p>
+            </div>
+
+            <h3>Key Terms</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-th"></i> Resolution</h4>
+                    <p>The <strong>number of pixels</strong> in an image, usually expressed as width × height (e.g., 1920 × 1080).</p>
+                    <p><strong>Higher resolution</strong> = more detail but larger file size.</p>
+                </div>
+
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-palette"></i> Colour Depth</h4>
+                    <p>The <strong>number of bits</strong> used to store each pixel's colour.</p>
+                    <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.9rem;">
+                        <li>1-bit = 2 colours (black/white)</li>
+                        <li>8-bit = 256 colours</li>
+                        <li>24-bit = 16.7 million colours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Calculating Image File Size</h3>
+            <div class="info-box" style="background: rgba(6, 182, 212, 0.1); border-left-color: #06b6d4;">
+                <h4><i class="fas fa-calculator"></i> Formula</h4>
+                <p style="font-size: 1.25rem; font-weight: bold; margin: 0.5rem 0;">
+                    File Size (bits) = Width × Height × Colour Depth
+                </p>
+                <p style="margin-top: 0.75rem;"><strong>Example:</strong> A 800 × 600 image with 24-bit colour:</p>
+                <p>800 × 600 × 24 = 11,520,000 bits = 1,440,000 bytes = <strong>1.44 MB</strong></p>
+            </div>
+
+            <h3>Metadata</h3>
+            <p><strong>Metadata</strong> is additional data stored with an image file, including:</p>
+            <ul style="margin: 0.5rem 0 1rem 1.5rem;">
+                <li>File format, dimensions, colour depth</li>
+                <li>Date and time the photo was taken</li>
+                <li>Camera settings (for photos)</li>
+                <li>GPS location (for phones/cameras)</li>
+            </ul>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2b-representing-images" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Representing Images</h4>
+                    <p>Pixels, resolution, and colour depth</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2022 - Paper 1</span>
+                    <span class="marks">3 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Calculate the file size in bytes of an image that is 640 × 480 pixels with a colour depth of 8 bits. Show your working.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p>File size = width × height × colour depth</p>
+                        <p>= 640 × 480 × 8 [1 mark]</p>
+                        <p>= 2,457,600 bits [1 mark]</p>
+                        <p>= 2,457,600 ÷ 8 = <strong>307,200 bytes</strong> [1 mark]</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ==================== SOUND REPRESENTATION ==================== -->
+        <section id="sound" class="content-section">
+            <h2>Representing Sound</h2>
+
+            <p>Sound is an <strong>analogue</strong> signal (continuous wave). To store it digitally, we must <strong>sample</strong> it at regular intervals.</p>
+
+            <h3>Key Terms</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-wave-square"></i> Sample Rate</h4>
+                    <p>The <strong>number of samples taken per second</strong>, measured in Hertz (Hz).</p>
+                    <p><strong>CD quality:</strong> 44,100 Hz (44.1 kHz)</p>
+                    <p>Higher sample rate = better quality, larger file</p>
+                </div>
+
+                <div class="info-box" style="background: var(--bg-secondary);">
+                    <h4><i class="fas fa-ruler-vertical"></i> Bit Depth</h4>
+                    <p>The <strong>number of bits per sample</strong>, determining the range of values each sample can have.</p>
+                    <p><strong>CD quality:</strong> 16-bit</p>
+                    <p>Higher bit depth = more accurate, larger file</p>
+                </div>
+            </div>
+
+            <h3>Calculating Audio File Size</h3>
+            <div class="info-box" style="background: rgba(6, 182, 212, 0.1); border-left-color: #06b6d4;">
+                <h4><i class="fas fa-calculator"></i> Formula</h4>
+                <p style="font-size: 1.25rem; font-weight: bold; margin: 0.5rem 0;">
+                    File Size (bits) = Sample Rate × Bit Depth × Duration (seconds)
+                </p>
+                <p style="margin-top: 0.75rem;"><strong>Example:</strong> 30 seconds of audio at 44,100 Hz with 16-bit depth:</p>
+                <p>44,100 × 16 × 30 = 21,168,000 bits = 2,646,000 bytes ≈ <strong>2.65 MB</strong></p>
+            </div>
+
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip</h4>
+                <p>For stereo audio, multiply by 2 (left and right channels). The formula becomes:</p>
+                <p><strong>File Size = Sample Rate × Bit Depth × Duration × Channels</strong></p>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2b-representing-sound" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Representing Sound</h4>
+                    <p>Sample rate, bit depth, and file sizes</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- ==================== COMPRESSION ==================== -->
+        <section id="compression" class="content-section">
+            <h2>Compression</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Definition</h4>
+                <p><strong>Compression</strong> reduces the size of a file so it takes up less storage space and can be transmitted faster. There are two types: <strong>lossy</strong> and <strong>lossless</strong>.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444;">Lossy Compression</h3>
+                    <p>Permanently removes some data to reduce file size. <strong>Cannot be reversed</strong>.</p>
+                    <h4 style="margin-top: 1rem;">Characteristics:</h4>
+                    <ul style="margin: 0.5rem 0 0 1rem;">
+                        <li>Smaller file sizes</li>
+                        <li>Some quality is lost</li>
+                        <li>Original cannot be recovered</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">Examples:</h4>
+                    <ul style="margin: 0.5rem 0 0 1rem;">
+                        <li>JPEG (images)</li>
+                        <li>MP3 (audio)</li>
+                        <li>MP4 (video)</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">Best for:</h4>
+                    <p>Streaming, web images, when quality loss is acceptable</p>
+                </div>
+
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: var(--radius-lg); border-top: 4px solid #10b981;">
+                    <h3 style="color: #10b981;">Lossless Compression</h3>
+                    <p>Reduces file size without losing any data. <strong>Fully reversible</strong>.</p>
+                    <h4 style="margin-top: 1rem;">Characteristics:</h4>
+                    <ul style="margin: 0.5rem 0 0 1rem;">
+                        <li>Larger than lossy (but smaller than original)</li>
+                        <li>No quality loss</li>
+                        <li>Original can be perfectly reconstructed</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">Examples:</h4>
+                    <ul style="margin: 0.5rem 0 0 1rem;">
+                        <li>PNG (images)</li>
+                        <li>FLAC (audio)</li>
+                        <li>ZIP (files)</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">Best for:</h4>
+                    <p>Text, code, medical images, when quality matters</p>
+                </div>
+            </div>
+
+            <h3>Run Length Encoding (RLE)</h3>
+            <p>A simple lossless compression technique that replaces repeated data with a count and value.</p>
+
+            <div class="info-box tip" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+                <h4><i class="fas fa-lightbulb"></i> Example</h4>
+                <p><strong>Original:</strong> AAAAAABBBBCCCCCCCC</p>
+                <p><strong>Compressed:</strong> 6A4B8C</p>
+                <p>18 characters reduced to 6 characters!</p>
+            </div>
+
+            <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-2b-compression" target="_blank" class="video-link">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                <div class="video-link-content">
+                    <h4>Craig 'n' Dave: Compression</h4>
+                    <p>Lossy vs lossless compression techniques</p>
+                </div>
+            </a>
+
+            <div class="past-paper-question">
+                <div class="question-header">
+                    <span class="paper-ref">June 2023 - Paper 1</span>
+                    <span class="marks">4 marks</span>
+                </div>
+                <div class="question-text">
+                    <p>Explain the difference between lossy and lossless compression. Give an example of when each type would be appropriate.</p>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Mark Scheme Answer</summary>
+                    <div class="answer-content">
+                        <p><strong>Lossy [2 marks]:</strong></p>
+                        <ul>
+                            <li>Permanently removes data/reduces quality</li>
+                            <li>Appropriate for: streaming media, web images, where smaller size matters more than perfect quality</li>
+                        </ul>
+                        <p><strong>Lossless [2 marks]:</strong></p>
+                        <ul>
+                            <li>No data is lost/original can be reconstructed</li>
+                            <li>Appropriate for: text files, program code, medical images, where accuracy is essential</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ==================== QUIZ SECTION ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 2 Quiz</h2>
+            <p>Test your knowledge of data representation with this quiz. Download your PDF certificate when complete!</p>
+
+            <div id="student-info" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin: 2rem 0;">
+                <h4 style="margin-bottom: 1rem;">Enter Your Details</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <label for="studentName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Name:</label>
+                        <input type="text" id="studentName" placeholder="Enter your name" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label for="teacherEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Teacher's Email (optional):</label>
+                        <input type="email" id="teacherEmail" placeholder="teacher@school.com" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: var(--radius-md); font-size: 1rem;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-container">
+                <form id="topic2-quiz"></form>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <button type="button" id="submit-quiz" class="btn btn-primary" style="flex: 1; min-width: 200px;">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </div>
+
+            <div id="quiz-results" style="display: none; margin-top: 2rem;">
+                <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-xl); text-align: center;">
+                    <h3 id="results-title" style="font-size: 1.75rem; margin-bottom: 1rem;"></h3>
+                    <div id="score-display" style="font-size: 3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;"></div>
+                    <p id="score-message" style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" id="download-pdf" class="btn btn-primary">
+                            <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                        </button>
+                        <button type="button" id="retry-quiz" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+                <div id="detailed-results" style="margin-top: 2rem;"></div>
+            </div>
+        </section>
+
+        <!-- Key Terms Summary -->
+        <section class="content-section" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: var(--radius-xl); padding: 2rem; margin: 2rem 0;">
+            <h2>Key Terms Summary</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div><strong>Binary</strong> - Base-2 number system using 0 and 1</div>
+                <div><strong>Denary</strong> - Base-10 number system (0-9)</div>
+                <div><strong>Hexadecimal</strong> - Base-16 number system (0-F)</div>
+                <div><strong>Bit</strong> - Single binary digit</div>
+                <div><strong>Byte</strong> - 8 bits</div>
+                <div><strong>Overflow</strong> - Result too large for available bits</div>
+                <div><strong>ASCII</strong> - 7-bit character encoding (128 chars)</div>
+                <div><strong>Unicode</strong> - Universal character encoding</div>
+                <div><strong>Resolution</strong> - Number of pixels in an image</div>
+                <div><strong>Colour Depth</strong> - Bits per pixel</div>
+                <div><strong>Sample Rate</strong> - Samples per second (Hz)</div>
+                <div><strong>Lossy</strong> - Compression that loses data permanently</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="topic1.html">← Previous: Topic 1</a></li>
+                        <li><a href="topic3.html">Next: Topic 3 →</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave</a></li>
+                        <li><a href="https://www.bbc.co.uk/bitesize/examspecs/zdqy7nb" target="_blank">BBC Bitesize</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Independent revision resource. Not affiliated with Pearson Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script>
+        // Topic 2 Quiz Questions
+        const topic2Questions = [
+            {
+                question: "What is the denary value of the binary number 11001?",
+                options: ["21", "25", "27", "29"],
+                correct: 1,
+                explanation: "11001 = 16 + 8 + 0 + 0 + 1 = 25"
+            },
+            {
+                question: "What is the hexadecimal equivalent of binary 11110000?",
+                options: ["E0", "F0", "EF", "FF"],
+                correct: 1,
+                explanation: "1111 = F, 0000 = 0, so 11110000 = F0"
+            },
+            {
+                question: "How many bits are in a byte?",
+                options: ["4", "8", "16", "32"],
+                correct: 1,
+                explanation: "A byte contains 8 bits."
+            },
+            {
+                question: "What is the maximum denary value that can be stored in 8 bits?",
+                options: ["128", "255", "256", "512"],
+                correct: 1,
+                explanation: "8 bits can represent 0-255 (2^8 - 1 = 255)"
+            },
+            {
+                question: "What happens when you perform a left shift on a binary number?",
+                options: ["Divides by 2", "Multiplies by 2", "Adds 1", "Subtracts 1"],
+                correct: 1,
+                explanation: "A left shift multiplies the number by 2 for each position shifted."
+            },
+            {
+                question: "What is overflow?",
+                options: ["When a number is too small", "When the result is too large for the available bits", "When memory runs out", "When a program crashes"],
+                correct: 1,
+                explanation: "Overflow occurs when the result of a calculation exceeds the maximum value that can be stored."
+            },
+            {
+                question: "How many characters can ASCII represent?",
+                options: ["64", "128", "256", "512"],
+                correct: 1,
+                explanation: "ASCII uses 7 bits, allowing for 2^7 = 128 different characters."
+            },
+            {
+                question: "Why is Unicode preferred over ASCII for international text?",
+                options: ["It's faster", "It uses less storage", "It can represent all world languages", "It's older"],
+                correct: 2,
+                explanation: "Unicode can represent characters from all languages, including emojis and symbols."
+            },
+            {
+                question: "What does colour depth determine?",
+                options: ["Image size", "Number of colours available", "Image brightness", "File format"],
+                correct: 1,
+                explanation: "Colour depth is the number of bits per pixel, determining how many colours can be displayed."
+            },
+            {
+                question: "Calculate the file size of a 100x100 pixel image with 24-bit colour depth.",
+                options: ["10,000 bits", "240,000 bits", "240,000 bytes", "2,400,000 bits"],
+                correct: 1,
+                explanation: "100 × 100 × 24 = 240,000 bits"
+            },
+            {
+                question: "What is sample rate measured in?",
+                options: ["Bits", "Bytes", "Hertz (Hz)", "Pixels"],
+                correct: 2,
+                explanation: "Sample rate is the number of samples per second, measured in Hertz (Hz)."
+            },
+            {
+                question: "Which compression type permanently removes data?",
+                options: ["Lossless", "Lossy", "Both", "Neither"],
+                correct: 1,
+                explanation: "Lossy compression permanently removes data that cannot be recovered."
+            },
+            {
+                question: "What file format uses lossless compression?",
+                options: ["JPEG", "MP3", "PNG", "MP4"],
+                correct: 2,
+                explanation: "PNG uses lossless compression, preserving all original data."
+            },
+            {
+                question: "What is Run Length Encoding (RLE)?",
+                options: ["A lossy compression method", "A lossless method replacing repeated data with counts", "An encryption method", "A file format"],
+                correct: 1,
+                explanation: "RLE is a lossless compression technique that replaces sequences of repeated data with a count and value."
+            },
+            {
+                question: "What is the hexadecimal value of denary 200?",
+                options: ["C0", "C8", "D0", "D8"],
+                correct: 1,
+                explanation: "200 ÷ 16 = 12 remainder 8. 12 = C, so 200 = C8"
+            }
+        ];
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizForm = document.getElementById('topic2-quiz');
+            if (!quizForm) return;
+
+            let html = '';
+            topic2Questions.forEach((q, index) => {
+                html += `
+                    <div class="quiz-question-card" style="background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="background: #06b6d4; color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.875rem;">Question ${index + 1}</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">${q.question}</h4>
+                        <div class="quiz-options" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            ${q.options.map((opt, optIndex) => `
+                                <label class="quiz-option" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; background: var(--bg-secondary); border: 2px solid var(--border-color); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease;">
+                                    <input type="radio" name="q${index}" value="${optIndex}" style="width: 18px; height: 18px; cursor: pointer;">
+                                    <span style="flex: 1;">${opt}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div class="question-feedback" id="feedback-${index}" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: var(--radius-md);"></div>
+                    </div>
+                `;
+            });
+            quizForm.innerHTML = html;
+
+            // Submit handler
+            document.getElementById('submit-quiz').addEventListener('click', function() {
+                const studentName = document.getElementById('studentName').value.trim() || 'Anonymous Student';
+                let score = 0;
+                let results = [];
+
+                topic2Questions.forEach((q, index) => {
+                    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                    const feedback = document.getElementById(`feedback-${index}`);
+                    const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+                    const userAnswer = selected ? parseInt(selected.value) : -1;
+                    const isCorrect = userAnswer === q.correct;
+                    if (isCorrect) score++;
+
+                    results.push({
+                        question: q.question,
+                        userAnswer: userAnswer >= 0 ? q.options[userAnswer] : 'Not answered',
+                        correctAnswer: q.options[q.correct],
+                        isCorrect: isCorrect,
+                        explanation: q.explanation
+                    });
+
+                    options.forEach((opt, optIndex) => {
+                        const label = opt.parentElement;
+                        label.style.pointerEvents = 'none';
+                        if (optIndex === q.correct) {
+                            label.style.borderColor = '#10b981';
+                            label.style.background = 'rgba(16, 185, 129, 0.1)';
+                        } else if (optIndex === userAnswer && !isCorrect) {
+                            label.style.borderColor = '#ef4444';
+                            label.style.background = 'rgba(239, 68, 68, 0.1)';
+                        }
+                    });
+
+                    feedback.style.display = 'block';
+                    feedback.style.background = isCorrect ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)';
+                    feedback.style.borderLeft = `4px solid ${isCorrect ? '#10b981' : '#ef4444'}`;
+                    feedback.innerHTML = `<p style="font-weight: 600; color: ${isCorrect ? '#10b981' : '#ef4444'};">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</p><p style="font-size: 0.9rem;">${q.explanation}</p>`;
+                });
+
+                // Store results
+                window.quizResults = {
+                    topicId: 'topic2',
+                    topicName: 'Topic 2: Data',
+                    studentName: studentName,
+                    teacherEmail: document.getElementById('teacherEmail').value.trim(),
+                    score: score,
+                    total: topic2Questions.length,
+                    percentage: Math.round((score / topic2Questions.length) * 100),
+                    results: results,
+                    date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+                };
+
+                // Show results
+                const percentage = window.quizResults.percentage;
+                let grade, message, color;
+                if (percentage >= 90) { grade = 'Excellent!'; message = 'Outstanding work!'; color = '#10b981'; }
+                else if (percentage >= 70) { grade = 'Good Job!'; message = 'Well done!'; color = '#3b82f6'; }
+                else if (percentage >= 50) { grade = 'Keep Practicing'; message = 'Review the topics you missed.'; color = '#f59e0b'; }
+                else { grade = 'More Study Needed'; message = 'Go through the notes again.'; color = '#ef4444'; }
+
+                document.getElementById('results-title').textContent = grade;
+                document.getElementById('results-title').style.color = color;
+                document.getElementById('score-display').textContent = `${score}/${topic2Questions.length}`;
+                document.getElementById('score-display').style.color = color;
+                document.getElementById('score-message').textContent = `${percentage}% - ${message}`;
+                document.getElementById('quiz-results').style.display = 'block';
+                document.getElementById('submit-quiz').disabled = true;
+                document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Retry handler
+            document.getElementById('retry-quiz').addEventListener('click', function() {
+                location.reload();
+            });
+
+            // PDF handler
+            document.getElementById('download-pdf').addEventListener('click', function() {
+                if (typeof generatePDF === 'function') {
+                    generatePDF('topic2');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

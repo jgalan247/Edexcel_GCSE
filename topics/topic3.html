@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 3: Computers | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html" class="active">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 3</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 3: Computers</h1>
+                    <p style="color: rgba(255,255,255,0.9);">CPU architecture, memory, storage, and software systems</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#cpu" class="subtopic-tab active">
+                    <i class="fas fa-microchip"></i>
+                    CPU
+                </a>
+                <a href="#memory" class="subtopic-tab">
+                    <i class="fas fa-memory"></i>
+                    Memory
+                </a>
+                <a href="#storage" class="subtopic-tab">
+                    <i class="fas fa-hdd"></i>
+                    Storage
+                </a>
+                <a href="#software" class="subtopic-tab">
+                    <i class="fas fa-cogs"></i>
+                    Software
+                </a>
+                <a href="#languages" class="subtopic-tab">
+                    <i class="fas fa-code"></i>
+                    Languages
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== CPU ==================== -->
+        <section id="cpu" class="content-section">
+            <h2>The Central Processing Unit (CPU)</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>The CPU (Central Processing Unit)</strong> is the brain of the computer that processes program instructions. It fetches instructions from memory, decodes them, and executes them using the fetch-decode-execute cycle.</p>
+            </div>
+
+            <h3>Von Neumann Architecture</h3>
+            <p>Most modern computers are based on <strong>Von Neumann architecture</strong>, which uses the stored program concept. The key elements are:</p>
+
+            <ul class="styled-list">
+                <li><strong>Data and instructions</strong> are both stored as binary digits</li>
+                <li><strong>Data and instructions</strong> are stored together in the same RAM</li>
+                <li><strong>Instructions are fetched</strong> from memory one at a time and in order (serially)</li>
+                <li><strong>The processor decodes and executes</strong> an instruction before fetching the next one</li>
+                <li><strong>The cycle continues</strong> until no more instructions are available</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>The stored program concept means that both data and instructions are stored in main memory, allowing the same hardware to run different programs.</p>
+            </div>
+
+            <h3>CPU Components</h3>
+            <p>The CPU consists of several key components that work together:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Control Unit (CU)</strong></td>
+                            <td>Fetches, decodes and manages execution of instructions; controls hardware and data flow</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arithmetic Logic Unit (ALU)</strong></td>
+                            <td>Performs arithmetic calculations (add, subtract, multiply, divide) and logical decisions (comparisons)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registers</strong></td>
+                            <td>Small amounts of high-speed memory within the CPU used for temporary storage during processing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cache</strong></td>
+                            <td>Small, fast memory that stores frequently used data and instructions for quick access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Clock</strong></td>
+                            <td>Sends regular electrical pulses to synchronise all components; measured in Hertz (Hz)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buses</strong></td>
+                            <td>High-speed internal connections that transfer data between components</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Key Registers</h3>
+            <p>The CPU uses special registers during the fetch-decode-execute cycle:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Register</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Program Counter (PC)</strong></td>
+                            <td>Holds the memory address of the next instruction to be fetched</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory Address Register (MAR)</strong></td>
+                            <td>Holds the address of the current instruction to be fetched, or the address to store data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory Data Register (MDR)</strong></td>
+                            <td>Holds the data fetched from memory or data to be written to memory</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Current Instruction Register (CIR)</strong></td>
+                            <td>Holds the instruction currently being decoded and executed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accumulator (ACC)</strong></td>
+                            <td>Holds the results of calculations performed by the ALU</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>The Fetch-Decode-Execute Cycle</h3>
+            <p>The CPU processes instructions using a continuous cycle:</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>FETCH</h4>
+                        <p>The address in the PC is copied to the MAR. The PC is then incremented by 1.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>FETCH (continued)</h4>
+                        <p>The processor sends a signal along the address bus to fetch the instruction from memory.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>FETCH (continued)</h4>
+                        <p>The instruction is sent along the data bus to the MDR, then copied to the CIR.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>DECODE</h4>
+                        <p>The Control Unit decodes the instruction in the CIR to determine what action is needed.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>EXECUTE</h4>
+                        <p>The instruction is carried out. Results are stored in the ACC. The cycle then repeats.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>System Buses</h3>
+            <p>Three types of bus connect the CPU to other components:</p>
+
+            <ul class="styled-list">
+                <li><strong>Address Bus:</strong> Carries memory addresses from the processor to RAM and I/O devices (one-way)</li>
+                <li><strong>Data Bus:</strong> Carries the actual data between the processor and other components (two-way)</li>
+                <li><strong>Control Bus:</strong> Carries control signals from the processor (read/write commands, clock signals)</li>
+            </ul>
+
+            <h3>Factors Affecting CPU Performance</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-clock"></i> Clock Speed</h4>
+                    <p>Measured in GHz. Higher clock speed = more instructions per second. Modern CPUs run at 3-5 GHz.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-layer-group"></i> Number of Cores</h4>
+                    <p>Each core can process instructions independently. Dual-core = 2 cores, Quad-core = 4 cores.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-memory"></i> Cache Size</h4>
+                    <p>Larger cache = more frequently used data stored for fast access, reducing trips to slower RAM.</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=G_crqRQ4e60" target="_blank">The CPU and Von Neumann Architecture</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Describe the purpose of the MAR and MDR in the fetch-decode-execute cycle. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>MAR holds the address of the memory location to be read from/written to (1)</li>
+                        <li>MDR holds the data that has been fetched from memory (1)</li>
+                        <li>Or holds the data that is to be written to memory (1)</li>
+                        <li>MAR is connected to the address bus (1)</li>
+                        <li>MDR is connected to the data bus (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MEMORY ==================== -->
+        <section id="memory" class="content-section">
+            <h2>Memory</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Memory</strong> is internal storage that holds data and programs needed by the CPU. Main memory provides fast access but is limited in size compared to secondary storage.</p>
+            </div>
+
+            <h3>Types of Main Memory</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-memory"></i> RAM (Random Access Memory)</h4>
+                    <ul>
+                        <li><strong>Volatile</strong> - loses contents when power is off</li>
+                        <li>Read and write memory</li>
+                        <li>Stores currently running programs and data</li>
+                        <li>Fast access by the CPU</li>
+                        <li>Contents constantly changing</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-microchip"></i> ROM (Read Only Memory)</h4>
+                    <ul>
+                        <li><strong>Non-volatile</strong> - keeps contents when power is off</li>
+                        <li>Read only - cannot be written to</li>
+                        <li>Stores the BIOS/bootstrap program</li>
+                        <li>Contents are fixed during manufacture</li>
+                        <li>Used to start up the computer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Cache Memory</h3>
+            <p>Cache is a small amount of very fast memory located inside the CPU:</p>
+
+            <ul class="styled-list">
+                <li><strong>Much faster</strong> than RAM</li>
+                <li>Stores <strong>frequently used</strong> instructions and data</li>
+                <li>Reduces the number of times the CPU needs to access RAM</li>
+                <li>Available in levels: <strong>L1</strong> (fastest, smallest), <strong>L2</strong>, <strong>L3</strong> (largest, slowest)</li>
+                <li>More cache = better performance but higher cost</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Cache is much faster than RAM because it is located inside the CPU chip, so data doesn't have to travel along the system buses.</p>
+            </div>
+
+            <h3>Virtual Memory</h3>
+            <p>When RAM is full, the operating system uses <strong>virtual memory</strong>:</p>
+
+            <ul class="styled-list">
+                <li>Part of the hard drive is used as temporary RAM</li>
+                <li>Data not currently needed is swapped to the hard drive</li>
+                <li>Allows computers to run more programs than physical RAM would allow</li>
+                <li><strong>Much slower</strong> than actual RAM because hard drives are slower</li>
+                <li>Excessive use causes "thrashing" - constant swapping that slows the computer</li>
+            </ul>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=Kj2kfzW0VuA" target="_blank">RAM, ROM and Virtual Memory</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain why a computer with more RAM might run faster than one with less RAM. (3 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>More programs/data can be stored in RAM at once (1)</li>
+                        <li>Less need to use virtual memory/swap files (1)</li>
+                        <li>RAM is faster than the hard drive/secondary storage (1)</li>
+                        <li>So the CPU can access data more quickly (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== STORAGE ==================== -->
+        <section id="storage" class="content-section">
+            <h2>Secondary Storage</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Secondary Storage</strong> is non-volatile, long-term storage used to keep programs and data when the computer is switched off. Unlike main memory, data is retained without power.</p>
+            </div>
+
+            <h3>Why is Secondary Storage Needed?</h3>
+            <ul class="styled-list">
+                <li>RAM is <strong>volatile</strong> - loses contents when power is off</li>
+                <li>RAM has <strong>limited capacity</strong> compared to storage needs</li>
+                <li>Programs and data need to be <strong>stored permanently</strong></li>
+                <li>Data needs to be <strong>portable</strong> between devices</li>
+            </ul>
+
+            <h3>Types of Secondary Storage</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Examples</th>
+                            <th>How it Works</th>
+                            <th>Advantages</th>
+                            <th>Disadvantages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Magnetic</strong></td>
+                            <td>Hard Disk Drive (HDD)</td>
+                            <td>Data stored as magnetic patterns on spinning platters</td>
+                            <td>High capacity, low cost per GB</td>
+                            <td>Moving parts can fail, slower than SSD, not portable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Solid State</strong></td>
+                            <td>SSD, USB flash drive, SD card</td>
+                            <td>Data stored as electrical charges in flash memory chips</td>
+                            <td>Very fast, no moving parts, durable, portable</td>
+                            <td>More expensive per GB, limited write cycles</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optical</strong></td>
+                            <td>CD, DVD, Blu-ray</td>
+                            <td>Laser reads/writes data as pits and lands on disc surface</td>
+                            <td>Cheap, portable, good for distributing software/media</td>
+                            <td>Low capacity, easily scratched, slow access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cloud</strong></td>
+                            <td>Google Drive, iCloud, OneDrive</td>
+                            <td>Data stored on remote servers accessed via internet</td>
+                            <td>Access anywhere, automatic backup, scalable</td>
+                            <td>Needs internet, ongoing costs, privacy concerns</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Optical Storage Capacity</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-compact-disc"></i> CD</h4>
+                    <p>Capacity: ~700 MB</p>
+                    <p>Uses infrared laser</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-compact-disc"></i> DVD</h4>
+                    <p>Capacity: ~4.7 GB (single layer)</p>
+                    <p>Uses red laser</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-compact-disc"></i> Blu-ray</h4>
+                    <p>Capacity: ~25 GB (single layer)</p>
+                    <p>Uses blue laser (shorter wavelength)</p>
+                </div>
+            </div>
+
+            <h3>Choosing Storage</h3>
+            <p>When choosing storage, consider:</p>
+
+            <ul class="styled-list">
+                <li><strong>Capacity:</strong> How much data needs to be stored?</li>
+                <li><strong>Speed:</strong> How quickly does data need to be accessed?</li>
+                <li><strong>Portability:</strong> Does the storage need to be moved between devices?</li>
+                <li><strong>Durability:</strong> How robust does the storage need to be?</li>
+                <li><strong>Cost:</strong> What is the budget?</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Embedded Systems</h4>
+                <p>Embedded computers (like digital watches or washing machines) often don't need secondary storage. Their instructions are stored in ROM and any temporary data is held in RAM.</p>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=H5YLn1R-7MI" target="_blank">Secondary Storage Devices</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: A photographer needs to choose between an SSD and an HDD for storing photos. Give two reasons why an SSD would be more suitable. (2 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>SSD is faster so photos load/save more quickly (1)</li>
+                        <li>SSD has no moving parts so is more durable/reliable (1)</li>
+                        <li>SSD is lighter/more portable (1)</li>
+                        <li>SSD uses less power (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SOFTWARE ==================== -->
+        <section id="software" class="content-section">
+            <h2>Software</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Software</strong> refers to programs, applications, and data stored in a computer system. It is everything that isn't physical hardware.</p>
+            </div>
+
+            <h3>Types of Software</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-cogs"></i> System Software</h4>
+                    <p>Software that manages the computer hardware and provides a platform for applications.</p>
+                    <ul>
+                        <li>Operating Systems (Windows, macOS, Linux)</li>
+                        <li>Utility Software</li>
+                        <li>Device Drivers</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-window-maximize"></i> Application Software</h4>
+                    <p>Software designed for end-users to perform specific tasks.</p>
+                    <ul>
+                        <li>Word Processors</li>
+                        <li>Web Browsers</li>
+                        <li>Games</li>
+                        <li>Spreadsheets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Operating Systems</h3>
+            <p>An operating system is essential for any general-purpose computer. It performs these key functions:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Function</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>User Interface</strong></td>
+                            <td>Provides a way for users to interact with the computer (GUI, command line)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>File Management</strong></td>
+                            <td>Organises files in folders/directories, handles naming, copying, moving, deleting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Process Management</strong></td>
+                            <td>Controls which programs run, allocates CPU time using scheduling algorithms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory Management</strong></td>
+                            <td>Allocates RAM to programs, manages virtual memory when RAM is full</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware Management</strong></td>
+                            <td>Controls input/output devices using device drivers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>User accounts, passwords, access permissions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Scheduling Algorithms</h3>
+            <p>The OS uses scheduling algorithms to manage multiple processes:</p>
+
+            <ul class="styled-list">
+                <li><strong>First Come First Served (FCFS):</strong> Processes run in the order they arrive. Simple but slow.</li>
+                <li><strong>Round Robin:</strong> Each process gets a fixed time slice, then moves to the back of the queue. Fairer and more responsive.</li>
+                <li><strong>Priority-Based:</strong> Processes are given priorities; higher priority processes run first.</li>
+            </ul>
+
+            <h3>Utility Software</h3>
+            <p>Utility software helps maintain the system:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Utility</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Disk Defragmentation</strong></td>
+                            <td>Reorganises fragmented files on HDD so they are stored contiguously, improving access speed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backup Software</strong></td>
+                            <td>Creates copies of files to protect against data loss (full or incremental backups)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anti-virus/Anti-malware</strong></td>
+                            <td>Scans for and removes malicious software</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Compression</strong></td>
+                            <td>Reduces file sizes for storage or transmission</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Encryption</strong></td>
+                            <td>Scrambles data to protect it from unauthorised access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>File Manager</strong></td>
+                            <td>Create, rename, copy, move, delete files and folders</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Defragmentation</h4>
+                <p>Defragmentation is only needed for HDDs (magnetic drives). SSDs don't benefit from defragmentation because they have no moving parts and access any location equally fast.</p>
+            </div>
+
+            <h3>Backup Types</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-copy"></i> Full Backup</h4>
+                    <p>Copies ALL files. Takes longer and uses more storage, but easy to restore.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-sync"></i> Incremental Backup</h4>
+                    <p>Only copies files changed since the last backup. Faster but needs full backup + all incrementals to restore.</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=05lpmGIGiTE" target="_blank">Operating Systems and Utility Software</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain why defragmentation would improve the performance of a hard disk drive. (3 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>Files become fragmented/split into parts stored in different locations on the disk (1)</li>
+                        <li>Defragmentation rearranges files so they are stored contiguously/in sequence (1)</li>
+                        <li>This reduces the time taken to read a file as the read/write head doesn't need to move as much (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== LANGUAGES ==================== -->
+        <section id="languages" class="content-section">
+            <h2>Programming Languages</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Programming Languages</strong> are used to write software. They are classified as high-level or low-level depending on how close they are to human language or machine code.</p>
+            </div>
+
+            <h3>High-Level vs Low-Level Languages</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-user"></i> High-Level Languages</h4>
+                    <ul>
+                        <li>Use English-like statements (print, if, while)</li>
+                        <li>Easier to read, write, and debug</li>
+                        <li>Portable - work on different processors</li>
+                        <li>Must be translated to machine code</li>
+                        <li>Examples: Python, Java, C#, JavaScript</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-microchip"></i> Low-Level Languages</h4>
+                    <ul>
+                        <li>Close to machine code</li>
+                        <li>Harder to read and write</li>
+                        <li>Processor-specific (not portable)</li>
+                        <li>Direct hardware control</li>
+                        <li>Examples: Assembly language, Machine code</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Types of Low-Level Language</h3>
+            <ul class="styled-list">
+                <li><strong>Machine Code:</strong> Binary instructions (0s and 1s) that the CPU can execute directly. Different for each processor type.</li>
+                <li><strong>Assembly Language:</strong> Uses mnemonics (e.g., ADD, MOV, JMP) instead of binary. Slightly easier to read than machine code. Must be translated by an assembler.</li>
+            </ul>
+
+            <h3>Translators</h3>
+            <p>Programs written in high-level or assembly languages must be translated into machine code:</p>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Translator</th>
+                            <th>Input</th>
+                            <th>How it Works</th>
+                            <th>Advantages</th>
+                            <th>Disadvantages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Compiler</strong></td>
+                            <td>High-level source code</td>
+                            <td>Translates the whole program at once into an executable file</td>
+                            <td>Faster execution, code is hidden from users, can be distributed without translator</td>
+                            <td>Slower to develop (must recompile after changes), harder to debug</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Interpreter</strong></td>
+                            <td>High-level source code</td>
+                            <td>Translates and executes one line at a time</td>
+                            <td>Easier to debug (stops at error line), quicker to test changes</td>
+                            <td>Slower execution, source code must be distributed, needs interpreter to run</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assembler</strong></td>
+                            <td>Assembly language</td>
+                            <td>Translates assembly mnemonics into machine code (one-to-one)</td>
+                            <td>Produces efficient machine code</td>
+                            <td>Specific to one processor type</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Python is often interpreted during development for easy testing, but can be compiled for distribution. Java uses both - it compiles to bytecode which is then interpreted by the Java Virtual Machine (JVM).</p>
+            </div>
+
+            <h3>When to Use Low-Level Languages</h3>
+            <ul class="styled-list">
+                <li><strong>Device drivers:</strong> Direct hardware control is needed</li>
+                <li><strong>Embedded systems:</strong> Limited memory and processing power</li>
+                <li><strong>Time-critical applications:</strong> Maximum performance required</li>
+                <li><strong>Operating system components:</strong> Need to interact with hardware</li>
+            </ul>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=p8_d9pnJyLQ" target="_blank">Programming Languages and Translators</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain one advantage and one disadvantage of using an interpreter rather than a compiler. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li><strong>Advantage:</strong> Easier to debug because errors are identified line by line (1) and the program stops at the exact line with the error (1)</li>
+                        <li><strong>Disadvantage:</strong> Slower execution because the code is translated every time it runs (1) rather than being translated once like a compiled program (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUIZ ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 3 Quiz</h2>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Test Your Knowledge</h4>
+                <p>Complete this 15-question quiz to test your understanding of computers, CPU, memory, storage, and software. You'll receive a PDF certificate with your results that you can download or send to your teacher.</p>
+            </div>
+
+            <form id="quiz-form" class="quiz-form">
+                <div class="quiz-student-info">
+                    <div class="form-group">
+                        <label for="student-name"><i class="fas fa-user"></i> Your Name (required)</label>
+                        <input type="text" id="student-name" name="student-name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email"><i class="fas fa-envelope"></i> Teacher's Email (optional)</label>
+                        <input type="email" id="teacher-email" name="teacher-email" placeholder="Enter your teacher's email">
+                    </div>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="quiz-question" data-question="1">
+                    <h4>Question 1</h4>
+                    <p>Which component of the CPU performs arithmetic and logical calculations?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="a">
+                            <span>Control Unit (CU)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="b">
+                            <span>Arithmetic Logic Unit (ALU)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="c">
+                            <span>Program Counter (PC)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="d">
+                            <span>Memory Data Register (MDR)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question" data-question="2">
+                    <h4>Question 2</h4>
+                    <p>What is stored in the Program Counter (PC)?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="a">
+                            <span>The result of the last calculation</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="b">
+                            <span>The current instruction being executed</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="c">
+                            <span>The address of the next instruction to be fetched</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="d">
+                            <span>The data fetched from memory</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question" data-question="3">
+                    <h4>Question 3</h4>
+                    <p>Which type of memory is volatile?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="a">
+                            <span>ROM</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="b">
+                            <span>Hard Disk Drive</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="c">
+                            <span>RAM</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="d">
+                            <span>SSD</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question" data-question="4">
+                    <h4>Question 4</h4>
+                    <p>What is the purpose of cache memory?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="a">
+                            <span>To store the operating system permanently</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="b">
+                            <span>To store frequently used data for quick access by the CPU</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="c">
+                            <span>To provide long-term storage for files</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="d">
+                            <span>To increase the storage capacity of RAM</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question" data-question="5">
+                    <h4>Question 5</h4>
+                    <p>Which bus carries memory addresses from the CPU to RAM?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="a">
+                            <span>Data Bus</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="b">
+                            <span>Control Bus</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="c">
+                            <span>Address Bus</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="d">
+                            <span>System Bus</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question" data-question="6">
+                    <h4>Question 6</h4>
+                    <p>What does ROM typically store in a computer?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="a">
+                            <span>User documents and files</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="b">
+                            <span>The BIOS/bootstrap program</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="c">
+                            <span>Currently running applications</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="d">
+                            <span>Virtual memory pages</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question" data-question="7">
+                    <h4>Question 7</h4>
+                    <p>Which type of secondary storage has no moving parts?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="a">
+                            <span>Hard Disk Drive (HDD)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="b">
+                            <span>DVD</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="c">
+                            <span>Solid State Drive (SSD)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="d">
+                            <span>Blu-ray</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question" data-question="8">
+                    <h4>Question 8</h4>
+                    <p>Which optical disc has the highest storage capacity?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="a">
+                            <span>CD (700 MB)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="b">
+                            <span>DVD (4.7 GB)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="c">
+                            <span>Blu-ray (25 GB)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="d">
+                            <span>They all have the same capacity</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question" data-question="9">
+                    <h4>Question 9</h4>
+                    <p>What is the main function of an operating system?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="a">
+                            <span>To create documents and spreadsheets</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="b">
+                            <span>To manage computer hardware and provide a platform for applications</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="c">
+                            <span>To connect to the internet</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="d">
+                            <span>To store files permanently</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question" data-question="10">
+                    <h4>Question 10</h4>
+                    <p>What does disk defragmentation do?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="a">
+                            <span>Deletes temporary files to free up space</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="b">
+                            <span>Reorganises files so they are stored contiguously</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="c">
+                            <span>Scans for and removes viruses</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="d">
+                            <span>Encrypts files for security</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question" data-question="11">
+                    <h4>Question 11</h4>
+                    <p>Which scheduling algorithm gives each process a fixed time slice?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="a">
+                            <span>First Come First Served (FCFS)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="b">
+                            <span>Round Robin</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="c">
+                            <span>Priority-Based</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="d">
+                            <span>Shortest Job First</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question" data-question="12">
+                    <h4>Question 12</h4>
+                    <p>What is a key characteristic of high-level programming languages?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="a">
+                            <span>They use binary code directly</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="b">
+                            <span>They use English-like statements and are easier to understand</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="c">
+                            <span>They are specific to one type of processor</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="d">
+                            <span>They don't need to be translated</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question" data-question="13">
+                    <h4>Question 13</h4>
+                    <p>What is the difference between a compiler and an interpreter?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="a">
+                            <span>A compiler translates the whole program at once; an interpreter translates one line at a time</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="b">
+                            <span>A compiler is for low-level languages; an interpreter is for high-level languages</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="c">
+                            <span>A compiler runs slower; an interpreter runs faster</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="d">
+                            <span>There is no difference</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question" data-question="14">
+                    <h4>Question 14</h4>
+                    <p>What is virtual memory used for?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="a">
+                            <span>To permanently store the operating system</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="b">
+                            <span>To extend RAM by using part of the hard drive</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="c">
+                            <span>To store backup copies of files</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="d">
+                            <span>To create virtual machines</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question" data-question="15">
+                    <h4>Question 15</h4>
+                    <p>According to Von Neumann architecture, where are both data and instructions stored?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="a">
+                            <span>In separate memory locations</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="b">
+                            <span>In the CPU registers only</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="c">
+                            <span>Together in the same main memory (RAM)</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="d">
+                            <span>On the hard drive</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </form>
+
+            <div id="quiz-results" class="quiz-results" style="display: none;">
+                <h3><i class="fas fa-chart-bar"></i> Your Results</h3>
+                <div class="results-summary">
+                    <div class="score-circle">
+                        <span id="score-display">0</span>
+                        <span class="score-total">/15</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div id="results-breakdown"></div>
+                <div class="results-actions">
+                    <button id="download-pdf" class="btn btn-primary">
+                        <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                    </button>
+                    <button id="retry-quiz" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>A comprehensive revision resource for the Pearson Edexcel GCSE Computer Science (1CP2) specification.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topic2.html">Topic 2: Data</a></li>
+                        <li><a href="topic3.html">Topic 3: Computers</a></li>
+                        <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>External Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave Videos</a></li>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Pearson Specification</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Topic 3 Quiz Answers
+        const quizAnswers = {
+            q1: 'b',  // ALU performs arithmetic and logical calculations
+            q2: 'c',  // PC holds address of next instruction
+            q3: 'c',  // RAM is volatile
+            q4: 'b',  // Cache stores frequently used data
+            q5: 'c',  // Address bus carries memory addresses
+            q6: 'b',  // ROM stores BIOS/bootstrap
+            q7: 'c',  // SSD has no moving parts
+            q8: 'c',  // Blu-ray has highest capacity
+            q9: 'b',  // OS manages hardware and provides platform
+            q10: 'b', // Defrag reorganises files contiguously
+            q11: 'b', // Round Robin gives fixed time slices
+            q12: 'b', // High-level uses English-like statements
+            q13: 'a', // Compiler translates whole program; interpreter line by line
+            q14: 'b', // Virtual memory extends RAM using hard drive
+            q15: 'c'  // Von Neumann: data and instructions in same RAM
+        };
+
+        const quizExplanations = {
+            q1: 'The ALU (Arithmetic Logic Unit) performs all arithmetic calculations (add, subtract, multiply, divide) and logical comparisons.',
+            q2: 'The Program Counter holds the memory address of the next instruction to be fetched from memory.',
+            q3: 'RAM (Random Access Memory) is volatile, meaning it loses its contents when the power is switched off.',
+            q4: 'Cache is small, fast memory inside the CPU that stores frequently used data and instructions for quick access.',
+            q5: 'The Address Bus carries memory addresses from the CPU to RAM and other components (one-way).',
+            q6: 'ROM stores the BIOS (Basic Input/Output System) or bootstrap program that starts the computer.',
+            q7: 'SSDs use flash memory with no moving parts, making them faster and more durable than HDDs.',
+            q8: 'Blu-ray discs can store 25 GB per layer, compared to 4.7 GB for DVD and 700 MB for CD.',
+            q9: 'The operating system manages hardware, file management, memory, processes, and provides a user interface.',
+            q10: 'Defragmentation rearranges fragmented files so they are stored contiguously, improving read/write speed on HDDs.',
+            q11: 'Round Robin scheduling gives each process a fixed time slice before switching to the next process.',
+            q12: 'High-level languages use English-like keywords (print, if, while) making them easier to read and write.',
+            q13: 'A compiler translates the entire program into an executable before running. An interpreter translates and executes one line at a time.',
+            q14: 'Virtual memory uses part of the hard drive as temporary RAM when physical RAM is full.',
+            q15: 'Von Neumann architecture stores both data and instructions together in the same main memory (RAM).'
+        };
+
+        // Quiz submission handler
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const studentName = document.getElementById('student-name').value;
+            if (!studentName.trim()) {
+                alert('Please enter your name to submit the quiz.');
+                return;
+            }
+
+            let score = 0;
+            let resultsHTML = '<div class="results-list">';
+
+            for (let i = 1; i <= 15; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const correct = quizAnswers[`q${i}`];
+                const isCorrect = selected && selected.value === correct;
+
+                if (isCorrect) score++;
+
+                resultsHTML += `
+                    <div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <span class="result-icon">${isCorrect ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}</span>
+                        <span class="result-text">Question ${i}: ${isCorrect ? 'Correct' : 'Incorrect'}</span>
+                        ${!isCorrect ? `<p class="result-explanation">${quizExplanations[`q${i}`]}</p>` : ''}
+                    </div>
+                `;
+            }
+            resultsHTML += '</div>';
+
+            document.getElementById('score-display').textContent = score;
+            document.getElementById('results-breakdown').innerHTML = resultsHTML;
+
+            let message = '';
+            if (score === 15) message = 'Perfect score! Outstanding work!';
+            else if (score >= 12) message = 'Excellent understanding of Topic 3!';
+            else if (score >= 9) message = 'Good work! Review the topics you missed.';
+            else if (score >= 6) message = 'Keep studying! Focus on the areas above.';
+            else message = 'More revision needed. Re-read the content and try again.';
+
+            document.getElementById('score-message').textContent = message;
+
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+
+            // Store data for PDF
+            window.quizData = {
+                studentName: studentName,
+                teacherEmail: document.getElementById('teacher-email').value,
+                score: score,
+                total: 15,
+                topic: 'Topic 3: Computers',
+                date: new Date().toLocaleDateString('en-GB')
+            };
+        });
+
+        // PDF Generation
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.quizData;
+
+            // Header
+            doc.setFillColor(16, 185, 129);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.text('Quiz Certificate', 105, 25, { align: 'center' });
+
+            // Content
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(16);
+            doc.text('This certifies that', 105, 60, { align: 'center' });
+
+            doc.setFontSize(22);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.studentName, 105, 75, { align: 'center' });
+
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(14);
+            doc.text('has completed the quiz for', 105, 90, { align: 'center' });
+
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.topic, 105, 105, { align: 'center' });
+
+            // Score
+            doc.setFontSize(36);
+            const percentage = Math.round((data.score / data.total) * 100);
+            doc.text(`${data.score}/${data.total}`, 105, 135, { align: 'center' });
+            doc.setFontSize(16);
+            doc.text(`(${percentage}%)`, 105, 148, { align: 'center' });
+
+            // Grade
+            doc.setFontSize(14);
+            let grade = '';
+            if (percentage >= 90) grade = 'Outstanding';
+            else if (percentage >= 70) grade = 'Good';
+            else if (percentage >= 50) grade = 'Satisfactory';
+            else grade = 'Needs Improvement';
+            doc.text(`Grade: ${grade}`, 105, 165, { align: 'center' });
+
+            // Date
+            doc.setFontSize(12);
+            doc.text(`Date: ${data.date}`, 105, 185, { align: 'center' });
+
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Edexcel GCSE Computer Science Revision', 105, 270, { align: 'center' });
+            doc.text('This is an independent revision resource', 105, 277, { align: 'center' });
+
+            doc.save(`Topic3-Quiz-${data.studentName.replace(/\s+/g, '-')}.pdf`);
+        });
+
+        // Retry quiz
+        document.getElementById('retry-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-form').reset();
+            document.getElementById('quiz-form').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Subtopic navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const tabs = document.querySelectorAll('.subtopic-tab');
+
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('href') === '#' + current) {
+                        tab.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

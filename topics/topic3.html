@@ -97,11 +97,38 @@
                 <p><strong>The CPU (Central Processing Unit)</strong> is the brain of the computer that processes program instructions. It fetches instructions from memory, decodes them, and executes them using the fetch-decode-execute cycle.</p>
             </div>
 
+            <!-- Simple Analogy for Low-Ability Students -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-brain"></i> Think of It Like This...</h4>
+                <p style="margin: 0 0 0.5rem 0;">The CPU is like your <strong>brain</strong> - it's the "thinking" part of the computer!</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li>Your brain receives information (eyes, ears) → CPU <strong>fetches</strong> instructions</li>
+                    <li>Your brain understands what it means → CPU <strong>decodes</strong> instructions</li>
+                    <li>Your brain tells your body what to do → CPU <strong>executes</strong> instructions</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">Just like your brain does this constantly (breathe, blink, think), the CPU does this millions of times per second!</p>
+            </div>
+
             <h3>Von Neumann Architecture</h3>
-            <p>Most modern computers are based on <strong>Von Neumann architecture</strong>, which uses the stored program concept. The key elements are:</p>
+            <p>Most modern computers are based on <strong>Von Neumann architecture</strong>, named after mathematician John Von Neumann who described it in 1945. It uses the stored program concept.</p>
+
+            <!-- Von Neumann Kitchen Analogy -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-utensils"></i> The Kitchen Analogy</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine the computer is a <strong>kitchen</strong>:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>RAM (Memory)</strong> = The countertop where you put ingredients AND recipes</li>
+                    <li><strong>CPU</strong> = The chef who reads recipes and cooks</li>
+                    <li><strong>Instructions</strong> = The recipe steps ("chop onions", "boil water")</li>
+                    <li><strong>Data</strong> = The ingredients (onions, water, pasta)</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Key insight:</strong> In Von Neumann architecture, recipes and ingredients sit on the SAME countertop (same memory) - the chef reads one instruction at a time and does it before reading the next!</p>
+            </div>
+
+            <p>The key elements of Von Neumann architecture are:</p>
 
             <ul class="styled-list">
-                <li><strong>Data and instructions</strong> are both stored as binary digits</li>
+                <li><strong>Data and instructions</strong> are both stored as binary digits (1s and 0s)</li>
                 <li><strong>Data and instructions</strong> are stored together in the same RAM</li>
                 <li><strong>Instructions are fetched</strong> from memory one at a time and in order (serially)</li>
                 <li><strong>The processor decodes and executes</strong> an instruction before fetching the next one</li>
@@ -110,7 +137,29 @@
 
             <div class="info-box tip">
                 <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
-                <p>The stored program concept means that both data and instructions are stored in main memory, allowing the same hardware to run different programs.</p>
+                <p>The <strong>stored program concept</strong> means that both data and instructions are stored in main memory, allowing the same hardware to run different programs. Before this, computers were "hard-wired" to do only ONE task!</p>
+            </div>
+
+            <!-- Von Neumann Diagram -->
+            <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; color: white;">
+                <h4 style="color: #f59e0b; margin-bottom: 1rem; text-align: center;"><i class="fas fa-project-diagram"></i> Von Neumann Architecture Diagram</h4>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: #3b82f6; padding: 1rem; border-radius: 8px; text-align: center; min-width: 120px;">
+                        <strong>CPU</strong><br>
+                        <span style="font-size: 0.8rem;">(Control Unit + ALU + Registers)</span>
+                    </div>
+                    <div style="font-size: 2rem;">⟷</div>
+                    <div style="background: #10b981; padding: 1rem; border-radius: 8px; text-align: center; min-width: 120px;">
+                        <strong>Memory (RAM)</strong><br>
+                        <span style="font-size: 0.8rem;">(Data + Instructions)</span>
+                    </div>
+                    <div style="font-size: 2rem;">⟷</div>
+                    <div style="background: #8b5cf6; padding: 1rem; border-radius: 8px; text-align: center; min-width: 120px;">
+                        <strong>Input/Output</strong><br>
+                        <span style="font-size: 0.8rem;">(Keyboard, Screen, etc.)</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin: 1rem 0 0 0; font-size: 0.85rem; color: #94a3b8;">All connected by <strong style="color: #f59e0b;">buses</strong> (data highways)</p>
             </div>
 
             <h3>CPU Components</h3>
@@ -154,90 +203,209 @@
             </div>
 
             <h3>Key Registers</h3>
-            <p>The CPU uses special registers during the fetch-decode-execute cycle:</p>
+            <p>The CPU uses special registers during the fetch-decode-execute cycle. Think of registers as <strong>tiny sticky notes</strong> on the chef's hand - small, super fast storage for things being worked on RIGHT NOW.</p>
+
+            <!-- Mailbox Analogy -->
+            <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+                <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-mailbox"></i> The Post Office Analogy</h4>
+                <p style="margin: 0;">Think of fetching instructions like collecting a parcel from the post office:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>PC</strong> = Your queue ticket number (tells you who's NEXT)</li>
+                    <li><strong>MAR</strong> = The address label you show to the clerk (WHERE to find it)</li>
+                    <li><strong>MDR</strong> = The actual parcel you receive (the DATA itself)</li>
+                    <li><strong>CIR</strong> = The parcel you're currently opening (instruction being worked on)</li>
+                    <li><strong>ACC</strong> = Your receipt showing the total (result of calculations)</li>
+                </ul>
+            </div>
 
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
                             <th>Register</th>
+                            <th>Full Name</th>
                             <th>Purpose</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Program Counter (PC)</strong></td>
-                            <td>Holds the memory address of the next instruction to be fetched</td>
+                            <td><strong style="color: #3b82f6;">PC</strong></td>
+                            <td>Program Counter</td>
+                            <td>Holds the memory address of the <strong>NEXT</strong> instruction to be fetched</td>
                         </tr>
                         <tr>
-                            <td><strong>Memory Address Register (MAR)</strong></td>
-                            <td>Holds the address of the current instruction to be fetched, or the address to store data</td>
+                            <td><strong style="color: #10b981;">MAR</strong></td>
+                            <td>Memory Address Register</td>
+                            <td>Holds the <strong>ADDRESS</strong> in memory that is about to be read from or written to</td>
                         </tr>
                         <tr>
-                            <td><strong>Memory Data Register (MDR)</strong></td>
-                            <td>Holds the data fetched from memory or data to be written to memory</td>
+                            <td><strong style="color: #f59e0b;">MDR</strong></td>
+                            <td>Memory Data Register</td>
+                            <td>Holds the <strong>DATA</strong> that has been fetched from memory or is about to be written</td>
                         </tr>
                         <tr>
-                            <td><strong>Current Instruction Register (CIR)</strong></td>
-                            <td>Holds the instruction currently being decoded and executed</td>
+                            <td><strong style="color: #8b5cf6;">CIR</strong></td>
+                            <td>Current Instruction Register</td>
+                            <td>Holds the instruction <strong>CURRENTLY</strong> being decoded and executed</td>
                         </tr>
                         <tr>
-                            <td><strong>Accumulator (ACC)</strong></td>
-                            <td>Holds the results of calculations performed by the ALU</td>
+                            <td><strong style="color: #ef4444;">ACC</strong></td>
+                            <td>Accumulator</td>
+                            <td>Holds the <strong>RESULTS</strong> of calculations performed by the ALU</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+            <!-- Memory Trick -->
+            <div style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; color: white;">
+                <h4 style="color: #f59e0b; margin-bottom: 0.75rem;"><i class="fas fa-brain"></i> Memory Trick: "PC MARches to MDR, CIR ACCepts"</h4>
+                <p style="margin: 0; line-height: 1.8;">
+                    <strong style="color: #3b82f6;">P</strong>rogram <strong style="color: #3b82f6;">C</strong>ounter → points to next instruction<br>
+                    <strong style="color: #10b981;">M</strong>emory <strong style="color: #10b981;">A</strong>ddress <strong style="color: #10b981;">R</strong>egister → holds the ADDRESS<br>
+                    <strong style="color: #f59e0b;">M</strong>emory <strong style="color: #f59e0b;">D</strong>ata <strong style="color: #f59e0b;">R</strong>egister → holds the DATA<br>
+                    <strong style="color: #8b5cf6;">C</strong>urrent <strong style="color: #8b5cf6;">I</strong>nstruction <strong style="color: #8b5cf6;">R</strong>egister → holds CURRENT instruction<br>
+                    <strong style="color: #ef4444;">ACC</strong>umulator → holds ACCUMULATED results
+                </p>
+                <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem; background: rgba(245, 158, 11, 0.2); padding: 0.5rem; border-radius: 4px;"><strong>Tip:</strong> MAR = Address (both have 'A'), MDR = Data (both have 'D')!</p>
+            </div>
+
             <h3>The Fetch-Decode-Execute Cycle</h3>
-            <p>The CPU processes instructions using a continuous cycle:</p>
+            <p>The CPU processes instructions using a continuous cycle that repeats billions of times per second!</p>
+
+            <!-- FDE Analogy -->
+            <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #ec4899;">
+                <h4 style="color: #be185d; margin-bottom: 0.5rem;"><i class="fas fa-hamburger"></i> The Fast Food Analogy</h4>
+                <p style="margin: 0;">Think of the CPU like a fast food worker making orders:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>FETCH</strong> = Read the next order ticket from the pile</li>
+                    <li><strong>DECODE</strong> = Understand what the order means ("Big Mac meal" = burger + fries + drink)</li>
+                    <li><strong>EXECUTE</strong> = Actually make the food and hand it over</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">Then grab the NEXT ticket and repeat... forever! That's what the CPU does with instructions.</p>
+            </div>
+
+            <!-- Visual FDE Cycle -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6; text-align: center;">
+                    <div style="background: #3b82f6; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-size: 1.5rem; font-weight: bold;">1</div>
+                    <h4 style="color: #1d4ed8; margin: 0 0 0.5rem 0;"><i class="fas fa-download"></i> FETCH</h4>
+                    <p style="margin: 0; font-size: 0.85rem;">Get the next instruction from memory</p>
+                </div>
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #f59e0b; text-align: center;">
+                    <div style="background: #f59e0b; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-size: 1.5rem; font-weight: bold;">2</div>
+                    <h4 style="color: #d97706; margin: 0 0 0.5rem 0;"><i class="fas fa-cogs"></i> DECODE</h4>
+                    <p style="margin: 0; font-size: 0.85rem;">Work out what the instruction means</p>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981; text-align: center;">
+                    <div style="background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-size: 1.5rem; font-weight: bold;">3</div>
+                    <h4 style="color: #059669; margin: 0 0 0.5rem 0;"><i class="fas fa-play"></i> EXECUTE</h4>
+                    <p style="margin: 0; font-size: 0.85rem;">Carry out the instruction</p>
+                </div>
+            </div>
+
+            <h4>The Detailed Steps (What the Registers Do)</h4>
 
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>FETCH</h4>
-                        <p>The address in the PC is copied to the MAR. The PC is then incremented by 1.</p>
+                        <h4 style="color: #3b82f6;">FETCH - Step 1</h4>
+                        <p>The address in the <strong>PC</strong> is copied to the <strong>MAR</strong>. The PC is then incremented by 1 (ready for next instruction).</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>FETCH (continued)</h4>
-                        <p>The processor sends a signal along the address bus to fetch the instruction from memory.</p>
+                        <h4 style="color: #3b82f6;">FETCH - Step 2</h4>
+                        <p>The processor sends the address along the <strong>address bus</strong> to fetch the instruction from RAM.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>FETCH (continued)</h4>
-                        <p>The instruction is sent along the data bus to the MDR, then copied to the CIR.</p>
+                        <h4 style="color: #3b82f6;">FETCH - Step 3</h4>
+                        <p>The instruction travels along the <strong>data bus</strong> to the <strong>MDR</strong>, then gets copied to the <strong>CIR</strong>.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>DECODE</h4>
-                        <p>The Control Unit decodes the instruction in the CIR to determine what action is needed.</p>
+                        <h4 style="color: #f59e0b;">DECODE</h4>
+                        <p>The <strong>Control Unit</strong> decodes the instruction in the CIR to work out what needs to be done.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h4>EXECUTE</h4>
-                        <p>The instruction is carried out. Results are stored in the ACC. The cycle then repeats.</p>
+                        <h4 style="color: #10b981;">EXECUTE</h4>
+                        <p>The instruction is carried out (e.g., the <strong>ALU</strong> does a calculation). Results are stored in the <strong>ACC</strong>. The cycle then repeats!</p>
                     </div>
                 </div>
             </div>
 
-            <h3>System Buses</h3>
-            <p>Three types of bus connect the CPU to other components:</p>
+            <div class="info-box exam" style="background: rgba(124, 58, 237, 0.1); border-left-color: #7c3aed;">
+                <h4><i class="fas fa-graduation-cap"></i> Exam Tip - Remember the Order!</h4>
+                <p>The cycle is always <strong>Fetch → Decode → Execute</strong> (FDE). A common exam question asks you to describe what happens at each stage. Remember:</p>
+                <ul style="margin: 0.5rem 0 0 1rem;">
+                    <li><strong>Fetch</strong> involves: PC, MAR, MDR, CIR, address bus, data bus</li>
+                    <li><strong>Decode</strong> involves: Control Unit, CIR</li>
+                    <li><strong>Execute</strong> involves: ALU (for calculations), ACC (for results)</li>
+                </ul>
+            </div>
 
-            <ul class="styled-list">
-                <li><strong>Address Bus:</strong> Carries memory addresses from the processor to RAM and I/O devices (one-way)</li>
-                <li><strong>Data Bus:</strong> Carries the actual data between the processor and other components (two-way)</li>
-                <li><strong>Control Bus:</strong> Carries control signals from the processor (read/write commands, clock signals)</li>
-            </ul>
+            <h3>System Buses</h3>
+            <p>Three types of bus connect the CPU to other components. Think of buses as <strong>highways</strong> inside your computer!</p>
+
+            <!-- Bus Highway Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-road"></i> The Highway Analogy</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine your computer has three motorways connecting the CPU to memory:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Address Bus</strong> = Signs saying WHERE to go (one-way, outbound only)</li>
+                    <li><strong>Data Bus</strong> = Lorries carrying the actual goods (two-way traffic!)</li>
+                    <li><strong>Control Bus</strong> = Traffic lights and signals (telling everyone what to do)</li>
+                </ul>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <!-- Address Bus -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Address Bus</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Carries memory <strong>addresses</strong> from CPU to RAM</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Direction:</strong> ONE-WAY (CPU → Memory)<br>
+                        <strong>Think:</strong> "Go to locker number 42"
+                    </p>
+                </div>
+
+                <!-- Data Bus -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-exchange-alt"></i> Data Bus</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Carries the actual <strong>data</strong> between CPU and components</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Direction:</strong> TWO-WAY (can read AND write)<br>
+                        <strong>Think:</strong> "Here's the actual stuff!"
+                    </p>
+                </div>
+
+                <!-- Control Bus -->
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border: 2px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.5rem;"><i class="fas fa-traffic-light"></i> Control Bus</h4>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Carries <strong>control signals</strong> (read/write, clock)</p>
+                    <p style="margin: 0; font-size: 0.85rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Direction:</strong> TWO-WAY<br>
+                        <strong>Think:</strong> "READ this!" or "WRITE this!"
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Memory Trick for Buses</h4>
+                <p><strong>A</strong>ddress = <strong>A</strong>ddress (where to go) - ONE way<br>
+                <strong>D</strong>ata = <strong>D</strong>elivery (the actual stuff) - TWO ways<br>
+                <strong>C</strong>ontrol = <strong>C</strong>ommands (read/write signals) - TWO ways</p>
+            </div>
 
             <h3>Factors Affecting CPU Performance</h3>
 
@@ -286,27 +454,61 @@
 
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Key Definition</h4>
-                <p><strong>Memory</strong> is internal storage that holds data and programs needed by the CPU. Main memory provides fast access but is limited in size compared to secondary storage.</p>
+                <p><strong>Memory</strong> (also called primary storage) is internal storage that holds data and programs needed by the CPU. Main memory provides fast access but is limited in size compared to secondary storage.</p>
+            </div>
+
+            <!-- Simple Memory Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-brain"></i> Think of Memory Like Your Desk</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine you're doing homework at your desk:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>RAM</strong> = Your desk surface (where you put books you're CURRENTLY using)</li>
+                    <li><strong>ROM</strong> = Instructions printed on your desk (always there, can't change them)</li>
+                    <li><strong>Secondary Storage</strong> = Your bookshelf (where books are stored when not in use)</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">When you turn off your computer, it's like clearing your desk - but your bookshelf (storage) keeps everything safe!</p>
             </div>
 
             <h3>Types of Main Memory</h3>
 
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4><i class="fas fa-memory"></i> RAM (Random Access Memory)</h4>
-                    <ul>
-                        <li><strong>Volatile</strong> - loses contents when power is off</li>
-                        <li>Read and write memory</li>
+            <!-- Volatile vs Non-Volatile Explanation -->
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-bolt"></i> Volatile vs Non-Volatile - What Does It Mean?</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 6px; border: 2px solid #ef4444;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #dc2626;">Volatile = "Forgetful"</strong><br>Like a goldfish - forgets everything when the power goes off!</p>
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 6px; border: 2px solid #10b981;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #059669;">Non-Volatile = "Remembers"</strong><br>Like an elephant - never forgets, even without power!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- RAM Card -->
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #ef4444;">
+                    <h4 style="color: #dc2626; margin-bottom: 0.75rem;"><i class="fas fa-memory"></i> RAM (Random Access Memory)</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong>Analogy:</strong> RAM is like a <strong>whiteboard</strong> - you can write on it, erase it, and write again. But when you go home (power off), the cleaners wipe it clean!</p>
+                    </div>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong style="color: #dc2626;">Volatile</strong> - loses contents when power is off</li>
+                        <li><strong>Read AND Write</strong> - can add and change data</li>
                         <li>Stores currently running programs and data</li>
                         <li>Fast access by the CPU</li>
                         <li>Contents constantly changing</li>
                     </ul>
                 </div>
-                <div class="comparison-card">
-                    <h4><i class="fas fa-microchip"></i> ROM (Read Only Memory)</h4>
-                    <ul>
-                        <li><strong>Non-volatile</strong> - keeps contents when power is off</li>
-                        <li>Read only - cannot be written to</li>
+
+                <!-- ROM Card -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.75rem;"><i class="fas fa-microchip"></i> ROM (Read Only Memory)</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.9rem;"><strong>Analogy:</strong> ROM is like a <strong>printed textbook</strong> - you can read it, but you can't change what's written. The information is permanent!</p>
+                    </div>
+                    <ul style="margin: 0 0 0 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong style="color: #059669;">Non-volatile</strong> - keeps contents when power is off</li>
+                        <li><strong>Read ONLY</strong> - cannot be written to</li>
                         <li>Stores the BIOS/bootstrap program</li>
                         <li>Contents are fixed during manufacture</li>
                         <li>Used to start up the computer</li>
@@ -314,32 +516,129 @@
                 </div>
             </div>
 
+            <!-- What is BIOS -->
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> What is the BIOS?</h4>
+                <p>The <strong>BIOS (Basic Input/Output System)</strong> is the first software that runs when you turn on your computer. It's stored in ROM and does a "health check" of all your hardware before loading the operating system. Without it, your computer wouldn't know how to start!</p>
+            </div>
+
+            <!-- RAM vs ROM Comparison Table -->
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th style="background: rgba(239, 68, 68, 0.2);">RAM</th>
+                            <th style="background: rgba(16, 185, 129, 0.2);">ROM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Volatile?</strong></td>
+                            <td style="color: #dc2626;">Yes - loses data when power off</td>
+                            <td style="color: #059669;">No - keeps data without power</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Read/Write?</strong></td>
+                            <td>Both read AND write</td>
+                            <td>Read ONLY</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contents</strong></td>
+                            <td>Constantly changing</td>
+                            <td>Fixed/permanent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Store running programs & data</td>
+                            <td>Store startup instructions (BIOS)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Size</strong></td>
+                            <td>Larger (8GB - 64GB typical)</td>
+                            <td>Smaller (few MB)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <h3>Cache Memory</h3>
-            <p>Cache is a small amount of very fast memory located inside the CPU:</p>
+
+            <!-- Cache Analogy -->
+            <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #ec4899;">
+                <h4 style="color: #be185d; margin-bottom: 0.5rem;"><i class="fas fa-bolt"></i> The Pocket Analogy</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine you're a student doing research:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li><strong>Your pocket</strong> = Cache (tiny, but you can grab things INSTANTLY)</li>
+                    <li><strong>Your desk</strong> = RAM (bigger, quick to reach)</li>
+                    <li><strong>The library</strong> = Hard Drive (huge capacity, but takes ages to walk there!)</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;">You keep your most-used pen in your pocket so you don't have to reach to your desk every time. That's what cache does!</p>
+            </div>
+
+            <p>Cache is a small amount of very fast memory located <strong>inside the CPU</strong>:</p>
 
             <ul class="styled-list">
-                <li><strong>Much faster</strong> than RAM</li>
+                <li><strong>Much faster</strong> than RAM (because it's right next to the processor!)</li>
                 <li>Stores <strong>frequently used</strong> instructions and data</li>
                 <li>Reduces the number of times the CPU needs to access RAM</li>
                 <li>Available in levels: <strong>L1</strong> (fastest, smallest), <strong>L2</strong>, <strong>L3</strong> (largest, slowest)</li>
                 <li>More cache = better performance but higher cost</li>
             </ul>
 
+            <!-- Cache Levels Visual -->
+            <div style="background: #1e1e1e; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; color: white;">
+                <h4 style="color: #ec4899; margin-bottom: 0.75rem; text-align: center;"><i class="fas fa-layer-group"></i> Cache Levels - Speed vs Size</h4>
+                <div style="display: flex; justify-content: center; align-items: flex-end; gap: 1rem; padding: 1rem 0;">
+                    <div style="text-align: center;">
+                        <div style="background: #ef4444; width: 60px; height: 40px; border-radius: 4px; margin: 0 auto;"></div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;"><strong>L1</strong><br>Fastest<br>~64KB</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #f59e0b; width: 80px; height: 60px; border-radius: 4px; margin: 0 auto;"></div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;"><strong>L2</strong><br>Fast<br>~256KB</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #10b981; width: 100px; height: 80px; border-radius: 4px; margin: 0 auto;"></div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;"><strong>L3</strong><br>Slower<br>~8MB</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin: 0.5rem 0 0 0; font-size: 0.85rem; color: #94a3b8;">Smaller cache = Faster access | Larger cache = More storage</p>
+            </div>
+
             <div class="info-box tip">
-                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
-                <p>Cache is much faster than RAM because it is located inside the CPU chip, so data doesn't have to travel along the system buses.</p>
+                <h4><i class="fas fa-lightbulb"></i> Why is Cache So Fast?</h4>
+                <p>Cache is located <strong>inside the CPU chip</strong> itself, so data doesn't have to travel along the system buses. It's like having answers written on your hand during a test vs. looking them up in a textbook!</p>
             </div>
 
             <h3>Virtual Memory</h3>
+
+            <!-- Virtual Memory Analogy -->
+            <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); padding: 1.25rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #6366f1;">
+                <h4 style="color: #4338ca; margin-bottom: 0.5rem;"><i class="fas fa-expand-arrows-alt"></i> The Overflowing Desk Analogy</h4>
+                <p style="margin: 0 0 0.5rem 0;">Imagine your desk (RAM) is full of books, but you need to open MORE books:</p>
+                <ul style="margin: 0 0 0 1.5rem; line-height: 1.6;">
+                    <li>You put some books you're NOT currently reading on the floor (hard drive)</li>
+                    <li>When you need them again, you swap them back to your desk</li>
+                    <li>This lets you work with MORE books than your desk can hold!</li>
+                </ul>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>The problem?</strong> Constantly bending down to swap books is SLOW! That's why virtual memory is slower than real RAM.</p>
+            </div>
+
             <p>When RAM is full, the operating system uses <strong>virtual memory</strong>:</p>
 
             <ul class="styled-list">
-                <li>Part of the hard drive is used as temporary RAM</li>
-                <li>Data not currently needed is swapped to the hard drive</li>
-                <li>Allows computers to run more programs than physical RAM would allow</li>
+                <li>Part of the hard drive is used as <strong>temporary RAM</strong></li>
+                <li>Data not currently needed is <strong>swapped out</strong> to the hard drive</li>
+                <li>Allows computers to run <strong>more programs</strong> than physical RAM would allow</li>
                 <li><strong>Much slower</strong> than actual RAM because hard drives are slower</li>
-                <li>Excessive use causes "thrashing" - constant swapping that slows the computer</li>
+                <li>Excessive use causes <strong>"thrashing"</strong> - constant swapping that slows the computer</li>
             </ul>
+
+            <div class="info-box warning" style="background: rgba(239, 68, 68, 0.1); border-left-color: #ef4444;">
+                <h4><i class="fas fa-exclamation-triangle"></i> What is Thrashing?</h4>
+                <p>If your computer spends more time swapping data in and out of virtual memory than actually doing work, it's called <strong>thrashing</strong>. Your computer becomes extremely slow! The solution? Add more RAM!</p>
+            </div>
 
             <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-3-ram-rom-and-virtual-memory" target="_blank" class="video-link">
                 <i class="fab fa-youtube" style="color: #ff0000;"></i>
@@ -373,6 +672,13 @@
                 <p><strong>Secondary Storage</strong> is non-volatile, long-term storage used to keep programs and data when the computer is switched off. Unlike main memory, data is retained without power.</p>
             </div>
 
+            <!-- Storage Analogy -->
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-archive"></i> Why Do We Need Secondary Storage?</h4>
+                <p style="margin: 0 0 0.5rem 0;">Remember: RAM is like a whiteboard - it gets wiped when power is off! We need somewhere to save our work <strong>permanently</strong>.</p>
+                <p style="margin: 0; font-size: 0.9rem; background: rgba(255,255,255,0.5); padding: 0.5rem; border-radius: 4px;"><strong>Analogy:</strong> RAM = your short-term memory (forgets when you sleep). Secondary Storage = your photo album (keeps memories forever!)</p>
+            </div>
+
             <h3>Why is Secondary Storage Needed?</h3>
             <ul class="styled-list">
                 <li>RAM is <strong>volatile</strong> - loses contents when power is off</li>
@@ -383,45 +689,114 @@
 
             <h3>Types of Secondary Storage</h3>
 
+            <!-- Storage Types Visual Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <!-- Magnetic Storage -->
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #8b5cf6;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem;"><i class="fas fa-hdd"></i> Magnetic Storage (HDD)</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.85rem;"><strong>Analogy:</strong> Like a <strong>record player</strong> - a spinning disk with a moving arm that reads/writes data!</p>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>How it works:</strong> Spinning metal platters coated in magnetic material. A read/write head moves across the surface.</p>
+                    <p style="margin: 0; font-size: 0.85rem;"><strong>Examples:</strong> Hard Disk Drives (HDD)</p>
+                    <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">High capacity</span>
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Cheap per GB</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Moving parts</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Slower</span>
+                    </div>
+                </div>
+
+                <!-- Solid State Storage -->
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;"><i class="fas fa-memory"></i> Solid State Storage (SSD)</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.85rem;"><strong>Analogy:</strong> Like a <strong>USB flash drive</strong> but bigger - NO moving parts, just electronic chips!</p>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>How it works:</strong> Data stored as electrical charges in flash memory chips. No spinning or moving parts.</p>
+                    <p style="margin: 0; font-size: 0.85rem;"><strong>Examples:</strong> SSD, USB stick, SD card</p>
+                    <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Super fast</span>
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Durable</span>
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Silent</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Expensive</span>
+                    </div>
+                </div>
+
+                <!-- Optical Storage -->
+                <div style="background: rgba(236, 72, 153, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #ec4899;">
+                    <h4 style="color: #be185d; margin-bottom: 0.5rem;"><i class="fas fa-compact-disc"></i> Optical Storage</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.85rem;"><strong>Analogy:</strong> Like reading <strong>Braille with a laser</strong> - the laser feels the bumps (pits) and flat areas (lands) on the disc!</p>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>How it works:</strong> Laser reads tiny pits and lands burned into the disc surface.</p>
+                    <p style="margin: 0; font-size: 0.85rem;"><strong>Examples:</strong> CD, DVD, Blu-ray</p>
+                    <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Very cheap</span>
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Portable</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Low capacity</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Scratches easily</span>
+                    </div>
+                </div>
+
+                <!-- Cloud Storage -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1.25rem; border-radius: 8px; border: 2px solid #10b981;">
+                    <h4 style="color: #059669; margin-bottom: 0.5rem;"><i class="fas fa-cloud"></i> Cloud Storage</h4>
+                    <div style="background: rgba(255,255,255,0.6); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                        <p style="margin: 0; font-size: 0.85rem;"><strong>Analogy:</strong> Like a <strong>storage locker in another city</strong> - your stuff is there, but you need the internet to access it!</p>
+                    </div>
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;"><strong>How it works:</strong> Data stored on remote servers owned by companies like Google, Microsoft, Apple.</p>
+                    <p style="margin: 0; font-size: 0.85rem;"><strong>Examples:</strong> Google Drive, iCloud, OneDrive</p>
+                    <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Access anywhere</span>
+                        <span style="background: #dcfce7; color: #16a34a; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Auto-backup</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Needs internet</span>
+                        <span style="background: #fee2e2; color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Privacy risks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Examples</th>
-                            <th>How it Works</th>
-                            <th>Advantages</th>
-                            <th>Disadvantages</th>
+                            <th>Feature</th>
+                            <th style="background: rgba(139, 92, 246, 0.2);">Magnetic (HDD)</th>
+                            <th style="background: rgba(59, 130, 246, 0.2);">Solid State (SSD)</th>
+                            <th style="background: rgba(236, 72, 153, 0.2);">Optical</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Magnetic</strong></td>
-                            <td>Hard Disk Drive (HDD)</td>
-                            <td>Data stored as magnetic patterns on spinning platters</td>
-                            <td>High capacity, low cost per GB</td>
-                            <td>Moving parts can fail, slower than SSD, not portable</td>
+                            <td><strong>Speed</strong></td>
+                            <td>Medium</td>
+                            <td style="color: #16a34a;"><strong>Fastest</strong></td>
+                            <td style="color: #dc2626;">Slowest</td>
                         </tr>
                         <tr>
-                            <td><strong>Solid State</strong></td>
-                            <td>SSD, USB flash drive, SD card</td>
-                            <td>Data stored as electrical charges in flash memory chips</td>
-                            <td>Very fast, no moving parts, durable, portable</td>
-                            <td>More expensive per GB, limited write cycles</td>
+                            <td><strong>Capacity</strong></td>
+                            <td style="color: #16a34a;"><strong>Highest (up to 20TB)</strong></td>
+                            <td>High (up to 4TB)</td>
+                            <td style="color: #dc2626;">Lowest (25GB max)</td>
                         </tr>
                         <tr>
-                            <td><strong>Optical</strong></td>
-                            <td>CD, DVD, Blu-ray</td>
-                            <td>Laser reads/writes data as pits and lands on disc surface</td>
-                            <td>Cheap, portable, good for distributing software/media</td>
-                            <td>Low capacity, easily scratched, slow access</td>
+                            <td><strong>Cost per GB</strong></td>
+                            <td style="color: #16a34a;"><strong>Cheapest</strong></td>
+                            <td style="color: #dc2626;">Most expensive</td>
+                            <td>Very cheap (bulk)</td>
                         </tr>
                         <tr>
-                            <td><strong>Cloud</strong></td>
-                            <td>Google Drive, iCloud, OneDrive</td>
-                            <td>Data stored on remote servers accessed via internet</td>
-                            <td>Access anywhere, automatic backup, scalable</td>
-                            <td>Needs internet, ongoing costs, privacy concerns</td>
+                            <td><strong>Durability</strong></td>
+                            <td style="color: #dc2626;">Fragile (moving parts)</td>
+                            <td style="color: #16a34a;"><strong>Very durable</strong></td>
+                            <td>Scratches easily</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Portability</strong></td>
+                            <td>Low (usually internal)</td>
+                            <td style="color: #16a34a;">High (USB, SD)</td>
+                            <td style="color: #16a34a;">High (discs)</td>
                         </tr>
                     </tbody>
                 </table>

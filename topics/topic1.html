@@ -8,6 +8,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- jsPDF for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Skulpt for in-browser Python -->
+    <script src="https://skulpt.org/js/skulpt.min.js"></script>
+    <script src="https://skulpt.org/js/skulpt-stdlib.js"></script>
+    <style>
+        .code-editor-container {
+            background: #1e1e1e;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .code-editor-header {
+            background: #2d2d2d;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        .code-editor-title {
+            color: #8b5cf6;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .code-editor-title i { margin-right: 0.5rem; }
+        .code-editor textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border: none;
+            resize: vertical;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .code-editor textarea:focus { background: #252526; }
+        .code-editor-buttons { display: flex; gap: 0.5rem; }
+        .btn-run {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+        .btn-run:hover { background: #7c3aed; }
+        .btn-clear {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-clear:hover { background: #4b5563; }
+        .code-output {
+            background: #0d1117;
+            color: #58a6ff;
+            padding: 1rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            min-height: 60px;
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #3d3d3d;
+            white-space: pre-wrap;
+        }
+        .code-output.error { color: #f87171; }
+        .challenge-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .challenge-box h4 { color: #92400e; margin-bottom: 0.5rem; }
+        .challenge-box h4 i { margin-right: 0.5rem; }
+        .challenge-box p, .challenge-box ul { color: #78350f; }
+        .challenge-box ul { margin: 0.5rem 0 0 1.5rem; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -423,6 +514,85 @@ def binary_search(sorted_list, target):
                 </tbody>
             </table>
 
+            <!-- Interactive Python Editor: Searching Algorithms -->
+            <h3><i class="fab fa-python"></i> Try It Yourself: Searching Algorithms</h3>
+            <p>Practice implementing Linear Search and Binary Search. Modify the code and run it to see the results!</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Searching Algorithms</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('searchEditor', 'searchOutput')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('searchOutput')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="searchEditor"># Searching Algorithms Practice
+# Try modifying the list and target values!
+
+def linear_search(data_list, target):
+    """Search through each item one at a time"""
+    for i in range(len(data_list)):
+        print(f"Checking index {i}: {data_list[i]}")
+        if data_list[i] == target:
+            return i  # Found it!
+    return -1  # Not found
+
+def binary_search(sorted_list, target):
+    """Search by dividing the list in half each time"""
+    low = 0
+    high = len(sorted_list) - 1
+    step = 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        print(f"Step {step}: Checking middle index {mid}, value = {sorted_list[mid]}")
+        step += 1
+
+        if sorted_list[mid] == target:
+            return mid  # Found it!
+        elif sorted_list[mid] < target:
+            low = mid + 1  # Search right half
+            print("  -> Target is larger, search right half")
+        else:
+            high = mid - 1  # Search left half
+            print("  -> Target is smaller, search left half")
+
+    return -1  # Not found
+
+# Test data
+numbers = [3, 7, 12, 18, 24, 31, 45, 52, 68]
+target = 31
+
+print("=== LINEAR SEARCH ===")
+print(f"Searching for {target} in {numbers}")
+result = linear_search(numbers, target)
+if result != -1:
+    print(f"Found at index {result}!")
+else:
+    print("Not found")
+
+print("\n=== BINARY SEARCH ===")
+print(f"Searching for {target} in {numbers}")
+result = binary_search(numbers, target)
+if result != -1:
+    print(f"Found at index {result}!")
+else:
+    print("Not found")</textarea>
+                </div>
+                <div class="code-output" id="searchOutput">Click "Run Code" to see the output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge</h4>
+                <p>Try these modifications:</p>
+                <ul>
+                    <li>Search for a value that doesn't exist (e.g., 50)</li>
+                    <li>Count how many comparisons each algorithm makes</li>
+                    <li>What happens if you use binary search on an unsorted list?</li>
+                </ul>
+            </div>
+
             <a href="https://student.craigndave.org/videos/gcse-edexcel-topic-1a-linear-search" target="_blank" class="video-link">
                 <i class="fab fa-youtube" style="color: #ff0000;"></i>
                 <div class="video-link-content">
@@ -515,6 +685,73 @@ def bubble_sort(data_list):
     return data_list</code></pre>
             </div>
 
+            <!-- Interactive Python Editor: Bubble Sort -->
+            <h4><i class="fab fa-python"></i> Try It Yourself: Bubble Sort</h4>
+            <p>Watch how Bubble Sort swaps adjacent elements. The code shows each pass and swap!</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Bubble Sort</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('bubbleEditor', 'bubbleOutput')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('bubbleOutput')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="bubbleEditor"># Bubble Sort with Step-by-Step Output
+# Watch how the largest values "bubble" to the end!
+
+def bubble_sort_visual(data_list):
+    data = data_list.copy()  # Don't modify original
+    n = len(data)
+    total_swaps = 0
+
+    print(f"Starting list: {data}")
+    print("-" * 40)
+
+    for i in range(n - 1):
+        print(f"\nPass {i + 1}:")
+        swapped = False
+
+        for j in range(n - 1 - i):
+            if data[j] > data[j + 1]:
+                # Show the swap
+                print(f"  Comparing {data[j]} and {data[j+1]} -> SWAP!")
+                data[j], data[j + 1] = data[j + 1], data[j]
+                swapped = True
+                total_swaps += 1
+            else:
+                print(f"  Comparing {data[j]} and {data[j+1]} -> OK")
+
+        print(f"  After pass: {data}")
+
+        if not swapped:
+            print("\n  No swaps needed - list is sorted!")
+            break
+
+    print("-" * 40)
+    print(f"Final sorted list: {data}")
+    print(f"Total swaps: {total_swaps}")
+    return data
+
+# Try with different lists!
+numbers = [12, 8, 15, 3, 9]
+print("=== BUBBLE SORT ===")
+sorted_nums = bubble_sort_visual(numbers)</textarea>
+                </div>
+                <div class="code-output" id="bubbleOutput">Click "Run Code" to see the output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge</h4>
+                <p>Experiment with different lists:</p>
+                <ul>
+                    <li>Try a list that's already sorted - how many swaps?</li>
+                    <li>Try a list in reverse order - what's the maximum swaps?</li>
+                    <li>Try [5, 3, 8, 1] from the example above</li>
+                </ul>
+            </div>
+
             <h3>Merge Sort</h3>
             <div class="info-box definition">
                 <h4><i class="fas fa-book"></i> Definition</h4>
@@ -534,6 +771,84 @@ def bubble_sort(data_list):
                 <p><strong>Divide:</strong> [6,3,8,2] → [6,3] [8,2] → [6] [3] [8] [2]</p>
                 <p><strong>Merge:</strong> [6] [3] → [3,6] and [8] [2] → [2,8]</p>
                 <p><strong>Merge:</strong> [3,6] [2,8] → [2,3,6,8] ✓</p>
+            </div>
+
+            <!-- Interactive Python Editor: Merge Sort -->
+            <h4><i class="fab fa-python"></i> Try It Yourself: Merge Sort</h4>
+            <p>Watch how Merge Sort divides and conquers. See the divide and merge phases!</p>
+
+            <div class="code-editor-container">
+                <div class="code-editor-header">
+                    <span class="code-editor-title"><i class="fab fa-python"></i> Python Editor - Merge Sort</span>
+                    <div class="code-editor-buttons">
+                        <button class="btn-run" onclick="runCode('mergeEditor', 'mergeOutput')"><i class="fas fa-play"></i> Run Code</button>
+                        <button class="btn-clear" onclick="clearOutput('mergeOutput')">Clear</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="mergeEditor"># Merge Sort with Visual Output
+# Watch the divide and conquer in action!
+
+def merge_sort_visual(data, depth=0):
+    indent = "  " * depth
+
+    if len(data) <= 1:
+        print(f"{indent}Base case: {data}")
+        return data
+
+    # Divide
+    mid = len(data) // 2
+    left = data[:mid]
+    right = data[mid:]
+    print(f"{indent}Splitting {data} into {left} and {right}")
+
+    # Conquer (recursively sort each half)
+    left_sorted = merge_sort_visual(left, depth + 1)
+    right_sorted = merge_sort_visual(right, depth + 1)
+
+    # Merge
+    result = merge(left_sorted, right_sorted)
+    print(f"{indent}Merging {left_sorted} and {right_sorted} = {result}")
+    return result
+
+def merge(left, right):
+    """Merge two sorted lists into one sorted list"""
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    # Add remaining elements
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+# Test with the example from above
+numbers = [6, 3, 8, 2]
+print("=== MERGE SORT ===")
+print(f"Original list: {numbers}")
+print("-" * 40)
+sorted_nums = merge_sort_visual(numbers)
+print("-" * 40)
+print(f"Final result: {sorted_nums}")</textarea>
+                </div>
+                <div class="code-output" id="mergeOutput">Click "Run Code" to see the output...</div>
+            </div>
+
+            <div class="challenge-box">
+                <h4><i class="fas fa-trophy"></i> Challenge</h4>
+                <p>Try these experiments:</p>
+                <ul>
+                    <li>Try sorting [5, 2, 8, 1, 9, 3] - how many levels of splitting?</li>
+                    <li>Compare the number of operations to bubble sort</li>
+                    <li>Try a list of 8 items - notice the pattern of splits</li>
+                </ul>
             </div>
 
             <h3>Comparison Table</h3>
@@ -943,6 +1258,51 @@ def bubble_sort(data_list):
                 }
             });
         });
+
+        // ==================== SKULPT PYTHON RUNNER ====================
+        function builtinRead(x) {
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+                throw "File not found: '" + x + "'";
+            }
+            return Sk.builtinFiles["files"][x];
+        }
+
+        function runCode(editorId, outputId) {
+            var code = document.getElementById(editorId).value;
+            var outputElement = document.getElementById(outputId);
+            outputElement.className = 'code-output';
+            outputElement.innerHTML = '';
+
+            Sk.configure({
+                output: function(text) {
+                    outputElement.innerHTML += text;
+                },
+                read: builtinRead,
+                inputfun: function(prompt) {
+                    return window.prompt(prompt);
+                },
+                inputfunTakesPrompt: true,
+                __future__: Sk.python3
+            });
+
+            Sk.misceval.asyncToPromise(function() {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            }).then(function(mod) {
+                // Success - code ran without errors
+                if (outputElement.innerHTML === '') {
+                    outputElement.innerHTML = '(No output)';
+                }
+            }, function(err) {
+                outputElement.className = 'code-output error';
+                outputElement.innerHTML = 'Error: ' + err.toString();
+            });
+        }
+
+        function clearOutput(outputId) {
+            var outputElement = document.getElementById(outputId);
+            outputElement.className = 'code-output';
+            outputElement.innerHTML = 'Click "Run Code" to see the output...';
+        }
     </script>
 </body>
 </html>

@@ -584,6 +584,143 @@ else:
                 </tbody>
             </table>
 
+            <!-- Flowchart Examples -->
+            <h3>Flowchart Examples</h3>
+            <p>Here are two complete flowchart examples to help you understand how the symbols connect together:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 1.5rem 0;">
+
+                <!-- Selection (IF) Example -->
+                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #f59e0b;">
+                    <h4 style="color: #d97706; margin-bottom: 0.5rem; text-align: center;"><i class="fas fa-code-branch"></i> Selection (IF Statement)</h4>
+                    <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">Check if someone can vote (age 18+)</p>
+
+                    <!-- Flowchart Visual -->
+                    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                        <!-- Start -->
+                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">Start</div>
+                        <div style="color: #666; font-size: 1.5rem;">↓</div>
+
+                        <!-- Input -->
+                        <div style="background: #10b981; color: white; padding: 0.5rem 1rem; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); min-width: 150px; text-align: center;">INPUT age</div>
+                        <div style="color: #666; font-size: 1.5rem;">↓</div>
+
+                        <!-- Decision -->
+                        <div style="background: #f59e0b; color: white; padding: 1rem; transform: rotate(45deg); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                            <span style="transform: rotate(-45deg); font-size: 0.75rem; text-align: center;">age >= 18?</span>
+                        </div>
+
+                        <!-- Branches -->
+                        <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start; margin-top: 0.5rem;">
+                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+                                <span style="color: #10b981; font-weight: bold; font-size: 0.8rem;">YES</span>
+                                <div style="color: #666; font-size: 1.2rem;">↓</div>
+                                <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT "You can vote"</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+                                <span style="color: #ef4444; font-weight: bold; font-size: 0.8rem;">NO</span>
+                                <div style="color: #666; font-size: 1.2rem;">↓</div>
+                                <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT "Too young"</div>
+                            </div>
+                        </div>
+
+                        <div style="color: #666; font-size: 1.2rem; margin-top: 0.5rem;">↓ ↓</div>
+
+                        <!-- End -->
+                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">End</div>
+                    </div>
+
+                    <!-- Pseudocode equivalent -->
+                    <div style="background: rgba(0,0,0,0.1); padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                        <p style="margin: 0 0 0.25rem 0; font-size: 0.8rem; color: #92400e;"><strong>Pseudocode equivalent:</strong></p>
+                        <pre style="margin: 0; font-size: 0.75rem; color: #78350f;">INPUT age
+IF age >= 18 THEN
+    OUTPUT "You can vote"
+ELSE
+    OUTPUT "Too young"
+END IF</pre>
+                    </div>
+                </div>
+
+                <!-- Iteration (WHILE) Example -->
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <h4 style="color: #2563eb; margin-bottom: 0.5rem; text-align: center;"><i class="fas fa-redo"></i> Iteration (WHILE Loop)</h4>
+                    <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">Count and display numbers 1 to 5</p>
+
+                    <!-- Flowchart Visual -->
+                    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                        <!-- Start -->
+                        <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold;">Start</div>
+                        <div style="color: #666; font-size: 1.5rem;">↓</div>
+
+                        <!-- Initialize -->
+                        <div style="background: #06b6d4; color: white; padding: 0.5rem 1rem; border-radius: 4px;">count = 1</div>
+                        <div style="color: #666; font-size: 1.5rem;">↓</div>
+
+                        <!-- Decision with loop indicator -->
+                        <div style="position: relative; width: 100%; display: flex; justify-content: center;">
+                            <div style="position: absolute; left: 10%; top: 50%; width: 15%; height: 120px; border-left: 2px solid #3b82f6; border-bottom: 2px solid #3b82f6; border-bottom-left-radius: 10px;"></div>
+                            <div style="position: absolute; left: 10%; top: calc(50% + 120px); color: #3b82f6; font-size: 1.2rem;">↑</div>
+                            <div style="background: #f59e0b; color: white; padding: 1rem; transform: rotate(45deg); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; z-index: 1;">
+                                <span style="transform: rotate(-45deg); font-size: 0.75rem; text-align: center;">count <= 5?</span>
+                            </div>
+                        </div>
+
+                        <!-- Branches -->
+                        <div style="display: flex; width: 100%; justify-content: space-around; align-items: flex-start; margin-top: 0.5rem;">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <span style="color: #10b981; font-weight: bold; font-size: 0.8rem;">YES</span>
+                                <div style="color: #666; font-size: 1.2rem;">↓</div>
+                                <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">OUTPUT count</div>
+                                <div style="color: #666; font-size: 1.2rem;">↓</div>
+                                <div style="background: #06b6d4; color: white; padding: 0.5rem; font-size: 0.8rem; text-align: center; border-radius: 4px;">count = count + 1</div>
+                                <div style="color: #3b82f6; font-size: 0.8rem; margin-top: 0.5rem;">← (loop back)</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <span style="color: #ef4444; font-weight: bold; font-size: 0.8rem;">NO</span>
+                                <div style="color: #666; font-size: 1.2rem;">↓</div>
+                                <div style="background: #8b5cf6; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold; margin-top: 2rem;">End</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output and Pseudocode -->
+                    <div style="background: rgba(0,0,0,0.1); padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                        <p style="margin: 0 0 0.25rem 0; font-size: 0.8rem; color: #1e40af;"><strong>Output:</strong> 1, 2, 3, 4, 5</p>
+                        <p style="margin: 0.5rem 0 0.25rem 0; font-size: 0.8rem; color: #1e40af;"><strong>Pseudocode equivalent:</strong></p>
+                        <pre style="margin: 0; font-size: 0.75rem; color: #1e3a8a;">count = 1
+WHILE count <= 5 DO
+    OUTPUT count
+    count = count + 1
+END WHILE</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spot the Difference -->
+            <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #22c55e; margin: 1.5rem 0;">
+                <h4 style="color: #166534; margin-bottom: 0.75rem;"><i class="fas fa-search"></i> Spot the Difference!</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #f59e0b;">Selection (IF):</strong> The flowchart splits into two paths that BOTH lead to the end. The decision is made ONCE.</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-size: 0.9rem;"><strong style="color: #3b82f6;">Iteration (WHILE):</strong> The flowchart has an arrow that loops BACK to the decision. It keeps repeating until the condition is false.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); border-left: 4px solid #8b5cf6; margin: 1.5rem 0;">
+                <h4><i class="fas fa-graduation-cap" style="color: #7c3aed;"></i> Exam Tip</h4>
+                <p style="margin: 0;">In exams, you might be asked to:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem;">
+                    <li>Complete missing parts of flowcharts or pseudocode</li>
+                    <li>Identify whether a flowchart shows selection or iteration</li>
+                    <li>Convert between flowcharts and pseudocode</li>
+                    <li>Trace through a flowchart with given input values</li>
+                </ul>
+            </div>
+
             <!-- ARITHMETIC OPERATORS SECTION -->
             <h3><i class="fas fa-calculator"></i> Arithmetic Operators</h3>
             <p>When writing algorithms, you'll need to perform calculations. Here are the <strong>arithmetic operators</strong> you must know:</p>

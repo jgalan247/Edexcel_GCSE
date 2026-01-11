@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 4: Networks | Edexcel GCSE CS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-microchip"></i>
+                <span>GCSE CS</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Topics <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                    <li><a href="topic2.html">Topic 2: Data</a></li>
+                    <li><a href="topic3.html">Topic 3: Computers</a></li>
+                    <li><a href="topic4.html" class="active">Topic 4: Networks</a></li>
+                    <li><a href="topic5.html">Topic 5: Issues & Impact</a></li>
+                    <li><a href="topic6.html">Topic 6: Programming</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li class="nav-item"><a href="../index.html#resources" class="nav-link">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header class="topic-header" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Topic 4</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="topic-header-icon" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div>
+                    <h1 style="color: white;">Topic 4: Networks</h1>
+                    <p style="color: rgba(255,255,255,0.9);">Network types, topologies, protocols, and cybersecurity</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subtopic-nav">
+        <div class="container">
+            <div class="subtopic-tabs">
+                <a href="#network-types" class="subtopic-tab active">
+                    <i class="fas fa-sitemap"></i>
+                    Network Types
+                </a>
+                <a href="#topologies" class="subtopic-tab">
+                    <i class="fas fa-project-diagram"></i>
+                    Topologies
+                </a>
+                <a href="#protocols" class="subtopic-tab">
+                    <i class="fas fa-exchange-alt"></i>
+                    Protocols
+                </a>
+                <a href="#internet" class="subtopic-tab">
+                    <i class="fas fa-globe"></i>
+                    Internet
+                </a>
+                <a href="#security" class="subtopic-tab">
+                    <i class="fas fa-shield-alt"></i>
+                    Security
+                </a>
+                <a href="#quiz" class="subtopic-tab">
+                    <i class="fas fa-clipboard-check"></i>
+                    Quiz
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- ==================== NETWORK TYPES ==================== -->
+        <section id="network-types" class="content-section">
+            <h2>Network Types</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>A network</strong> is a group of two or more computers or devices connected together to communicate and share resources such as files, printers, and internet connections.</p>
+            </div>
+
+            <h3>LAN vs WAN</h3>
+            <p>Networks are classified into two main types based on their geographical size:</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-building"></i> LAN (Local Area Network)</h4>
+                    <ul>
+                        <li>Covers a <strong>small geographical area</strong> (single building or site)</li>
+                        <li>Examples: school, office, home network</li>
+                        <li><strong>Owned and maintained</strong> by the organisation</li>
+                        <li>Connected by cables (Ethernet) or Wi-Fi</li>
+                        <li>High data transfer speeds</li>
+                        <li>Low latency (fast response)</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-globe"></i> WAN (Wide Area Network)</h4>
+                    <ul>
+                        <li>Covers a <strong>large geographical area</strong> (cities, countries, worldwide)</li>
+                        <li>Examples: internet, bank networks across branches</li>
+                        <li>Usually made up of <strong>multiple LANs</strong> connected together</li>
+                        <li>Uses telephone lines, fibre optic cables, satellites</li>
+                        <li>Third-party infrastructure (not owned by user)</li>
+                        <li>Higher latency than LANs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>The Internet is the world's largest WAN - a global network of interconnected networks.</p>
+            </div>
+
+            <h3>Client-Server vs Peer-to-Peer</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-server"></i> Client-Server Network</h4>
+                    <ul>
+                        <li>Central <strong>server</strong> provides services to clients</li>
+                        <li>Server manages files, security, backups</li>
+                        <li>Clients request resources from server</li>
+                        <li>Centralised management and control</li>
+                        <li>More secure and reliable</li>
+                        <li>Expensive (need dedicated server)</li>
+                        <li>Used in businesses and schools</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-users"></i> Peer-to-Peer Network</h4>
+                    <ul>
+                        <li><strong>No central server</strong></li>
+                        <li>All computers are equal (peers)</li>
+                        <li>Each computer can share and access files</li>
+                        <li>Decentralised - no single point of failure</li>
+                        <li>Less secure, harder to manage</li>
+                        <li>Cheap and easy to set up</li>
+                        <li>Used in small offices, homes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Wired vs Wireless Connections</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Wired (Ethernet)</th>
+                            <th>Wireless (Wi-Fi)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Speed</strong></td>
+                            <td>Faster (up to 10 Gbps)</td>
+                            <td>Slower (typically up to 1 Gbps)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reliability</strong></td>
+                            <td>More reliable, consistent connection</td>
+                            <td>Subject to interference and signal loss</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>More secure (physical access needed)</td>
+                            <td>Less secure (signals can be intercepted)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobility</strong></td>
+                            <td>Fixed location, cables required</td>
+                            <td>Freedom to move around</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost</strong></td>
+                            <td>Expensive to install cables</td>
+                            <td>Cheaper, no cabling needed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=Rc5EoRvIJ7w" target="_blank">Types of Networks</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain two differences between a LAN and a WAN. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>A LAN covers a small geographical area/single site (1) whereas a WAN covers a large geographical area/multiple sites (1)</li>
+                        <li>A LAN is owned and maintained by the organisation (1) whereas a WAN uses third-party infrastructure/phone lines (1)</li>
+                        <li>A LAN typically has higher data transfer speeds (1) than a WAN (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TOPOLOGIES ==================== -->
+        <section id="topologies" class="content-section">
+            <h2>Network Topologies</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Network Topology</strong> is the arrangement or pattern in which nodes (devices) on a network are connected together. The three main topologies are star, bus, and mesh.</p>
+            </div>
+
+            <h3>Star Topology</h3>
+            <p>All devices connect to a <strong>central hub or switch</strong>:</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
+                    <ul>
+                        <li>If one cable fails, only that device is affected</li>
+                        <li>Easy to add new devices</li>
+                        <li>Easier to manage and troubleshoot</li>
+                        <li>Good performance - no data collisions</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
+                    <ul>
+                        <li>If central hub/switch fails, whole network fails</li>
+                        <li>Requires more cable than bus topology</li>
+                        <li>More expensive (hub/switch needed)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Bus Topology</h3>
+            <p>All devices connect to a <strong>single central cable (backbone)</strong>:</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
+                    <ul>
+                        <li>Simple and cheap to install</li>
+                        <li>Uses less cable than star topology</li>
+                        <li>Easy to add new devices</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
+                    <ul>
+                        <li>If backbone fails, whole network fails</li>
+                        <li>Data collisions reduce performance</li>
+                        <li>Harder to troubleshoot</li>
+                        <li>Limited cable length and number of devices</li>
+                        <li>Security risk - all devices see all data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Mesh Topology</h3>
+            <p>Every device connects <strong>directly to every other device</strong>:</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Advantages</h4>
+                    <ul>
+                        <li>Very reliable - multiple paths for data</li>
+                        <li>No single point of failure</li>
+                        <li>If one connection fails, data reroutes</li>
+                        <li>Good for critical systems</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-times-circle" style="color: #ef4444;"></i> Disadvantages</h4>
+                    <ul>
+                        <li>Very expensive - lots of cables/connections</li>
+                        <li>Complex to set up and manage</li>
+                        <li>Impractical for large networks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>Star topology is the most common in modern LANs. Mesh topology is often used in WANs and the internet where reliability is critical.</p>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=Oc7eVhL0fSg" target="_blank">Network Topologies</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: A school is setting up a new computer room. Explain why star topology would be a better choice than bus topology. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>In star topology, if one cable fails only that computer is affected (1)</li>
+                        <li>In bus topology, if the backbone fails the whole network fails (1)</li>
+                        <li>Star topology has better performance/no data collisions (1)</li>
+                        <li>Star topology is easier to add new computers (1)</li>
+                        <li>Star topology is easier to troubleshoot/identify faults (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROTOCOLS ==================== -->
+        <section id="protocols" class="content-section">
+            <h2>Network Protocols</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>A protocol</strong> is a set of rules that governs how data is transmitted across a network. Protocols ensure that devices from different manufacturers can communicate with each other.</p>
+            </div>
+
+            <h3>Why Do We Need Protocols?</h3>
+            <p>Protocols define rules for:</p>
+            <ul class="styled-list">
+                <li><strong>Data transmission speed</strong> - how fast data can be sent</li>
+                <li><strong>Error checking</strong> - detecting and correcting errors</li>
+                <li><strong>Addressing</strong> - how to locate devices on the network</li>
+                <li><strong>Data format</strong> - how data is structured</li>
+                <li><strong>Handshaking</strong> - establishing connections</li>
+            </ul>
+
+            <h3>Common Protocols</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Full Name</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>TCP/IP</strong></td>
+                            <td>Transmission Control Protocol / Internet Protocol</td>
+                            <td>The foundation of internet communication. TCP breaks data into packets; IP addresses and routes them.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HTTP</strong></td>
+                            <td>Hypertext Transfer Protocol</td>
+                            <td>Transfers web pages from servers to browsers. Used when you visit websites.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HTTPS</strong></td>
+                            <td>HTTP Secure</td>
+                            <td>Secure version of HTTP. Encrypts data for safe transactions (banking, shopping).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FTP</strong></td>
+                            <td>File Transfer Protocol</td>
+                            <td>Transfers files between computers across the internet.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SMTP</strong></td>
+                            <td>Simple Mail Transfer Protocol</td>
+                            <td>Sends emails from client to server and between servers.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>POP3/IMAP</strong></td>
+                            <td>Post Office Protocol / Internet Message Access Protocol</td>
+                            <td>Retrieves emails from server to client.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethernet</strong></td>
+                            <td>-</td>
+                            <td>Standard for wired LAN connections. Defines cable types and speeds.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wi-Fi</strong></td>
+                            <td>-</td>
+                            <td>Standard for wireless LAN connections.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Layers of Protocols</h3>
+            <p>Network communication uses layers, with each layer handling different tasks:</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Application Layer</h4>
+                        <p>User-facing protocols: HTTP, HTTPS, FTP, SMTP, POP3</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Transport Layer</h4>
+                        <p>TCP - ensures reliable delivery of data packets</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Network Layer</h4>
+                        <p>IP - addresses and routes packets across networks</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Link Layer</h4>
+                        <p>Ethernet, Wi-Fi - physical transmission of data</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=HMQmS0fPbqM" target="_blank">Network Protocols</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Explain the difference between HTTP and HTTPS. (2 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>HTTPS encrypts data / HTTP does not (1)</li>
+                        <li>HTTPS is more secure / used for sensitive data like banking (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== INTERNET ==================== -->
+        <section id="internet" class="content-section">
+            <h2>The Internet</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>The Internet</strong> is a global network of interconnected networks that use TCP/IP protocols to communicate. The <strong>World Wide Web</strong> is a service that runs on the internet, consisting of web pages accessed via browsers.</p>
+            </div>
+
+            <h3>Key Internet Concepts</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>IP Address</strong></td>
+                            <td>A unique numerical address that identifies each device on a network (e.g., 192.168.1.1). IPv4 uses 32 bits; IPv6 uses 128 bits.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MAC Address</strong></td>
+                            <td>A unique hardware address assigned to every network interface card (NIC). Used for local network communication.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DNS</strong></td>
+                            <td>Domain Name System - translates domain names (www.google.com) into IP addresses.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Router</strong></td>
+                            <td>Directs data packets between networks. Connects your LAN to the internet.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Switch</strong></td>
+                            <td>Connects devices within a LAN. Forwards data only to the intended device.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ISP</strong></td>
+                            <td>Internet Service Provider - company that provides internet access (e.g., BT, Virgin).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Packet Switching</h3>
+            <p>Data sent across the internet is broken into <strong>packets</strong>:</p>
+
+            <ul class="styled-list">
+                <li>Each packet contains a <strong>header</strong> (source IP, destination IP, packet number) and <strong>payload</strong> (the actual data)</li>
+                <li>Packets can take <strong>different routes</strong> to reach the destination</li>
+                <li>Packets are <strong>reassembled in order</strong> at the destination</li>
+                <li>If packets are lost, they can be <strong>resent</strong></li>
+                <li>More efficient than circuit switching (phone calls)</li>
+            </ul>
+
+            <h3>How a Web Page is Loaded</h3>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>User enters URL</h4>
+                        <p>User types www.example.com in the browser</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>DNS Lookup</h4>
+                        <p>Browser contacts DNS server to get IP address for the domain name</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>HTTP Request</h4>
+                        <p>Browser sends HTTP GET request to the web server</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Server Response</h4>
+                        <p>Web server sends HTML, CSS, JavaScript files back in packets</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Page Rendered</h4>
+                        <p>Browser reassembles packets and displays the web page</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=tG6C1A6F74g" target="_blank">The Internet and DNS</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Describe the role of DNS when a user accesses a website. (3 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li>DNS stands for Domain Name System (1)</li>
+                        <li>It translates the domain name/URL into an IP address (1)</li>
+                        <li>So the browser knows which server to connect to (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECURITY ==================== -->
+        <section id="security" class="content-section">
+            <h2>Network Security</h2>
+
+            <div class="info-box definition">
+                <h4><i class="fas fa-book"></i> Key Definition</h4>
+                <p><strong>Network Security</strong> involves protecting a network and its data from unauthorised access, misuse, modification, or denial of service. It includes both technical measures and policies.</p>
+            </div>
+
+            <h3>Types of Malware</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Malware Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Virus</strong></td>
+                            <td>Malicious code that attaches to files and spreads when files are shared. Can delete or modify data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Worm</strong></td>
+                            <td>Self-replicating malware that spreads across networks without user action. Often spreads via email.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trojan</strong></td>
+                            <td>Malware disguised as legitimate software. Users are tricked into installing it.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spyware</strong></td>
+                            <td>Secretly monitors user activity (websites visited, passwords) and sends data to hackers.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ransomware</strong></td>
+                            <td>Encrypts user files and demands payment (ransom) to decrypt them.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Keylogger</strong></td>
+                            <td>Records keystrokes to capture passwords and sensitive information.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Types of Cyber Attack</h3>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Attack Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phishing</strong></td>
+                            <td>Fake emails or websites that trick users into revealing personal information (passwords, bank details).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brute Force</strong></td>
+                            <td>Trying every possible password combination until the correct one is found.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DDoS</strong></td>
+                            <td>Distributed Denial of Service - flooding a server with requests to make it unavailable.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SQL Injection</strong></td>
+                            <td>Inserting malicious SQL code into web forms to access or modify database data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Man-in-the-Middle</strong></td>
+                            <td>Intercepting communication between two parties to steal or modify data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shoulder Surfing</strong></td>
+                            <td>Watching someone enter passwords or PINs by looking over their shoulder.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Protection Methods</h3>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-shield-alt"></i> Technical Measures</h4>
+                    <ul>
+                        <li><strong>Firewall</strong> - monitors and filters network traffic</li>
+                        <li><strong>Anti-malware</strong> - detects and removes malicious software</li>
+                        <li><strong>Encryption</strong> - scrambles data so only authorised users can read it</li>
+                        <li><strong>Software updates</strong> - patches security vulnerabilities</li>
+                        <li><strong>Automatic backups</strong> - protects against data loss</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4><i class="fas fa-user-shield"></i> User Measures</h4>
+                    <ul>
+                        <li><strong>Strong passwords</strong> - 8+ characters, mix of letters, numbers, symbols</li>
+                        <li><strong>Two-factor authentication</strong> - extra verification step</li>
+                        <li><strong>Access rights</strong> - limit who can access what data</li>
+                        <li><strong>User training</strong> - recognising phishing and threats</li>
+                        <li><strong>Acceptable use policy</strong> - rules for using the network</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Encryption</h3>
+            <p>Encryption converts readable data (plaintext) into unreadable data (ciphertext):</p>
+
+            <ul class="styled-list">
+                <li><strong>Symmetric encryption:</strong> Same key used to encrypt and decrypt (e.g., AES)</li>
+                <li><strong>Asymmetric encryption:</strong> Different keys for encrypting (public) and decrypting (private)</li>
+                <li>Used for: secure websites (HTTPS), email, stored files, VPNs</li>
+            </ul>
+
+            <div class="info-box tip">
+                <h4><i class="fas fa-lightbulb"></i> Key Fact</h4>
+                <p>HTTPS uses SSL/TLS encryption to protect data sent between your browser and websites. The padlock icon shows a secure connection.</p>
+            </div>
+
+            <div class="video-container">
+                <h4><i class="fab fa-youtube"></i> Craig 'n' Dave Video</h4>
+                <p>Watch: <a href="https://www.youtube.com/watch?v=YJG0OQqHSFI" target="_blank">Network Security and Threats</a></p>
+            </div>
+
+            <div class="exam-tip">
+                <h4><i class="fas fa-graduation-cap"></i> Past Paper Question</h4>
+                <p><strong>Q: Describe two methods an organisation could use to protect their network from cyber attacks. (4 marks)</strong></p>
+                <div class="mark-scheme">
+                    <p><strong>Mark Scheme:</strong></p>
+                    <ul>
+                        <li><strong>Firewall:</strong> Monitors incoming and outgoing network traffic (1) and blocks unauthorised access/suspicious activity (1)</li>
+                        <li><strong>Anti-malware software:</strong> Scans files for known malware/viruses (1) and removes or quarantines infected files (1)</li>
+                        <li><strong>Encryption:</strong> Scrambles data so it cannot be read (1) if intercepted by hackers (1)</li>
+                        <li><strong>Strong passwords:</strong> Complex passwords are harder to guess/crack (1) reducing risk of unauthorised access (1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUIZ ==================== -->
+        <section id="quiz" class="content-section">
+            <h2>Topic 4 Quiz</h2>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Test Your Knowledge</h4>
+                <p>Complete this 15-question quiz to test your understanding of networks, protocols, and security. You'll receive a PDF certificate with your results.</p>
+            </div>
+
+            <form id="quiz-form" class="quiz-form">
+                <div class="quiz-student-info">
+                    <div class="form-group">
+                        <label for="student-name"><i class="fas fa-user"></i> Your Name (required)</label>
+                        <input type="text" id="student-name" name="student-name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email"><i class="fas fa-envelope"></i> Teacher's Email (optional)</label>
+                        <input type="email" id="teacher-email" name="teacher-email" placeholder="Enter your teacher's email">
+                    </div>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="quiz-question" data-question="1">
+                    <h4>Question 1</h4>
+                    <p>What is a LAN?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="a">
+                            <span>A network covering a large geographical area</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="b">
+                            <span>A network covering a small geographical area like a building</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="c">
+                            <span>The global internet</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="d">
+                            <span>A wireless network only</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question" data-question="2">
+                    <h4>Question 2</h4>
+                    <p>In a star topology, what happens if the central hub fails?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="a">
+                            <span>Only some devices lose connection</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="b">
+                            <span>The whole network fails</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="c">
+                            <span>Nothing happens - data reroutes</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="d">
+                            <span>The network becomes faster</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question" data-question="3">
+                    <h4>Question 3</h4>
+                    <p>What does TCP/IP stand for?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="a">
+                            <span>Transfer Control Protocol / Internet Provider</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="b">
+                            <span>Transmission Control Protocol / Internet Protocol</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="c">
+                            <span>Technical Computer Program / Internet Protocol</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="d">
+                            <span>Transmission Computer Protocol / Internal Process</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question" data-question="4">
+                    <h4>Question 4</h4>
+                    <p>What is the purpose of DNS?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="a">
+                            <span>To encrypt data for secure transmission</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="b">
+                            <span>To translate domain names into IP addresses</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="c">
+                            <span>To transfer files between computers</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q4" value="d">
+                            <span>To filter network traffic</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question" data-question="5">
+                    <h4>Question 5</h4>
+                    <p>Which type of malware disguises itself as legitimate software?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="a">
+                            <span>Virus</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="b">
+                            <span>Worm</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="c">
+                            <span>Trojan</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q5" value="d">
+                            <span>Spyware</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question" data-question="6">
+                    <h4>Question 6</h4>
+                    <p>What is phishing?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="a">
+                            <span>Trying all possible password combinations</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="b">
+                            <span>Using fake emails/websites to steal personal information</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="c">
+                            <span>Flooding a server with requests</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q6" value="d">
+                            <span>Recording keystrokes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question" data-question="7">
+                    <h4>Question 7</h4>
+                    <p>What does a firewall do?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="a">
+                            <span>Encrypts all data on the network</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="b">
+                            <span>Monitors and filters network traffic</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="c">
+                            <span>Scans for viruses</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q7" value="d">
+                            <span>Creates backup copies of files</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question" data-question="8">
+                    <h4>Question 8</h4>
+                    <p>Which protocol is used for secure web browsing?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="a">
+                            <span>HTTP</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="b">
+                            <span>FTP</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="c">
+                            <span>HTTPS</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q8" value="d">
+                            <span>SMTP</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question" data-question="9">
+                    <h4>Question 9</h4>
+                    <p>In a client-server network, what is the role of the server?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="a">
+                            <span>To request resources from other computers</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="b">
+                            <span>To provide services and resources to clients</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="c">
+                            <span>To connect to the internet</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q9" value="d">
+                            <span>To store files locally only</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question" data-question="10">
+                    <h4>Question 10</h4>
+                    <p>What is ransomware?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="a">
+                            <span>Software that monitors user activity</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="b">
+                            <span>Malware that encrypts files and demands payment</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="c">
+                            <span>A virus that spreads through email</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q10" value="d">
+                            <span>Software that creates backups</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question" data-question="11">
+                    <h4>Question 11</h4>
+                    <p>What does an IP address identify?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="a">
+                            <span>The physical location of a user</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="b">
+                            <span>A unique device on a network</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="c">
+                            <span>The type of network connection</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q11" value="d">
+                            <span>The network protocol being used</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question" data-question="12">
+                    <h4>Question 12</h4>
+                    <p>Which network topology has every device connected to every other device?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="a">
+                            <span>Star</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="b">
+                            <span>Bus</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="c">
+                            <span>Mesh</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q12" value="d">
+                            <span>Ring</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question" data-question="13">
+                    <h4>Question 13</h4>
+                    <p>What is packet switching?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="a">
+                            <span>Sending data as one continuous stream</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="b">
+                            <span>Breaking data into packets that can take different routes</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="c">
+                            <span>Encrypting data before transmission</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q13" value="d">
+                            <span>Compressing data to reduce size</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question" data-question="14">
+                    <h4>Question 14</h4>
+                    <p>What is one advantage of wired connections over wireless?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="a">
+                            <span>Easier to set up</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="b">
+                            <span>More mobility</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="c">
+                            <span>Faster and more reliable</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q14" value="d">
+                            <span>Cheaper to install</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question" data-question="15">
+                    <h4>Question 15</h4>
+                    <p>What does encryption do?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="a">
+                            <span>Compresses files to save space</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="b">
+                            <span>Scrambles data so only authorised users can read it</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="c">
+                            <span>Speeds up data transmission</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q15" value="d">
+                            <span>Creates backup copies of data</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-check-circle"></i> Submit Quiz
+                    </button>
+                </div>
+            </form>
+
+            <div id="quiz-results" class="quiz-results" style="display: none;">
+                <h3><i class="fas fa-chart-bar"></i> Your Results</h3>
+                <div class="results-summary">
+                    <div class="score-circle">
+                        <span id="score-display">0</span>
+                        <span class="score-total">/15</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div id="results-breakdown"></div>
+                <div class="results-actions">
+                    <button id="download-pdf" class="btn btn-primary">
+                        <i class="fas fa-file-pdf"></i> Download PDF Certificate
+                    </button>
+                    <button id="retry-quiz" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Edexcel GCSE CS</h4>
+                    <p>A comprehensive revision resource for the Pearson Edexcel GCSE Computer Science (1CP2) specification.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="topic1.html">Topic 1: Computational Thinking</a></li>
+                        <li><a href="topic2.html">Topic 2: Data</a></li>
+                        <li><a href="topic3.html">Topic 3: Computers</a></li>
+                        <li><a href="topic4.html">Topic 4: Networks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>External Resources</h4>
+                    <ul>
+                        <li><a href="https://student.craigndave.org/gcse-edexcel" target="_blank">Craig 'n' Dave Videos</a></li>
+                        <li><a href="https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" target="_blank">Pearson Specification</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>This is an independent revision resource and is not affiliated with Pearson Education Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Topic 4 Quiz Answers
+        const quizAnswers = {
+            q1: 'b',  // LAN covers small area
+            q2: 'b',  // Star - hub fails, network fails
+            q3: 'b',  // Transmission Control Protocol / Internet Protocol
+            q4: 'b',  // DNS translates domain names to IPs
+            q5: 'c',  // Trojan disguises as legitimate software
+            q6: 'b',  // Phishing uses fake emails/websites
+            q7: 'b',  // Firewall monitors and filters traffic
+            q8: 'c',  // HTTPS for secure browsing
+            q9: 'b',  // Server provides services to clients
+            q10: 'b', // Ransomware encrypts and demands payment
+            q11: 'b', // IP address identifies device on network
+            q12: 'c', // Mesh - every device connected to every other
+            q13: 'b', // Packet switching breaks data into packets
+            q14: 'c', // Wired is faster and more reliable
+            q15: 'b'  // Encryption scrambles data
+        };
+
+        const quizExplanations = {
+            q1: 'A LAN (Local Area Network) covers a small geographical area such as a single building, school, or home.',
+            q2: 'In star topology, all devices connect to a central hub or switch. If the hub fails, no devices can communicate.',
+            q3: 'TCP/IP stands for Transmission Control Protocol / Internet Protocol - the foundation of internet communication.',
+            q4: 'DNS (Domain Name System) translates human-readable domain names like www.google.com into IP addresses.',
+            q5: 'A Trojan is malware disguised as legitimate software. Users are tricked into installing it themselves.',
+            q6: 'Phishing uses fake emails or websites to trick users into revealing personal information like passwords.',
+            q7: 'A firewall monitors incoming and outgoing network traffic and blocks suspicious or unauthorised access.',
+            q8: 'HTTPS (HTTP Secure) encrypts data between browser and server, shown by the padlock icon.',
+            q9: 'In a client-server network, the server provides centralised services and resources to client computers.',
+            q10: 'Ransomware encrypts your files and demands a ransom payment (usually in cryptocurrency) to decrypt them.',
+            q11: 'An IP address is a unique numerical address that identifies each device on a network.',
+            q12: 'In mesh topology, every device is connected directly to every other device, providing multiple paths for data.',
+            q13: 'Packet switching breaks data into small packets that can travel different routes and are reassembled at the destination.',
+            q14: 'Wired connections are faster (up to 10 Gbps) and more reliable than wireless as they are not affected by interference.',
+            q15: 'Encryption scrambles data using a key so that only authorised users with the key can read it.'
+        };
+
+        // Quiz submission handler
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const studentName = document.getElementById('student-name').value;
+            if (!studentName.trim()) {
+                alert('Please enter your name to submit the quiz.');
+                return;
+            }
+
+            let score = 0;
+            let resultsHTML = '<div class="results-list">';
+
+            for (let i = 1; i <= 15; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const correct = quizAnswers[`q${i}`];
+                const isCorrect = selected && selected.value === correct;
+
+                if (isCorrect) score++;
+
+                resultsHTML += `
+                    <div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                        <span class="result-icon">${isCorrect ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>'}</span>
+                        <span class="result-text">Question ${i}: ${isCorrect ? 'Correct' : 'Incorrect'}</span>
+                        ${!isCorrect ? `<p class="result-explanation">${quizExplanations[`q${i}`]}</p>` : ''}
+                    </div>
+                `;
+            }
+            resultsHTML += '</div>';
+
+            document.getElementById('score-display').textContent = score;
+            document.getElementById('results-breakdown').innerHTML = resultsHTML;
+
+            let message = '';
+            if (score === 15) message = 'Perfect score! Outstanding work!';
+            else if (score >= 12) message = 'Excellent understanding of Topic 4!';
+            else if (score >= 9) message = 'Good work! Review the topics you missed.';
+            else if (score >= 6) message = 'Keep studying! Focus on the areas above.';
+            else message = 'More revision needed. Re-read the content and try again.';
+
+            document.getElementById('score-message').textContent = message;
+
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
+
+            // Store data for PDF
+            window.quizData = {
+                studentName: studentName,
+                teacherEmail: document.getElementById('teacher-email').value,
+                score: score,
+                total: 15,
+                topic: 'Topic 4: Networks',
+                date: new Date().toLocaleDateString('en-GB')
+            };
+        });
+
+        // PDF Generation
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.quizData;
+
+            // Header
+            doc.setFillColor(245, 158, 11);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.text('Quiz Certificate', 105, 25, { align: 'center' });
+
+            // Content
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(16);
+            doc.text('This certifies that', 105, 60, { align: 'center' });
+
+            doc.setFontSize(22);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.studentName, 105, 75, { align: 'center' });
+
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(14);
+            doc.text('has completed the quiz for', 105, 90, { align: 'center' });
+
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text(data.topic, 105, 105, { align: 'center' });
+
+            // Score
+            doc.setFontSize(36);
+            const percentage = Math.round((data.score / data.total) * 100);
+            doc.text(`${data.score}/${data.total}`, 105, 135, { align: 'center' });
+            doc.setFontSize(16);
+            doc.text(`(${percentage}%)`, 105, 148, { align: 'center' });
+
+            // Grade
+            doc.setFontSize(14);
+            let grade = '';
+            if (percentage >= 90) grade = 'Outstanding';
+            else if (percentage >= 70) grade = 'Good';
+            else if (percentage >= 50) grade = 'Satisfactory';
+            else grade = 'Needs Improvement';
+            doc.text(`Grade: ${grade}`, 105, 165, { align: 'center' });
+
+            // Date
+            doc.setFontSize(12);
+            doc.text(`Date: ${data.date}`, 105, 185, { align: 'center' });
+
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Edexcel GCSE Computer Science Revision', 105, 270, { align: 'center' });
+            doc.text('This is an independent revision resource', 105, 277, { align: 'center' });
+
+            doc.save(`Topic4-Quiz-${data.studentName.replace(/\s+/g, '-')}.pdf`);
+        });
+
+        // Retry quiz
+        document.getElementById('retry-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-form').reset();
+            document.getElementById('quiz-form').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('quiz-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Subtopic navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const tabs = document.querySelectorAll('.subtopic-tab');
+
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('href') === '#' + current) {
+                        tab.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
